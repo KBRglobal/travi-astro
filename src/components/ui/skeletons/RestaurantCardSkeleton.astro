@@ -1,0 +1,41 @@
+---
+import Skeleton from './Skeleton.astro';
+---
+
+<div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+  <!-- Image -->
+  <Skeleton width="w-full" height="h-52" rounded="none" />
+
+  <div class="p-5 space-y-3">
+    <!-- Cuisine Badge -->
+    <Skeleton width="w-32" height="h-6" rounded="full" />
+
+    <!-- Restaurant Name -->
+    <Skeleton width="w-4/5" height="h-6" />
+
+    <!-- Description -->
+    <div class="space-y-2">
+      <Skeleton width="w-full" height="h-4" />
+      <Skeleton width="w-full" height="h-4" />
+      <Skeleton width="w-2/3" height="h-4" />
+    </div>
+
+    <!-- Rating & Price Range -->
+    <div class="flex items-center gap-4 pt-2">
+      <div class="flex items-center gap-1">
+        <Skeleton width="w-5" height="h-5" rounded="none" />
+        <Skeleton width="w-10" height="h-4" />
+      </div>
+      <Skeleton width="w-20" height="h-4" />
+    </div>
+
+    <!-- Location -->
+    <div class="flex items-center gap-2 pt-2 border-t border-gray-100 dark:border-gray-700">
+      <Skeleton width="w-4" height="h-4" rounded="none" />
+      <Skeleton width="w-36" height="h-4" />
+    </div>
+
+    <!-- CTA Button -->
+    <Skeleton width="w-full" height="h-10" rounded="lg" />
+  </div>
+</div>

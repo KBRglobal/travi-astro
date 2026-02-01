@@ -1,0 +1,302 @@
+---
+import { t, changeLanguage } from "i18next";
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { languages, type Language } from '../../lib/i18n';
+import Skeleton from '../../components/ui/skeletons/Skeleton.astro';
+import CardSkeleton from '../../components/ui/skeletons/CardSkeleton.astro';
+import AttractionCardSkeleton from '../../components/ui/skeletons/AttractionCardSkeleton.astro';
+import HotelCardSkeleton from '../../components/ui/skeletons/HotelCardSkeleton.astro';
+import RestaurantCardSkeleton from '../../components/ui/skeletons/RestaurantCardSkeleton.astro';
+import ArticleCardSkeleton from '../../components/ui/skeletons/ArticleCardSkeleton.astro';
+import GridSkeleton from '../../components/ui/skeletons/GridSkeleton.astro';
+import DetailPageSkeleton from '../../components/ui/skeletons/DetailPageSkeleton.astro';
+
+export async function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Language };
+changeLanguage(lang);
+---
+
+<BaseLayout
+  title="Skeleton Components Demo"
+  description="Showcase of all skeleton loading components"
+  lang={lang}
+>
+  <div class="container py-20 space-y-16">
+    <!-- Page Header -->
+    <div class="text-center space-y-4">
+      <span class="inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
+        Design System
+      </span>
+      <h1 class="text-4xl font-bold md:text-5xl">
+        Skeleton <span class="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">Loading Components</span>
+      </h1>
+      <p class="mx-auto max-w-3xl text-lg text-muted-foreground">
+        מערכת skeleton loaders מלאה עם אנימציות shimmer ו-pulse. תומך ב-RTL ו-dark mode.
+      </p>
+    </div>
+
+    <!-- Base Skeleton Variants -->
+    <section class="space-y-6">
+      <div class="border-l-4 border-primary pl-6">
+        <h2 class="text-2xl font-bold mb-2">Base Skeleton</h2>
+        <p class="text-muted-foreground">קומפוננט בסיסי עם options שונות</p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Shimmer Animation -->
+        <div class="space-y-3 rounded-lg border bg-card p-6">
+          <h3 class="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Shimmer (Default)</h3>
+          <Skeleton animation="shimmer" />
+          <Skeleton width="w-3/4" animation="shimmer" />
+          <Skeleton width="w-1/2" animation="shimmer" />
+        </div>
+
+        <!-- Pulse Animation -->
+        <div class="space-y-3 rounded-lg border bg-card p-6">
+          <h3 class="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Pulse</h3>
+          <Skeleton animation="pulse" />
+          <Skeleton width="w-3/4" animation="pulse" />
+          <Skeleton width="w-1/2" animation="pulse" />
+        </div>
+
+        <!-- No Animation -->
+        <div class="space-y-3 rounded-lg border bg-card p-6">
+          <h3 class="text-sm font-semibold text-muted-foreground uppercase tracking-wide">No Animation</h3>
+          <Skeleton animation="none" />
+          <Skeleton width="w-3/4" animation="none" />
+          <Skeleton width="w-1/2" animation="none" />
+        </div>
+      </div>
+
+      <!-- Rounded Variants -->
+      <div class="grid gap-6 md:grid-cols-4">
+        <div class="space-y-3 rounded-lg border bg-card p-6">
+          <h3 class="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-4">Rounded: sm</h3>
+          <Skeleton rounded="sm" height="h-12" />
+        </div>
+        <div class="space-y-3 rounded-lg border bg-card p-6">
+          <h3 class="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-4">Rounded: md</h3>
+          <Skeleton rounded="md" height="h-12" />
+        </div>
+        <div class="space-y-3 rounded-lg border bg-card p-6">
+          <h3 class="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-4">Rounded: lg</h3>
+          <Skeleton rounded="lg" height="h-12" />
+        </div>
+        <div class="space-y-3 rounded-lg border bg-card p-6">
+          <h3 class="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-4">Rounded: full</h3>
+          <Skeleton rounded="full" height="h-12" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Generic Card Skeleton -->
+    <section class="space-y-6">
+      <div class="border-l-4 border-primary pl-6">
+        <h2 class="text-2xl font-bold mb-2">Generic Card Skeleton</h2>
+        <p class="text-muted-foreground">skeleton כללי לכרטיסים עם אפשרויות התאמה</p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-3">
+        <CardSkeleton showImage={true} showCategory={true} showRating={false} lines={3} />
+        <CardSkeleton showImage={false} showCategory={true} showRating={true} lines={2} />
+        <CardSkeleton showImage={true} showCategory={false} showRating={true} lines={4} />
+      </div>
+    </section>
+
+    <!-- Attraction Cards -->
+    <section class="space-y-6">
+      <div class="border-l-4 border-primary pl-6">
+        <h2 class="text-2xl font-bold mb-2">Attraction Card Skeleton</h2>
+        <p class="text-muted-foreground">לעמודי attractions</p>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <AttractionCardSkeleton />
+        <AttractionCardSkeleton />
+        <AttractionCardSkeleton />
+        <AttractionCardSkeleton />
+      </div>
+    </section>
+
+    <!-- Hotel Cards -->
+    <section class="space-y-6">
+      <div class="border-l-4 border-primary pl-6">
+        <h2 class="text-2xl font-bold mb-2">Hotel Card Skeleton</h2>
+        <p class="text-muted-foreground">לעמודי hotels</p>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <HotelCardSkeleton />
+        <HotelCardSkeleton />
+        <HotelCardSkeleton />
+        <HotelCardSkeleton />
+      </div>
+    </section>
+
+    <!-- Restaurant Cards -->
+    <section class="space-y-6">
+      <div class="border-l-4 border-primary pl-6">
+        <h2 class="text-2xl font-bold mb-2">Restaurant Card Skeleton</h2>
+        <p class="text-muted-foreground">לעמודי restaurants</p>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <RestaurantCardSkeleton />
+        <RestaurantCardSkeleton />
+        <RestaurantCardSkeleton />
+        <RestaurantCardSkeleton />
+      </div>
+    </section>
+
+    <!-- Article Cards -->
+    <section class="space-y-6">
+      <div class="border-l-4 border-primary pl-6">
+        <h2 class="text-2xl font-bold mb-2">Article Card Skeleton</h2>
+        <p class="text-muted-foreground">לעמודי articles/guides</p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <ArticleCardSkeleton />
+        <ArticleCardSkeleton />
+        <ArticleCardSkeleton />
+      </div>
+    </section>
+
+    <!-- Grid Skeleton Wrapper -->
+    <section class="space-y-6">
+      <div class="border-l-4 border-primary pl-6">
+        <h2 class="text-2xl font-bold mb-2">Grid Skeleton Wrapper</h2>
+        <p class="text-muted-foreground">wrapper שמייצר grid של skeletons אוטומטית</p>
+      </div>
+
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-lg font-semibold mb-4">4 Columns Grid</h3>
+          <GridSkeleton count={8} columns={4} SkeletonComponent={AttractionCardSkeleton} />
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-4">3 Columns Grid</h3>
+          <GridSkeleton count={6} columns={3} SkeletonComponent={HotelCardSkeleton} />
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-4">2 Columns Grid</h3>
+          <GridSkeleton count={4} columns={2} SkeletonComponent={RestaurantCardSkeleton} />
+        </div>
+      </div>
+    </section>
+
+    <!-- Detail Page Skeleton -->
+    <section class="space-y-6">
+      <div class="border-l-4 border-primary pl-6">
+        <h2 class="text-2xl font-bold mb-2">Detail Page Skeleton</h2>
+        <p class="text-muted-foreground">לדפי פרטים (attraction/[slug], hotel/[slug])</p>
+      </div>
+
+      <div class="rounded-lg border bg-muted/50 p-4">
+        <DetailPageSkeleton />
+      </div>
+    </section>
+
+    <!-- Usage Guide -->
+    <section class="space-y-6">
+      <div class="border-l-4 border-primary pl-6">
+        <h2 class="text-2xl font-bold mb-2">Usage Guide</h2>
+        <p class="text-muted-foreground">איך להשתמש בskeletons</p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2">
+        <div class="rounded-lg border bg-card p-6 space-y-4">
+          <h3 class="text-lg font-semibold">בAstro Components</h3>
+          <pre class="bg-muted p-4 rounded-md overflow-x-auto text-sm"><code>{`---
+import AttractionCardSkeleton from '../skeletons/AttractionCardSkeleton.astro';
+---
+
+{loading && (
+  <AttractionCardSkeleton />
+)}`}</code></pre>
+        </div>
+
+        <div class="rounded-lg border bg-card p-6 space-y-4">
+          <h3 class="text-lg font-semibold">עם GridSkeleton</h3>
+          <pre class="bg-muted p-4 rounded-md overflow-x-auto text-sm"><code>{`---
+import GridSkeleton from '../skeletons/GridSkeleton.astro';
+import HotelCardSkeleton from '../skeletons/HotelCardSkeleton.astro';
+---
+
+<GridSkeleton
+  count={8}
+  columns={4}
+  SkeletonComponent={HotelCardSkeleton}
+/>`}</code></pre>
+        </div>
+
+        <div class="rounded-lg border bg-card p-6 space-y-4">
+          <h3 class="text-lg font-semibold">Base Skeleton</h3>
+          <pre class="bg-muted p-4 rounded-md overflow-x-auto text-sm"><code>{`---
+import Skeleton from '../skeletons/Skeleton.astro';
+---
+
+<Skeleton
+  width="w-full"
+  height="h-4"
+  rounded="md"
+  animation="shimmer"
+/>`}</code></pre>
+        </div>
+
+        <div class="rounded-lg border bg-card p-6 space-y-4">
+          <h3 class="text-lg font-semibold">Features</h3>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>תמיכה ב-RTL (Hebrew, Arabic)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Dark mode support אוטומטי</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>אנימציות shimmer ו-pulse</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Accessibility עם role="status"</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Customizable (width, height, rounded)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Back Button -->
+    <div class="text-center pt-8">
+      <a
+        href={`/${lang}`}
+        class="inline-flex h-11 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      >
+        ← Back to Home
+      </a>
+    </div>
+  </div>
+</BaseLayout>

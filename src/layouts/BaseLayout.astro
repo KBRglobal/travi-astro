@@ -1,6 +1,8 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import '../styles/global.css';
 import { getLangFromUrl, useTranslations, isRTL, languages, type Language } from '../lib/i18n';
+import ProgressBar from '../components/ui/ProgressBar.astro';
 
 interface Props {
   title: string;
@@ -158,9 +160,15 @@ const siteName = 'TRAVI World';
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+    <!-- View Transitions -->
+    <ViewTransitions />
+
     <slot name="head" />
   </head>
   <body class="min-h-screen bg-background font-sans antialiased">
+    <!-- Progress Bar -->
+    <ProgressBar />
+
     <div class="relative flex min-h-screen flex-col">
       <header class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div class="container flex h-16 items-center">

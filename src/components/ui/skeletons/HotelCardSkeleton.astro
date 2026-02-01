@@ -1,0 +1,48 @@
+---
+import Skeleton from './Skeleton.astro';
+---
+
+<div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+  <!-- Image -->
+  <Skeleton width="w-full" height="h-48" rounded="none" />
+
+  <div class="p-5 space-y-3">
+    <!-- Star Rating -->
+    <div class="flex gap-1">
+      <Skeleton width="w-4" height="h-4" rounded="none" />
+      <Skeleton width="w-4" height="h-4" rounded="none" />
+      <Skeleton width="w-4" height="h-4" rounded="none" />
+      <Skeleton width="w-4" height="h-4" rounded="none" />
+      <Skeleton width="w-4" height="h-4" rounded="none" />
+    </div>
+
+    <!-- Hotel Name -->
+    <Skeleton width="w-3/4" height="h-6" />
+
+    <!-- Description -->
+    <div class="space-y-2">
+      <Skeleton width="w-full" height="h-4" />
+      <Skeleton width="w-5/6" height="h-4" />
+    </div>
+
+    <!-- Amenities -->
+    <div class="flex flex-wrap gap-2 pt-2">
+      <Skeleton width="w-16" height="h-6" rounded="full" />
+      <Skeleton width="w-20" height="h-6" rounded="full" />
+      <Skeleton width="w-14" height="h-6" rounded="full" />
+      <Skeleton width="w-18" height="h-6" rounded="full" />
+    </div>
+
+    <!-- Location & Price -->
+    <div class="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-gray-700">
+      <div class="flex items-center gap-2">
+        <Skeleton width="w-4" height="h-4" rounded="none" />
+        <Skeleton width="w-24" height="h-4" />
+      </div>
+      <Skeleton width="w-20" height="h-6" />
+    </div>
+
+    <!-- CTA Button -->
+    <Skeleton width="w-full" height="h-10" rounded="lg" />
+  </div>
+</div>

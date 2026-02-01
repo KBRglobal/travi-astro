@@ -1,0 +1,197 @@
+---
+import { t, changeLanguage } from "i18next";
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { languages, type Language } from '../../lib/i18n';
+
+export async function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Language };
+changeLanguage(lang);
+
+// Note: RSS aggregator works on the client-side only (SSR would need server deployment)
+// For SSG, we show a loading message and fetch on client
+---
+
+<BaseLayout
+  title={t('news.title', { defaultValue: 'Latest Travel News' })}
+  description={t('news.description', { defaultValue: 'Stay updated with the latest travel news from around the world' })}
+  lang={lang}
+>
+  <div class="container py-20">
+    <!-- Hero Section -->
+    <div class="mb-12 text-center">
+      <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
+        {t('news.badge', { defaultValue: 'Travel News Aggregator' })}
+      </span>
+      <h1 class="mb-4 text-4xl font-bold md:text-5xl lg:text-6xl">
+        {t('news.headline', { defaultValue: 'Latest' })}
+        <span class="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+          {' '}{t('news.headlinePart2', { defaultValue: 'Travel News' })}
+        </span>
+      </h1>
+      <p class="mx-auto max-w-3xl text-lg text-muted-foreground">
+        {t('news.heroDescription', { defaultValue: 'Aggregated travel news from top sources worldwide. Stay informed about destinations, tips, and travel trends.' })}
+      </p>
+    </div>
+
+    <!-- News Feed Container -->
+    <div id="news-container" class="space-y-6">
+      <!-- Loading State -->
+      <div id="loading-state" class="text-center py-12">
+        <div class="inline-flex items-center gap-3 text-muted-foreground">
+          <svg class="animate-spin h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          <span>{t('news.loading', { defaultValue: 'Loading travel news...' })}</span>
+        </div>
+      </div>
+
+      <!-- Error State -->
+      <div id="error-state" class="hidden text-center py-12">
+        <div class="rounded-lg bg-destructive/10 p-6 text-destructive">
+          <svg class="mx-auto h-12 w-12 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <p class="font-semibold">{t('news.error', { defaultValue: 'Failed to load news' })}</p>
+          <p class="text-sm mt-2">{t('news.errorDescription', { defaultValue: 'Please try again later' })}</p>
+        </div>
+      </div>
+
+      <!-- News Grid -->
+      <div id="news-grid" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3"></div>
+    </div>
+
+    <!-- RSS Sources -->
+    <div class="mt-16 rounded-lg border bg-card p-8">
+      <h2 class="text-2xl font-bold mb-6 text-center">
+        {t('news.sources', { defaultValue: 'News Sources' })}
+      </h2>
+      <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 text-sm text-muted-foreground">
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+          <span>Travel + Leisure</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+          <span>Lonely Planet</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+          <span>Condé Nast Traveler</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+          <span>National Geographic</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+          <span>Skift</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+          <span>Time Out</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+          <span>The Points Guy</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+          <span>+ More</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  // Fetch and display news
+  async function loadNews() {
+    const loadingState = document.getElementById('loading-state');
+    const errorState = document.getElementById('error-state');
+    const newsGrid = document.getElementById('news-grid');
+
+    if (!newsGrid) return;
+
+    try {
+      const response = await fetch('/api/rss-aggregator');
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch news');
+      }
+
+      const news = await response.json();
+
+      // Hide loading
+      if (loadingState) loadingState.classList.add('hidden');
+
+      // Render news items
+      newsGrid.innerHTML = news
+        .map(
+          (item: any) => `
+        <article class="group rounded-lg border bg-card overflow-hidden hover:shadow-xl transition-shadow">
+          <div class="p-6 space-y-3">
+            <div class="flex items-center gap-2 text-xs text-muted-foreground">
+              <span class="rounded-full bg-primary/10 px-2 py-1 text-primary">${item.source}</span>
+              <span>${new Date(item.pubDate).toLocaleDateString()}</span>
+            </div>
+
+            <h3 class="text-lg font-semibold group-hover:text-primary transition-colors line-clamp-2">
+              <a href="${item.link}" target="_blank" rel="noopener noreferrer">
+                ${item.title}
+              </a>
+            </h3>
+
+            <p class="text-sm text-muted-foreground line-clamp-3">
+              ${item.description.replace(/<[^>]*>/g, '').slice(0, 200)}...
+            </p>
+
+            <a
+              href="${item.link}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center text-sm text-primary hover:underline"
+            >
+              Read more
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+          </div>
+        </article>
+      `
+        )
+        .join('');
+    } catch (error) {
+      console.error('Error loading news:', error);
+
+      // Hide loading, show error
+      if (loadingState) loadingState.classList.add('hidden');
+      if (errorState) errorState.classList.remove('hidden');
+    }
+  }
+
+  // Load news on page load
+  loadNews();
+</script>

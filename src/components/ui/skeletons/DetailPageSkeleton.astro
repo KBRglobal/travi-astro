@@ -1,0 +1,123 @@
+---
+import Skeleton from './Skeleton.astro';
+---
+
+<div class="max-w-7xl mx-auto px-4 py-8 space-y-8">
+  <!-- Breadcrumb -->
+  <div class="flex items-center gap-2">
+    <Skeleton width="w-16" height="h-4" />
+    <Skeleton width="w-2" height="h-4" />
+    <Skeleton width="w-24" height="h-4" />
+    <Skeleton width="w-2" height="h-4" />
+    <Skeleton width="w-32" height="h-4" />
+  </div>
+
+  <!-- Hero Section -->
+  <div class="space-y-6">
+    <!-- Category Badge -->
+    <Skeleton width="w-32" height="h-7" rounded="full" />
+
+    <!-- Title -->
+    <Skeleton width="w-2/3" height="h-12" />
+
+    <!-- Meta Info (Location, Rating, etc.) -->
+    <div class="flex flex-wrap items-center gap-6">
+      <div class="flex items-center gap-2">
+        <Skeleton width="w-5" height="h-5" rounded="none" />
+        <Skeleton width="w-40" height="h-5" />
+      </div>
+      <div class="flex items-center gap-2">
+        <Skeleton width="w-5" height="h-5" rounded="none" />
+        <Skeleton width="w-24" height="h-5" />
+      </div>
+      <div class="flex items-center gap-2">
+        <Skeleton width="w-5" height="h-5" rounded="none" />
+        <Skeleton width="w-20" height="h-5" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Image Gallery -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <Skeleton width="w-full" height="h-96" rounded="lg" />
+    <div class="grid grid-cols-2 gap-4">
+      <Skeleton width="w-full" height="h-44" rounded="lg" />
+      <Skeleton width="w-full" height="h-44" rounded="lg" />
+      <Skeleton width="w-full" height="h-44" rounded="lg" />
+      <Skeleton width="w-full" height="h-44" rounded="lg" />
+    </div>
+  </div>
+
+  <!-- Content Grid -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <!-- Main Content -->
+    <div class="lg:col-span-2 space-y-8">
+      <!-- Description Section -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-6 space-y-4">
+        <Skeleton width="w-48" height="h-7" />
+        <div class="space-y-3">
+          <Skeleton width="w-full" height="h-4" />
+          <Skeleton width="w-full" height="h-4" />
+          <Skeleton width="w-full" height="h-4" />
+          <Skeleton width="w-full" height="h-4" />
+          <Skeleton width="w-5/6" height="h-4" />
+          <Skeleton width="w-full" height="h-4" />
+          <Skeleton width="w-4/5" height="h-4" />
+        </div>
+      </div>
+
+      <!-- Features/Amenities Section -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-6 space-y-4">
+        <Skeleton width="w-40" height="h-7" />
+        <div class="grid grid-cols-2 gap-3">
+          {Array.from({ length: 8 }).map(() => (
+            <div class="flex items-center gap-2">
+              <Skeleton width="w-5" height="h-5" rounded="none" />
+              <Skeleton width="w-32" height="h-4" />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Additional Info Section -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-6 space-y-4">
+        <Skeleton width="w-44" height="h-7" />
+        <div class="space-y-3">
+          <Skeleton width="w-full" height="h-4" />
+          <Skeleton width="w-full" height="h-4" />
+          <Skeleton width="w-3/4" height="h-4" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="space-y-6">
+      <!-- Info Card -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-6 space-y-4 sticky top-4">
+        <Skeleton width="w-full" height="h-12" rounded="lg" />
+
+        <div class="space-y-3 pt-4 border-t border-gray-100 dark:border-gray-700">
+          <div class="flex items-center justify-between">
+            <Skeleton width="w-24" height="h-4" />
+            <Skeleton width="w-32" height="h-4" />
+          </div>
+          <div class="flex items-center justify-between">
+            <Skeleton width="w-28" height="h-4" />
+            <Skeleton width="w-28" height="h-4" />
+          </div>
+          <div class="flex items-center justify-between">
+            <Skeleton width="w-20" height="h-4" />
+            <Skeleton width="w-24" height="h-4" />
+          </div>
+        </div>
+
+        <Skeleton width="w-full" height="h-12" rounded="lg" />
+      </div>
+
+      <!-- Map Card -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden">
+        <Skeleton width="w-full" height="h-64" rounded="none" />
+      </div>
+    </div>
+  </div>
+</div>

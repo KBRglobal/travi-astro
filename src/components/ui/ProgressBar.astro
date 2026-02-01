@@ -1,0 +1,153 @@
+---
+// Top loading progress bar (like YouTube, GitHub)
+// Automatically shows during page transitions
+---
+
+<div
+  id="progress-bar"
+  class="fixed top-0 left-0 right-0 h-1 bg-primary z-[100] transform scale-x-0 origin-left transition-transform duration-300"
+  role="progressbar"
+  aria-label="Page loading progress"
+  aria-valuemin="0"
+  aria-valuemax="100"
+  aria-valuenow="0"
+></div>
+
+<style>
+  #progress-bar {
+    box-shadow: 0 0 10px rgba(14, 165, 233, 0.5);
+  }
+
+  #progress-bar.loading {
+    animation: progress 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  #progress-bar.complete {
+    transform: scaleX(1) !important;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  @keyframes progress {
+    0% {
+      transform: scaleX(0);
+    }
+    50% {
+      transform: scaleX(0.7);
+    }
+    100% {
+      transform: scaleX(0.95);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #progress-bar {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+
+<script>
+  // Progress bar logic
+  const progressBar = document.getElementById('progress-bar');
+
+  if (progressBar) {
+    let progressValue = 0;
+    let progressInterval: number | null = null;
+
+    // Start progress (fast at first, then slows down)
+    function startProgress() {
+      progressBar.classList.add('loading');
+      progressBar.setAttribute('aria-valuenow', '0');
+
+      progressValue = 0;
+      progressInterval = window.setInterval(() => {
+        // Simulate loading: fast at first (0-70%), then slow (70-95%)
+        if (progressValue < 70) {
+          progressValue += Math.random() * 10;
+        } else if (progressValue < 90) {
+          progressValue += Math.random() * 3;
+        } else if (progressValue < 95) {
+          progressValue += Math.random() * 1;
+        }
+
+        progressValue = Math.min(progressValue, 95);
+        progressBar.style.transform = `scaleX(${progressValue / 100})`;
+        progressBar.setAttribute('aria-valuenow', Math.floor(progressValue).toString());
+      }, 100);
+    }
+
+    // Complete progress
+    function completeProgress() {
+      if (progressInterval) {
+        clearInterval(progressInterval);
+        progressInterval = null;
+      }
+
+      progressBar.classList.remove('loading');
+      progressBar.classList.add('complete');
+      progressBar.style.transform = 'scaleX(1)';
+      progressBar.setAttribute('aria-valuenow', '100');
+
+      // Hide after completion
+      setTimeout(() => {
+        progressBar.style.transform = 'scaleX(0)';
+        progressBar.classList.remove('complete');
+      }, 300);
+    }
+
+    // Reset progress
+    function resetProgress() {
+      if (progressInterval) {
+        clearInterval(progressInterval);
+        progressInterval = null;
+      }
+      progressBar.style.transform = 'scaleX(0)';
+      progressBar.classList.remove('loading', 'complete');
+      progressValue = 0;
+    }
+
+    // Listen to navigation events
+    document.addEventListener('astro:before-preparation', startProgress);
+    document.addEventListener('astro:after-swap', completeProgress);
+    document.addEventListener('astro:page-load', completeProgress);
+
+    // Fallback for links without View Transitions
+    document.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      const link = target.closest('a');
+
+      if (link && link.href && !link.target && !link.download) {
+        const url = new URL(link.href);
+        if (url.origin === window.location.origin) {
+          startProgress();
+
+          // Auto-complete after 2s if page doesn't load
+          setTimeout(() => {
+            if (progressValue < 100) {
+              completeProgress();
+            }
+          }, 2000);
+        }
+      }
+    });
+
+    // Handle form submissions
+    document.addEventListener('submit', (e) => {
+      const form = e.target as HTMLFormElement;
+      if (form.method.toLowerCase() === 'post') {
+        startProgress();
+      }
+    });
+
+    // Complete on page load
+    window.addEventListener('load', () => {
+      if (progressValue > 0) {
+        completeProgress();
+      }
+    });
+
+    // Reset on error
+    window.addEventListener('error', resetProgress);
+  }
+</script>

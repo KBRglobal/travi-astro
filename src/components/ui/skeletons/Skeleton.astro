@@ -1,0 +1,71 @@
+---
+interface Props {
+  width?: string;
+  height?: string;
+  className?: string;
+  rounded?: 'sm' | 'md' | 'lg' | 'full' | 'none';
+  animation?: 'pulse' | 'shimmer' | 'none';
+}
+
+const {
+  width = 'w-full',
+  height = 'h-4',
+  className = '',
+  rounded = 'md',
+  animation = 'shimmer'
+} = Astro.props;
+
+const roundedClass = {
+  sm: 'rounded-sm',
+  md: 'rounded-md',
+  lg: 'rounded-lg',
+  full: 'rounded-full',
+  none: 'rounded-none'
+}[rounded];
+
+const animationClass = {
+  pulse: 'animate-pulse',
+  shimmer: 'animate-shimmer',
+  none: ''
+}[animation];
+---
+
+<div
+  class={`bg-gray-200 dark:bg-gray-700 ${width} ${height} ${roundedClass} ${animationClass} ${className}`}
+  role="status"
+  aria-label="Loading..."
+/>
+
+<style>
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(
+      90deg,
+      rgb(229 231 235 / 1) 0%,
+      rgb(243 244 246 / 1) 50%,
+      rgb(229 231 235 / 1) 100%
+    );
+    background-size: 1000px 100%;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .animate-shimmer {
+      background: linear-gradient(
+        90deg,
+        rgb(55 65 81 / 1) 0%,
+        rgb(75 85 99 / 1) 50%,
+        rgb(55 65 81 / 1) 100%
+      );
+      background-size: 1000px 100%;
+    }
+  }
+</style>

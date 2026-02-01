@@ -1,0 +1,104 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  class?: string;
+  priority?: boolean;
+  aspectRatio?: string;
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  class: className = '',
+  priority = false,
+  aspectRatio = '16/9'
+} = Astro.props;
+
+// Generate placeholder (base64 tiny blurred image data URL)
+const placeholderDataUrl = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"%3E%3Cfilter id="b" color-interpolation-filters="sRGB"%3E%3CfeGaussianBlur stdDeviation="20"/%3E%3C/filter%3E%3Crect width="400" height="300" fill="%23e5e7eb" filter="url(%23b)"/%3E%3C/svg%3E';
+
+const loading = priority ? 'eager' : 'lazy';
+const fetchPriority = priority ? 'high' : 'auto';
+---
+
+<div class={`relative overflow-hidden ${className}`} style={`aspect-ratio: ${aspectRatio};`}>
+  <!-- Placeholder (blurred) -->
+  <img
+    src={placeholderDataUrl}
+    alt=""
+    class="absolute inset-0 w-full h-full object-cover blur-xl scale-110"
+    aria-hidden="true"
+  />
+
+  <!-- Main Image -->
+  <img
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    loading={loading}
+    fetchpriority={fetchPriority}
+    decoding={priority ? 'sync' : 'async'}
+    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0"
+    style="background: linear-gradient(to bottom, rgb(229, 231, 235), rgb(243, 244, 246));"
+    onload="this.style.opacity='1'"
+  />
+</div>
+
+<style>
+  /* Ensure smooth fade-in when image loads */
+  img[loading="lazy"] {
+    will-change: opacity;
+  }
+
+  /* Add shimmer effect to placeholder */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  .blur-xl {
+    filter: blur(20px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    img {
+      transition: none !important;
+    }
+  }
+</style>
+
+<script>
+  // IntersectionObserver for better lazy loading control
+  if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target as HTMLImageElement;
+          if (img.dataset.src) {
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+            observer.unobserve(img);
+          }
+        }
+      });
+    }, {
+      rootMargin: '50px 0px', // Start loading 50px before visible
+      threshold: 0.01
+    });
+
+    // Observe all lazy images
+    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+      imageObserver.observe(img);
+    });
+  }
+</script>
