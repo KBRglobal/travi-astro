@@ -1,0 +1,355 @@
+---
+import { t, changeLanguage } from "i18next";
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { languages, type Language } from '../../../lib/i18n';
+
+export async function getStaticPaths() {
+  // TODO: Replace with Sanity data
+  const attractions = [
+    'burj-khalifa',
+    'eiffel-tower',
+    'colosseum',
+    'taj-mahal',
+    'tokyo-tower',
+    'dubai-mall',
+    'louvre',
+    'sagrada-familia',
+    'statue-of-liberty',
+    'great-wall',
+    'sydney-opera',
+    'big-ben',
+  ];
+
+  return Object.keys(languages).flatMap((lang) =>
+    attractions.map((slug) => ({
+      params: { lang, slug },
+    }))
+  );
+}
+
+const { lang, slug } = Astro.params as { lang: Language; slug: string };
+changeLanguage(lang);
+
+// TODO: Replace with Sanity query
+const attractionData: Record<string, any> = {
+  'burj-khalifa': {
+    title: t('attractions.detail.burjKhalifa.title', { defaultValue: 'Burj Khalifa' }),
+    subtitle: t('attractions.detail.burjKhalifa.subtitle', { defaultValue: 'The Tallest Building in the World' }),
+    category: 'landmarks',
+    rating: 4.8,
+    reviews: 12453,
+    description: t('attractions.detail.burjKhalifa.description', {
+      defaultValue: 'Standing at 828 meters (2,717 feet), the Burj Khalifa is an engineering marvel and the tallest structure in the world. Opened in 2010, it features observation decks on the 124th, 125th, and 148th floors, offering breathtaking panoramic views of Dubai.'
+    }),
+    hours: t('attractions.detail.burjKhalifa.hours', { defaultValue: 'Daily 9:00 AM - 11:00 PM' }),
+    price: t('attractions.detail.burjKhalifa.price', { defaultValue: 'From $40' }),
+    duration: t('attractions.detail.burjKhalifa.duration', { defaultValue: '2-3 hours' }),
+    address: t('attractions.detail.burjKhalifa.address', { defaultValue: '1 Sheikh Mohammed bin Rashid Blvd, Downtown Dubai' }),
+  },
+  'eiffel-tower': {
+    title: t('attractions.detail.eiffelTower.title', { defaultValue: 'Eiffel Tower' }),
+    subtitle: t('attractions.detail.eiffelTower.subtitle', { defaultValue: 'Iconic Symbol of Paris' }),
+    category: 'landmarks',
+    rating: 4.7,
+    reviews: 28934,
+    description: t('attractions.detail.eiffelTower.description', {
+      defaultValue: 'Built in 1889 for the World\'s Fair, the Eiffel Tower stands 330 meters tall and welcomes nearly 7 million visitors annually. Climb to the top for stunning views of Paris, dine at one of its restaurants, or simply admire it from the Champ de Mars.'
+    }),
+    hours: t('attractions.detail.eiffelTower.hours', { defaultValue: 'Daily 9:30 AM - 11:45 PM' }),
+    price: t('attractions.detail.eiffelTower.price', { defaultValue: 'From €18' }),
+    duration: t('attractions.detail.eiffelTower.duration', { defaultValue: '2-3 hours' }),
+    address: t('attractions.detail.eiffelTower.address', { defaultValue: 'Champ de Mars, 5 Avenue Anatole France, Paris' }),
+  },
+  'colosseum': {
+    title: t('attractions.detail.colosseum.title', { defaultValue: 'Colosseum' }),
+    subtitle: t('attractions.detail.colosseum.subtitle', { defaultValue: 'Ancient Roman Amphitheater' }),
+    category: 'cultural',
+    rating: 4.6,
+    reviews: 19876,
+    description: t('attractions.detail.colosseum.description', {
+      defaultValue: 'The Colosseum is an ancient amphitheater built between 70-80 AD, capable of seating 50,000 spectators. Once the stage for gladiatorial contests and public spectacles, it remains a powerful symbol of Imperial Rome and is one of the New Seven Wonders of the World.'
+    }),
+    hours: t('attractions.detail.colosseum.hours', { defaultValue: 'Daily 9:00 AM - 7:00 PM' }),
+    price: t('attractions.detail.colosseum.price', { defaultValue: 'From €18' }),
+    duration: t('attractions.detail.colosseum.duration', { defaultValue: '2-4 hours' }),
+    address: t('attractions.detail.colosseum.address', { defaultValue: 'Piazza del Colosseo, 1, Rome' }),
+  },
+};
+
+// Fallback to generic data if slug not found
+const attraction = attractionData[slug] || {
+  title: slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
+  subtitle: t('attractions.detail.generic.subtitle', { defaultValue: 'Top Attraction' }),
+  category: 'landmarks',
+  rating: 4.5,
+  reviews: 1000,
+  description: t('attractions.detail.generic.description', {
+    defaultValue: 'Discover this amazing attraction and experience everything it has to offer.'
+  }),
+  hours: t('attractions.detail.generic.hours', { defaultValue: 'Daily 9:00 AM - 6:00 PM' }),
+  price: t('attractions.detail.generic.price', { defaultValue: 'From $20' }),
+  duration: t('attractions.detail.generic.duration', { defaultValue: '2-3 hours' }),
+  address: t('attractions.detail.generic.address', { defaultValue: 'Location not specified' }),
+};
+
+// Gallery images (placeholder)
+const galleryImages = [
+  { url: '/placeholder.jpg', alt: attraction.title },
+  { url: '/placeholder.jpg', alt: attraction.title },
+  { url: '/placeholder.jpg', alt: attraction.title },
+  { url: '/placeholder.jpg', alt: attraction.title },
+];
+---
+
+<BaseLayout
+  title={`${attraction.title} | TRAVI World`}
+  description={attraction.description}
+  lang={lang}
+>
+  <div class="container py-12">
+    <!-- Breadcrumb -->
+    <nav class="mb-6 flex items-center gap-2 text-sm text-muted-foreground">
+      <a href={`/${lang}`} class="hover:text-primary">{t('nav.home', { defaultValue: 'Home' })}</a>
+      <span>/</span>
+      <a href={`/${lang}/attractions`} class="hover:text-primary">{t('nav.attractions', { defaultValue: 'Attractions' })}</a>
+      <span>/</span>
+      <span class="text-foreground">{attraction.title}</span>
+    </nav>
+
+    <div class="grid gap-8 lg:grid-cols-3">
+      <!-- Main Content -->
+      <div class="lg:col-span-2">
+        <!-- Hero Image -->
+        <div class="mb-6 aspect-video overflow-hidden rounded-lg bg-muted">
+          <div class="flex h-full items-center justify-center text-muted-foreground">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Title & Rating -->
+        <div class="mb-6">
+          <div class="mb-2 flex items-center gap-2">
+            <span class="rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary capitalize">
+              {attraction.category}
+            </span>
+          </div>
+          <h1 class="mb-2 text-4xl font-bold">{attraction.title}</h1>
+          <p class="mb-4 text-xl text-muted-foreground">{attraction.subtitle}</p>
+
+          <!-- Rating -->
+          <div class="flex items-center gap-4">
+            <div class="flex items-center gap-1">
+              {Array.from({ length: 5 }, (_, i) => (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class={`h-5 w-5 ${i < Math.floor(attraction.rating) ? 'fill-primary text-primary' : 'fill-muted text-muted'}`}
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1"
+                >
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+              ))}
+            </div>
+            <span class="text-sm font-semibold">{attraction.rating}</span>
+            <span class="text-sm text-muted-foreground">
+              ({attraction.reviews.toLocaleString()} {t('attractions.detail.reviews', { defaultValue: 'reviews' })})
+            </span>
+          </div>
+        </div>
+
+        <!-- Quick Info -->
+        <div class="mb-8 grid gap-4 rounded-lg border bg-card p-6 sm:grid-cols-2">
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <div>
+              <p class="text-sm font-medium">{t('attractions.detail.hours', { defaultValue: 'Hours' })}</p>
+              <p class="text-sm text-muted-foreground">{attraction.hours}</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <div>
+              <p class="text-sm font-medium">{t('attractions.detail.price', { defaultValue: 'Price' })}</p>
+              <p class="text-sm text-muted-foreground">{attraction.price}</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+            <div>
+              <p class="text-sm font-medium">{t('attractions.detail.duration', { defaultValue: 'Duration' })}</p>
+              <p class="text-sm text-muted-foreground">{attraction.duration}</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            <div>
+              <p class="text-sm font-medium">{t('attractions.detail.address', { defaultValue: 'Address' })}</p>
+              <p class="text-sm text-muted-foreground">{attraction.address}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="mb-8">
+          <h2 class="mb-4 text-2xl font-bold">{t('attractions.detail.about', { defaultValue: 'About' })}</h2>
+          <p class="text-muted-foreground leading-relaxed">{attraction.description}</p>
+        </div>
+
+        <!-- Gallery -->
+        <div class="mb-8">
+          <h2 class="mb-4 text-2xl font-bold">{t('attractions.detail.gallery', { defaultValue: 'Gallery' })}</h2>
+          <div class="grid gap-4 sm:grid-cols-2">
+            {galleryImages.map((image) => (
+              <div class="aspect-video overflow-hidden rounded-lg bg-muted">
+                <div class="flex h-full items-center justify-center text-muted-foreground">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <polyline points="21 15 16 10 5 21"/>
+                  </svg>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Tips -->
+        <div class="mb-8 rounded-lg border-l-4 border-primary bg-primary/5 p-6">
+          <h3 class="mb-3 flex items-center gap-2 text-lg font-semibold">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+            {t('attractions.detail.tipsTitle', { defaultValue: 'Insider Tips' })}
+          </h3>
+          <ul class="space-y-2 text-sm text-muted-foreground">
+            <li class="flex items-start gap-2">
+              <span class="mt-1 text-primary">•</span>
+              <span>{t('attractions.detail.tip1', { defaultValue: 'Book tickets online to skip the line' })}</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1 text-primary">•</span>
+              <span>{t('attractions.detail.tip2', { defaultValue: 'Visit early morning or late afternoon to avoid crowds' })}</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1 text-primary">•</span>
+              <span>{t('attractions.detail.tip3', { defaultValue: 'Bring a camera for stunning photo opportunities' })}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="lg:col-span-1">
+        <!-- Booking Widget (TODO: Convert to React Island) -->
+        <div class="sticky top-20 rounded-lg border bg-card p-6 shadow-lg">
+          <h3 class="mb-4 text-xl font-bold">{t('attractions.detail.bookNow', { defaultValue: 'Book Your Visit' })}</h3>
+
+          <div class="mb-4">
+            <label class="mb-2 block text-sm font-medium">
+              {t('attractions.detail.selectDate', { defaultValue: 'Select Date' })}
+            </label>
+            <input
+              type="date"
+              class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            />
+          </div>
+
+          <div class="mb-4">
+            <label class="mb-2 block text-sm font-medium">
+              {t('attractions.detail.numberOfPeople', { defaultValue: 'Number of People' })}
+            </label>
+            <select class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+              <option>1 {t('common.person', { defaultValue: 'person' })}</option>
+              <option>2 {t('common.people', { defaultValue: 'people' })}</option>
+              <option>3 {t('common.people', { defaultValue: 'people' })}</option>
+              <option>4 {t('common.people', { defaultValue: 'people' })}</option>
+              <option>5+ {t('common.people', { defaultValue: 'people' })}</option>
+            </select>
+          </div>
+
+          <div class="mb-4 flex items-center justify-between">
+            <span class="text-sm text-muted-foreground">{t('attractions.detail.totalPrice', { defaultValue: 'Total Price' })}</span>
+            <span class="text-2xl font-bold text-primary">{attraction.price}</span>
+          </div>
+
+          <button class="w-full rounded-md bg-primary px-4 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90">
+            {t('attractions.detail.bookNow', { defaultValue: 'Book Now' })}
+          </button>
+
+          <p class="mt-4 text-center text-xs text-muted-foreground">
+            {t('attractions.detail.freeCancellation', { defaultValue: 'Free cancellation up to 24 hours before' })}
+          </p>
+        </div>
+
+        <!-- Location Map Placeholder -->
+        <div class="mt-6 rounded-lg border bg-card p-6">
+          <h3 class="mb-4 text-lg font-semibold">{t('attractions.detail.location', { defaultValue: 'Location' })}</h3>
+          <div class="aspect-video overflow-hidden rounded-lg bg-muted">
+            <div class="flex h-full items-center justify-center text-muted-foreground">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+          </div>
+          <p class="mt-3 text-sm text-muted-foreground">{attraction.address}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Attractions -->
+    <div class="mt-16">
+      <h2 class="mb-6 text-3xl font-bold">{t('attractions.detail.similarAttractions', { defaultValue: 'Similar Attractions' })}</h2>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { slug: 'burj-khalifa', title: 'Burj Khalifa', category: 'landmarks' },
+          { slug: 'eiffel-tower', title: 'Eiffel Tower', category: 'landmarks' },
+          { slug: 'colosseum', title: 'Colosseum', category: 'cultural' },
+          { slug: 'taj-mahal', title: 'Taj Mahal', category: 'cultural' },
+        ].filter(a => a.slug !== slug).slice(0, 3).map((relatedAttraction) => (
+          <a
+            href={`/${lang}/attractions/${relatedAttraction.slug}`}
+            class="group overflow-hidden rounded-lg border bg-card transition-all hover:shadow-lg hover:border-primary/50"
+          >
+            <div class="aspect-video bg-muted overflow-hidden">
+              <div class="flex h-full items-center justify-center text-muted-foreground">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="mb-2 flex items-center gap-2">
+                <span class="rounded-full bg-primary/10 px-2 py-1 text-xs font-medium text-primary capitalize">
+                  {relatedAttraction.category}
+                </span>
+              </div>
+              <h3 class="text-lg font-semibold group-hover:text-primary transition-colors">
+                {relatedAttraction.title}
+              </h3>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</BaseLayout>
