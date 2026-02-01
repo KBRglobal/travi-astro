@@ -1,0 +1,321 @@
+---
+import { t, changeLanguage } from "i18next";
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { languages, type Language } from '../../../lib/i18n';
+import SearchFilters from '../../../components/islands/SearchFilters';
+import { getAllArticles, getFeaturedArticles, getImageUrl } from '../../../../sanity/lib/client';
+
+export async function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Language };
+changeLanguage(lang);
+
+// Fetch articles from Sanity (fallback to mock data if empty)
+let articles = [];
+let featuredArticles = [];
+
+try {
+  const sanityArticles = await getAllArticles(lang);
+  const sanityFeatured = await getFeaturedArticles(lang, 3);
+
+  articles = sanityArticles?.length > 0 ? sanityArticles : [];
+  featuredArticles = sanityFeatured?.length > 0 ? sanityFeatured : [];
+} catch (error) {
+  console.error('Error fetching articles from Sanity:', error);
+}
+
+// Fallback to mock data if Sanity returns empty
+if (articles.length === 0) {
+  const mockArticles = [
+    {
+      slug: { current: 'best-time-visit-japan' },
+      title: t('articles.sample.japanTiming.title', { defaultValue: 'Best Time to Visit Japan' }),
+      excerpt: t('articles.sample.japanTiming.excerpt', { defaultValue: 'Discover the perfect season for cherry blossoms and fall foliage' }),
+      category: 'Travel Tips',
+      publishedAt: '2026-01-15',
+      featured: true,
+      author: 'Sarah Johnson',
+    },
+    {
+      slug: { current: 'sustainable-travel-2026' },
+      title: t('articles.sample.sustainable.title', { defaultValue: 'Sustainable Travel in 2026' }),
+      excerpt: t('articles.sample.sustainable.excerpt', { defaultValue: 'How to travel responsibly and reduce your carbon footprint' }),
+      category: 'Sustainability',
+      publishedAt: '2026-01-10',
+      featured: true,
+      author: 'Michael Chen',
+    },
+    {
+      slug: { current: 'hidden-gems-europe' },
+      title: t('articles.sample.europeGems.title', { defaultValue: 'Hidden Gems of Europe' }),
+      excerpt: t('articles.sample.europeGems.excerpt', { defaultValue: 'Explore lesser-known destinations that deserve your attention' }),
+      category: 'Destinations',
+      publishedAt: '2026-01-05',
+      featured: true,
+      author: 'Emma Rodriguez',
+    },
+    {
+      slug: { current: 'solo-travel-safety' },
+      title: t('articles.sample.soloSafety.title', { defaultValue: 'Solo Travel Safety Guide' }),
+      excerpt: t('articles.sample.soloSafety.excerpt', { defaultValue: 'Essential tips for safe solo adventures around the world' }),
+      category: 'Travel Tips',
+      publishedAt: '2025-12-28',
+      featured: false,
+      author: 'David Kim',
+    },
+    {
+      slug: { current: 'budget-southeast-asia' },
+      title: t('articles.sample.seaBudget.title', { defaultValue: 'Southeast Asia on a Budget' }),
+      excerpt: t('articles.sample.seaBudget.excerpt', { defaultValue: 'How to explore Thailand, Vietnam, and Cambodia affordably' }),
+      category: 'Budget Travel',
+      publishedAt: '2025-12-20',
+      featured: false,
+      author: 'Lisa Nguyen',
+    },
+    {
+      slug: { current: 'digital-nomad-hotspots' },
+      title: t('articles.sample.nomad.title', { defaultValue: 'Top Digital Nomad Destinations' }),
+      excerpt: t('articles.sample.nomad.excerpt', { defaultValue: 'Best cities for remote workers in 2026' }),
+      category: 'Digital Nomad',
+      publishedAt: '2025-12-15',
+      featured: false,
+      author: 'Alex Thompson',
+    },
+    {
+      slug: { current: 'luxury-safari-africa' },
+      title: t('articles.sample.safari.title', { defaultValue: 'Ultimate Luxury Safari Experience' }),
+      excerpt: t('articles.sample.safari.excerpt', { defaultValue: 'Experience Africa\'s wildlife in style and comfort' }),
+      category: 'Luxury Travel',
+      publishedAt: '2025-12-10',
+      featured: false,
+      author: 'James Wilson',
+    },
+    {
+      slug: { current: 'family-friendly-caribbean' },
+      title: t('articles.sample.caribbean.title', { defaultValue: 'Family-Friendly Caribbean Islands' }),
+      excerpt: t('articles.sample.caribbean.excerpt', { defaultValue: 'Perfect island getaways for families with kids' }),
+      category: 'Family Travel',
+      publishedAt: '2025-12-05',
+      featured: false,
+      author: 'Rachel Brown',
+    },
+  ];
+
+  articles = mockArticles;
+  featuredArticles = mockArticles.filter(a => a.featured).slice(0, 3);
+}
+
+// Prepare filters for the React component
+const filters = {
+  all: t('articles.filters.all', { defaultValue: 'All Articles' }),
+  tips: t('articles.filters.tips', { defaultValue: 'Travel Tips' }),
+  destinations: t('articles.filters.destinations', { defaultValue: 'Destinations' }),
+  budget: t('articles.filters.budget', { defaultValue: 'Budget Travel' }),
+  luxury: t('articles.filters.luxury', { defaultValue: 'Luxury' }),
+  sustainability: t('articles.filters.sustainability', { defaultValue: 'Sustainability' }),
+};
+---
+
+<BaseLayout
+  title={t('articles.hero.title', { defaultValue: 'Travel News & Articles' })}
+  description={t('articles.hero.description', { defaultValue: 'Latest travel news, tips, and inspiration' })}
+  lang={lang}
+>
+  <div class="container py-20">
+    <!-- Hero Section -->
+    <div class="mb-12 text-center">
+      <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
+        {t('articles.hero.badge', { defaultValue: '1,000+ Travel Articles' })}
+      </span>
+      <h1 class="mb-4 text-4xl font-bold md:text-5xl lg:text-6xl">
+        {t('articles.hero.headlinePart1', { defaultValue: 'Travel' })}
+        <span class="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+          {' '}{t('articles.hero.headlinePart2', { defaultValue: 'Inspiration' })}
+        </span>
+      </h1>
+      <p class="mx-auto max-w-3xl text-lg text-muted-foreground">
+        {t('articles.hero.description', { defaultValue: 'Stay updated with the latest travel trends, destination guides, and insider tips from our expert contributors.' })}
+      </p>
+    </div>
+
+    <!-- Search & Filters (React Island) -->
+    <SearchFilters
+      client:load
+      lang={lang}
+      filters={filters}
+      searchPlaceholder={t('articles.hero.searchPlaceholder', { defaultValue: 'Search articles by topic or destination...' })}
+      searchButton={t('articles.hero.searchButton', { defaultValue: 'Search' })}
+    />
+
+    <!-- Results Count & Sort -->
+    <div class="mb-6 flex items-center justify-between">
+      <p class="text-sm text-muted-foreground">
+        {t('articles.resultsCount', { defaultValue: 'Showing {{count}} articles', count: articles.length })}
+      </p>
+      <select class="rounded-md border border-input bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+        <option>{t('articles.sortBy.newest', { defaultValue: 'Newest First' })}</option>
+        <option>{t('articles.sortBy.oldest', { defaultValue: 'Oldest First' })}</option>
+        <option>{t('articles.sortBy.popular', { defaultValue: 'Most Popular' })}</option>
+        <option>{t('articles.sortBy.category', { defaultValue: 'By Category' })}</option>
+      </select>
+    </div>
+
+    <!-- Featured Articles -->
+    {featuredArticles.length > 0 && (
+      <div class="mb-16">
+        <h2 class="mb-6 text-2xl font-bold">{t('articles.sections.featured', { defaultValue: 'Featured Stories' })}</h2>
+        <div class="grid gap-6 lg:grid-cols-3">
+          {featuredArticles.map((article) => (
+            <a
+              href={`/${lang}/articles/${article.slug?.current || article.slug}`}
+              class="group overflow-hidden rounded-lg border bg-card transition-all hover:shadow-lg hover:border-primary/50"
+            >
+              <div class="aspect-video bg-muted overflow-hidden">
+                {article.featuredImage ? (
+                  <img
+                    src={getImageUrl(article.featuredImage, 800, 450)}
+                    alt={article.featuredImage.alt || article.title}
+                    class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                ) : (
+                  <div class="flex h-full items-center justify-center bg-gradient-to-br from-primary/20 to-primary/5 text-muted-foreground">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                      <polyline points="14 2 14 8 20 8"/>
+                      <line x1="16" y1="13" x2="8" y2="13"/>
+                      <line x1="16" y1="17" x2="8" y2="17"/>
+                      <line x1="10" y1="9" x2="8" y2="9"/>
+                    </svg>
+                  </div>
+                )}
+              </div>
+              <div class="p-6">
+                <div class="mb-3 flex items-center gap-3 text-xs text-muted-foreground">
+                  <span class="rounded-full bg-primary/10 px-2 py-1 font-medium text-primary">
+                    {article.category}
+                  </span>
+                  <span>{new Date(article.publishedAt).toLocaleDateString(lang, { year: 'numeric', month: 'short', day: 'numeric' })}</span>
+                </div>
+                <h3 class="mb-2 text-xl font-semibold group-hover:text-primary transition-colors line-clamp-2">
+                  {article.title}
+                </h3>
+                <p class="mb-4 text-sm text-muted-foreground line-clamp-3">
+                  {article.excerpt}
+                </p>
+                {article.author && (
+                  <div class="flex items-center gap-2 text-sm">
+                    <div class="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary">
+                      {article.author.charAt(0)}
+                    </div>
+                    <span class="text-muted-foreground">{article.author}</span>
+                  </div>
+                )}
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- All Articles Grid -->
+    <div class="mb-16">
+      <h2 class="mb-6 text-2xl font-bold">{t('articles.sections.latest', { defaultValue: 'Latest Articles' })}</h2>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {articles.map((article) => (
+          <a
+            href={`/${lang}/articles/${article.slug?.current || article.slug}`}
+            class="group overflow-hidden rounded-lg border bg-card transition-all hover:shadow-lg hover:border-primary/50"
+          >
+            <div class="aspect-video bg-muted overflow-hidden">
+              {article.featuredImage ? (
+                <img
+                  src={getImageUrl(article.featuredImage, 600, 400)}
+                  alt={article.featuredImage.alt || article.title}
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+              ) : (
+                <div class="flex h-full items-center justify-center bg-gradient-to-br from-muted to-muted/50 text-muted-foreground">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                  </svg>
+                </div>
+              )}
+            </div>
+            <div class="p-4">
+              <div class="mb-2 flex items-center gap-2 text-xs text-muted-foreground">
+                <span class="rounded-full bg-primary/10 px-2 py-1 font-medium text-primary">
+                  {article.category}
+                </span>
+                <span>{new Date(article.publishedAt).toLocaleDateString(lang, { month: 'short', day: 'numeric' })}</span>
+              </div>
+              <h3 class="text-base font-semibold group-hover:text-primary transition-colors line-clamp-2">
+                {article.title}
+              </h3>
+              <p class="mt-1 text-sm text-muted-foreground line-clamp-2">
+                {article.excerpt}
+              </p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <div class="mb-16 rounded-lg bg-gradient-to-br from-primary/10 to-primary/5 p-8 md:p-12">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="mb-4 text-3xl font-bold">
+          {t('articles.newsletter.title', { defaultValue: 'Never Miss an Update' })}
+        </h2>
+        <p class="mb-6 text-lg text-muted-foreground">
+          {t('articles.newsletter.description', { defaultValue: 'Get the latest travel articles, tips, and destination guides delivered to your inbox weekly.' })}
+        </p>
+        <form class="flex gap-2 max-w-md mx-auto">
+          <input
+            type="email"
+            placeholder={t('newsletter.emailPlaceholder', { defaultValue: 'Enter your email' })}
+            class="flex h-11 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            required
+          />
+          <button
+            type="submit"
+            class="inline-flex h-11 items-center justify-center rounded-md bg-primary px-6 text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring whitespace-nowrap"
+          >
+            {t('common.subscribe', { defaultValue: 'Subscribe' })}
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Explore More -->
+    <div class="rounded-lg border bg-card p-8 text-center">
+      <h2 class="mb-6 text-2xl font-bold">
+        {t('articles.exploreLinks.title', { defaultValue: 'Plan Your Next Trip' })}
+      </h2>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href={`/${lang}/attractions`}
+          class="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          {t('articles.exploreLinks.attractions', { defaultValue: 'Browse Attractions' })}
+        </a>
+        <a
+          href={`/${lang}/hotels`}
+          class="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          {t('articles.exploreLinks.hotels', { defaultValue: 'Find Hotels' })}
+        </a>
+        <a
+          href={`/${lang}/guides`}
+          class="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          {t('articles.exploreLinks.guides', { defaultValue: 'Travel Guides' })}
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

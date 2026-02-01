@@ -1,0 +1,321 @@
+---
+import { t, changeLanguage } from "i18next";
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { languages, type Language } from '../../../lib/i18n';
+import SearchFilters from '../../../components/islands/SearchFilters';
+import { getAllRestaurants, getImageUrl } from '../../../../sanity/lib/client';
+
+export async function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Language };
+changeLanguage(lang);
+
+// Fetch restaurants from Sanity (fallback to mock data if empty)
+let restaurants = [];
+try {
+  const sanityRestaurants = await getAllRestaurants(lang);
+  restaurants = sanityRestaurants?.length > 0 ? sanityRestaurants : [];
+} catch (error) {
+  console.error('Error fetching restaurants from Sanity:', error);
+}
+
+// Fallback to mock data if Sanity returns empty
+if (restaurants.length === 0) {
+  restaurants = [
+    {
+      slug: { current: 'noma-copenhagen' },
+      name: t('dining.sample.noma', { defaultValue: 'Noma' }),
+      description: t('dining.sample.nomaDesc', { defaultValue: 'Revolutionary Nordic cuisine' }),
+      cuisine: 'Nordic',
+      priceRange: '$$$$$',
+      featured: true,
+      rating: 4.9,
+    },
+    {
+      slug: { current: 'osteria-francescana' },
+      name: t('dining.sample.osteria', { defaultValue: 'Osteria Francescana' }),
+      description: t('dining.sample.osteriaDesc', { defaultValue: 'Innovative Italian fine dining' }),
+      cuisine: 'Italian',
+      priceRange: '$$$$$',
+      featured: true,
+      rating: 4.8,
+    },
+    {
+      slug: { current: 'sukiyabashi-jiro' },
+      name: t('dining.sample.jiro', { defaultValue: 'Sukiyabashi Jiro' }),
+      description: t('dining.sample.jiroDesc', { defaultValue: 'Legendary sushi master' }),
+      cuisine: 'Japanese',
+      priceRange: '$$$$',
+      featured: true,
+      rating: 4.9,
+    },
+    {
+      slug: { current: 'eleven-madison-park' },
+      name: t('dining.sample.elevenMadison', { defaultValue: 'Eleven Madison Park' }),
+      description: t('dining.sample.elevenMadisonDesc', { defaultValue: 'Contemporary American fine dining' }),
+      cuisine: 'American',
+      priceRange: '$$$$$',
+      featured: false,
+      rating: 4.7,
+    },
+    {
+      slug: { current: 'le-bernardin' },
+      name: t('dining.sample.leBernardin', { defaultValue: 'Le Bernardin' }),
+      description: t('dining.sample.leBernardinDesc', { defaultValue: 'Exquisite French seafood' }),
+      cuisine: 'French',
+      priceRange: '$$$$$',
+      featured: false,
+      rating: 4.8,
+    },
+    {
+      slug: { current: 'gaggan-bangkok' },
+      name: t('dining.sample.gaggan', { defaultValue: 'Gaggan' }),
+      description: t('dining.sample.gagganDesc', { defaultValue: 'Progressive Indian cuisine' }),
+      cuisine: 'Indian',
+      priceRange: '$$$$',
+      featured: false,
+      rating: 4.6,
+    },
+    {
+      slug: { current: 'la-pergola-rome' },
+      name: t('dining.sample.laPergola', { defaultValue: 'La Pergola' }),
+      description: t('dining.sample.laPergolaDesc', { defaultValue: 'Michelin-starred Italian excellence' }),
+      cuisine: 'Italian',
+      priceRange: '$$$$$',
+      featured: false,
+      rating: 4.7,
+    },
+    {
+      slug: { current: 'per-se-nyc' },
+      name: t('dining.sample.perSe', { defaultValue: 'Per Se' }),
+      description: t('dining.sample.perSeDesc', { defaultValue: 'Thomas Keller\'s New York masterpiece' }),
+      cuisine: 'French',
+      priceRange: '$$$$$',
+      featured: false,
+      rating: 4.8,
+    },
+  ];
+}
+
+// Prepare filters for the React component
+const filters = {
+  all: t('dining.filters.all', { defaultValue: 'All Cuisines' }),
+  italian: t('dining.filters.italian', { defaultValue: 'Italian' }),
+  french: t('dining.filters.french', { defaultValue: 'French' }),
+  japanese: t('dining.filters.japanese', { defaultValue: 'Japanese' }),
+  chinese: t('dining.filters.chinese', { defaultValue: 'Chinese' }),
+  indian: t('dining.filters.indian', { defaultValue: 'Indian' }),
+  american: t('dining.filters.american', { defaultValue: 'American' }),
+  mediterranean: t('dining.filters.mediterranean', { defaultValue: 'Mediterranean' }),
+};
+---
+
+<BaseLayout
+  title={t('dining.hero.title', { defaultValue: 'Discover Amazing Restaurants' })}
+  description={t('dining.hero.description', { defaultValue: 'Find the best dining experiences worldwide' })}
+  lang={lang}
+>
+  <div class="container py-20">
+    <!-- Hero Section -->
+    <div class="mb-12 text-center">
+      <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
+        {t('dining.hero.badge', { defaultValue: '5,000+ Restaurants' })}
+      </span>
+      <h1 class="mb-4 text-4xl font-bold md:text-5xl lg:text-6xl">
+        {t('dining.hero.headlinePart1', { defaultValue: 'Taste the' })}
+        <span class="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+          {' '}{t('dining.hero.headlinePart2', { defaultValue: 'World\'s Best' })}
+        </span>
+      </h1>
+      <p class="mx-auto max-w-3xl text-lg text-muted-foreground">
+        {t('dining.hero.description', { defaultValue: 'From Michelin-starred restaurants to hidden local gems, discover unforgettable dining experiences around the world.' })}
+      </p>
+    </div>
+
+    <!-- Search & Filters (React Island) -->
+    <SearchFilters
+      client:load
+      lang={lang}
+      filters={filters}
+      searchPlaceholder={t('dining.hero.searchPlaceholder', { defaultValue: 'Search restaurants by name or cuisine...' })}
+      searchButton={t('dining.hero.searchButton', { defaultValue: 'Search' })}
+    />
+
+    <!-- Results Count & Sort -->
+    <div class="mb-6 flex items-center justify-between">
+      <p class="text-sm text-muted-foreground">
+        {t('dining.resultsCount', { defaultValue: 'Showing {{count}} restaurants', count: restaurants.length })}
+      </p>
+      <select class="rounded-md border border-input bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+        <option>{t('dining.sortBy.featured', { defaultValue: 'Featured' })}</option>
+        <option>{t('dining.sortBy.rating', { defaultValue: 'Highest Rated' })}</option>
+        <option>{t('dining.sortBy.priceHighLow', { defaultValue: 'Price: High to Low' })}</option>
+        <option>{t('dining.sortBy.priceLowHigh', { defaultValue: 'Price: Low to High' })}</option>
+        <option>{t('dining.sortBy.cuisine', { defaultValue: 'Cuisine Type' })}</option>
+      </select>
+    </div>
+
+    <!-- Restaurants Grid -->
+    <div class="mb-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {restaurants.map((restaurant) => (
+        <a
+          href={`/${lang}/dining/${restaurant.slug?.current || restaurant.slug}`}
+          class="group overflow-hidden rounded-lg border bg-card transition-all hover:shadow-lg hover:border-primary/50"
+        >
+          <div class="aspect-video bg-muted overflow-hidden">
+            {restaurant.images?.[0] ? (
+              <img
+                src={getImageUrl(restaurant.images[0], 600, 400)}
+                alt={restaurant.images[0].alt || restaurant.name}
+                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+            ) : (
+              <div class="flex h-full items-center justify-center text-muted-foreground">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/>
+                  <path d="M7 2v20"/>
+                  <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>
+                </svg>
+              </div>
+            )}
+          </div>
+          <div class="p-4">
+            <div class="mb-2 flex items-center justify-between gap-2">
+              <span class="rounded-full bg-primary/10 px-2 py-1 text-xs font-medium text-primary">
+                {restaurant.cuisine}
+              </span>
+              <span class="text-sm font-medium text-muted-foreground">{restaurant.priceRange}</span>
+            </div>
+            <h3 class="text-lg font-semibold group-hover:text-primary transition-colors line-clamp-1">
+              {restaurant.name}
+            </h3>
+            <p class="mt-1 text-sm text-muted-foreground line-clamp-2">
+              {restaurant.description}
+            </p>
+            {restaurant.rating && (
+              <div class="mt-3 flex items-center gap-2">
+                <div class="flex h-7 w-7 items-center justify-center rounded bg-primary text-xs font-bold text-primary-foreground">
+                  {restaurant.rating}
+                </div>
+                <span class="text-xs text-muted-foreground">{t('dining.excellent', { defaultValue: 'Excellent' })}</span>
+              </div>
+            )}
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- Cuisine Categories -->
+    <div class="mb-16 rounded-lg bg-muted/50 p-8 md:p-12">
+      <div class="mb-8 text-center">
+        <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
+          {t('dining.sections.cuisinesBadge', { defaultValue: 'Explore Cuisines' })}
+        </span>
+        <h2 class="mb-2 text-3xl font-bold">
+          {t('dining.sections.cuisinesTitle', { defaultValue: 'Discover World Cuisines' })}
+        </h2>
+        <p class="text-muted-foreground">
+          {t('dining.sections.cuisinesDesc', { defaultValue: 'From traditional to contemporary, explore diverse culinary traditions' })}
+        </p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {['Italian', 'French', 'Japanese', 'Chinese', 'Indian', 'Mediterranean', 'American', 'Thai'].map((cuisine) => (
+          <div class="rounded-lg border bg-card p-4 text-center transition-all hover:shadow-md hover:border-primary/50">
+            <h3 class="font-semibold">{cuisine}</h3>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="mb-16 rounded-lg bg-muted/50 p-8 md:p-12">
+      <div class="mb-8 text-center">
+        <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
+          {t('dining.sections.whyBadge', { defaultValue: 'Why TRAVI Dining' })}
+        </span>
+        <h2 class="mb-2 text-3xl font-bold">
+          {t('dining.sections.whyTitle', { defaultValue: 'Curated Dining Experiences' })}
+        </h2>
+        <p class="text-muted-foreground">
+          {t('dining.sections.whyDesc', { defaultValue: 'Find the perfect restaurant for every occasion' })}
+        </p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="rounded-lg border bg-card p-6 text-center">
+          <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <h3 class="mb-2 text-lg font-semibold">
+            {t('dining.features.expertPicks', { defaultValue: 'Expert Recommendations' })}
+          </h3>
+          <p class="text-sm text-muted-foreground">
+            {t('dining.features.expertPicksDesc', { defaultValue: 'Curated by food critics and travel experts' })}
+          </p>
+        </div>
+
+        <div class="rounded-lg border bg-card p-6 text-center">
+          <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <h3 class="mb-2 text-lg font-semibold">
+            {t('dining.features.localGems', { defaultValue: 'Hidden Gems' })}
+          </h3>
+          <p class="text-sm text-muted-foreground">
+            {t('dining.features.localGemsDesc', { defaultValue: 'Discover authentic local favorites' })}
+          </p>
+        </div>
+
+        <div class="rounded-lg border bg-card p-6 text-center">
+          <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+            </svg>
+          </div>
+          <h3 class="mb-2 text-lg font-semibold">
+            {t('dining.features.easyBooking', { defaultValue: 'Easy Reservations' })}
+          </h3>
+          <p class="text-sm text-muted-foreground">
+            {t('dining.features.easyBookingDesc', { defaultValue: 'Book your table in just a few clicks' })}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Explore More -->
+    <div class="rounded-lg border bg-card p-8 text-center">
+      <h2 class="mb-6 text-2xl font-bold">
+        {t('dining.exploreLinks.title', { defaultValue: 'Explore More' })}
+      </h2>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href={`/${lang}/attractions`}
+          class="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          {t('dining.exploreLinks.attractions', { defaultValue: 'Browse Attractions' })}
+        </a>
+        <a
+          href={`/${lang}/hotels`}
+          class="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          {t('dining.exploreLinks.hotels', { defaultValue: 'Find Hotels' })}
+        </a>
+        <a
+          href={`/${lang}/guides`}
+          class="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          {t('dining.exploreLinks.guides', { defaultValue: 'Travel Guides' })}
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

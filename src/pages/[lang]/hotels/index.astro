@@ -1,0 +1,283 @@
+---
+import { t, changeLanguage } from "i18next";
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { languages, type Language } from '../../../lib/i18n';
+import SearchFilters from '../../../components/islands/SearchFilters';
+import { getAllHotels, getImageUrl } from '../../../../sanity/lib/client';
+
+export async function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Language };
+changeLanguage(lang);
+
+// Fetch hotels from Sanity (fallback to mock data if empty)
+let hotels = [];
+try {
+  const sanityHotels = await getAllHotels(lang);
+  hotels = sanityHotels?.length > 0 ? sanityHotels : [];
+} catch (error) {
+  console.error('Error fetching hotels from Sanity:', error);
+}
+
+// Fallback to mock data if Sanity returns empty
+if (hotels.length === 0) {
+  hotels = [
+    {
+      slug: { current: 'burj-al-arab' },
+      name: t('hotels.sample.burjAlArab', { defaultValue: 'Burj Al Arab' }),
+      description: t('hotels.sample.burjAlArabDesc', { defaultValue: 'Iconic 7-star luxury hotel' }),
+      starRating: 5,
+      priceRange: '$$$$$',
+      featured: true,
+      rating: 4.9,
+    },
+    {
+      slug: { current: 'ritz-paris' },
+      name: t('hotels.sample.ritzParis', { defaultValue: 'Ritz Paris' }),
+      description: t('hotels.sample.ritzParisDesc', { defaultValue: 'Legendary luxury in the heart of Paris' }),
+      starRating: 5,
+      priceRange: '$$$$$',
+      featured: true,
+      rating: 4.8,
+    },
+    {
+      slug: { current: 'marina-bay-sands' },
+      name: t('hotels.sample.marinaBaySands', { defaultValue: 'Marina Bay Sands' }),
+      description: t('hotels.sample.marinaBaySandsDesc', { defaultValue: 'Iconic hotel with rooftop infinity pool' }),
+      starRating: 5,
+      priceRange: '$$$$',
+      featured: true,
+      rating: 4.7,
+    },
+    {
+      slug: { current: 'the-plaza-nyc' },
+      name: t('hotels.sample.thePlaza', { defaultValue: 'The Plaza New York' }),
+      description: t('hotels.sample.thePlazaDesc', { defaultValue: 'Historic luxury on Fifth Avenue' }),
+      starRating: 5,
+      priceRange: '$$$$$',
+      featured: false,
+      rating: 4.6,
+    },
+    {
+      slug: { current: 'atlantis-dubai' },
+      name: t('hotels.sample.atlantisDubai', { defaultValue: 'Atlantis The Palm' }),
+      description: t('hotels.sample.atlantisDubaiDesc', { defaultValue: 'Aquatic-themed resort on Palm Jumeirah' }),
+      starRating: 5,
+      priceRange: '$$$$',
+      featured: false,
+      rating: 4.5,
+    },
+    {
+      slug: { current: 'four-seasons-tokyo' },
+      name: t('hotels.sample.fourSeasonsTokyo', { defaultValue: 'Four Seasons Tokyo' }),
+      description: t('hotels.sample.fourSeasonsTokyoDesc', { defaultValue: 'Modern luxury with stunning city views' }),
+      starRating: 5,
+      priceRange: '$$$$',
+      featured: false,
+      rating: 4.7,
+    },
+  ];
+}
+
+// Prepare filters for the React component
+const filters = {
+  all: t('hotels.filters.all', { defaultValue: 'All Hotels' }),
+  luxury: t('hotels.filters.luxury', { defaultValue: '5 Star' }),
+  upscale: t('hotels.filters.upscale', { defaultValue: '4 Star' }),
+  midrange: t('hotels.filters.midrange', { defaultValue: '3 Star' }),
+  budget: t('hotels.filters.budget', { defaultValue: 'Budget' }),
+};
+---
+
+<BaseLayout
+  title={t('hotels.hero.title', { defaultValue: 'Find Your Perfect Hotel' })}
+  description={t('hotels.hero.description', { defaultValue: 'Browse thousands of hotels worldwide' })}
+  lang={lang}
+>
+  <div class="container py-20">
+    <!-- Hero Section -->
+    <div class="mb-12 text-center">
+      <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
+        {t('hotels.hero.badge', { defaultValue: '10,000+ Hotels Worldwide' })}
+      </span>
+      <h1 class="mb-4 text-4xl font-bold md:text-5xl lg:text-6xl">
+        {t('hotels.hero.headlinePart1', { defaultValue: 'Find Your' })}
+        <span class="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+          {' '}{t('hotels.hero.headlinePart2', { defaultValue: 'Perfect Stay' })}
+        </span>
+      </h1>
+      <p class="mx-auto max-w-3xl text-lg text-muted-foreground">
+        {t('hotels.hero.description', { defaultValue: 'From budget-friendly to ultra-luxury, find the perfect accommodation for your trip. Compare prices, amenities, and locations.' })}
+      </p>
+    </div>
+
+    <!-- Search & Filters (React Island) -->
+    <SearchFilters
+      client:load
+      lang={lang}
+      filters={filters}
+      searchPlaceholder={t('hotels.hero.searchPlaceholder', { defaultValue: 'Search hotels by name or location...' })}
+      searchButton={t('hotels.hero.searchButton', { defaultValue: 'Search' })}
+    />
+
+    <!-- Results Count & Sort -->
+    <div class="mb-6 flex items-center justify-between">
+      <p class="text-sm text-muted-foreground">
+        {t('hotels.resultsCount', { defaultValue: 'Showing {{count}} hotels', count: hotels.length })}
+      </p>
+      <select class="rounded-md border border-input bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+        <option>{t('hotels.sortBy.featured', { defaultValue: 'Featured' })}</option>
+        <option>{t('hotels.sortBy.priceHighLow', { defaultValue: 'Price: High to Low' })}</option>
+        <option>{t('hotels.sortBy.priceLowHigh', { defaultValue: 'Price: Low to High' })}</option>
+        <option>{t('hotels.sortBy.rating', { defaultValue: 'Highest Rated' })}</option>
+        <option>{t('hotels.sortBy.stars', { defaultValue: 'Star Rating' })}</option>
+      </select>
+    </div>
+
+    <!-- Hotels Grid -->
+    <div class="mb-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {hotels.map((hotel) => (
+        <a
+          href={`/${lang}/hotels/${hotel.slug?.current || hotel.slug}`}
+          class="group overflow-hidden rounded-lg border bg-card transition-all hover:shadow-lg hover:border-primary/50"
+        >
+          <div class="aspect-video bg-muted overflow-hidden">
+            {hotel.images?.[0] ? (
+              <img
+                src={getImageUrl(hotel.images[0], 600, 400)}
+                alt={hotel.images[0].alt || hotel.name}
+                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+            ) : (
+              <div class="flex h-full items-center justify-center text-muted-foreground">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                  <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+              </div>
+            )}
+          </div>
+          <div class="p-4">
+            <div class="mb-2 flex items-center justify-between gap-2">
+              <!-- Star Rating -->
+              <div class="flex items-center gap-1">
+                {Array.from({ length: hotel.starRating || 5 }, () => (
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                  </svg>
+                ))}
+              </div>
+              <!-- Price Range -->
+              <span class="text-sm font-medium text-primary">{hotel.priceRange}</span>
+            </div>
+            <h3 class="text-lg font-semibold group-hover:text-primary transition-colors line-clamp-1">
+              {hotel.name}
+            </h3>
+            <p class="mt-1 text-sm text-muted-foreground line-clamp-2">
+              {hotel.description}
+            </p>
+            {hotel.rating && (
+              <div class="mt-3 flex items-center gap-2">
+                <div class="flex h-7 w-7 items-center justify-center rounded bg-primary text-xs font-bold text-primary-foreground">
+                  {hotel.rating}
+                </div>
+                <span class="text-xs text-muted-foreground">{t('hotels.excellent', { defaultValue: 'Excellent' })}</span>
+              </div>
+            )}
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- Features Section -->
+    <div class="mb-16 rounded-lg bg-muted/50 p-8 md:p-12">
+      <div class="mb-8 text-center">
+        <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
+          {t('hotels.sections.whyBadge', { defaultValue: 'Why Book With TRAVI' })}
+        </span>
+        <h2 class="mb-2 text-3xl font-bold">
+          {t('hotels.sections.whyTitle', { defaultValue: 'Best Hotel Deals Guaranteed' })}
+        </h2>
+        <p class="text-muted-foreground">
+          {t('hotels.sections.whyDesc', { defaultValue: 'Find the perfect place to stay for your journey' })}
+        </p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="rounded-lg border bg-card p-6 text-center">
+          <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+              <path d="M12 2v20M2 12h20"/>
+            </svg>
+          </div>
+          <h3 class="mb-2 text-lg font-semibold">
+            {t('hotels.features.bestPrice', { defaultValue: 'Best Price Guarantee' })}
+          </h3>
+          <p class="text-sm text-muted-foreground">
+            {t('hotels.features.bestPriceDesc', { defaultValue: 'We match or beat any price you find elsewhere' })}
+          </p>
+        </div>
+
+        <div class="rounded-lg border bg-card p-6 text-center">
+          <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <h3 class="mb-2 text-lg font-semibold">
+            {t('hotels.features.verified', { defaultValue: 'Verified Reviews' })}
+          </h3>
+          <p class="text-sm text-muted-foreground">
+            {t('hotels.features.verifiedDesc', { defaultValue: 'Real reviews from real guests who stayed' })}
+          </p>
+        </div>
+
+        <div class="rounded-lg border bg-card p-6 text-center">
+          <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h3 class="mb-2 text-lg font-semibold">
+            {t('hotels.features.cancellation', { defaultValue: 'Free Cancellation' })}
+          </h3>
+          <p class="text-sm text-muted-foreground">
+            {t('hotels.features.cancellationDesc', { defaultValue: 'Cancel or change your booking anytime' })}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Explore More -->
+    <div class="rounded-lg border bg-card p-8 text-center">
+      <h2 class="mb-6 text-2xl font-bold">
+        {t('hotels.exploreLinks.title', { defaultValue: 'Explore More' })}
+      </h2>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href={`/${lang}/attractions`}
+          class="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          {t('hotels.exploreLinks.attractions', { defaultValue: 'Browse Attractions' })}
+        </a>
+        <a
+          href={`/${lang}/dining`}
+          class="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          {t('hotels.exploreLinks.dining', { defaultValue: 'Find Restaurants' })}
+        </a>
+        <a
+          href={`/${lang}/guides`}
+          class="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          {t('hotels.exploreLinks.guides', { defaultValue: 'Travel Guides' })}
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

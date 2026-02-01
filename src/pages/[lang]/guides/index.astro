@@ -1,0 +1,294 @@
+---
+import { t, changeLanguage } from "i18next";
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { languages, type Language } from '../../../lib/i18n';
+import SearchFilters from '../../../components/islands/SearchFilters';
+
+export async function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Language };
+changeLanguage(lang);
+
+// Mock guides data (to be replaced with Sanity later)
+const guides = [
+  {
+    slug: 'dubai-ultimate-guide',
+    title: t('guides.sample.dubai.title', { defaultValue: 'Dubai: The Ultimate Guide' }),
+    description: t('guides.sample.dubai.desc', { defaultValue: 'Everything you need to know about visiting Dubai' }),
+    category: 'Destination Guide',
+    destination: 'Dubai',
+    readTime: '15 min',
+    featured: true,
+  },
+  {
+    slug: 'paris-first-timers',
+    title: t('guides.sample.paris.title', { defaultValue: 'Paris for First-Time Visitors' }),
+    description: t('guides.sample.paris.desc', { defaultValue: 'Essential tips for your first trip to Paris' }),
+    category: 'Destination Guide',
+    destination: 'Paris',
+    readTime: '12 min',
+    featured: true,
+  },
+  {
+    slug: 'tokyo-food-guide',
+    title: t('guides.sample.tokyoFood.title', { defaultValue: 'Tokyo Food Guide' }),
+    description: t('guides.sample.tokyoFood.desc', { defaultValue: 'Where to eat in Tokyo: from sushi to ramen' }),
+    category: 'Food & Dining',
+    destination: 'Tokyo',
+    readTime: '10 min',
+    featured: true,
+  },
+  {
+    slug: 'nyc-budget-travel',
+    title: t('guides.sample.nycBudget.title', { defaultValue: 'NYC on a Budget' }),
+    description: t('guides.sample.nycBudget.desc', { defaultValue: 'How to experience New York without breaking the bank' }),
+    category: 'Budget Travel',
+    destination: 'New York',
+    readTime: '8 min',
+    featured: false,
+  },
+  {
+    slug: 'rome-3-day-itinerary',
+    title: t('guides.sample.rome.title', { defaultValue: 'Rome: Perfect 3-Day Itinerary' }),
+    description: t('guides.sample.rome.desc', { defaultValue: 'Make the most of 3 days in the Eternal City' }),
+    category: 'Itinerary',
+    destination: 'Rome',
+    readTime: '14 min',
+    featured: false,
+  },
+  {
+    slug: 'bali-beaches-guide',
+    title: t('guides.sample.bali.title', { defaultValue: 'Best Beaches in Bali' }),
+    description: t('guides.sample.bali.desc', { defaultValue: 'Your guide to Bali\'s most beautiful beaches' }),
+    category: 'Beach Guide',
+    destination: 'Bali',
+    readTime: '9 min',
+    featured: false,
+  },
+  {
+    slug: 'london-museums',
+    title: t('guides.sample.london.title', { defaultValue: 'London\'s Best Museums' }),
+    description: t('guides.sample.london.desc', { defaultValue: 'A guide to London\'s world-class museums' }),
+    category: 'Culture',
+    destination: 'London',
+    readTime: '11 min',
+    featured: false,
+  },
+  {
+    slug: 'barcelona-architecture',
+    title: t('guides.sample.barcelona.title', { defaultValue: 'Gaudí\'s Barcelona' }),
+    description: t('guides.sample.barcelona.desc', { defaultValue: 'Exploring Gaudí\'s architectural masterpieces' }),
+    category: 'Architecture',
+    destination: 'Barcelona',
+    readTime: '13 min',
+    featured: false,
+  },
+];
+
+// Prepare filters for the React component
+const filters = {
+  all: t('guides.filters.all', { defaultValue: 'All Guides' }),
+  destination: t('guides.filters.destination', { defaultValue: 'Destination Guides' }),
+  food: t('guides.filters.food', { defaultValue: 'Food & Dining' }),
+  budget: t('guides.filters.budget', { defaultValue: 'Budget Travel' }),
+  itinerary: t('guides.filters.itinerary', { defaultValue: 'Itineraries' }),
+  culture: t('guides.filters.culture', { defaultValue: 'Culture' }),
+};
+---
+
+<BaseLayout
+  title={t('guides.hero.title', { defaultValue: 'Travel Guides & Tips' })}
+  description={t('guides.hero.description', { defaultValue: 'Expert travel guides for destinations worldwide' })}
+  lang={lang}
+>
+  <div class="container py-20">
+    <!-- Hero Section -->
+    <div class="mb-12 text-center">
+      <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
+        {t('guides.hero.badge', { defaultValue: '500+ Travel Guides' })}
+      </span>
+      <h1 class="mb-4 text-4xl font-bold md:text-5xl lg:text-6xl">
+        {t('guides.hero.headlinePart1', { defaultValue: 'Expert Travel' })}
+        <span class="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+          {' '}{t('guides.hero.headlinePart2', { defaultValue: 'Guides & Tips' })}
+        </span>
+      </h1>
+      <p class="mx-auto max-w-3xl text-lg text-muted-foreground">
+        {t('guides.hero.description', { defaultValue: 'From comprehensive destination guides to specific tips on food, culture, and budget travel - we\'ve got you covered.' })}
+      </p>
+    </div>
+
+    <!-- Search & Filters (React Island) -->
+    <SearchFilters
+      client:load
+      lang={lang}
+      filters={filters}
+      searchPlaceholder={t('guides.hero.searchPlaceholder', { defaultValue: 'Search guides by destination or topic...' })}
+      searchButton={t('guides.hero.searchButton', { defaultValue: 'Search' })}
+    />
+
+    <!-- Results Count & Sort -->
+    <div class="mb-6 flex items-center justify-between">
+      <p class="text-sm text-muted-foreground">
+        {t('guides.resultsCount', { defaultValue: 'Showing {{count}} guides', count: guides.length })}
+      </p>
+      <select class="rounded-md border border-input bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+        <option>{t('guides.sortBy.featured', { defaultValue: 'Featured' })}</option>
+        <option>{t('guides.sortBy.newest', { defaultValue: 'Newest First' })}</option>
+        <option>{t('guides.sortBy.popular', { defaultValue: 'Most Popular' })}</option>
+        <option>{t('guides.sortBy.destination', { defaultValue: 'By Destination' })}</option>
+      </select>
+    </div>
+
+    <!-- Featured Guides -->
+    {guides.filter(g => g.featured).length > 0 && (
+      <div class="mb-12">
+        <h2 class="mb-6 text-2xl font-bold">{t('guides.sections.featured', { defaultValue: 'Featured Guides' })}</h2>
+        <div class="grid gap-6 md:grid-cols-3">
+          {guides.filter(g => g.featured).map((guide) => (
+            <a
+              href={`/${lang}/guides/${guide.slug}`}
+              class="group overflow-hidden rounded-lg border bg-card transition-all hover:shadow-lg hover:border-primary/50"
+            >
+              <div class="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 p-8 flex items-center justify-center">
+                <div class="text-center">
+                  <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+                      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                    </svg>
+                  </div>
+                  <span class="text-sm font-medium text-primary">{guide.destination}</span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="mb-2 flex items-center justify-between gap-2">
+                  <span class="rounded-full bg-primary/10 px-2 py-1 text-xs font-medium text-primary">
+                    {guide.category}
+                  </span>
+                  <span class="text-xs text-muted-foreground">{guide.readTime}</span>
+                </div>
+                <h3 class="text-lg font-semibold group-hover:text-primary transition-colors line-clamp-2">
+                  {guide.title}
+                </h3>
+                <p class="mt-2 text-sm text-muted-foreground line-clamp-2">
+                  {guide.description}
+                </p>
+                <div class="mt-4 flex items-center text-sm text-primary">
+                  {t('common.readMore', { defaultValue: 'Read Guide' })}
+                  <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- All Guides Grid -->
+    <div class="mb-16">
+      <h2 class="mb-6 text-2xl font-bold">{t('guides.sections.allGuides', { defaultValue: 'All Travel Guides' })}</h2>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {guides.map((guide) => (
+          <a
+            href={`/${lang}/guides/${guide.slug}`}
+            class="group overflow-hidden rounded-lg border bg-card transition-all hover:shadow-lg hover:border-primary/50"
+          >
+            <div class="aspect-video bg-gradient-to-br from-muted to-muted/50 p-6 flex items-center justify-center">
+              <div class="text-center">
+                <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-background">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <span class="text-xs font-medium">{guide.destination}</span>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="mb-2 flex items-center justify-between gap-2">
+                <span class="rounded-full bg-primary/10 px-2 py-1 text-xs font-medium text-primary">
+                  {guide.category}
+                </span>
+                <span class="text-xs text-muted-foreground">{guide.readTime}</span>
+              </div>
+              <h3 class="text-base font-semibold group-hover:text-primary transition-colors line-clamp-2">
+                {guide.title}
+              </h3>
+              <p class="mt-1 text-sm text-muted-foreground line-clamp-2">
+                {guide.description}
+              </p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Guide Categories -->
+    <div class="mb-16 rounded-lg bg-muted/50 p-8 md:p-12">
+      <div class="mb-8 text-center">
+        <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
+          {t('guides.sections.categoriesBadge', { defaultValue: 'Browse by Category' })}
+        </span>
+        <h2 class="mb-2 text-3xl font-bold">
+          {t('guides.sections.categoriesTitle', { defaultValue: 'Find What You Need' })}
+        </h2>
+        <p class="text-muted-foreground">
+          {t('guides.sections.categoriesDesc', { defaultValue: 'Guides tailored to your travel style and interests' })}
+        </p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {[
+          { name: 'Destination Guides', icon: 'M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z M12 10 a3 3 0 1 1 0 0.001' },
+          { name: 'Food & Dining', icon: 'M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2 M7 2v20 M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3 M21 22v-7' },
+          { name: 'Budget Travel', icon: 'M12 1v22 M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6' },
+          { name: 'Itineraries', icon: 'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z M14 2v6h6 M16 13H8 M16 17H8 M10 9H8' },
+          { name: 'Culture', icon: 'M4 19.5A2.5 2.5 0 0 1 6.5 17H20 M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z' },
+          { name: 'Adventure', icon: 'M12 2L2 7l10 5 10-5-10-5z M2 17l10 5 10-5 M2 12l10 5 10-5' },
+        ].map((category) => (
+          <div class="rounded-lg border bg-card p-6 transition-all hover:shadow-md hover:border-primary/50">
+            <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+                <path d={category.icon}/>
+              </svg>
+            </div>
+            <h3 class="font-semibold">{category.name}</h3>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Explore More -->
+    <div class="rounded-lg border bg-card p-8 text-center">
+      <h2 class="mb-6 text-2xl font-bold">
+        {t('guides.exploreLinks.title', { defaultValue: 'Plan Your Trip' })}
+      </h2>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href={`/${lang}/attractions`}
+          class="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          {t('guides.exploreLinks.attractions', { defaultValue: 'Browse Attractions' })}
+        </a>
+        <a
+          href={`/${lang}/hotels`}
+          class="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          {t('guides.exploreLinks.hotels', { defaultValue: 'Find Hotels' })}
+        </a>
+        <a
+          href={`/${lang}/dining`}
+          class="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          {t('guides.exploreLinks.dining', { defaultValue: 'Find Restaurants' })}
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
