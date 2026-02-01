@@ -3,12 +3,14 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
+import astroI18next from 'astro-i18next';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://travi.world',
   integrations: [
     react(),
+    astroI18next(),
     sitemap({
       i18n: {
         defaultLocale: 'en',
