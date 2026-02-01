@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { languages, type Language } from '../../lib/i18n';
+import { getTranslations } from '../../lib/translations';
+
+export async function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Language };
+const t = getTranslations(lang);
+---
+
+<BaseLayout
+  title={t.pages?.privacy?.metaTitle || 'Privacy Policy'}
+  description={t.pages?.privacy?.metaDescription || 'TRAVI World Privacy Policy - Learn how we protect your data.'}
+  lang={lang}
+>
+  <div class="container max-w-4xl py-20">
+    <div class="prose prose-lg dark:prose-invert max-w-none">
+      <div class="mb-8 not-prose">
+        <span class="inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary mb-4">
+          {t.pages?.privacy?.badge || 'Legal'}
+        </span>
+        <h1 class="text-4xl font-bold mb-4">{t.pages?.privacy?.title || 'Privacy Policy'}</h1>
+        <p class="text-lg text-muted-foreground">{t.pages?.privacy?.subtitle || 'Your privacy is important to us'}</p>
+        <p class="text-sm text-muted-foreground mt-2">{t.pages?.privacy?.effectiveDate || 'Effective Date: January 1, 2026'}</p>
+      </div>
+
+      <h2>1. Information We Collect</h2>
+      <p>We collect information you provide directly to us, including:</p>
+      <ul>
+        <li>Contact information (name, email)</li>
+        <li>Usage data and preferences</li>
+        <li>Device and browser information</li>
+      </ul>
+
+      <h2>2. How We Use Your Information</h2>
+      <p>We use collected information to:</p>
+      <ul>
+        <li>Provide and improve our services</li>
+        <li>Communicate with you</li>
+        <li>Analyze usage patterns</li>
+        <li>Protect against fraud and abuse</li>
+      </ul>
+
+      <h2>3. Data Sharing</h2>
+      <p>We do not sell your personal information. We may share data with:</p>
+      <ul>
+        <li>Service providers (hosting, analytics)</li>
+        <li>Legal authorities when required by law</li>
+      </ul>
+
+      <h2>4. Your Rights</h2>
+      <p>You have the right to:</p>
+      <ul>
+        <li>Access your personal data</li>
+        <li>Request corrections or deletions</li>
+        <li>Opt-out of marketing communications</li>
+        <li>Data portability</li>
+      </ul>
+
+      <h2>5. Cookies</h2>
+      <p>We use cookies and similar technologies to improve your experience. You can control cookie preferences in your browser settings.</p>
+
+      <h2>6. Security</h2>
+      <p>We implement appropriate security measures to protect your data from unauthorized access, alteration, or destruction.</p>
+
+      <h2>7. Changes to This Policy</h2>
+      <p>We may update this policy periodically. Continued use of our service constitutes acceptance of any changes.</p>
+
+      <h2>8. Contact Us</h2>
+      <p>For privacy-related questions, contact us at: <a href={`/${lang}/contact`}>Contact Page</a></p>
+    </div>
+  </div>
+</BaseLayout>

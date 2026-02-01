@@ -1,0 +1,172 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { languages, type Language } from '../../../lib/i18n';
+import { getTranslations } from '../../../lib/translations';
+
+export async function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Language };
+const t = getTranslations(lang);
+
+// Sample attractions data - will be replaced with content collections
+const sampleAttractions = [
+  {
+    id: 'burj-khalifa',
+    title: 'Burj Khalifa',
+    description: "The world's tallest building",
+    category: 'landmarks',
+    image: '/placeholder.jpg',
+  },
+  {
+    id: 'dubai-mall',
+    title: 'Dubai Mall',
+    description: "One of the world's largest shopping malls",
+    category: 'shopping',
+    image: '/placeholder.jpg',
+  },
+  {
+    id: 'palm-jumeirah',
+    title: 'Palm Jumeirah',
+    description: 'Iconic palm-shaped island',
+    category: 'landmarks',
+    image: '/placeholder.jpg',
+  },
+];
+---
+
+<BaseLayout
+  title={t.attractions.title}
+  description={t.attractions.subtitle}
+  lang={lang}
+>
+  <div class="container py-20">
+    <!-- Hero Section -->
+    <div class="mb-12 text-center">
+      <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
+        {t.attractions.hero.badgeThousands}
+      </span>
+      <h1 class="mb-4 text-4xl font-bold md:text-5xl">
+        {t.attractions.hero.headlinePart1} <span class="text-primary">{t.attractions.hero.headlinePart2}</span>
+      </h1>
+      <div class="mx-auto max-w-3xl text-lg text-muted-foreground" set:html={t.attractions.hero.description} />
+
+      <!-- Search Bar -->
+      <div class="mx-auto mt-8 max-w-2xl">
+        <div class="flex gap-2">
+          <input
+            type="search"
+            placeholder={t.attractions.hero.searchPlaceholder}
+            aria-label={t.attractions.hero.searchAriaLabel}
+            class="flex h-12 w-full rounded-md border border-input bg-background px-4 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          />
+          <button
+            class="inline-flex h-12 items-center justify-center rounded-md bg-primary px-6 text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            aria-label={t.attractions.hero.searchButtonAriaLabel}
+          >
+            {t.attractions.hero.searchButton}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filters Section -->
+    <div class="mb-8">
+      <div class="mb-4 flex flex-wrap gap-2">
+        {Object.entries(t.attractions.filters).map(([key, label]: [string, string]) => (
+          <button class="rounded-md border px-4 py-2 text-sm font-medium transition-colors hover:bg-accent">
+            {label}
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <!-- Attractions Grid -->
+    <div class="mb-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {sampleAttractions.map((attraction) => (
+        <a
+          href={`/${lang}/attractions/${attraction.id}`}
+          class="group overflow-hidden rounded-lg border bg-background transition-all hover:shadow-lg"
+        >
+          <div class="aspect-video bg-muted"></div>
+          <div class="p-6">
+            <div class="mb-2 flex items-center gap-2">
+              <span class="rounded-full bg-primary/10 px-2 py-1 text-xs font-medium text-primary">
+                {t.attractions.types[attraction.category] || attraction.category}
+              </span>
+            </div>
+            <h3 class="text-xl font-semibold group-hover:text-primary">
+              {attraction.title}
+            </h3>
+            <p class="mt-2 text-sm text-muted-foreground">
+              {attraction.description}
+            </p>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- Features Section -->
+    <div class="mb-16">
+      <div class="mb-8 text-center">
+        <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
+          {t.attractions.sections.whyBookBadge}
+        </span>
+        <h2 class="mb-2 text-3xl font-bold">{t.attractions.sections.whyBookTitle}</h2>
+        <p class="text-muted-foreground">{t.attractions.sections.whyBookDesc}</p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3">
+        {Object.entries(t.attractions.features)
+          .filter(([key]) => !key.endsWith('Desc'))
+          .map(([key, title]: [string, string]) => {
+            const desc = t.attractions.features[key + 'Desc'];
+            return (
+              <div class="rounded-lg border bg-card p-6 text-center">
+                <h3 class="mb-2 text-lg font-semibold">{title}</h3>
+                <p class="text-sm text-muted-foreground">{desc}</p>
+              </div>
+            );
+          })}
+      </div>
+    </div>
+
+    <!-- Browse by Destination -->
+    <div class="mb-16">
+      <div class="mb-8 text-center">
+        <h2 class="mb-2 text-3xl font-bold">{t.attractions.browse.title}</h2>
+        <p class="text-muted-foreground">{t.attractions.browse.desc}</p>
+      </div>
+      <div class="text-center text-muted-foreground">
+        <p>{t.attractions.browse.noDestinations}</p>
+      </div>
+    </div>
+
+    <!-- Explore Links -->
+    <div class="rounded-lg border bg-muted/50 p-8 text-center">
+      <h2 class="mb-6 text-2xl font-bold">{t.attractions.exploreLinks.title}</h2>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href={`/${lang}/hotels`}
+          class="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+        >
+          {t.attractions.exploreLinks.hotelsWorldwide}
+        </a>
+        <a
+          href={`/${lang}/dining`}
+          class="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+        >
+          {t.attractions.exploreLinks.bestRestaurants}
+        </a>
+        <a
+          href={`/${lang}/news`}
+          class="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+        >
+          {t.attractions.exploreLinks.travelNews}
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

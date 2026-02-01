@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { languages, type Language } from '../../lib/i18n';
+import { getTranslations } from '../../lib/translations';
+
+export async function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Language };
+const t = getTranslations(lang);
+---
+
+<BaseLayout
+  title={t.pages.about.metaTitle}
+  description={t.pages.about.metaDescription}
+  lang={lang}
+>
+  <div class="container max-w-4xl py-20">
+    <!-- Header -->
+    <div class="mb-12 text-center">
+      <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
+        {t.pages.about.badge}
+      </span>
+      <h1 class="mb-4 text-4xl font-bold md:text-5xl">
+        {t.pages.about.title} <span class="text-primary">{t.pages.about.titleHighlight}</span>
+      </h1>
+      <p class="mx-auto max-w-2xl text-lg text-muted-foreground">
+        {t.pages.about.subtitle}
+      </p>
+      <div class="mt-8 flex justify-center gap-4">
+        <a
+          href={`/${lang}/attractions`}
+          class="inline-flex h-11 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+        >
+          {t.pages.about.ctaExplore}
+        </a>
+        <a
+          href={`/${lang}/contact`}
+          class="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+        >
+          {t.pages.about.ctaContact}
+        </a>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="mb-16 grid grid-cols-2 gap-8 md:grid-cols-4">
+      <div class="text-center">
+        <div class="text-3xl font-bold text-primary">17</div>
+        <div class="text-sm text-muted-foreground">{t.pages.about.stats.destinations}</div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl font-bold text-primary">3,000+</div>
+        <div class="text-sm text-muted-foreground">{t.pages.about.stats.articles}</div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl font-bold text-primary">24/7</div>
+        <div class="text-sm text-muted-foreground">{t.pages.about.stats.support}</div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl font-bold text-primary">{t.pages.about.stats.cities}</div>
+        <div class="text-sm text-muted-foreground">{t.pages.about.stats.coverage}</div>
+      </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="mb-16">
+      <div class="mb-8 text-center">
+        <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
+          {t.pages.about.services.badge}
+        </span>
+        <h2 class="text-3xl font-bold">{t.pages.about.services.title}</h2>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {Object.entries(t.pages.about.offerings).map(([key, service]: [string, any]) => (
+          <div class="rounded-lg border bg-card p-6">
+            <h3 class="mb-2 text-xl font-semibold">{service.title}</h3>
+            <p class="text-sm text-muted-foreground">{service.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Values Section -->
+    <div class="mb-16">
+      <div class="mb-8 text-center">
+        <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
+          {t.pages.about.values.badge}
+        </span>
+        <h2 class="text-3xl font-bold">{t.pages.about.values.title}</h2>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3">
+        {Object.entries(t.pages.about.values)
+          .filter(([key]) => !['badge', 'title'].includes(key))
+          .map(([key, value]: [string, any]) => (
+            <div class="rounded-lg border bg-card p-6 text-center">
+              <h3 class="mb-2 text-xl font-semibold">{value.title}</h3>
+              <p class="text-sm text-muted-foreground">{value.description}</p>
+            </div>
+          ))}
+      </div>
+    </div>
+
+    <!-- Contact CTA -->
+    <div class="rounded-lg border bg-muted/50 p-8 text-center">
+      <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
+        {t.pages.about.connect.badge}
+      </span>
+      <h2 class="mb-4 text-2xl font-bold">{t.pages.about.connect.title}</h2>
+      <a
+        href={`/${lang}/contact`}
+        class="inline-flex h-11 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+      >
+        {t.pages.about.ctaContact}
+      </a>
+    </div>
+  </div>
+</BaseLayout>

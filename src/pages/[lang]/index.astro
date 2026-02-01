@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { languages, type Language } from '../../lib/i18n';
+import { t, getTranslations } from '../../lib/translations';
+
+export async function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Language };
+const translations = getTranslations(lang);
+---
+
+<BaseLayout
+  title={translations.home.hero.title}
+  description={translations.home.hero.subtitle}
+  lang={lang}
+>
+  <!-- Hero Section -->
+  <section class="container grid place-content-center gap-6 py-20 md:py-32 lg:py-40">
+    <div class="mx-auto flex max-w-[980px] flex-col items-center gap-4 text-center">
+      <h1 class="text-4xl font-bold leading-tight tracking-tighter md:text-6xl lg:text-7xl lg:leading-[1.1]">
+        {translations.home.hero.title}
+      </h1>
+      <p class="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
+        {translations.home.hero.subtitle}
+      </p>
+      <div class="flex gap-4">
+        <a
+          href={`/${lang}/attractions`}
+          class="inline-flex h-11 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+        >
+          {translations.home.hero.cta}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="container py-12">
+    <h2 class="mb-8 text-3xl font-bold">{translations.home.sections.categories}</h2>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {Object.entries(translations.home.categories)
+        .filter(([key]) => !key.endsWith('Desc'))
+        .map(([key, name]: [string, string]) => {
+          const desc = translations.home.categories[key + 'Desc'];
+          return (
+            <div class="group relative overflow-hidden rounded-lg border bg-background p-6 transition-all hover:shadow-lg">
+              <h3 class="text-xl font-semibold">{name}</h3>
+              {desc && (
+                <p class="mt-2 text-sm text-muted-foreground">{desc}</p>
+              )}
+            </div>
+          );
+        })}
+    </div>
+  </section>
+
+  <!-- Experiences Section -->
+  <section class="container py-12">
+    <h2 class="mb-8 text-3xl font-bold">{translations.home.sections.experiences}</h2>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {Object.entries(translations.home.experiences)
+        .filter(([key]) => !key.endsWith('Desc'))
+        .map(([key, name]: [string, string]) => {
+          const desc = translations.home.experiences[key + 'Desc'];
+          return (
+            <div class="group relative overflow-hidden rounded-lg border bg-background p-6 transition-all hover:shadow-lg">
+              <h3 class="text-xl font-semibold">{name}</h3>
+              <p class="mt-2 text-sm text-muted-foreground">{desc}</p>
+            </div>
+          );
+        })}
+    </div>
+  </section>
+</BaseLayout>

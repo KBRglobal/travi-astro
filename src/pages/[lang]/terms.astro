@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { languages, type Language } from '../../lib/i18n';
+import { getTranslations } from '../../lib/translations';
+
+export async function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Language };
+const t = getTranslations(lang);
+---
+
+<BaseLayout
+  title={t.pages?.terms?.metaTitle || 'Terms & Conditions'}
+  description={t.pages?.terms?.metaDescription || 'TRAVI World Terms & Conditions - Legal agreement for using our service.'}
+  lang={lang}
+>
+  <div class="container max-w-4xl py-20">
+    <div class="prose prose-lg dark:prose-invert max-w-none">
+      <div class="mb-8 not-prose">
+        <span class="inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary mb-4">
+          {t.pages?.terms?.badge || 'Legal Agreement'}
+        </span>
+        <h1 class="text-4xl font-bold mb-4">{t.pages?.terms?.title || 'Terms & Conditions'}</h1>
+        <p class="text-lg text-muted-foreground">{t.pages?.terms?.subtitle || 'Please read these terms carefully'}</p>
+        <p class="text-sm text-muted-foreground mt-2">{t.pages?.terms?.lastUpdated || 'Last updated: January 1, 2026'}</p>
+      </div>
+
+      <h2>1. Acceptance of Terms</h2>
+      <p>By accessing and using TRAVI World, you accept and agree to be bound by these terms and conditions.</p>
+
+      <h2>2. Use of Service</h2>
+      <p>You agree to use our service only for lawful purposes and in accordance with these terms.</p>
+      <ul>
+        <li>Do not misuse or attempt to harm the service</li>
+        <li>Do not violate any applicable laws</li>
+        <li>Do not infringe on others' rights</li>
+      </ul>
+
+      <h2>3. Content</h2>
+      <p>Our service provides travel information and guides. While we strive for accuracy:</p>
+      <ul>
+        <li>Information may change without notice</li>
+        <li>We are not liable for inaccuracies</li>
+        <li>Users should verify critical information</li>
+      </ul>
+
+      <h2>4. Intellectual Property</h2>
+      <p>All content on TRAVI World is protected by copyright and other intellectual property rights.</p>
+
+      <h2>5. Third-Party Links</h2>
+      <p>Our service may contain links to third-party websites. We are not responsible for their content or practices.</p>
+
+      <h2>6. Disclaimer of Warranties</h2>
+      <p>The service is provided "as is" without warranties of any kind, express or implied.</p>
+
+      <h2>7. Limitation of Liability</h2>
+      <p>TRAVI World shall not be liable for any indirect, incidental, or consequential damages arising from your use of the service.</p>
+
+      <h2>8. Modifications</h2>
+      <p>We reserve the right to modify these terms at any time. Continued use constitutes acceptance of changes.</p>
+
+      <h2>9. Governing Law</h2>
+      <p>These terms are governed by applicable international laws.</p>
+
+      <h2>10. Contact</h2>
+      <p>Questions about these terms? <a href={`/${lang}/contact`}>Contact us</a></p>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { languages, type Language } from '../../lib/i18n';
+import { getTranslations } from '../../lib/translations';
+import ContactForm from '../../components/islands/ContactForm';
+
+export async function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Language };
+const t = getTranslations(lang);
+---
+
+<BaseLayout
+  title={t.pages.contact.metaTitle}
+  description={t.pages.contact.metaDescription}
+  lang={lang}
+>
+  <div class="container max-w-4xl py-20">
+    <!-- Header -->
+    <div class="mb-12 text-center">
+      <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
+        {t.pages.contact.badge}
+      </span>
+      <h1 class="mb-4 text-4xl font-bold md:text-5xl">
+        {t.pages.contact.titlePart1} <span class="text-primary">{t.pages.contact.titlePart2}</span>
+      </h1>
+      <p class="mx-auto max-w-2xl text-lg text-muted-foreground">
+        {t.pages.contact.subtitle}
+      </p>
+    </div>
+
+    <!-- Contact Options -->
+    <div class="mb-16">
+      <div class="mb-8">
+        <h2 class="mb-2 text-2xl font-bold">{t.pages.contact.getInTouch}</h2>
+        <p class="text-muted-foreground">{t.pages.contact.getInTouchSubtitle}</p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2">
+        {Object.entries(t.pages.contact.options).map(([key, option]: [string, any]) => (
+          <div class="rounded-lg border bg-card p-6">
+            <h3 class="mb-2 text-lg font-semibold">{option.title}</h3>
+            <p class="text-sm text-muted-foreground">{option.description}</p>
+            {option.action && (
+              <div class="mt-4 inline-block rounded bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
+                {option.action}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Help Topics -->
+    <div class="mb-16">
+      <div class="mb-8">
+        <h2 class="mb-2 text-2xl font-bold">{t.pages.contact.howCanWeHelp}</h2>
+        <p class="text-muted-foreground">{t.pages.contact.howCanWeHelpSubtitle}</p>
+      </div>
+      <div class="grid gap-4 md:grid-cols-2">
+        {Object.entries(t.pages.contact.helpTopics).map(([key, topic]: [string, string]) => (
+          <div class="flex items-start gap-3 rounded-lg border bg-card p-4">
+            <div class="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <p class="text-sm">{topic}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Important Note -->
+    <div class="mb-16 rounded-lg border-l-4 border-primary bg-primary/5 p-6">
+      <h3 class="mb-2 text-lg font-semibold">{t.pages.contact.importantNote}</h3>
+      <p class="mb-4 text-sm text-muted-foreground">{t.pages.contact.importantNoteSubtitle}</p>
+      <p class="text-sm">
+        {t.pages.contact.urgentNote.replace('{{urgentLabel}}', `"${t.pages.contact.urgentLabel}"`)}
+      </p>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="rounded-lg border bg-card p-8">
+      <h2 class="mb-6 text-2xl font-bold">{t.pages.contact.cta}</h2>
+      <ContactForm client:load lang={lang} />
+    </div>
+  </div>
+</BaseLayout>

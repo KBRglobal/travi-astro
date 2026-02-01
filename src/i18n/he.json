@@ -1,0 +1,1682 @@
+{
+  "nav": {
+    "home": "דף הבית",
+    "destinations": "יעדים",
+    "attractions": "אטרקציות",
+    "hotels": "מלונות",
+    "guides": "מדריכים",
+    "dining": "מסעדות",
+    "districts": "שכונות",
+    "articles": "מאמרים",
+    "news": "חדשות",
+    "shopping": "קניות",
+    "realEstate": "נדל״ן",
+    "events": "אירועים",
+    "search": "חיפוש",
+    "language": "שפה",
+    "mainNavigation": "תפריט ראשי",
+    "openMenu": "פתיחת תפריט",
+    "closeMenu": "סגירת תפריט",
+    "logoAlt": "TRAVI - מדריך הטיולים שלכם",
+    "followInstagram": "עקבו אחרינו באינסטגרם",
+    "followTikTok": "עקבו אחרינו בטיקטוק",
+    "changeLanguage": "החלפת שפה",
+    "selectLanguage": "בחירת שפה",
+    "popularLanguages": "שפות פופולריות",
+    "allLanguages": "כל השפות"
+  },
+  "breadcrumbs": {
+    "ariaLabel": "ניווט בעמודים",
+    "dubai": "דובאי",
+    "home": "בית",
+    "destinations": "יעדים",
+    "guides": "מדריכים",
+    "tips": "טיפים",
+    "planning": "תכנון",
+    "deals": "מבצעים",
+    "experiences": "חוויות",
+    "hotels": "מלונות",
+    "flights": "טיסות",
+    "attractions": "אטרקציות",
+    "restaurants": "מסעדות",
+    "transportation": "תחבורה",
+    "shopping": "קניות",
+    "culture": "תרבות",
+    "activities": "פעילויות",
+    "tours": "סיורים",
+    "events": "אירועים",
+    "weather": "מזג אוויר",
+    "safety": "בטיחות",
+    "budget": "תקציב",
+    "luxury": "יוקרה",
+    "family": "משפחות",
+    "adventure": "הרפתקאות",
+    "beaches": "חופים",
+    "nightlife": "חיי לילה",
+    "business": "עסקים",
+    "visa": "ויזה",
+    "insurance": "ביטוח",
+    "health": "בריאות"
+  },
+  "common": {
+    "readMore": "קראו עוד",
+    "viewAll": "לכל התוכן",
+    "learnMore": "למידע נוסף",
+    "bookNow": "להזמנה",
+    "contactUs": "צרו קשר",
+    "subscribe": "הרשמו לניוזלטר",
+    "submit": "שליחה",
+    "cancel": "ביטול",
+    "save": "שמירה",
+    "edit": "עריכה",
+    "delete": "מחיקה",
+    "loading": "טוען...",
+    "error": "אירעה שגיאה",
+    "noResults": "לא נמצאו תוצאות",
+    "seeMore": "עוד",
+    "back": "חזרה",
+    "next": "הבא",
+    "previous": "הקודם",
+    "close": "סגירה",
+    "share": "שיתוף",
+    "copyLink": "העתקת קישור",
+    "copied": "הועתק!",
+    "search": "חיפוש",
+    "filter": "סינון",
+    "sort": "מיון",
+    "sortBy": "מיין לפי",
+    "apply": "החל",
+    "reset": "איפוס",
+    "clear": "ניקוי",
+    "confirm": "אישור",
+    "decline": "דחייה",
+    "agree": "מסכים",
+    "disagree": "לא מסכים",
+    "yes": "כן",
+    "no": "לא",
+    "maybe": "אולי",
+    "ok": "אישור",
+    "gotIt": "הבנתי",
+    "dismiss": "בטל",
+    "retry": "נסה שוב",
+    "refresh": "רענון",
+    "update": "עדכון",
+    "download": "הורדה",
+    "upload": "העלאה",
+    "print": "הדפסה",
+    "email": "אימייל",
+    "phone": "טלפון",
+    "message": "הודעה",
+    "notification": "התראה",
+    "settings": "הגדרות",
+    "preferences": "העדפות",
+    "account": "חשבון",
+    "profile": "פרופיל",
+    "logout": "יציאה",
+    "login": "כניסה",
+    "signup": "הרשמה",
+    "forgotPassword": "שכחתי סיסמה",
+    "resetPassword": "איפוס סיסמה",
+    "changePassword": "שינוי סיסמה",
+    "newPassword": "סיסמה חדשה",
+    "confirmPassword": "אימות סיסמה",
+    "currentPassword": "סיסמה נוכחית",
+    "password": "סיסמה",
+    "username": "שם משתמש",
+    "firstName": "שם פרטי",
+    "lastName": "שם משפחה",
+    "fullName": "שם מלא",
+    "emailAddress": "כתובת אימייל",
+    "phoneNumber": "מספר טלפון",
+    "address": "כתובת",
+    "city": "עיר",
+    "country": "מדינה",
+    "zipCode": "מיקוד",
+    "language": "שפה",
+    "currency": "מטבע",
+    "timezone": "אזור זמן",
+    "date": "תאריך",
+    "time": "שעה",
+    "dateTime": "תאריך ושעה",
+    "today": "היום",
+    "tomorrow": "מחר",
+    "yesterday": "אתמול",
+    "week": "שבוע",
+    "month": "חודש",
+    "year": "שנה",
+    "startDate": "תאריך התחלה",
+    "endDate": "תאריך סיום",
+    "duration": "משך",
+    "from": "מאת",
+    "to": "אל",
+    "price": "מחיר",
+    "total": "סה״כ",
+    "subtotal": "סכום ביניים",
+    "tax": "מס",
+    "discount": "הנחה",
+    "fee": "עמלה",
+    "payment": "תשלום",
+    "paymentMethod": "אמצעי תשלום",
+    "creditCard": "כרטיס אשראי",
+    "debitCard": "כרטיס חיוב",
+    "paypal": "פייפאל",
+    "bankTransfer": "העברה בנקאית",
+    "cash": "מזומן",
+    "invoice": "חשבונית",
+    "receipt": "קבלה",
+    "confirmation": "אישור",
+    "bookingReference": "מספר הזמנה",
+    "status": "סטטוס",
+    "pending": "ממתין",
+    "confirmed": "מאושר",
+    "cancelled": "בוטל",
+    "completed": "הושלם",
+    "inProgress": "בתהליך",
+    "upcoming": "קרוב",
+    "past": "עבר",
+    "active": "פעיל",
+    "inactive": "לא פעיל",
+    "available": "זמין",
+    "unavailable": "לא זמין",
+    "soldOut": "אזל",
+    "limitedAvailability": "זמינות מוגבלת",
+    "popular": "פופולרי",
+    "trending": "טרנדי",
+    "new": "חדש",
+    "recommended": "מומלץ",
+    "featured": "מובלט",
+    "exclusive": "בלעדי",
+    "limited": "מוגבל",
+    "special": "מיוחד",
+    "promotion": "מבצע",
+    "offer": "הצעה",
+    "deal": "דיל",
+    "sale": "מכירה",
+    "free": "חינם",
+    "included": "כלול",
+    "optional": "אופציונלי",
+    "required": "חובה",
+    "termsAndConditions": "תנאים והגבלות",
+    "privacyPolicy": "מדיניות פרטיות",
+    "cookiePolicy": "מדיניות עוגיות",
+    "help": "עזרה",
+    "support": "תמיכה",
+    "faq": "שאלות נפוצות",
+    "contactSupport": "פנייה לתמיכה",
+    "feedback": "משוב",
+    "review": "ביקורת",
+    "rating": "דירוג",
+    "comment": "תגובה",
+    "report": "דיווח",
+    "shareExperience": "שתפו את החוויה",
+    "writeReview": "כתבו ביקורת",
+    "addPhoto": "הוסיפו תמונה",
+    "addVideo": "הוסיפו וידאו",
+    "gallery": "גלריה",
+    "photos": "תמונות",
+    "videos": "סרטונים",
+    "map": "מפה",
+    "directions": "הוראות הגעה",
+    "distance": "מרחק",
+    "nearMe": "בקרבתי",
+    "location": "מיקום",
+    "coordinates": "קואורדינטות",
+    "openingHours": "שעות פתיחה",
+    "closedNow": "סגור כעת",
+    "openNow": "פתוח כעת",
+    "opensAt": "נפתח ב",
+    "closesAt": "נסגר ב",
+    "alwaysOpen": "פתוח תמיד",
+    "temporarily": "זמנית",
+    "permanently": "לצמיתות",
+    "info": "מידע",
+    "details": "פרטים",
+    "description": "תיאור",
+    "overview": "סקירה",
+    "highlights": "נקודות עיקריות",
+    "features": "תכונות",
+    "amenities": "שירותים",
+    "facilities": "מתקנים",
+    "services": "שירותים",
+    "notIncluded": "לא כלול",
+    "important": "חשוב",
+    "note": "הערה",
+    "warning": "אזהרה",
+    "tip": "טיפ",
+    "suggestion": "הצעה",
+    "mustKnow": "חובה לדעת",
+    "usefulInfo": "מידע שימושי",
+    "localTip": "טיפ מקומי",
+    "insiderAdvice": "עצת מקומיים",
+    "bestTime": "הזמן הטוב ביותר",
+    "avoidCrowds": "הימנעו מהמונים",
+    "peakSeason": "עונת שיא",
+    "offSeason": "מחוץ לעונה",
+    "weather": "מזג אוויר",
+    "temperature": "טמפרטורה",
+    "forecast": "תחזית",
+    "sunny": "שמשי",
+    "cloudy": "מעונן",
+    "rainy": "גשום",
+    "windy": "סוער",
+    "hot": "חם",
+    "cold": "קר",
+    "mild": "נעים",
+    "humid": "לח"
+  },
+  "home": {
+    "hero": {
+      "title": "כל העולם במקום אחד עם TRAVI",
+      "subtitle": "מדריך הטיולים המלא שלכם ל-17 יעדים ברחבי העולם",
+      "searchPlaceholder": "חיפוש אטרקציות, מלונות, מסעדות...",
+      "cta": "בואו נתחיל",
+      "badge": "מדריך הטיולים שלכם",
+      "headlinePart1": "כל מה שצריך",
+      "headlinePart2": "לטיול מושלם",
+      "description": "מדריכי טיולים מקיפים ל-{{destinations}} יעדים ברחבי העולם. למעלה מ-{{attractions}} אטרקציות, מלונות ומסעדות מומלצות.",
+      "descriptionPart1": "מדריכי טיולים מקיפים ל-",
+      "descriptionPart2": "יעדים ברחבי העולם. גלו מידע מפורט על",
+      "descriptionPart3": "אטרקציות.",
+      "carouselLabel": "גלריית יעדים",
+      "viewDestination": "לצפייה ב{{name}} - {{tagline}}",
+      "worldwide": "ברחבי העולם",
+      "exploreWorld": "בואו לגלות את העולם",
+      "welcomeAriaLabel": "ברוכים הבאים ל-TRAVI World",
+      "pageTitle": "TRAVI World - מדריך טיולים למלונות, אטרקציות ומה לעשות",
+      "pageDescription": "מדריך הטיולים המלא שלכם ל-17 יעדים ברחבי העולם. מידע מקצועי על מלונות, אטרקציות, מסעדות ופעילויות ביותר מ-3,000 מקומות.",
+      "orgDescription": "מדריך הטיולים המהימן שלכם ל-17 יעדים ברחבי העולם."
+    },
+    "srLabel": {
+      "attractions": "למעלה מ-{{count}} אטרקציות",
+      "destinations": "{{count}} יעדים ברחבי העולם",
+      "languages": "פלטפורמה רב-לשונית עם שפות נוספות בדרך"
+    },
+    "featured": "מומלצים",
+    "trending": "טרנדים עכשיו",
+    "topAttractions": "האטרקציות החמות",
+    "bestHotels": "המלונות הכי שווים",
+    "latestNews": "חדשות ומדריכים עדכניים",
+    "sections": {
+      "destinations": "גלו את היעדים",
+      "destinationsDesc": "האוסף המלא שלנו מיעדי התיירות הכי שווים בעולם",
+      "categories": "חיפוש לפי קטגוריה",
+      "categoriesDesc": "מצאו בדיוק מה שאתם מחפשים",
+      "experiences": "טיולים לפי סגנון",
+      "experiencesDesc": "בחרו את סגנון הטיול שלכם",
+      "faq": "שאלות נפוצות",
+      "faqDesc": "כל מה שרציתם לדעת על TRAVI",
+      "regions": "יעדים לפי אזור",
+      "newsletter": "הישארו מעודכנים",
+      "allDestinationsTitle": "מדריכי טיולים לכל {{count}} היעדים",
+      "completeGuide": "{{name}}, {{country}} - המדריך המלא"
+    },
+    "cta": {
+      "exploreDestinations": "לכל היעדים",
+      "viewGuides": "למדריכים",
+      "viewAll": "לכל התוכן",
+      "startExploring": "בואו נתחיל",
+      "planTrip": "תכננו את הטיול",
+      "viewExperience": "צפו ב{{name}}"
+    },
+    "stats": {
+      "destinations": "יעדים",
+      "attractions": "אטרקציות",
+      "languages": "שפות",
+      "attractionsNum": "+3,000",
+      "destinationsNum": "17",
+      "languagesNum": "+17",
+      "destinationsCountWithLabel": "{{count}} יעדים",
+      "attractionsCountWithLabel": "{{count}}+ אטרקציות"
+    },
+    "categories": {
+      "attractions": "אטרקציות",
+      "attractionsDesc": "מה חובה לראות",
+      "news": "חדשות טיולים",
+      "newsDesc": "העדכונים האחרונים",
+      "guides": "מדריכים",
+      "guidesDesc": "מדריכי יעדים",
+      "hotels": "מלונות",
+      "hotelsDesc": "מצאו את המלון המושלם"
+    },
+    "experiences": {
+      "luxury": "טיולי יוקרה",
+      "luxuryDesc": "חוויות פרימיום ויעדים אקסקלוסיביים",
+      "adventure": "הרפתקאות",
+      "adventureDesc": "חוויות אקסטרים ופעילויות בטבע",
+      "family": "טיולים משפחתיים",
+      "familyDesc": "יעדים ופעילויות מושלמים למשפחות",
+      "budget": "טיולים חסכוניים",
+      "budgetDesc": "יעדים ואפשרויות במחירים נוחים",
+      "romance": "ירח דבש ורומנטיקה",
+      "romanceDesc": "יעדים רומנטיים וטיולי ירח דבש",
+      "solo": "טיולים לבד",
+      "soloDesc": "יעדים מושלמים לטיילים סולו"
+    },
+    "faq": {
+      "title": "שאלות נפוצות",
+      "subtitle": "כל מה שרציתם לדעת על TRAVI World",
+      "whatIsTravi": "מה זה TRAVI World?",
+      "whatIsTraviAnswer": "TRAVI World זו פלטפורמת מידע מקיפה למטיילים הישראלים, המספקת מדריכי טיולים מפורטים ל-17 יעדי תיירות מובילים בעולם. אנחנו כמו סוכנות ידיעות לתיירות - מביאים לכם מידע אמין, מעודכן ומקצועי על למעלה מ-3,000 אטרקציות, מלונות, מסעדות ופעילויות.",
+      "howManyDestinations": "כמה יעדים יש ב-TRAVI?",
+      "howManyDestinationsAnswer": "TRAVI World מכסה כרגע 17 יעדי תיירות מובילים שישראלים אוהבים במיוחד: דובאי, פריז, טוקיו, ניו יורק, ברצלונה, סינגפור, לונדון, בנגקוק, אבו דאבי, אמסטרדם, הונג קונג, איסטנבול, לאס וגאס, לוס אנג'לס, מיאמי ורומא. כל יעד כולל מידע מקיף שעוזר לכם לתכנן את הטיול המושלם.",
+      "isFree": "האם TRAVI בחינם?",
+      "isFreeAnswer": "כן, TRAVI בחינם לחלוטין! אנחנו מאמינים שמידע איכותי על טיולים צריך להיות נגיש לכולם. תוכלו לגלוש באלפי מדריכים, ביקורות על אטרקציות, המלצות על מלונות ומסעדות, טיפים מקומיים ועוד - הכל ללא עלות ובלי צורך בהרשמה.",
+      "updateFrequency": "באיזו תדירות מתעדכן התוכן?",
+      "updateFrequencyAnswer": "התוכן ב-TRAVI מתעדכן מדי יום! הצוות שלנו עוקב אחרי החדשות והטרנדים האחרונים בעולם התיירות ומעדכן מידע על אטרקציות חדשות, שינויים במלונות ומסעדות, אירועים מיוחדים ועוד. כך אתם תמיד מקבלים את המידע הכי רלוונטי ועדכני לתכנון הטיול שלכם."
+    },
+    "mascotAlt": "הקמע של TRAVI עם ציוני דרך מרחבי העולם - גלו מדריכי טיולים לדובאי, פריז, לונדון, רומא ועוד",
+    "mascotTitle": "TRAVI World - מדריכי טיולים ליעדים ברחבי העולם"
+  },
+  "attractions": {
+    "title": "אטרקציות ברחבי העולם",
+    "subtitle": "גלו חוויות בלתי נשכחות, ציוני דרך מפורסמים ופנינים מקומיות",
+    "hero": {
+      "badge": "{{count}} אטרקציות ב-{{cities}} ערים",
+      "badgeThousands": "אלפי אטרקציות ברחבי העולם",
+      "headlinePart1": "מה לעשות",
+      "headlinePart2": "ברחבי העולם",
+      "description": "<span class=\"font-medium text-slate-700 dark:text-slate-300\">כרטיסים ללא תור</span> למגדל אייפל, קולוסיאום, בורג' ח'ליפה ואטרקציות מובילות בפריז, רומא, דובאי ועוד.",
+      "searchPlaceholder": "חיפוש מגדל אייפל, קולוסיאום, בורג' ח'ליפה...",
+      "carouselLabel": "גלריית אטרקציות מומלצות",
+      "sectionLabel": "הזמנת כרטיסים לאטרקציות מובילות ברחבי העולם",
+      "searchAriaLabel": "חיפוש אטרקציות לפי שם או עיר",
+      "searchButton": "חיפוש",
+      "searchButtonAriaLabel": "חיפוש אטרקציות"
+    },
+    "stats": {
+      "attractions": "אטרקציות",
+      "cities": "ערים",
+      "rating": "דירוג",
+      "verified": "מאומת",
+      "reviews": "ביקורות",
+      "travelers": "מטיילים"
+    },
+    "srLabel": {
+      "attractions": "למעלה מ-{{count}} אטרקציות",
+      "cities": "{{count}} ערים",
+      "rating": "דירוג {{rating}} כוכבים",
+      "verified": "אטרקציה מאומתת",
+      "reviews": "{{count}} ביקורות",
+      "travelers": "{{count}} מטיילים ביקרו"
+    },
+    "types": {
+      "all": "כל הסוגים",
+      "museums": "מוזיאונים",
+      "landmarks": "ציוני דרך",
+      "tours": "סיורים",
+      "themeParks": "פארקי שעשועים",
+      "shows": "מופעים",
+      "waterActivities": "פעילויות מים",
+      "adventure": "הרפתקאות",
+      "cultural": "תרבות ומורשת",
+      "nature": "טבע ונופים",
+      "food": "אוכל וקולינריה",
+      "nightlife": "חיי לילה"
+    },
+    "thingsToDoIn": "מה לעשות ב{{name}}",
+    "countAttractions": "{{country}} - {{count}} אטרקציות",
+    "filters": {
+      "all": "הכל",
+      "popular": "הכי פופולריים",
+      "free": "כניסה חינם",
+      "familyFriendly": "מתאים למשפחות",
+      "outdoor": "פעילויות חוץ",
+      "indoor": "פעילויות פנים",
+      "mustSee": "חובה לראות",
+      "localFavorites": "אהובי המקומיים",
+      "offTheBeatenPath": "מחוץ לשבילים המוכרים",
+      "seasonal": "עונתי",
+      "accessible": "נגיש לנכים",
+      "petFriendly": "מתאים לחיות מחמד"
+    },
+    "details": {
+      "location": "מיקום",
+      "hours": "שעות פתיחה",
+      "price": "מחיר",
+      "duration": "משך הביקור",
+      "tips": "טיפים שימושיים",
+      "bestTime": "הזמן הטוב ביותר לבקר",
+      "gettingThere": "איך להגיע",
+      "nearbyAttractions": "אטרקציות בקרבת מקום",
+      "includedInTicket": "כלול בכרטיס",
+      "notIncluded": "לא כלול",
+      "importantInfo": "מידע חשוב",
+      "bookingRequired": "נדרשת הזמנה מראש",
+      "lastEntry": "כניסה אחרונה",
+      "audioGuide": "מדריך אודיו",
+      "languages": "שפות זמינות"
+    },
+    "sections": {
+      "destinations": "אטרקציות לפי יעד",
+      "destinationsDesc": "בחרו עיר כדי לגלות מה כדאי לעשות",
+      "faq": "שאלות נפוצות",
+      "faqDesc": "כל מה שצריך לדעת על הזמנת כרטיסים לאטרקציות",
+      "whyBookBadge": "למה להזמין אצלנו",
+      "whyBookTitle": "דלגו על התורים, חסכו זמן",
+      "whyBookDesc": "הזמינו כרטיסים מראש ותיהנו מכניסה מהירה לאטרקציות המובילות",
+      "allDestinations": "כל היעדים",
+      "popularThisMonth": "פופולרי החודש",
+      "newAttractions": "אטרקציות חדשות",
+      "travelGuides": "מדריכי טיולים",
+      "insiderTips": "טיפים של מקומיים"
+    },
+    "features": {
+      "skipTheLine": "כרטיסים ללא תור",
+      "skipTheLineDesc": "עקפו את התורים במגדל אייפל, קולוסיאום, וותיקן ועוד",
+      "mobileTickets": "כרטיסים דיגיטליים",
+      "mobileTicketsDesc": "קבלה מיידית לטלפון - הראו את הכרטיס ונכנסו",
+      "freeCancellation": "ביטול חינם",
+      "freeCancellationDesc": "התוכניות השתנו? בטלו עד 24 שעות לפני ותקבלו החזר מלא",
+      "bestPriceGuarantee": "הבטחת המחיר הטוב ביותר",
+      "bestPriceGuaranteeDesc": "מצאתם זול יותר? נשווה את המחיר",
+      "instantConfirmation": "אישור מיידי",
+      "instantConfirmationDesc": "קבלו אישור הזמנה מיידי באימייל",
+      "supportInHebrew": "תמיכה בעברית",
+      "supportInHebrewDesc": "צוות שירות דובר עברית 24/7"
+    },
+    "browse": {
+      "title": "מה לעשות לפי יעד",
+      "desc": "מצאו אטרקציות וחוויות בערים המובילות בעולם",
+      "thingsToDo": "{{count}} דברים לעשות",
+      "noDestinations": "אין יעדים זמינים כרגע.",
+      "viewAll": "צפו בכל האטרקציות",
+      "popularCities": "ערים פופולריות",
+      "byRegion": "לפי אזור",
+      "byTheme": "לפי נושא"
+    },
+    "exploreLinks": {
+      "title": "עוד מדריכי טיולים",
+      "hotelsWorldwide": "מלונות ברחבי העולם",
+      "bestRestaurants": "המסעדות הכי שוות",
+      "travelNews": "חדשות טיולים",
+      "flightDeals": "מבצעי טיסות",
+      "travelInsurance": "ביטוח נסיעות",
+      "carRentals": "השכרת רכב",
+      "cityGuides": "מדריכי ערים"
+    },
+    "cta": {
+      "title": "מוכנים לחוויה הבאה?",
+      "desc": "הזמינו כרטיסים ללא תור למגדל אייפל, קולוסיאום, בורג' ח'ליפה ואטרקציות מובילות ברחבי העולם.",
+      "parisAttractions": "אטרקציות בפריז",
+      "romeAttractions": "אטרקציות ברומא",
+      "dubaiAttractions": "אטרקציות בדובאי",
+      "londonAttractions": "אטרקציות בלונדון",
+      "newYorkAttractions": "אטרקציות בניו יורק",
+      "barcelonaAttractions": "אטרקציות בברצלונה"
+    },
+    "search": {
+      "popular": "פופולרי:",
+      "thingsToDoIn": "מה לעשות ב{{city}}",
+      "ariaCarouselNav": "ניווט בגלריית אטרקציות",
+      "ariaViewInCity": "צפו ב{{name}} ב{{city}}",
+      "noResults": "לא נמצאו תוצאות",
+      "tryAgain": "נסו חיפוש אחר",
+      "suggestions": "הצעות חיפוש",
+      "recentSearches": "חיפושים אחרונים"
+    },
+    "gallery": {
+      "ariaFeaturedAttraction": "אטרקציה מומלצת",
+      "ariaThumbnails": "תמונות ממוזערות של גלריית אטרקציות",
+      "ariaTicketsIn": "כרטיסים ל{{name}} ב{{city}}",
+      "priceFrom": "החל מ-",
+      "bookTickets": "להזמנת כרטיסים",
+      "skipTheLine": "דילוג על התור",
+      "duration": "2-3 שעות",
+      "freeCancellation": "ביטול חינם",
+      "freeCancellationDesc": "עד 24 שעות לפני הביקור",
+      "mobileTickets": "כרטיסים דיגיטליים",
+      "instantDelivery": "קבלה מיידית",
+      "bestSeller": "רב מכר",
+      "limitedAvailability": "זמינות מוגבלת",
+      "lastMinuteDeals": "מבצעי רגע אחרון",
+      "groupDiscounts": "הנחות לקבוצות",
+      "comboDeals": "חבילות משתלמות",
+      "viewDetails": "צפו בפרטים",
+      "quickView": "תצוגה מהירה"
+    },
+    "chip": {
+      "thingsToDo": "{{count}} דברים לעשות",
+      "openNow": "פתוח עכשיו",
+      "closingSoon": "נסגר בקרוב",
+      "freeEntry": "כניסה חינם",
+      "bookInAdvance": "להזמין מראש",
+      "topRated": "דירוג גבוה",
+      "localFavorite": "אהוב על מקומיים"
+    },
+    "booking": {
+      "selectDate": "בחרו תאריך",
+      "selectTime": "בחרו שעה",
+      "numberOfTickets": "מספר כרטיסים",
+      "adult": "מבוגר",
+      "child": "ילד",
+      "senior": "אזרח ותיק",
+      "student": "סטודנט",
+      "total": "סה״כ",
+      "bookNow": "הזמינו עכשיו",
+      "addToCart": "הוסיפו לסל",
+      "soldOut": "אזל המלאי",
+      "availableDates": "תאריכים זמינים"
+    },
+    "reviews": {
+      "title": "ביקורות אחרונות",
+      "writeReview": "כתבו ביקורת",
+      "verified": "רכישה מאומתת",
+      "helpful": "האם הביקורת עזרה לכם?",
+      "reportReview": "דווחו על הביקורת",
+      "sortBy": "מיין לפי",
+      "mostRecent": "הכי חדש",
+      "mostHelpful": "הכי מועיל",
+      "highestRated": "דירוג גבוה",
+      "lowestRated": "דירוג נמוך"
+    }
+  },
+  "hotels": {
+    "title": "מלונות בדובאי",
+    "subtitle": "מצאו את המלון המושלם לחופשה בדובאי",
+    "filters": {
+      "all": "כל המלונות",
+      "luxury": "מלונות יוקרה",
+      "budget": "תקציב נמוך",
+      "beachfront": "על שפת הים",
+      "cityCenter": "מרכז העיר",
+      "familyFriendly": "ידידותי למשפחות",
+      "businessHotels": "מלונות עסקים",
+      "boutiqueHotels": "מלונות בוטיק",
+      "resorts": "אתרי נופש",
+      "apartmentHotels": "דירות מלון"
+    },
+    "details": {
+      "priceFrom": "החל מ-",
+      "perNight": "ללילה",
+      "amenities": "מתקנים ושירותים",
+      "checkIn": "כניסה למלון",
+      "checkOut": "יציאה מהמלון",
+      "rooms": "חדרים זמינים",
+      "rating": "דירוג אורחים",
+      "reviews": "ביקורות",
+      "location": "מיקום",
+      "distanceFromCenter": "מרחק ממרכז העיר",
+      "freeWifi": "אינטרנט אלחוטי חינם",
+      "breakfast": "ארוחת בוקר כלולה",
+      "parking": "חניה",
+      "pool": "בריכה",
+      "spa": "ספא",
+      "gym": "חדר כושר",
+      "airportShuttle": "הסעה משדה התעופה"
+    },
+    "bookNow": "הזמינו עכשיו",
+    "viewDetails": "פרטים נוספים",
+    "compareHotels": "השוו מלונות",
+    "availability": {
+      "available": "זמין",
+      "limitedRooms": "חדרים אחרונים",
+      "fullyBooked": "תפוסה מלאה",
+      "checkDates": "בדקו תאריכים"
+    },
+    "sorting": {
+      "sortBy": "מיין לפי",
+      "priceAsc": "מחיר - מהנמוך לגבוה",
+      "priceDesc": "מחיר - מהגבוה לנמוך",
+      "ratingHigh": "דירוג - מהגבוה לנמוך",
+      "distance": "מרחק ממרכז העיר",
+      "popularity": "פופולריות"
+    }
+  },
+  "dining": {
+    "title": "מסעדות ואוכל בדובאי",
+    "subtitle": "מדריך קולינרי מקיף לחוויות האוכל המגוונות בעיר",
+    "meta": {
+      "description": "מדריך מסעדות מקיף בדובאי - מסעדות יוקרה, אוכל רחוב, בתי קפה וחוויות קולינריות ייחודיות לישראלים",
+      "keywords": "מסעדות דובאי, אוכל בדובאי, מסעדות כשר דובאי, מסעדות ישראליות דובאי, חלאל דובאי"
+    },
+    "filters": {
+      "all": "הכל",
+      "fineDining": "מסעדות שף",
+      "casual": "מסעדות משפחתיות",
+      "cafes": "בתי קפה ומאפיות",
+      "streetFood": "אוכל רחוב מקומי",
+      "halal": "חלאל מוסמך",
+      "vegetarian": "צמחוני וטבעוני",
+      "kosher": "כשר למהדרין",
+      "israeli": "מטבח ישראלי"
+    },
+    "details": {
+      "cuisine": "סוג מטבח",
+      "priceRange": "טווח מחירים",
+      "hours": "שעות פעילות",
+      "dress": "קוד לבוש נדרש",
+      "reservations": "הזמנת שולחן",
+      "location": "מיקום ואזור",
+      "parking": "חניה",
+      "accessibility": "נגישות",
+      "familyFriendly": "מתאים למשפחות",
+      "delivery": "משלוחים"
+    },
+    "priceCategories": {
+      "budget": "חסכוני (עד 100 דירהם)",
+      "moderate": "בינוני (100-250 דירהם)",
+      "upscale": "יוקרתי (250-500 דירהם)",
+      "luxury": "פרימיום (500+ דירהם)"
+    },
+    "cuisineTypes": {
+      "emirati": "אמירתי מסורתי",
+      "levantine": "לבנטיני",
+      "indian": "הודי",
+      "asian": "אסייתי",
+      "european": "אירופאי",
+      "american": "אמריקאי",
+      "seafood": "פירות ים",
+      "international": "בינלאומי"
+    },
+    "diningTips": {
+      "title": "טיפים חשובים לסועדים ישראלים",
+      "tips": [
+        "רוב המסעדות בדובאי מוסמכות חלאל - בשר ועוף בלבד",
+        "במסעדות יוקרה נדרש קוד לבוש - אין כניסה בכפכפים או בגדי ים",
+        "מומלץ להזמין מקום מראש במסעדות פופולריות",
+        "בחודש הרמדאן - שעות הפעילות משתנות",
+        "טיפ מקובל: 10-15% מסך החשבון"
+      ]
+    }
+  },
+  "destinations": {
+    "cities": {
+      "dubai": {
+        "name": "דובאי",
+        "country": "איחוד האמירויות",
+        "cardAlt": "קו הרקיע של דובאי עם מגדל בורג' ח'ליפה בשקיעה"
+      },
+      "london": {
+        "name": "לונדון",
+        "country": "בריטניה",
+        "cardAlt": "ביג בן וארמון ווסטמינסטר בלונדון"
+      },
+      "paris": {
+        "name": "פריז",
+        "country": "צרפת",
+        "cardAlt": "מגדל אייפל מואר בשקיעה"
+      },
+      "newYork": {
+        "name": "ניו יורק",
+        "country": "ארה״ב",
+        "cardAlt": "קו הרקיע של מנהטן עם בניין האמפייר סטייט"
+      },
+      "tokyo": {
+        "name": "טוקיו",
+        "country": "יפן",
+        "cardAlt": "מעבר החציה שיבויה בטוקיו עם אורות ניאון בלילה"
+      },
+      "singapore": {
+        "name": "סינגפור",
+        "country": "סינגפור",
+        "cardAlt": "מרינה ביי סאנדס וגנים ליד המפרץ בסינגפור"
+      },
+      "barcelona": {
+        "name": "ברצלונה",
+        "country": "ספרד",
+        "cardAlt": "הסגרדה פמיליה בברצלונה בשעת הזהב"
+      },
+      "bangkok": {
+        "name": "בנגקוק",
+        "country": "תאילנד",
+        "cardAlt": "הארמון המלכותי בבנגקוק בזריחה"
+      },
+      "abuDhabi": {
+        "name": "אבו דאבי",
+        "country": "איחוד האמירויות",
+        "cardAlt": "מסגד שייח' זאיד הגדול באבו דאבי"
+      },
+      "amsterdam": {
+        "name": "אמסטרדם",
+        "country": "הולנד",
+        "cardAlt": "תעלה באמסטרדם עם בניינים היסטוריים"
+      },
+      "hongKong": {
+        "name": "הונג קונג",
+        "country": "סין",
+        "cardAlt": "קו הרקיע של הונג קונג בלילה"
+      },
+      "istanbul": {
+        "name": "איסטנבול",
+        "country": "טורקיה",
+        "cardAlt": "המסגד הכחול באיסטנבול בשקיעה"
+      },
+      "lasVegas": {
+        "name": "לאס וגאס",
+        "country": "ארה״ב",
+        "cardAlt": "רצועת לאס וגאס בלילה"
+      },
+      "losAngeles": {
+        "name": "לוס אנג'לס",
+        "country": "ארה״ב",
+        "cardAlt": "שלט הוליווד בלוס אנג'לס"
+      },
+      "miami": {
+        "name": "מיאמי",
+        "country": "ארה״ב",
+        "cardAlt": "חוף מיאמי ורובע ארט דקו"
+      },
+      "rome": {
+        "name": "רומא",
+        "country": "איטליה",
+        "cardAlt": "הקולוסיאום ברומא בשעת הזהב"
+      }
+    },
+    "hero": {
+      "badge": "{{count}} יעדים ברחבי העולם",
+      "trustedBy": "מהימן על ידי {{count}} יעדים ברחבי העולם",
+      "discover": "גלו",
+      "worldClass": "יעדים ברמה",
+      "destinations": "עולמית",
+      "description": "מדריכי טיולים מקצועיים עם ידע מקומי לערים המרתקות בעולם. מציוני דרך איקוניים ועד פנינים נסתרות.",
+      "exploreAll": "לכל היעדים",
+      "travelGuides": "מדריכי טיולים",
+      "explorePlaceholder": "גלו יעדים",
+      "browseCollection": "גלו את האוסף המלא של יעדי התיירות שלנו למטה",
+      "explore": "גלו",
+      "discoverButton": "גלו",
+      "ariaLabel": "סקירת יעדים",
+      "exploreTitle": "גלו את {{name}}",
+      "galleryAriaLabel": "גלריית יעדים מומלצים",
+      "placeholderAriaLabel": "מציין מקום ליעד מומלץ"
+    },
+    "stats": {
+      "destinations": "יעדים",
+      "countries": "מדינות",
+      "regions": "אזורים",
+      "languages": "שפות"
+    },
+    "sections": {
+      "featured": "יעדים מומלצים",
+      "featuredDesc": "יעדים נבחרים עם חוויות יוצאות דופן, ידע מקומי וכל מה שצריך לתכנן את הטיול המושלם שלכם.",
+      "all": "כל היעדים",
+      "count": "נמצאו {{count}} יעדים"
+    },
+    "search": {
+      "placeholder": "חיפוש יעדים...",
+      "noResults": "לא נמצאו יעדים",
+      "tryAdjusting": "נסו לשנות את קריטריוני החיפוש",
+      "clearSearch": "ניקוי חיפוש"
+    },
+    "carousel": {
+      "label": "גלריית יעדים מומלצים",
+      "previous": "יעד קודם",
+      "next": "יעד הבא",
+      "goTo": "מעבר ל{{name}}",
+      "slideOf": "שקופית {{current}} מתוך {{total}}: {{name}}",
+      "thumbnails": "תמונות ממוזערות של גלריית יעדים"
+    },
+    "card": {
+      "explore": "גלו",
+      "defaultLevel": "עיר",
+      "exploreFallback": "גלו את {{name}}",
+      "destination": "יעד",
+      "travelGuideAlt": "מדריך טיולים ל{{name}}"
+    },
+    "faq": {
+      "title": "שאלות נפוצות",
+      "subtitle": "כל מה שצריך לדעת על מדריכי היעדים של TRAVI",
+      "q1": "כמה יעדים מכסה TRAVI?",
+      "a1": "TRAVI מכסה יעדי תיירות מרכזיים במזרח התיכון, אירופה, אסיה ואמריקה עם מדריכים מקיפים לכל מיקום.",
+      "q2": "איזה מידע כלול במדריכי היעדים של TRAVI?",
+      "a2": "כל מדריך יעד כולל תיאורים מפורטים של אטרקציות, אפשרויות לינה, מטבח מקומי, טיפים לתחבורה ומידע מעשי לטיול.",
+      "q3": "אפשר לחפש יעדים?",
+      "a3": "כן, TRAVI מאפשר חיפוש יעדים לפי שם או מדינה באמצעות שורת החיפוש בעמוד היעדים.",
+      "q4": "מה הם היעדים המומלצים ב-TRAVI?",
+      "a4": "היעדים המומלצים של TRAVI הם מקומות נבחרים בקפידה המציעים חוויות יוצאות דופן לטיילים עם תחומי עניין מגוונים, מטיולי יוקרה ועד טיולים חסכוניים."
+    },
+    "loading": {
+      "title": "טוען יעדים",
+      "message": "מביא את הנתונים העדכניים ביותר..."
+    },
+    "error": {
+      "title": "לא ניתן לטעון יעדים",
+      "message": "אנחנו נתקלים בבעיה בטעינת נתוני היעדים. אנא נסו שוב מאוחר יותר.",
+      "refresh": "רענון עמוד"
+    },
+    "empty": {
+      "title": "אין יעדים זמינים",
+      "message": "אין יעדים זמינים כרגע. אנא בדקו שוב מאוחר יותר."
+    }
+  },
+  "districts": {
+    "title": "אזורים ושכונות בדובאי",
+    "subtitle": "מדריך מקיף לאזורי התיירות, המגורים והעסקים המובילים בעיר",
+    "explore": "חקרו את האזור",
+    "meta_description": "מדריך שכונות דובאי 2026 - ממרכז העיר ההיסטורי ועד איי הפאר החדשים. מידע עדכני על אזורי מגורים, קניות, בידור ועסקים",
+    "meta_keywords": "שכונות דובאי, אזורי תיירות דובאי, מרינה דובאי, דאונטאון דובאי, ג'ומיירה, דירה, בור דובאי, JBR, פאלם ג'ומיירה",
+    "districts_intro": "דובאי מחולקת לאזורים ייחודיים, כל אחד עם אופי ואווירה משלו - מהשווקים המסורתיים של דירה ההיסטורית ועד גורדי השחקים המודרניים של דאונטאון",
+    "popular_districts_title": "האזורים המבוקשים ביותר",
+    "district_categories": {
+      "tourist_hotspots": "מוקדי תיירות מרכזיים",
+      "residential_areas": "אזורי מגורים יוקרתיים",
+      "business_districts": "מרכזי עסקים",
+      "traditional_areas": "אזורים מסורתיים",
+      "beach_communities": "קהילות חוף"
+    }
+  },
+  "realEstate": {
+    "title": "נדל״ן בדובאי",
+    "subtitle": "השקעה חכמה בעיר העתיד",
+    "offPlan": {
+      "title": "פרויקטים בתכנון ובנייה",
+      "subtitle": "הזדמנות להשקעה מוקדמת במחירי השקה אטרקטיביים",
+      "findProperty": "חפשו את הנכס המושלם להשקעה",
+      "from": "החל מ-",
+      "paymentPlan": "תוכנית תשלומים",
+      "handover": "מועד מסירה",
+      "developer": "חברת הפיתוח",
+      "viewDetails": "צפייה בפרטים המלאים",
+      "bookViewing": "תיאום סיור בנכס",
+      "downloadBrochure": "הורדת חוברת מידע",
+      "expectedCompletion": "סיום בנייה צפוי"
+    },
+    "filters": {
+      "all": "כל סוגי הנכסים",
+      "apartments": "דירות",
+      "villas": "וילות פרטיות",
+      "townhouses": "בתים טוריים",
+      "penthouses": "דירות גג יוקרתיות",
+      "studios": "דירות סטודיו",
+      "commercial": "נכסים מסחריים"
+    },
+    "features": {
+      "cryptoAccepted": "אפשרות תשלום במטבעות דיגיטליים",
+      "paymentPlans": "תוכניות תשלום גמישות עד 7 שנים",
+      "goldenVisa": "זכאות לויזת משקיע מוזהבת",
+      "roiGuarantee": "הבטחת תשואה שנתית",
+      "noTax": "פטור ממס הכנסה ורווחי הון",
+      "freehold": "בעלות מלאה לזרים",
+      "highRental": "תשואות שכירות גבוהות",
+      "primeLocation": "מיקומים אסטרטגיים"
+    },
+    "propertyDetails": {
+      "overview": "סקירה כללית",
+      "amenities": "מתקנים ושירותים",
+      "location": "מיקום",
+      "floorPlans": "תוכניות קומה",
+      "gallery": "גלריית תמונות",
+      "virtualTour": "סיור וירטואלי",
+      "priceDetails": "פירוט מחירים",
+      "similarProperties": "נכסים דומים"
+    },
+    "cta": {
+      "getQuote": "קבלו הצעת מחיר",
+      "scheduleCall": "תיאום שיחת ייעוץ",
+      "whatsappExpert": "שוחחו עם מומחה בוואטסאפ",
+      "downloadGuide": "הורידו מדריך השקעות חינם"
+    },
+    "meta": {
+      "title": "נדל״ן בדובאי | השקעות נדל״ן למשקיעים ישראלים | TRAVI",
+      "description": "מדריך מקיף להשקעות נדל״ן בדובאי עבור משקיעים ישראלים. מידע על פרויקטים חדשים, תוכניות תשלום גמישות, ויזת משקיע וזכויות בעלות מלאה",
+      "keywords": "נדל״ן דובאי, השקעות נדל״ן, ויזה מוזהבת דובאי, דירות בדובאי, השקעות באמירויות"
+    }
+  },
+  "search": {
+    "placeholder": "חיפוש אטרקציות, מדריכים, יעדים...",
+    "results": "תוצאות חיפוש",
+    "noResults": "לא נמצאו תוצאות עבור",
+    "tryAgain": "נסו מילות חיפוש אחרות",
+    "searchButton": "חפש",
+    "clearSearch": "נקה חיפוש",
+    "recentSearches": "חיפושים אחרונים",
+    "popularSearches": "חיפושים פופולריים",
+    "searchFilters": "סינון תוצאות",
+    "sortBy": "מיין לפי",
+    "relevance": "רלוונטיות",
+    "mostRecent": "החדשים ביותר",
+    "mostPopular": "הפופולריים ביותר",
+    "searchIn": "חפש ב",
+    "allContent": "כל התוכן",
+    "destinations": "יעדים",
+    "attractions": "אטרקציות",
+    "guides": "מדריכים",
+    "articles": "כתבות",
+    "tips": "טיפים",
+    "searchSuggestions": "הצעות חיפוש",
+    "advancedSearch": "חיפוש מתקדם",
+    "dateRange": "טווח תאריכים",
+    "location": "מיקום",
+    "category": "קטגוריה",
+    "priceRange": "טווח מחירים",
+    "rating": "דירוג",
+    "language": "שפה",
+    "accessibility": "נגישות",
+    "familyFriendly": "מתאים למשפחות",
+    "searchHistory": "היסטוריית חיפושים",
+    "saveSearch": "שמור חיפוש",
+    "savedSearches": "חיפושים שמורים",
+    "deleteSearch": "מחק חיפוש",
+    "searchTips": "טיפים לחיפוש יעיל",
+    "useQuotes": "השתמשו במירכאות לביטוי מדויק",
+    "excludeWords": "הוסיפו מינוס (-) למילים שברצונכם להחריג",
+    "wildcards": "השתמשו בכוכבית (*) לחיפוש חלקי",
+    "searchError": "אירעה שגיאה בחיפוש",
+    "tryLater": "אנא נסו שוב מאוחר יותר",
+    "loadingResults": "טוען תוצאות...",
+    "showMore": "הצג עוד תוצאות",
+    "showLess": "הצג פחות",
+    "resultsPerPage": "תוצאות בעמוד",
+    "page": "עמוד",
+    "of": "מתוך",
+    "filterByDate": "סנן לפי תאריך",
+    "filterByLocation": "סנן לפי מיקום",
+    "filterByCategory": "סנן לפי קטגוריה",
+    "clearFilters": "נקה סינונים",
+    "appliedFilters": "סינונים פעילים",
+    "searchMetaTitle": "חיפוש במאגר המידע התיירותי של TRAVI",
+    "searchMetaDescription": "חפשו יעדים, אטרקציות, מדריכי טיולים ומידע תיירותי מקיף במאגר הנתונים המהימן של TRAVI"
+  },
+  "footer": {
+    "about": "אודות Travi",
+    "aboutTravi": "אודות Travi",
+    "aboutText": "Travi - מאגר המידע המוביל למטיילים ישראלים. מידע מקיף, אמין ומעודכן על יעדי תיירות מובילים ברחבי העולם. כלים חכמים, מדריכים מפורטים וטיפים בלעדיים לתכנון הטיול המושלם שלכם.",
+    "aboutUs": "אודותינו",
+    "quickLinks": "קישורים מהירים",
+    "legal": "משפטי",
+    "privacy": "מדיניות פרטיות",
+    "privacyPolicy": "מדיניות פרטיות",
+    "terms": "תנאי שימוש",
+    "termsOfService": "תנאי שימוש",
+    "contact": "צור קשר",
+    "contactUs": "צור קשר איתנו",
+    "followUs": "עקבו אחרינו",
+    "explore": "גלו יעדים",
+    "travel": "מדריכי טיולים",
+    "company": "אודות החברה",
+    "allGuides": "כל מדריכי הטיולים",
+    "cookies": "מדיניות עוגיות",
+    "security": "אבטחת מידע",
+    "cookieSettings": "העדפות עוגיות",
+    "tagline": "Travi - פלטפורמת המידע התיירותי המהימנה בישראל",
+    "ariaLabel": "תפריט תחתון - Travi",
+    "featuredGuides": "מדריכים פופולריים",
+    "tools": "כלים שימושיים",
+    "currencyConverter": "המרת מטבע חוץ",
+    "roiCalculator": "מחשבון החזר השקעה",
+    "mortgageCalculator": "מחשבון משכנתא לנכסים בחו״ל",
+    "glossary": "מילון מונחי תיירות",
+    "freeThingsToDo": "מעל 70 אטרקציות חינמיות",
+    "open24Hours": "מקומות פתוחים 24/7",
+    "tributeToSheikh": "מורשת שייח׳ מוחמד",
+    "lawsForTourists": "חוקים ותקנות למטיילים",
+    "newsletter": "הצטרפו לרשימת הדיוור",
+    "newsletterDescription": "עדכונים שבועיים על יעדים חמים, מבצעי טיסות וטיפים בלעדיים מצוות Travi.",
+    "emailPlaceholder": "כתובת הדוא״ל שלכם",
+    "allRightsReserved": "כל הזכויות שמורות.",
+    "copyright": "© {{year}} {{brand}}. כל הזכויות שמורות לחברת Travi בע״מ.",
+    "emailAriaLabel": "שליחת דוא״ל למערכת Travi"
+  },
+  "errors": {
+    "403": {
+      "title": "הגישה למידע מוגבלת",
+      "message": "התוכן המבוקש דורש הרשאות מיוחדות או אינו זמין באזורכם.",
+      "button": "חזרה למידע הציבורי",
+      "restricted": "מידע זה מיועד למנויים בלבד"
+    },
+    "404": {
+      "title": "הדף המבוקש אינו זמין",
+      "message": "המידע שחיפשתם אינו נמצא במאגר שלנו. ייתכן שהקישור השתנה או שהתוכן הועבר למיקום אחר.",
+      "button": "חזרה למרכז המידע",
+      "alt_message": "לא הצלחנו לאתר את המידע המבוקש",
+      "suggestion": "נסו לחפש במאגר הנושאים שלנו"
+    },
+    "500": {
+      "title": "תקלה טכנית זמנית",
+      "message": "אירעה תקלה במערכות המידע שלנו. הצוות הטכני עובד על פתרון הבעיה.",
+      "button": "רענון הדף",
+      "alt_button": "חזרה לעמוד הקודם",
+      "error_code": "קוד שגיאה: 500"
+    },
+    "network": {
+      "title": "בעיית תקשורת",
+      "message": "לא ניתן לגשת למאגר המידע. אנא ודאו שאתם מחוברים לרשת האינטרנט ונסו שנית.",
+      "button": "ניסיון חוזר",
+      "offline_message": "אתם במצב לא מקוון",
+      "tip": "בדקו את הגדרות הרשת שלכם"
+    },
+    "timeout": {
+      "title": "פג זמן הטעינה",
+      "message": "טעינת המידע ארכה זמן רב מדי. ייתכן שהשרתים עמוסים או שיש בעיית רשת.",
+      "button": "טען מחדש",
+      "suggestion": "נסו שוב בעוד מספר דקות"
+    },
+    "maintenance": {
+      "title": "עדכון מערכות",
+      "message": "מאגר המידע בתחזוקה שוטפת לשיפור השירות. נשוב לפעילות בקרוב.",
+      "button": "בדקו מצב עדכני",
+      "estimated": "זמן משוער לחזרה לפעילות"
+    },
+    "generic": {
+      "title": "אירעה שגיאה",
+      "message": "נתקלנו בבעיה לא צפויה. אנא נסו שוב או פנו לתמיכה.",
+      "button": "נסו שנית",
+      "support": "פנייה לתמיכה טכנית"
+    }
+  },
+  "newsletter": {
+    "badge": "הצטרפו למסע המושלם",
+    "title": "השראה ומידע לנוסעים החכמים",
+    "description": "עדכונים שבועיים על יעדים מרתקים, טיפים מקצועיים ומגמות תיירות עולמיות. מידע אמין ועדכני מצוות המומחים של TRAVI - מקור המידע המוביל לתיירות בינלאומית.",
+    "emailPlaceholder": "כתובת הדוא״ל שלכם",
+    "subscribe": "הירשמו עכשיו",
+    "success": "תודה שהצטרפתם! שלחנו אליכם אימות לכתובת הדוא״ל.",
+    "terms": "בהרשמתכם אתם מסכימים לתנאי השימוש ומדיניות הפרטיות",
+    "frequency": "עדכון שבועי כל יום חמישי",
+    "unsubscribe": "ניתן לבטל את המנוי בכל עת"
+  },
+  "cookies": {
+    "title": "הפרטיות שלכם חשובה לנו",
+    "description": "אנחנו משתמשים בעוגיות כדי לשפר את חווית הגלישה שלכם, לנתח תנועה באתר ולהתאים תוכן רלוונטי. בלחיצה על \"אישור הכל\", אתם מסכימים לשימוש בכל סוגי העוגיות.",
+    "manage": "ניהול העדפות",
+    "rejectAll": "דחיית הכל",
+    "acceptAll": "אישור הכל",
+    "preferencesTitle": "מרכז ניהול העדפות עוגיות",
+    "savePreferences": "שמירת העדפות",
+    "essential": {
+      "title": "עוגיות חיוניות",
+      "description": "עוגיות אלו הכרחיות לתפקוד בסיסי של האתר ואינן ניתנות לביטול. הן מאפשרות ניווט בין עמודים, גישה לאזורים מאובטחים ושימוש בפונקציות ליבה של המערכת."
+    },
+    "analytics": {
+      "title": "עוגיות אנליטיקה וביצועים",
+      "description": "עוגיות אלו מסייעות לנו להבין כיצד מבקרים מתקשרים עם האתר שלנו, אילו עמודים הם הפופולריים ביותר ומאפשרות לנו לשפר באופן מתמיד את חוויית המשתמש."
+    },
+    "marketing": {
+      "title": "עוגיות שיווק ופרסום ממוקד",
+      "description": "עוגיות אלו משמשות להצגת תוכן שיווקי רלוונטי ומותאם אישית על סמך תחומי העניין שלכם. הן מאפשרות לנו למדוד את יעילות הקמפיינים השיווקיים שלנו."
+    }
+  },
+  "meta": {
+    "home": {
+      "title": "TRAVI - המדריך המקיף לדובאי | אטרקציות, מלונות ומסעדות",
+      "description": "פורטל המידע המוביל לתיירות בדובאי. מידע מקיף ועדכני על אטרקציות, מלונות, מסעדות, קניות ותרבות. תכנון חכם לחופשה מושלמת באיחוד האמירויות."
+    },
+    "attractions": {
+      "title": "אטרקציות בדובאי 2024 | המדריך השלם למטייל הישראלי",
+      "description": "רשימה מלאה של אטרקציות בדובאי: בורג' ח'ליפה, דובאי מול, ספארי במדבר, פארקי שעשועים ועוד. מחירים, שעות פתיחה וטיפים לחסכון בכרטיסים."
+    },
+    "hotels": {
+      "title": "מלונות בדובאי | השוואת מחירים והמלצות 2024",
+      "description": "מדריך מקיף למלונות בדובאי לפי אזורים ותקציב. מלונות יוקרה באטלנטיס ובורג' אל ערב, מלונות בוטיק במרינה ואפשרויות חסכוניות בדירה. ביקורות אמיתיות ומחירים עדכניים."
+    },
+    "dining": {
+      "title": "מסעדות בדובאי | אוכל כשר, הלאל ומטבח בינלאומי",
+      "description": "מדריך אוכל מקיף לדובאי: מסעדות כשרות, אוכל רחוב אותנטי, מסעדות מישלן ומקומות מומלצים למשפחות. מחירים, תפריטים וטיפים להזמנת מקום."
+    },
+    "shopping": {
+      "title": "קניות בדובאי | מדריך למרכזי קניות ושווקים 2024",
+      "description": "המדריך המלא לקניות בדובאי: דובאי מול, מול האמירויות, אאוטלטים, שוק הזהב והתבלינים. מבצעים, פסטיבל הקניות השנתי וטיפים למציאות."
+    },
+    "neighborhoods": {
+      "title": "שכונות בדובאי | איפה לגור ומה לראות בכל אזור",
+      "description": "סקירה מקיפה של שכונות דובאי: דאון טאון, מרינה, JBR, דירה הישנה ועוד. מידע על תחבורה, אטרקציות מקומיות והמלצות לינה לפי אזור."
+    },
+    "culture": {
+      "title": "תרבות דובאי | מנהגים, דת וטיפים לתיירים",
+      "description": "מדריך תרבותי לדובאי: חוקי לבוש, מנהגי האיסלאם, חגים ופסטיבלים, טיפים להתנהגות במסגד ובמקומות ציבוריים. כל מה שצריך לדעת כדי לכבד את התרבות המקומית."
+    },
+    "transport": {
+      "title": "תחבורה בדובאי | מטרו, מוניות והשכרת רכב",
+      "description": "מדריך תחבורה מלא לדובאי: מפת המטרו, מחירי מוניות, השכרת רכב, אוטובוסים ושירותי הסעות. כרטיס נול, אפליקציות מומלצות וטיפים לנסיעה חסכונית."
+    }
+  },
+  "guides": {
+    "hero": {
+      "categoryLabel": "מידע מקצועי לטיולים",
+      "headlinePart1": "סיפורים שמניעים",
+      "headlinePart2": "אתכם לטייל",
+      "description": "מדריכים מקצועיים, נקודות מבט מקומיות וסיפורים עיתונאיים שמשנים את הדרך בה אתם חווים את העולם.",
+      "startJourney": "צאו לדרך",
+      "browseCollection": "גלו את האוסף",
+      "issueBadge": "גיליון 47 — חורף 2026"
+    },
+    "stats": {
+      "guides": "מדריכי טיולים",
+      "destinations": "יעדים",
+      "languages": "שפות"
+    },
+    "journey": {
+      "badge": "המסע שלכם, ההדרכה שלנו",
+      "title": "כל טיול מעולה מתחיל עם מדריך",
+      "subtitle": "מחלום ועד שיתוף, אנחנו איתכם בכל שלב"
+    },
+    "ideaLab": {
+      "badge": "מעבדת רעיונות",
+      "title": "השראה מובחרת",
+      "readGuide": "לקריאת המדריך"
+    },
+    "archetype": {
+      "badge": "מותאם אישית עבורכם",
+      "title": "איזה טיילים אתם?",
+      "subtitle": "בחרו את סגנון הטיול שלכם וגלו מדריכים מותאמים במיוחד עבורכם",
+      "viewGuides": "למדריכי {{type}}"
+    },
+    "archetypes": {
+      "adventure": {
+        "name": "מחפשי הרפתקאות",
+        "description": "חוויות מרגשות ואדרנלין"
+      },
+      "culture": {
+        "name": "חוקרי תרבות",
+        "description": "אמנות, היסטוריה ומסורות מקומיות"
+      },
+      "relaxation": {
+        "name": "גורו רילקסציה",
+        "description": "נופשי בריאות ומילוט שלו"
+      },
+      "foodie": {
+        "name": "נוודים קולינריים",
+        "description": "טעמים מקומיים והרפתקאות גסטרונומיות"
+      },
+      "wellness": {
+        "name": "מחפשי בריאות",
+        "description": "רילקסציה, ספא ונופשים מודעים"
+      },
+      "budget": {
+        "name": "טיילים חכמים",
+        "description": "חוויה מקסימלית, תקציב מינימלי"
+      },
+      "solo": {
+        "name": "חוקרים סולו",
+        "description": "מסעות עצמאיים וגילוי עצמי"
+      },
+      "luxury": {
+        "name": "אניני יוקרה",
+        "description": "חוויות פרימיום וחיים טובים"
+      }
+    },
+    "milestones": {
+      "dream": {
+        "title": "חולמים",
+        "subtitle": "גלו השראה",
+        "guides": [
+          "מדריכי יעדים",
+          "מסות צילום",
+          "סיפורי השראה",
+          "רשימות דלי"
+        ]
+      },
+      "plan": {
+        "title": "מתכננים",
+        "subtitle": "מפו את המסלול",
+        "guides": [
+          "תכנון טיול",
+          "דרישות ויזה",
+          "מזג אוויר עונתי",
+          "תקציב חכם"
+        ]
+      },
+      "prepare": {
+        "title": "מתכוננים",
+        "subtitle": "הכנה לנסיעה",
+        "guides": [
+          "רשימות אריזה",
+          "טיפי בטיחות",
+          "ביטוח נסיעות",
+          "מדריכי תרבות"
+        ]
+      },
+      "experience": {
+        "title": "חווים",
+        "subtitle": "חיו את ההרפתקה",
+        "guides": [
+          "תובנות מקומיות",
+          "פנינים נסתרות",
+          "חוויות אותנטיות",
+          "מסלולים מומלצים"
+        ]
+      },
+      "share": {
+        "title": "משתפים",
+        "subtitle": "ספרו את הסיפור שלכם",
+        "guides": [
+          "כתיבת טיולים",
+          "צילום",
+          "יצירת סרטונים",
+          "פלטפורמות חברתיות"
+        ]
+      }
+    },
+    "categories": {
+      "weekendEscapes": "בריחות סוף שבוע",
+      "offBeatenPath": "מחוץ לשביל המוכר",
+      "smartTravel": "טיולים חכמים",
+      "bucketList": "רשימת חלומות",
+      "culinary": "קולינרי",
+      "natureWonder": "טבע ופלאים"
+    },
+    "seo": {
+      "title": "מדריכי טיולים מקצועיים | תובנות מומחים ליעדים בעולם - TRAVI",
+      "description": "גלו מדריכי טיולים מקצועיים ומעודכנים, תובנות מקומיות אותנטיות וטיפים מעשיים מרשת הכותבים הגלובלית של TRAVI. תכננו את הטיול המושלם שלכם עם מידע אמין ומקיף."
+    },
+    "editorial": {
+      "badge": "מהעורכים שלנו",
+      "title": "מאמרי דעה",
+      "readFull": "לקריאת המאמר המלא"
+    },
+    "gallery": {
+      "badge": "סיפורים חזותיים",
+      "title": "יעדים המעוררים השראה",
+      "categories": {
+        "city": "עיר",
+        "mountains": "הרים",
+        "beach": "חוף",
+        "safari": "ספארי",
+        "nature": "טבע"
+      }
+    },
+    "writers": {
+      "badge": "קולות מומחים",
+      "title": "הכירו את הכותבים שלנו",
+      "subtitle": "הקולות המומחים מאחורי מדריכי הטיולים המהימנים ביותר שלנו",
+      "articleCount": "{{count}} מאמרים",
+      "viewProfile": "לצפייה בפרופיל"
+    },
+    "map": {
+      "badge": "גלו לפי אזור",
+      "title": "מדריכים ברחבי העולם",
+      "subtitle": "לחצו על כל יעד כדי לגלות את הכיסוי המקצועי שלנו",
+      "guidesAvailable": "{{count}} מדריכים זמינים",
+      "legendDestination": "יעד",
+      "legendHighlighted": "מודגש"
+    },
+    "newsletter": {
+      "badge": "הצטרפו למסע",
+      "title": "סיפורי טיולים, כל שבוע",
+      "description": "השראה לטיולים, טיפים מקצועיים ונקודות מבט מקומיות ישירות למייל שלכם כל שבוע.",
+      "placeholder": "הזינו את המייל שלכם",
+      "subscribe": "הרשמו",
+      "subscribing": "נרשם...",
+      "joinCount": "הצטרפו ל-50,000+ טיילים שקוראים את הניוזלטר השבועי שלנו",
+      "invalidEmail": "אנא הזינו כתובת מייל תקינה",
+      "successTitle": "ברוכים הבאים למסע!",
+      "successDesc": "נרשמתם בהצלחה לניוזלטר העיתונאי שלנו."
+    }
+  },
+  "news": {
+    "time": {
+      "recent": "לאחרונה",
+      "justNow": "ממש עכשיו",
+      "minutesAgo": "לפני {{count}} דקות",
+      "hoursAgo": "לפני {{count}} שעות",
+      "daysAgo": "לפני {{count}} ימים",
+      "minRead": "{{count}} דקות קריאה",
+      "updated": "עודכן לאחרונה",
+      "readTime": "זמן קריאה משוער"
+    },
+    "header": {
+      "title": "חדשות TRAVI",
+      "edition": "מהדורה בינלאומית",
+      "subscribe": "הרשמו",
+      "breakingNews": "מבזקים",
+      "lastUpdate": "עדכון אחרון",
+      "liveNow": "שידור חי"
+    },
+    "breaking": {
+      "label": "חדשות דחופות",
+      "alert": "התראת חדשות",
+      "developing": "סיפור מתפתח"
+    },
+    "search": {
+      "placeholder": "חיפוש חדשות ברחבי העולם...",
+      "button": "חיפוש",
+      "title": "חיפוש",
+      "searching": "מחפש \"{{query}}\"...",
+      "results": "{{count}} תוצאות עבור \"{{query}}\"",
+      "noResults": "לא נמצאו תוצאות עבור \"{{query}}\"",
+      "suggestions": "הצעות חיפוש",
+      "recentSearches": "חיפושים אחרונים",
+      "clearHistory": "נקה היסטוריה",
+      "filter": "סנן תוצאות",
+      "sortBy": "מיין לפי",
+      "relevance": "רלוונטיות",
+      "date": "תאריך"
+    },
+    "categories": {
+      "all": "כל החדשות",
+      "world": "עולם",
+      "business": "עסקים",
+      "culture": "תרבות",
+      "travel": "טיולים",
+      "tech": "טכנולוגיה",
+      "opinion": "דעה",
+      "aviation": "תעופה",
+      "destinations": "יעדים",
+      "hospitality": "אירוח",
+      "sustainability": "קיימות",
+      "adventure": "הרפתקה",
+      "luxury": "יוקרה"
+    },
+    "empty": {
+      "title": "אין עדיין כתבות חדשות",
+      "description": "אנחנו עובדים על הבאת החדשות והתובנות האחרונות מעולם הטיולים. בדקו שוב בקרוב לעדכונים מרחבי העולם.",
+      "exploreDestinations": "גלו יעדים",
+      "viewGuides": "צפו במדריכי טיולים",
+      "subscribeNews": "הירשמו לעדכונים",
+      "browseArchive": "עיינו בארכיון"
+    },
+    "hero": {
+      "topStory": "הכתבה המובילה",
+      "editorialTeam": "צוות עורכים",
+      "exclusive": "בלעדי",
+      "featured": "כתבת תחקיר",
+      "spotlight": "זרקור",
+      "mustRead": "חובה לקרוא"
+    },
+    "views": "{{count}} צפיות",
+    "viewAll": "לכל הכתבות",
+    "loadMore": "טען עוד כתבות",
+    "showLess": "הצג פחות",
+    "shareArticle": "שתף כתבה",
+    "saveForLater": "שמור לקריאה מאוחרת",
+    "reportError": "דווח על שגיאה",
+    "seo": {
+      "title": "חדשות טיולים | סיפורים ועדכונים אחרונים",
+      "description": "הישארו מעודכנים עם חדשות הטיולים האחרונות, עדכוני יעדים ותובנות מהתעשייה מרחבי העולם.",
+      "keywords": "חדשות טיולים, עדכוני תיירות, חדשות תעופה, מגמות נסיעות, חדשות יעדים"
+    },
+    "sidebar": {
+      "alsoToday": "גם היום",
+      "storiesCount": "{{count}} כתבות",
+      "liveUpdates": "עדכונים חיים",
+      "trendingTopics": "נושאים חמים",
+      "noTrending": "אין עדיין נושאים חמים. בדקו שוב בקרוב!",
+      "popularNow": "פופולרי עכשיו",
+      "editorsPicks": "בחירת העורכים",
+      "mostShared": "השיתופים הרבים ביותר",
+      "localNews": "חדשות מקומיות",
+      "relatedStories": "כתבות קשורות",
+      "weatherAlerts": "התראות מזג אוויר"
+    },
+    "sections": {
+      "topStories": "הכתבות המובילות",
+      "opinion": "דעות וניתוחים",
+      "moreOpinion": "עוד דעות",
+      "worldwide": "כיסוי עולמי",
+      "analysis": "ניתוחים מעמיקים",
+      "interviews": "ראיונות בלעדיים",
+      "investigations": "תחקירים",
+      "photoEssays": "סיפורים בתמונות",
+      "videos": "וידאו",
+      "podcasts": "פודקאסטים"
+    },
+    "worldwide": {
+      "title": "החלון שלכם לעולם",
+      "subtitle": "חדשות מכל פינה בעולם",
+      "storiesCount": "{{count}} כתבות",
+      "comingSoon": "בקרוב",
+      "byContinent": "לפי יבשת",
+      "byRegion": "לפי אזור",
+      "correspondents": "כתבים בשטח",
+      "localVoices": "קולות מקומיים"
+    },
+    "newsletter": {
+      "title": "הישארו מעודכנים",
+      "description": "קבלו את הכתבות המובילות של היום ישירות למייל כל בוקר. הצטרפו ל-50,000+ קוראים.",
+      "placeholder": "הזינו את המייל שלכם",
+      "subscribe": "הרשמו בחינם",
+      "noSpam": "בלי ספאם. ביטול בכל עת.",
+      "successTitle": "נרשמתם בהצלחה!",
+      "successDesc": "אנא בדקו את המייל שלכם לאישור ההרשמה.",
+      "errorTitle": "ההרשמה נכשלה",
+      "errorDesc": "אנא נסו שוב מאוחר יותר.",
+      "invalidTitle": "מייל לא תקין",
+      "invalidDesc": "אנא הזינו כתובת מייל תקינה.",
+      "preferences": "העדפות תוכן",
+      "frequency": "תדירות משלוח",
+      "daily": "יומי",
+      "weekly": "שבועי",
+      "monthlyDigest": "סיכום חודשי"
+    },
+    "article": {
+      "byline": "מאת {{author}}",
+      "location": "{{location}}",
+      "updated": "עודכן ב-{{date}}",
+      "readMore": "קרא עוד",
+      "relatedTopics": "נושאים קשורים",
+      "corrections": "תיקונים והבהרות",
+      "sources": "מקורות",
+      "factCheck": "בדיקת עובדות",
+      "gallery": "גלריית תמונות",
+      "infographic": "אינפוגרפיקה"
+    },
+    "engagement": {
+      "comments": "תגובות",
+      "share": "שתף",
+      "print": "הדפס",
+      "email": "שלח במייל",
+      "bookmark": "שמור",
+      "report": "דווח",
+      "fontSize": "גודל גופן",
+      "translate": "תרגם"
+    },
+    "filters": {
+      "dateRange": "טווח תאריכים",
+      "today": "היום",
+      "thisWeek": "השבוע",
+      "thisMonth": "החודש",
+      "customRange": "טווח מותאם",
+      "region": "אזור",
+      "language": "שפה",
+      "mediaType": "סוג מדיה"
+    }
+  },
+  "pages": {
+    "about": {
+      "metaTitle": "אודותינו | TRAVI World",
+      "metaDescription": "למדו על TRAVI World, מקור מידע עצמאי לטיולים המספק מדריכי טיולים מקיפים, אטרקציות, מלונות ומידע על מסעדות ליעדים ברחבי העולם.",
+      "badge": "הלוויה שלכם לטיולים",
+      "title": "אודות",
+      "titleHighlight": "TRAVI World",
+      "subtitle": "המקור המהימן שלכם למידע מקיף על טיולים ומדריכי יעדים, עוזר למיליונים לחקור את העולם בביטחון.",
+      "ctaExplore": "גלו יעדים",
+      "ctaContact": "צרו קשר",
+      "stats": {
+        "destinations": "Destinations",
+        "articles": "Articles",
+        "support": "Travel Support",
+        "coverage": "Coverage",
+        "cities": "16+ Cities"
+      },
+      "whoWeAre": {
+        "title": "Who We Are"
+      },
+      "mission": {
+        "title": "Our Mission"
+      },
+      "services": {
+        "badge": "Our Services",
+        "title": "What We Offer"
+      },
+      "offerings": {
+        "destinations": {
+          "title": "Destination Guides",
+          "description": "Comprehensive information about cities and regions around the world"
+        },
+        "attractions": {
+          "title": "Attraction Information",
+          "description": "Details about must-see sights and unique experiences"
+        },
+        "hotels": {
+          "title": "Hotel Guides",
+          "description": "Information about accommodation options for every budget"
+        },
+        "restaurants": {
+          "title": "Restaurant Recommendations",
+          "description": "Dining options for every taste and preference"
+        },
+        "articles": {
+          "title": "Travel Articles",
+          "description": "Tips, insights, and travel inspiration"
+        },
+        "news": {
+          "title": "Latest Travel News",
+          "description": "Stay informed with curated travel updates"
+        }
+      },
+      "editorial": {
+        "title": "Editorial Independence",
+        "affiliateTitle": "Affiliate Disclosure"
+      },
+      "values": {
+        "badge": "Our Foundation",
+        "title": "Our Values",
+        "accuracy": {
+          "title": "Accuracy",
+          "description": "We strive to provide accurate and reliable information, regularly updating our contents"
+        },
+        "transparency": {
+          "title": "Transparency",
+          "description": "We are clear about our affiliate relationships and how we operate"
+        },
+        "userFocused": {
+          "title": "User-Focused",
+          "description": "Our contents is designed to help travelers make informed decisions"
+        }
+      },
+      "connect": {
+        "badge": "Let's Connect",
+        "title": "Get in Touch"
+      },
+      "company": {
+        "title": "Company Information",
+        "contactTitle": "Contact Information",
+        "contactForm": "Contact Form"
+      }
+    },
+    "contact": {
+      "metaTitle": "צרו קשר | TRAVI World",
+      "metaDescription": "צרו קשר עם TRAVI World. נשמח לשמוע את המשוב, השאלות והפניות שלכם לגבי שירותי המידע לטיולים שלנו.",
+      "badge": "נשמח לשמוע מכם",
+      "titlePart1": "בואו",
+      "titlePart2": "ליצור קשר",
+      "subtitle": "יש לכם שאלות על ההרפתקה הבאה שלכם? אנחנו כאן כדי לעזור לכם לחקור את העולם בביטחון.",
+      "cta": "שלחו לנו הודעה",
+      "getInTouch": "צרו קשר",
+      "getInTouchSubtitle": "בחרו את הדרך הטובה ביותר להגיע אלינו. אנחנו מחויבים להגיב במהירות.",
+      "howCanWeHelp": "איך נוכל לעזור?",
+      "howCanWeHelpSubtitle": "אנחנו כאן כדי לסייע בכל שאלה או משוב שיש לכם לגבי התכנים ושירותי הטיולים שלנו.",
+      "importantNote": "הערה חשובה",
+      "importantNoteSubtitle": "אנא קראו לפני יצירת קשר",
+      "ourOffice": "המשרד שלנו",
+      "ourOfficeSubtitle": "להתכתבות רשמית ופניות בדואר",
+      "travelCompanion": "הלוויה שלכם לטיולים",
+      "urgentNote": "לעניינים דחופים, אנא כללו {{urgentLabel}} בנושא המייל. אנחנו מעניקים עדיפות לתגובות על פי אופי הפנייה.",
+      "urgentLabel": "דחוף",
+      "options": {
+        "generalInquiries": {
+          "title": "פניות כלליות",
+          "description": "שאלות על מדריכי הטיולים והתכנים שלנו"
+        },
+        "privacyInquiries": {
+          "title": "פניות פרטיות",
+          "description": "גישה לנתונים, מחיקה ובקשות פרטיות"
+        },
+        "visitWebsite": {
+          "title": "בקרו באתר שלנו",
+          "description": "גלו יעדים והשראה לטיולים"
+        },
+        "responseTime": {
+          "title": "זמן תגובה",
+          "description": "אנחנו שואפים להגיב במהירות",
+          "action": "2-3 ימי עסקים"
+        }
+      },
+      "helpTopics": {
+        "general": "פניות כלליות על מדריכי הטיולים והתכנים שלנו",
+        "feedback": "משוב והצעות לשיפור",
+        "reporting": "דיווח על שגיאות בתוכן או מידע לא מעודכן",
+        "business": "פניות עסקיות ושותפויות",
+        "media": "פניות מדיה ועיתונות",
+        "privacy": "בקשות הקשורות לפרטיות (גישה לנתונים, מחיקה וכו')"
+      }
+    },
+    "privacy": {
+      "metaTitle": "מדיניות פרטיות | TRAVI World",
+      "metaDescription": "למדו כיצד TRAVI World אוספת, משתמשת ומגינה על המידע האישי שלכם. קראו את מדיניות הפרטיות המקיפה שלנו.",
+      "badge": "הפרטיות שלכם חשובה",
+      "title": "מדיניות פרטיות",
+      "subtitle": "אנחנו מחויבים להגן על הפרטיות שלכם ולהיות שקופים לגבי שיטות הנתונים שלנו. למדו כיצד TRAVI World אוספת, משתמשת ומגינה על המידע שלכם.",
+      "effectiveDate": "תאריך תוקף: 1 בינואר 2026",
+      "features": {
+        "dataProtection": {
+          "title": "הגנת מידע",
+          "description": "הנתונים שלכם מוגנים"
+        },
+        "minimalCollection": {
+          "title": "איסוף מינימלי",
+          "description": "אנחנו אוספים רק את מה שצריך"
+        },
+        "transparency": {
+          "title": "שקיפות מלאה",
+          "description": "ברורים לגבי השיטות שלנו"
+        },
+        "yourControl": {
+          "title": "השליטה שלכם",
+          "description": "נהלו את ההעדפות שלכם"
+        }
+      },
+      "sections": {
+        "whoWeAre": "1. מי אנחנו",
+        "informationCollect": "2. מידע שאנו אוספים",
+        "howWeUse": "3. כיצד אנו משתמשים במידע שלכם",
+        "legalBasis": "4. בסיס משפטי לעיבוד (GDPR)",
+        "cookies": "5. עוגיות וטכנולוגיות מעקב",
+        "thirdParty": "6. שירותי צד שלישי",
+        "aiContent": "7. תוכן שנוצר באמצעות AI",
+        "internationalTransfers": "8. העברות נתונים בינלאומיות",
+        "dataRetention": "9. שמירת נתונים",
+        "privacyRights": "10. זכויות הפרטיות שלכם",
+        "californiaRights": "11. זכויות פרטיות בקליפורניה (CCPA/CPRA)",
+        "childrenPrivacy": "12. פרטיות ילדים",
+        "dataSecurity": "13. אבטחת מידע",
+        "changes": "14. שינויים במדיניות זו",
+        "contactUs": "15. צרו קשר"
+      }
+    },
+    "terms": {
+      "metaTitle": "תנאי שימוש | TRAVI World",
+      "metaDescription": "קראו את תנאי השימוש לשימוש בשירותי המידע לטיולים של TRAVI World. הסכם משפטי בינכם לבין KBR Global Creative Consulting Ltd.",
+      "badge": "הסכם משפטי",
+      "title": "תנאי שימוש",
+      "subtitle": "אנא קראו תנאים אלה בקפידה לפני השימוש ב-TRAVI World. הגישה והשימוש שלכם בפלטפורמה שלנו כפופים לתנאים אלה.",
+      "lastUpdated": "עדכון אחרון: 1 בינואר 2026",
+      "importantNotice": "הודעה משפטית חשובה",
+      "keyPoints": {
+        "editorial": {
+          "title": "פלטפורמה עיתונאית",
+          "description": "מדריכי טיולים ותכני יעדים"
+        },
+        "affiliate": {
+          "title": "קישורי שותפים",
+          "description": "המלצות מבוססות עמלה"
+        },
+        "aiGenerated": {
+          "title": "נוצר באמצעות AI",
+          "description": "תוכן שנוצר בסיוע AI"
+        },
+        "privacy": {
+          "title": "הפרטיות שלכם",
+          "description": "הגנת מידע מובטחת"
+        }
+      },
+      "sections": {
+        "operator": "מפעיל / ישות משפטית",
+        "purpose": "1. מטרה והיקף שימוש",
+        "affiliateDisclosure": "2. גילוי שותפים ועסקאות צד שלישי",
+        "aiDisclaimer": "3. כתב ויתור על תוכן שנוצר באמצעות AI",
+        "newsletter": "4. ניוזלטר ותקשורת",
+        "userConduct": "5. התנהגות משתמש ופעולות אסורות",
+        "intellectualProperty": "6. קניין רוחני ורישיון מוגבל",
+        "dmca": "7. הודעה והסרה (DMCA ודומים)",
+        "disclaimers": "8. דיוק, זמינות וכתבי ויתור",
+        "liability": "9. הגבלת אחריות ומקרים של כוח עליון",
+        "indemnification": "10. שיפוי",
+        "privacyCookies": "11. פרטיות, עוגיות והגנת מידע",
+        "accessibility": "12. הצהרת נגישות",
+        "governingLaw": "13. חוק החל, פתרון סכסוכים ושיפוט",
+        "modifications": "14. שינויים, היפרדות והוראות כלליות"
+      }
+    }
+  }
+}
