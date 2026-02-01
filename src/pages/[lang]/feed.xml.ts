@@ -1,6 +1,6 @@
 import RSS from 'rss';
 import type { APIRoute } from 'astro';
-import { getAllArticles } from '../../../sanity/lib/client';
+import { getAllArticles } from '../../lib/db';
 import { languages, type Language } from '../../lib/i18n';
 
 export async function getStaticPaths() {

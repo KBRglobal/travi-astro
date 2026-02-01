@@ -4,11 +4,11 @@
     "destinations": "Destinations",
     "attractions": "Attractions",
     "hotels": "Hotels",
-    "guides": "Guides",
+    "guides": "Travel Guides",
     "dining": "Dining",
     "districts": "Districts",
-    "articles": "News",
-    "news": "News",
+    "articles": "Travel News",
+    "news": "Latest News",
     "shopping": "Shopping",
     "realEstate": "Real Estate",
     "events": "Events",
@@ -17,17 +17,49 @@
     "mainNavigation": "Main navigation",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
-    "logoAlt": "TRAVI - Travel Guide",
+    "logoAlt": "TRAVI - Your Trusted Travel Intelligence Platform",
     "followInstagram": "Follow TRAVI on Instagram",
     "followTikTok": "Follow TRAVI on TikTok",
     "changeLanguage": "Change language",
     "selectLanguage": "Select Language",
     "popularLanguages": "Popular Languages",
-    "allLanguages": "All Languages"
+    "allLanguages": "All Languages",
+    "skipToContent": "Skip to main content",
+    "backToTop": "Back to top",
+    "moreOptions": "More options",
+    "viewAll": "View all",
+    "seeMore": "See more",
+    "searchPlaceholder": "Search destinations, hotels, attractions...",
+    "noResults": "No results found",
+    "loading": "Loading...",
+    "error": "Error loading content",
+    "retry": "Try again"
   },
   "breadcrumbs": {
     "ariaLabel": "Breadcrumb navigation",
-    "dubai": "Dubai"
+    "dubai": "Dubai",
+    "home": "Home",
+    "currentPage": "You are here",
+    "backTo": "Back to",
+    "explore": "Explore",
+    "allDestinations": "All Destinations",
+    "middleEast": "Middle East",
+    "unitedArabEmirates": "United Arab Emirates",
+    "asia": "Asia",
+    "europe": "Europe",
+    "americas": "Americas",
+    "africa": "Africa",
+    "oceania": "Oceania",
+    "travelGuides": "Travel Guides",
+    "destinations": "Destinations",
+    "experiences": "Experiences",
+    "planning": "Planning",
+    "inspiration": "Inspiration",
+    "practical": "Practical Info",
+    "separator": "/",
+    "ellipsis": "...",
+    "showMore": "Show more",
+    "showLess": "Show less"
   },
   "common": {
     "readMore": "Read More",
@@ -55,106 +87,106 @@
   },
   "home": {
     "hero": {
-      "title": "Find Everything About Your Next Destination",
-      "subtitle": "Detailed guides for 3,000+ attractions across 17 cities — accurate, current, and free",
-      "searchPlaceholder": "Search Eiffel Tower, Burj Khalifa, Colosseum...",
-      "cta": "Explore Destinations",
-      "badge": "17 Destinations · 3,000+ Attractions",
-      "headlinePart1": "Know Before",
-      "headlinePart2": "You Go",
-      "description": "Detailed travel information for {{destinations}} destinations. Hours, prices, tips, and honest recommendations for {{attractions}}+ attractions.",
-      "descriptionPart1": "Detailed travel information for",
-      "descriptionPart2": "destinations. Hours, prices, tips, and honest recommendations for",
-      "descriptionPart3": "attractions.",
-      "carouselLabel": "Destination carousel navigation",
-      "viewDestination": "View {{name}} - {{tagline}}",
-      "worldwide": "Worldwide",
-      "exploreWorld": "Explore the World",
-      "welcomeAriaLabel": "Welcome to TRAVI World",
-      "pageTitle": "TRAVI World — Travel Guides for 17 Destinations | 3,000+ Attractions",
-      "pageDescription": "Find detailed travel information for Dubai, Paris, Tokyo, and more. Opening hours, ticket prices, insider tips, and honest recommendations. Updated daily.",
-      "orgDescription": "Comprehensive travel information for 17 destinations worldwide."
+      "title": "Your Complete Travel Research Hub",
+      "subtitle": "Real-time information on 3,000+ attractions across 17 major cities — verified daily, completely free",
+      "searchPlaceholder": "Search attractions, neighborhoods, experiences...",
+      "cta": "Start Exploring",
+      "badge": "17 Global Cities · 3,000+ Verified Listings",
+      "headlinePart1": "Research Smarter,",
+      "headlinePart2": "Travel Better",
+      "description": "Comprehensive travel intelligence for {{destinations}} world-class destinations. Current hours, pricing, insider insights, and unbiased recommendations for {{attractions}}+ verified attractions.",
+      "descriptionPart1": "Comprehensive travel intelligence for",
+      "descriptionPart2": "world-class destinations. Current hours, pricing, insider insights, and unbiased recommendations for",
+      "descriptionPart3": "verified attractions.",
+      "carouselLabel": "Browse destinations carousel",
+      "viewDestination": "Explore {{name}} - {{tagline}}",
+      "worldwide": "Global Coverage",
+      "exploreWorld": "Discover Your Next Destination",
+      "welcomeAriaLabel": "Welcome to TRAVI - Your Travel Information Resource",
+      "pageTitle": "TRAVI: Real-Time Travel Information for 17 Cities | 3,000+ Verified Attractions",
+      "pageDescription": "Research Dubai, Paris, Tokyo, NYC and 13 more destinations. Current opening hours, ticket prices, local insights, and unbiased recommendations. Updated daily by travel experts.",
+      "orgDescription": "The world's most comprehensive travel information platform covering 17 major destinations with real-time updates and verified local insights."
     },
     "srLabel": {
-      "attractions": "Over {{count}} attractions covered",
-      "destinations": "{{count}} destinations worldwide",
-      "languages": "Multilingual platform with additional languages rolling out"
+      "attractions": "More than {{count}} attractions with verified information",
+      "destinations": "{{count}} world-class destinations covered",
+      "languages": "Multi-language support with new languages added monthly"
     },
-    "featured": "Featured",
-    "trending": "Trending Now",
-    "topAttractions": "Top Attractions",
-    "bestHotels": "Best Hotels",
-    "latestNews": "Latest News & Guides",
+    "featured": "Editor's Choice",
+    "trending": "Popular Right Now",
+    "topAttractions": "Must-See Attractions",
+    "bestHotels": "Top-Rated Hotels",
+    "latestNews": "Fresh Updates & Insights",
     "sections": {
-      "destinations": "Pick Your Destination",
-      "destinationsDesc": "Detailed guides for each city — attractions, hotels, restaurants, and local tips",
-      "categories": "What Are You Looking For?",
-      "categoriesDesc": "Jump straight to what matters",
-      "experiences": "Plan by Travel Style",
-      "experiencesDesc": "Find places that match how you like to travel",
-      "faq": "Common Questions",
-      "faqDesc": "What travelers ask before using TRAVI",
-      "regions": "Browse by Region",
-      "newsletter": "Get Weekly Travel Tips",
-      "allDestinationsTitle": "Travel Guides for All {{count}} Destinations",
-      "completeGuide": "{{name}}, {{country}} — Complete Travel Guide"
+      "destinations": "Choose Your Destination",
+      "destinationsDesc": "In-depth city guides covering attractions, accommodations, dining, and local insights",
+      "categories": "Quick Navigation",
+      "categoriesDesc": "Jump directly to what you need",
+      "experiences": "Match Your Travel Style",
+      "experiencesDesc": "Discover destinations that align with your interests and budget",
+      "faq": "Quick Answers",
+      "faqDesc": "Everything you need to know about using TRAVI",
+      "regions": "Explore by Region",
+      "newsletter": "Weekly Travel Intelligence",
+      "allDestinationsTitle": "Complete Guides for All {{count}} Destinations",
+      "completeGuide": "{{name}}, {{country}} — Comprehensive City Guide"
     },
     "cta": {
-      "exploreDestinations": "Explore Destinations",
-      "viewGuides": "See All Guides",
-      "viewAll": "See All",
-      "startExploring": "Find Your Destination",
-      "planTrip": "Start Researching",
-      "viewExperience": "See {{name}} Guides"
+      "exploreDestinations": "Browse All Cities",
+      "viewGuides": "View All Guides",
+      "viewAll": "Show More",
+      "startExploring": "Start Your Research",
+      "planTrip": "Begin Planning",
+      "viewExperience": "Explore {{name}} Options"
     },
     "stats": {
-      "destinations": "DESTINATIONS",
-      "attractions": "ATTRACTIONS",
+      "destinations": "CITIES",
+      "attractions": "VERIFIED LISTINGS",
       "languages": "LANGUAGES",
       "attractionsNum": "3,000+",
-      "destinationsNum": "16",
-      "languagesNum": "17+",
-      "destinationsCountWithLabel": "{{count}} destinations",
-      "attractionsCountWithLabel": "{{count}}+ attractions"
+      "destinationsNum": "17",
+      "languagesNum": "18+",
+      "destinationsCountWithLabel": "{{count}} major cities",
+      "attractionsCountWithLabel": "{{count}}+ verified attractions"
     },
     "categories": {
-      "attractions": "Attractions",
-      "attractionsDesc": "Must-see places",
-      "news": "Travel News",
-      "newsDesc": "Latest updates",
-      "guides": "Guides",
-      "guidesDesc": "Destination guides",
-      "hotels": "Hotels",
-      "hotelsDesc": "Find your perfect stay"
+      "attractions": "Things to Do",
+      "attractionsDesc": "Essential sights & experiences",
+      "news": "Latest Updates",
+      "newsDesc": "Fresh travel intelligence",
+      "guides": "City Guides",
+      "guidesDesc": "Complete destination coverage",
+      "hotels": "Where to Stay",
+      "hotelsDesc": "Curated accommodation options"
     },
     "experiences": {
-      "luxury": "Luxury Travel",
-      "luxuryDesc": "Premium travel experiences and exclusive destinations",
-      "adventure": "Adventure & Outdoors",
-      "adventureDesc": "Thrilling outdoor experiences and adventures",
-      "family": "Family Travel",
-      "familyDesc": "Family-friendly destinations and activities",
-      "budget": "Budget Travel",
-      "budgetDesc": "Affordable travel options and destinations",
-      "romance": "Honeymoon & Romance",
-      "romanceDesc": "Romantic getaways and honeymoon destinations",
-      "solo": "Solo Travel",
-      "soloDesc": "Perfect destinations for solo travelers"
+      "luxury": "Luxury Escapes",
+      "luxuryDesc": "Five-star experiences and exclusive access to premium destinations",
+      "adventure": "Active & Adventure",
+      "adventureDesc": "Outdoor activities, extreme sports, and natural wonders",
+      "family": "Family Friendly",
+      "familyDesc": "Kid-approved attractions and family-oriented accommodations",
+      "budget": "Smart Budget Travel",
+      "budgetDesc": "Maximum experience without breaking the bank",
+      "romance": "Couples & Romance",
+      "romanceDesc": "Intimate escapes and romantic experiences for two",
+      "solo": "Solo Adventures",
+      "soloDesc": "Safe, social, and rewarding destinations for independent travelers"
     },
     "faq": {
-      "title": "Common Questions",
-      "subtitle": "What travelers ask before using TRAVI",
-      "whatIsTravi": "What kind of information does TRAVI provide?",
-      "whatIsTraviAnswer": "TRAVI gives you the practical details you need: opening hours, ticket prices, how to get there, best times to visit, and insider tips. We cover 3,000+ attractions across 17 destinations including Dubai, Paris, Tokyo, and more.",
-      "howManyDestinations": "Which destinations are covered?",
-      "howManyDestinationsAnswer": "Dubai, Paris, Tokyo, New York, Barcelona, Singapore, London, Bangkok, Abu Dhabi, Amsterdam, Hong Kong, Istanbul, Las Vegas, Los Angeles, Miami, and Rome. We add more destinations regularly.",
-      "isFree": "Is there a cost to use TRAVI?",
-      "isFreeAnswer": "TRAVI is completely free. No subscriptions, no paywalls. We earn a small commission when you book tickets through our partner links, but our recommendations are based on what's actually worth visiting.",
-      "updateFrequency": "How current is the information?",
-      "updateFrequencyAnswer": "We update our content daily. Opening hours, prices, and seasonal information are verified regularly so you can plan with confidence."
+      "title": "Quick Answers",
+      "subtitle": "Everything you need to know about TRAVI",
+      "whatIsTravi": "What makes TRAVI different from other travel sites?",
+      "whatIsTraviAnswer": "TRAVI is your travel research hub, not a booking site. We provide verified, real-time information on opening hours, prices, transportation, and local tips for 3,000+ attractions. Our data is updated daily and completely unbiased — we focus on facts, not sales pitches.",
+      "howManyDestinations": "Which cities does TRAVI cover?",
+      "howManyDestinationsAnswer": "We currently cover 17 major destinations: Dubai, Paris, Tokyo, New York, Barcelona, Singapore, London, Bangkok, Abu Dhabi, Amsterdam, Hong Kong, Istanbul, Las Vegas, Los Angeles, Miami, Rome, and Riyadh. New cities are added based on traveler demand.",
+      "isFree": "Does TRAVI cost anything to use?",
+      "isFreeAnswer": "TRAVI is 100% free — no hidden fees, no premium tiers, no registration required. We're supported by affiliate partnerships when you book through our verified links, but this never influences our recommendations. Our priority is accurate information, not commissions.",
+      "updateFrequency": "How reliable is TRAVI's information?",
+      "updateFrequencyAnswer": "Our team verifies and updates content daily, with particular attention to opening hours, seasonal changes, and pricing. We cross-reference multiple sources and work with local contributors to ensure you're getting the most current information available."
     },
-    "mascotAlt": "TRAVI mascot with world landmarks - explore travel guides for Dubai, Paris, London, Rome and more",
-    "mascotTitle": "TRAVI World - Travel Guides for Global Destinations"
+    "mascotAlt": "TRAVI mascot surrounded by iconic landmarks from Dubai, Paris, London, Rome, Tokyo and more - your global travel research companion",
+    "mascotTitle": "TRAVI - Your Trusted Source for Global Travel Information"
   },
   "attractions": {
     "title": "Dubai Attractions",
@@ -184,28 +216,44 @@
     },
     "types": {
       "all": "All Types",
-      "museums": "Museums",
-      "landmarks": "Landmarks",
-      "tours": "Tours",
+      "museums": "Museums & Galleries",
+      "landmarks": "Historical Sites",
+      "tours": "Guided Tours",
       "themeParks": "Theme Parks",
-      "shows": "Shows"
+      "shows": "Shows & Entertainment",
+      "nature": "Nature & Wildlife",
+      "waterActivities": "Water Activities",
+      "adventure": "Adventure Sports",
+      "cultural": "Cultural Experiences"
     },
     "thingsToDoIn": "Things to do in {{name}}",
     "countAttractions": "{{country}} - {{count}} attractions",
     "filters": {
-      "all": "All",
+      "all": "All Attractions",
       "popular": "Most Popular",
       "free": "Free Entry",
       "familyFriendly": "Family Friendly",
       "outdoor": "Outdoor",
-      "indoor": "Indoor"
+      "indoor": "Indoor",
+      "budgetFriendly": "Budget Friendly",
+      "luxury": "Luxury Experiences",
+      "halfDay": "Half Day (2-4 hours)",
+      "fullDay": "Full Day (5+ hours)",
+      "evening": "Evening Activities",
+      "wheelchair": "Wheelchair Accessible"
     },
     "details": {
       "location": "Location",
       "hours": "Opening Hours",
       "price": "Price",
       "duration": "Duration",
-      "tips": "Insider Tips"
+      "tips": "Insider Tips",
+      "bestTime": "Best Time to Visit",
+      "whatToExpect": "What to Expect",
+      "included": "What's Included",
+      "notIncluded": "What's Not Included",
+      "restrictions": "Age & Health Restrictions",
+      "howToGetThere": "How to Get There"
     },
     "sections": {
       "destinations": "Attractions by Destination",
@@ -215,7 +263,11 @@
       "whyBookBadge": "Skip the Queues",
       "whyBookTitle": "Book Tickets in Advance",
       "whyBookDesc": "Get skip-the-line tickets to popular attractions and walk straight in",
-      "allDestinations": "All Destinations"
+      "allDestinations": "All Destinations",
+      "topPicks": "Editor's Top Picks",
+      "topPicksDesc": "Hand-picked attractions worth your time and money",
+      "seasonal": "Seasonal Highlights",
+      "seasonalDesc": "Best attractions for this time of year"
     },
     "features": {
       "skipTheLine": "Skip-the-Line Entry",
@@ -223,31 +275,51 @@
       "mobileTickets": "Mobile Tickets",
       "mobileTicketsDesc": "Tickets delivered to your phone instantly. Show and enter.",
       "freeCancellation": "Free Cancellation",
-      "freeCancellationDesc": "Cancel up to 24 hours before for a full refund"
+      "freeCancellationDesc": "Cancel up to 24 hours before for a full refund",
+      "instantConfirmation": "Instant Confirmation",
+      "instantConfirmationDesc": "Secure your spot immediately with instant booking confirmation",
+      "expertGuides": "Expert Local Guides",
+      "expertGuidesDesc": "Learn from passionate guides who bring attractions to life",
+      "smallGroups": "Small Group Sizes",
+      "smallGroupsDesc": "Enjoy intimate experiences with groups of 20 or fewer"
     },
     "browse": {
       "title": "Things to Do by Destination",
       "desc": "Find attractions and experiences in the world's top cities",
       "thingsToDo": "{{count}} things to do",
-      "noDestinations": "No destinations available at this time."
+      "noDestinations": "No destinations available at this time.",
+      "viewAll": "View All {{city}} Attractions",
+      "trending": "Trending Now",
+      "newlyAdded": "Recently Added"
     },
     "exploreLinks": {
       "title": "Explore More Travel Guides",
       "hotelsWorldwide": "Hotels Worldwide",
       "bestRestaurants": "Best Restaurants",
-      "travelNews": "Travel News"
+      "travelNews": "Travel News",
+      "cityGuides": "City Guides",
+      "travelTips": "Travel Tips & Advice",
+      "flightDeals": "Flight Deals"
     },
     "cta": {
       "title": "Ready to Explore?",
       "desc": "Book skip-the-line tickets to Eiffel Tower, Colosseum, Burj Khalifa and top attractions worldwide.",
       "parisAttractions": "Paris Attractions",
-      "romeAttractions": "Rome Attractions"
+      "romeAttractions": "Rome Attractions",
+      "londonAttractions": "London Attractions",
+      "newYorkAttractions": "New York Attractions",
+      "dubaiAttractions": "Dubai Attractions",
+      "barcelonaAttractions": "Barcelona Attractions"
     },
     "search": {
       "popular": "Popular:",
       "thingsToDoIn": "Things to Do in {{city}}",
       "ariaCarouselNav": "Attraction carousel navigation",
-      "ariaViewInCity": "View {{name}} in {{city}}"
+      "ariaViewInCity": "View {{name}} in {{city}}",
+      "noResults": "No attractions found",
+      "tryAgain": "Try searching for a different attraction or city",
+      "suggestions": "Popular searches:",
+      "recentSearches": "Your recent searches"
     },
     "gallery": {
       "ariaFeaturedAttraction": "Featured attraction",
@@ -260,52 +332,131 @@
       "freeCancellation": "Free Cancellation",
       "freeCancellationDesc": "24h before visit",
       "mobileTickets": "Mobile Tickets",
-      "instantDelivery": "Instant delivery"
+      "instantDelivery": "Instant delivery",
+      "bestSeller": "Best Seller",
+      "limitedAvailability": "Limited Availability",
+      "lastMinuteDeals": "Last Minute Deal",
+      "groupDiscount": "Group Discount Available",
+      "comboOffer": "Combo Offer",
+      "saveUpTo": "Save up to {{percent}}%"
     },
     "chip": {
-      "thingsToDo": "{{count}} things to do"
+      "thingsToDo": "{{count}} things to do",
+      "openNow": "Open Now",
+      "closingSoon": "Closing Soon",
+      "todayOnly": "Today Only",
+      "weekendSpecial": "Weekend Special"
+    },
+    "booking": {
+      "selectDate": "Select Date",
+      "selectTime": "Select Time Slot",
+      "numberOfTickets": "Number of Tickets",
+      "adults": "Adults",
+      "children": "Children",
+      "infants": "Infants (Free)",
+      "total": "Total",
+      "bookNow": "Book Now",
+      "addToCart": "Add to Cart",
+      "processing": "Processing...",
+      "soldOut": "Sold Out",
+      "availableToday": "Available Today"
+    },
+    "reviews": {
+      "title": "Visitor Reviews",
+      "writeReview": "Write a Review",
+      "verified": "Verified Purchase",
+      "helpful": "Helpful",
+      "sortBy": "Sort by",
+      "mostRecent": "Most Recent",
+      "mostHelpful": "Most Helpful",
+      "highestRated": "Highest Rated",
+      "lowestRated": "Lowest Rated"
     }
   },
   "hotels": {
-    "title": "Dubai Hotels",
-    "subtitle": "Find your perfect stay",
+    "title": "Dubai Hotels & Accommodations",
+    "subtitle": "Discover exceptional stays in the City of Gold",
     "filters": {
-      "all": "All Hotels",
-      "luxury": "Luxury",
-      "budget": "Budget Friendly",
-      "beachfront": "Beachfront",
-      "cityCenter": "City Center",
-      "familyFriendly": "Family Friendly"
+      "all": "All Properties",
+      "luxury": "5-Star Luxury",
+      "budget": "Budget-Friendly Stays",
+      "beachfront": "Beach & Waterfront",
+      "cityCenter": "Downtown & Business District",
+      "familyFriendly": "Family-Friendly Hotels"
     },
     "details": {
-      "priceFrom": "From",
+      "priceFrom": "Starting from",
       "perNight": "per night",
-      "amenities": "Amenities",
-      "checkIn": "Check-in",
-      "checkOut": "Check-out",
-      "rooms": "Rooms",
-      "rating": "Rating"
+      "amenities": "Hotel Amenities",
+      "checkIn": "Check-in Time",
+      "checkOut": "Check-out Time",
+      "rooms": "Available Rooms",
+      "rating": "Guest Rating",
+      "reviews": "Verified Reviews",
+      "location": "Location & Map",
+      "cancellation": "Cancellation Policy",
+      "breakfast": "Breakfast Included",
+      "parking": "Parking Available",
+      "wifi": "Free Wi-Fi",
+      "pool": "Swimming Pool",
+      "gym": "Fitness Center",
+      "spa": "Spa & Wellness",
+      "restaurant": "On-site Dining",
+      "airportShuttle": "Airport Transfer",
+      "petFriendly": "Pet-Friendly",
+      "accessibility": "Accessibility Features"
     },
-    "bookNow": "Book Now"
+    "bookNow": "Check Availability",
+    "compareHotels": "Compare Properties",
+    "savedHotels": "Saved Hotels",
+    "recentlyViewed": "Recently Viewed",
+    "popularWith": "Popular with travelers from",
+    "bestValue": "Best Value",
+    "topRated": "Top Rated",
+    "newlyAdded": "Newly Listed"
   },
   "dining": {
-    "title": "Dubai Dining",
-    "subtitle": "Culinary experiences for every taste",
+    "title": "Dubai Dining Guide",
+    "subtitle": "From Michelin-starred restaurants to authentic street food experiences",
     "filters": {
       "all": "All Restaurants",
       "fineDining": "Fine Dining",
       "casual": "Casual Dining",
-      "cafes": "Cafes",
-      "streetFood": "Street Food",
-      "halal": "Halal",
-      "vegetarian": "Vegetarian"
+      "cafes": "Cafés & Coffee Houses",
+      "streetFood": "Street Food & Local Eats",
+      "halal": "Halal Certified",
+      "vegetarian": "Vegetarian & Vegan",
+      "seafood": "Seafood & Fresh Catch",
+      "brunch": "Brunch Spots",
+      "rooftop": "Rooftop Dining",
+      "waterfront": "Waterfront Restaurants"
     },
     "details": {
-      "cuisine": "Cuisine",
+      "cuisine": "Cuisine Type",
       "priceRange": "Price Range",
       "hours": "Opening Hours",
       "dress": "Dress Code",
-      "reservations": "Reservations"
+      "reservations": "Reservation Policy",
+      "location": "Location & District",
+      "rating": "Guest Rating",
+      "specialties": "House Specialties",
+      "dietary": "Dietary Options",
+      "ambiance": "Ambiance & Setting",
+      "parking": "Parking Available",
+      "delivery": "Delivery & Takeout"
+    },
+    "priceCategories": {
+      "budget": "Budget-Friendly (Under AED 100)",
+      "moderate": "Moderate (AED 100-250)",
+      "upscale": "Upscale (AED 250-500)",
+      "luxury": "Luxury (AED 500+)"
+    },
+    "popularAreas": {
+      "downtown": "Downtown & DIFC",
+      "marina": "Dubai Marina & JBR",
+      "jumeirah": "Jumeirah & Beach Road",
+      "oldDubai": "Deira & Bur Dubai",
+      "citywalk": "City Walk & Box Park"
     }
   },
   "destinations": {
@@ -313,190 +464,318 @@
       "dubai": {
         "name": "Dubai",
         "country": "UAE",
-        "cardAlt": "Dubai skyline featuring Burj Khalifa at sunset"
+        "cardAlt": "Dubai skyline showcasing the iconic Burj Khalifa piercing through golden sunset clouds",
+        "description": "Ultra-modern metropolis where futuristic architecture meets Arabian heritage",
+        "highlights": "World's tallest building, luxury shopping, desert adventures"
       },
       "london": {
         "name": "London",
         "country": "UK",
-        "cardAlt": "Big Ben and Houses of Parliament in London"
+        "cardAlt": "Historic Big Ben clock tower and Westminster Palace along the Thames River",
+        "description": "Royal capital blending centuries of history with cutting-edge culture",
+        "highlights": "British Museum, Tower of London, West End theaters"
       },
       "paris": {
         "name": "Paris",
         "country": "France",
-        "cardAlt": "Eiffel Tower illuminated at sunset in Paris"
+        "cardAlt": "Eiffel Tower sparkling with evening lights against purple Parisian sky",
+        "description": "City of Light renowned for art, fashion, and culinary excellence",
+        "highlights": "Louvre Museum, Notre-Dame, Champs-Élysées"
       },
       "newYork": {
         "name": "New York",
         "country": "USA",
-        "cardAlt": "Manhattan skyline with Empire State Building"
+        "cardAlt": "Manhattan skyline dominated by Empire State Building and One World Trade Center",
+        "description": "The city that never sleeps - global hub of finance, arts, and entertainment",
+        "highlights": "Times Square, Central Park, Statue of Liberty"
       },
       "tokyo": {
         "name": "Tokyo",
         "country": "Japan",
-        "cardAlt": "Shibuya crossing with neon lights in Tokyo"
+        "cardAlt": "Bustling Shibuya crossing illuminated by countless neon signs and digital billboards",
+        "description": "Megacity where ancient temples coexist with neon-lit skyscrapers",
+        "highlights": "Senso-ji Temple, Tsukiji Market, Mount Fuji views"
       },
       "singapore": {
         "name": "Singapore",
         "country": "Singapore",
-        "cardAlt": "Marina Bay Sands and Gardens by the Bay"
+        "cardAlt": "Marina Bay Sands towers overlooking the futuristic Supertree Grove at Gardens by the Bay",
+        "description": "Island nation pioneering sustainable urban living and cultural diversity",
+        "highlights": "Gardens by the Bay, Sentosa Island, hawker centers"
       },
       "barcelona": {
         "name": "Barcelona",
         "country": "Spain",
-        "cardAlt": "Sagrada Familia basilica in Barcelona"
+        "cardAlt": "Antoni Gaudí's masterpiece Sagrada Familia basilica with intricate Gothic spires",
+        "description": "Mediterranean gem famous for modernist architecture and vibrant beach culture",
+        "highlights": "Park Güell, Las Ramblas, Gothic Quarter"
       },
       "bangkok": {
         "name": "Bangkok",
         "country": "Thailand",
-        "cardAlt": "Grand Palace temple in Bangkok"
+        "cardAlt": "Golden spires of the Grand Palace complex reflecting traditional Thai architecture",
+        "description": "Bustling capital where ornate shrines share space with modern shopping centers",
+        "highlights": "Wat Pho, floating markets, street food paradise"
       },
       "abuDhabi": {
         "name": "Abu Dhabi",
         "country": "UAE",
-        "cardAlt": "Sheikh Zayed Grand Mosque in Abu Dhabi"
+        "cardAlt": "Pristine white domes and minarets of Sheikh Zayed Grand Mosque under azure sky",
+        "description": "Cultural capital balancing tradition with ambitious sustainable development",
+        "highlights": "Louvre Abu Dhabi, Ferrari World, mangrove kayaking"
       },
       "amsterdam": {
         "name": "Amsterdam",
         "country": "Netherlands",
-        "cardAlt": "Amsterdam canal with historic buildings"
+        "cardAlt": "Picturesque canal lined with 17th-century merchant houses and moored houseboats",
+        "description": "Canal-laced city celebrated for artistic heritage and progressive culture",
+        "highlights": "Van Gogh Museum, Anne Frank House, bike tours"
       },
       "hongKong": {
         "name": "Hong Kong",
         "country": "China",
-        "cardAlt": "Hong Kong skyline at night"
+        "cardAlt": "Victoria Harbour skyline illuminated during Symphony of Lights show",
+        "description": "Dynamic fusion of East and West with stunning harbor views and dim sum delights",
+        "highlights": "Victoria Peak, Temple Street markets, Star Ferry"
       },
       "istanbul": {
         "name": "Istanbul",
         "country": "Turkey",
-        "cardAlt": "Blue Mosque at sunset in Istanbul"
+        "cardAlt": "Majestic Blue Mosque with six minarets silhouetted against vibrant sunset",
+        "description": "Transcontinental city where Europe meets Asia across the Bosphorus",
+        "highlights": "Hagia Sophia, Grand Bazaar, Bosphorus cruise"
       },
-      "lasVegas": { "name": "Las Vegas", "country": "USA", "cardAlt": "Las Vegas Strip at night" },
+      "lasVegas": {
+        "name": "Las Vegas",
+        "country": "USA",
+        "cardAlt": "Dazzling Las Vegas Strip illuminated with casino lights and entertainment venues",
+        "description": "Entertainment capital offering world-class shows, dining, and desert adventures",
+        "highlights": "Cirque du Soleil, Grand Canyon tours, celebrity chef restaurants"
+      },
       "losAngeles": {
         "name": "Los Angeles",
         "country": "USA",
-        "cardAlt": "Hollywood sign in Los Angeles"
+        "cardAlt": "Iconic Hollywood sign overlooking the sprawling City of Angels",
+        "description": "Entertainment industry capital with beaches, museums, and endless sunshine",
+        "highlights": "Universal Studios, Santa Monica Pier, Getty Center"
       },
-      "miami": { "name": "Miami", "country": "USA", "cardAlt": "Miami Beach Art Deco district" },
-      "rome": { "name": "Rome", "country": "Italy", "cardAlt": "Colosseum at golden hour in Rome" }
+      "miami": {
+        "name": "Miami",
+        "country": "USA",
+        "cardAlt": "Colorful Art Deco buildings along Ocean Drive in South Beach Miami",
+        "description": "Tropical paradise mixing Latin flair with pristine beaches and nightlife",
+        "highlights": "South Beach, Wynwood Walls, Everglades tours"
+      },
+      "rome": {
+        "name": "Rome",
+        "country": "Italy",
+        "cardAlt": "Ancient Roman Colosseum bathed in warm golden hour light",
+        "description": "Eternal City where every corner reveals millennia of history and culture",
+        "highlights": "Vatican City, Trevi Fountain, Roman Forum"
+      }
     },
     "hero": {
       "badge": "{{count}} Destinations Covered",
-      "trustedBy": "{{count}} destinations with detailed guides",
+      "trustedBy": "{{count}} destinations with comprehensive travel intelligence",
       "discover": "Find Your",
       "worldClass": "Next",
-      "destinations": "Destination",
-      "description": "Detailed information for every major attraction. Opening hours, ticket prices, how to get there, and what to expect.",
-      "exploreAll": "See All Destinations",
-      "travelGuides": "Travel Guides",
-      "explorePlaceholder": "Explore Destinations",
-      "browseCollection": "Choose a destination to start researching",
-      "explore": "Explore",
-      "discoverButton": "Explore",
-      "ariaLabel": "Destinations overview",
-      "exploreTitle": "Explore {{name}}",
-      "galleryAriaLabel": "Featured destination gallery",
-      "placeholderAriaLabel": "Featured destination placeholder"
+      "destinations": "Adventure",
+      "description": "Real-time information for every major attraction worldwide. Current opening hours, ticket prices, transport options, and insider tips from local experts.",
+      "exploreAll": "Browse All Destinations",
+      "travelGuides": "Destination Intelligence",
+      "explorePlaceholder": "Search Destinations",
+      "browseCollection": "Select a destination to access detailed travel intelligence",
+      "explore": "Discover",
+      "discoverButton": "Start Exploring",
+      "ariaLabel": "TRAVI destinations overview and search",
+      "exploreTitle": "Discover {{name}}",
+      "galleryAriaLabel": "Featured travel destinations image gallery",
+      "placeholderAriaLabel": "Loading featured destination preview"
     },
     "stats": {
       "destinations": "DESTINATIONS",
       "countries": "COUNTRIES",
-      "regions": "Regions",
+      "regions": "Continents",
       "languages": "Languages"
     },
     "sections": {
       "featured": "Featured Destinations",
-      "featuredDesc": "Handpicked destinations with exceptional experiences, local insights, and everything you need to plan your perfect trip.",
-      "all": "All Destinations",
-      "count": "{{count}} destinations found"
+      "featuredDesc": "Editor-selected destinations offering exceptional experiences, verified local insights, and comprehensive planning resources for memorable journeys.",
+      "all": "Browse Destinations",
+      "count": "Showing {{count}} destinations"
     },
     "search": {
-      "placeholder": "Search destinations...",
-      "noResults": "No destinations found",
-      "tryAdjusting": "Try adjusting your search criteria",
-      "clearSearch": "Clear Search"
+      "placeholder": "Search by city, country, or attraction...",
+      "noResults": "No destinations match your search",
+      "tryAdjusting": "Try different keywords or browse our featured destinations",
+      "clearSearch": "Clear Filters"
     },
     "carousel": {
-      "label": "Featured destinations carousel",
-      "previous": "Previous destination",
-      "next": "Next destination",
-      "goTo": "Go to {{name}}",
-      "slideOf": "Slide {{current}} of {{total}}: {{name}}",
-      "thumbnails": "Destination carousel thumbnails"
+      "label": "Interactive destination showcase carousel",
+      "previous": "View previous destination",
+      "next": "View next destination",
+      "goTo": "Explore {{name}} guide",
+      "slideOf": "Destination {{current}} of {{total}}: {{name}}",
+      "thumbnails": "Quick destination preview thumbnails"
     },
     "card": {
-      "explore": "Explore",
-      "defaultLevel": "City",
-      "exploreFallback": "Explore {{name}}",
-      "destination": "Destination",
-      "travelGuideAlt": "{{name}} travel guide"
+      "explore": "View Guide",
+      "defaultLevel": "Destination",
+      "exploreFallback": "Discover {{name}}",
+      "destination": "Travel Guide",
+      "travelGuideAlt": "Comprehensive {{name}} destination guide"
     },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "subtitle": "Everything you need to know about TRAVI destination guides",
-      "q1": "How many destinations does TRAVI cover?",
-      "a1": "TRAVI covers major travel destinations across the Middle East, Europe, Asia, and Americas with comprehensive guides for each location.",
-      "q2": "What information is included in TRAVI destination guides?",
-      "a2": "Each destination guide includes detailed descriptions covering attractions, accommodation options, local cuisine, transportation tips, and practical travel information.",
-      "q3": "Can I search for destinations?",
-      "a3": "Yes, TRAVI allows searching destinations by name or country using the search bar on the destinations page.",
-      "q4": "What are the featured destinations on TRAVI?",
-      "a4": "TRAVI's featured destinations are handpicked locations offering exceptional experiences for travelers with diverse interests from luxury to budget travel."
+      "title": "Destination Guide FAQs",
+      "subtitle": "Your questions about TRAVI's comprehensive destination intelligence answered",
+      "q1": "How extensive is TRAVI's destination coverage?",
+      "a1": "TRAVI provides in-depth guides for major destinations across 6 continents, covering metropolitan areas, cultural sites, and natural attractions with real-time updates and local insights.",
+      "q2": "What makes TRAVI destination guides comprehensive?",
+      "a2": "Each guide features current attraction details, accommodation reviews, authentic dining recommendations, public transport navigation, seasonal weather patterns, and budget planning tools verified by local contributors.",
+      "q3": "How do I find specific destination information?",
+      "a3": "Use our intelligent search to find destinations by city name, country, landmark, or activity type. Filter results by region, climate, or travel style for personalized recommendations.",
+      "q4": "How are featured destinations selected?",
+      "a4": "Our editorial team selects featured destinations based on seasonal relevance, emerging travel trends, exceptional visitor experiences, and comprehensive local infrastructure supporting diverse traveler needs."
     },
     "loading": {
-      "title": "Loading Destinations",
-      "message": "Fetching the latest destination data..."
+      "title": "Loading Destination Data",
+      "message": "Retrieving the latest travel intelligence from our global network..."
     },
     "error": {
-      "title": "Unable to Load Destinations",
-      "message": "We're having trouble loading destination data. Please try again later.",
-      "refresh": "Refresh Page"
+      "title": "Connection Issue",
+      "message": "We're experiencing difficulty accessing destination data. Please refresh the page or try again in a moment.",
+      "refresh": "Retry Connection"
     },
     "empty": {
-      "title": "No Destinations Available",
-      "message": "No destinations are currently available. Please check back later."
+      "title": "Destinations Temporarily Unavailable",
+      "message": "Our destination database is being updated. Please check back shortly for the latest travel information."
     }
   },
   "districts": {
-    "title": "Dubai Districts",
-    "subtitle": "Explore Dubai's diverse neighborhoods",
-    "explore": "Explore District"
+    "title": "Dubai Districts: Complete Neighborhood Guide",
+    "subtitle": "Discover Dubai's diverse neighborhoods, from historic quarters to futuristic developments",
+    "explore": "Explore District",
+    "meta_description": "Comprehensive guide to Dubai's districts and neighborhoods. Find the best areas for luxury shopping, beach resorts, cultural experiences, and business in Dubai.",
+    "featured_districts": {
+      "title": "Popular Dubai Districts",
+      "description": "From glittering Marina skylines to traditional souks in Deira"
+    },
+    "district_categories": {
+      "beachfront": "Beachfront Districts",
+      "business": "Business & Financial Districts",
+      "cultural": "Cultural & Historic Districts",
+      "residential": "Residential Communities",
+      "entertainment": "Entertainment Districts",
+      "shopping": "Shopping Districts"
+    },
+    "quick_facts": {
+      "title": "District Quick Facts",
+      "total_districts": "Over 200 communities",
+      "largest_district": "Dubai Marina",
+      "oldest_district": "Deira & Bur Dubai",
+      "newest_developments": "Dubai South & Dubai Creek Harbour"
+    },
+    "navigation": {
+      "view_all": "View All Districts",
+      "filter_by": "Filter by Category",
+      "sort_by": "Sort Districts",
+      "map_view": "District Map"
+    },
+    "district_info": {
+      "overview": "Overview",
+      "getting_there": "Getting There",
+      "highlights": "Key Highlights",
+      "best_for": "Best For",
+      "nearby": "Nearby Attractions"
+    }
   },
   "realEstate": {
     "title": "Dubai Real Estate",
-    "subtitle": "Invest in the future",
+    "subtitle": "Premium Investment Opportunities in the Heart of the Middle East",
     "offPlan": {
       "title": "Off-Plan Properties",
-      "subtitle": "Invest Early, Pay Less, Gain More",
+      "subtitle": "Secure Tomorrow's Assets at Today's Prices",
       "findProperty": "Find My Perfect Property",
-      "from": "From",
-      "paymentPlan": "Payment Plan",
-      "handover": "Handover",
-      "developer": "Developer"
+      "from": "Starting from",
+      "paymentPlan": "Flexible Payment Plan",
+      "handover": "Expected Handover",
+      "developer": "Trusted Developer",
+      "description": "Access exclusive pre-construction properties with developer direct pricing and premium payment terms",
+      "benefits": {
+        "title": "Why Choose Off-Plan",
+        "items": [
+          "Up to 30% below market value",
+          "0% interest payment plans",
+          "Capital appreciation before completion",
+          "Prime location selection"
+        ]
+      }
     },
     "filters": {
       "all": "All Properties",
-      "apartments": "Apartments",
-      "villas": "Villas",
-      "townhouses": "Townhouses",
-      "penthouses": "Penthouses"
+      "apartments": "Luxury Apartments",
+      "villas": "Premium Villas",
+      "townhouses": "Modern Townhouses",
+      "penthouses": "Exclusive Penthouses",
+      "studios": "Smart Studios",
+      "commercial": "Commercial Spaces"
     },
     "features": {
-      "cryptoAccepted": "Crypto Accepted",
+      "cryptoAccepted": "Cryptocurrency Accepted",
       "paymentPlans": "Flexible Payment Plans",
       "goldenVisa": "Golden Visa Eligible",
-      "roiGuarantee": "ROI Guarantee"
+      "roiGuarantee": "Guaranteed ROI",
+      "propertyManagement": "Full Property Management",
+      "rentalYield": "High Rental Yields",
+      "taxFree": "Tax-Free Investment",
+      "freehold": "100% Freehold Ownership"
+    },
+    "investment": {
+      "title": "Investment Insights",
+      "metrics": {
+        "avgRoi": "Average Annual ROI",
+        "capitalGrowth": "Capital Growth Rate",
+        "rentalYield": "Rental Yield",
+        "demandIndex": "Market Demand Index"
+      }
+    },
+    "cta": {
+      "consultation": "Book Free Consultation",
+      "viewMore": "Explore More Properties",
+      "calculate": "Calculate Investment Returns",
+      "download": "Download Investment Guide"
+    },
+    "meta": {
+      "title": "Dubai Real Estate Investment | Off-Plan Properties & Premium Developments",
+      "description": "Discover lucrative real estate investment opportunities in Dubai. Off-plan properties with flexible payment plans, Golden Visa eligibility, and guaranteed returns. Expert guidance for international investors.",
+      "keywords": "Dubai real estate, off-plan properties Dubai, property investment UAE, Golden Visa property, Dubai luxury homes, cryptocurrency real estate, tax-free investment, freehold property Dubai"
     }
   },
   "search": {
-    "placeholder": "Search attractions, guides, destinations...",
+    "placeholder": "Search destinations, attractions, guides, and travel insights...",
     "results": "Search Results",
     "noResults": "No results found for",
-    "tryAgain": "Try different keywords"
+    "tryAgain": "Try different keywords or browse our categories",
+    "searchTips": "Search tip: Use specific terms like 'Paris museums' or 'Tokyo food tours'",
+    "popularSearches": "Popular searches",
+    "recentSearches": "Your recent searches",
+    "clearHistory": "Clear search history",
+    "searchFilters": "Refine your search",
+    "searchButton": "Search",
+    "searching": "Searching...",
+    "resultCount": "Showing {count} results",
+    "sortBy": "Sort by relevance",
+    "filterByType": "Filter by type",
+    "allResults": "All results",
+    "destinations": "Destinations",
+    "attractions": "Attractions",
+    "guides": "Travel guides",
+    "articles": "Articles & insights"
   },
   "footer": {
     "about": "About TRAVI",
     "aboutTravi": "About TRAVI",
-    "aboutText": "Detailed travel information for 17 destinations. Opening hours, prices, tips.",
+    "aboutText": "Your trusted source for comprehensive travel intelligence across 17 premier destinations worldwide. Real-time information on opening hours, admission prices, insider tips, and essential local knowledge.",
     "aboutUs": "About Us",
     "quickLinks": "Quick Links",
     "legal": "Legal",
@@ -510,91 +789,118 @@
     "explore": "Explore",
     "travel": "Travel",
     "company": "Company",
-    "allGuides": "All Guides",
-    "cookies": "Cookies",
+    "allGuides": "All Destination Guides",
+    "cookies": "Cookie Policy",
     "security": "Security",
     "cookieSettings": "Cookie Settings",
-    "tagline": "Know Before You Go",
-    "ariaLabel": "Site footer",
+    "tagline": "Know Before You Go™",
+    "ariaLabel": "Site footer navigation and information",
     "featuredGuides": "Featured Guides",
-    "tools": "Tools",
+    "tools": "Travel Tools",
     "currencyConverter": "Currency Converter",
     "roiCalculator": "ROI Calculator",
     "mortgageCalculator": "Mortgage Calculator",
-    "glossary": "Glossary",
+    "glossary": "Travel Glossary",
     "freeThingsToDo": "70+ Free Things to Do",
     "open24Hours": "Open 24 Hours",
     "tributeToSheikh": "Tribute to HH Sheikh Mohammed",
     "lawsForTourists": "Laws for Tourists",
-    "newsletter": "Subscribe to our newsletter",
-    "newsletterDescription": "Get the latest Dubai travel tips and updates.",
-    "emailPlaceholder": "Enter your email",
+    "newsletter": "Stay Informed with TRAVI",
+    "newsletterDescription": "Weekly digest of travel intelligence, destination updates, and insider tips delivered straight to your inbox.",
+    "emailPlaceholder": "Enter your email address",
     "allRightsReserved": "All rights reserved.",
     "copyright": "© {{year}} {{brand}}. All rights reserved.",
-    "emailAriaLabel": "Send email to TRAVI"
+    "emailAriaLabel": "Send email to TRAVI support team"
   },
   "errors": {
+    "403": {
+      "title": "Access Restricted",
+      "message": "This travel content requires proper authentication or subscription. Sign in to access TRAVI's complete destination intelligence.",
+      "button": "Sign In",
+      "alt_button": "View Plans"
+    },
     "404": {
       "title": "Page Not Found",
-      "message": "The page you're looking for doesn't exist.",
-      "button": "Go Home"
+      "message": "The travel content you're looking for isn't available. It may have been moved, updated, or removed from our repository.",
+      "button": "Return to Homepage",
+      "alt_button": "Search TRAVI",
+      "meta_title": "404 Error - Page Not Found | TRAVI Travel Information",
+      "meta_description": "The requested travel information page cannot be found. Browse TRAVI's extensive travel content repository or search for your destination."
+    },
+    "429": {
+      "title": "Too Many Requests",
+      "message": "You've exceeded the request limit for TRAVI's travel API. Please wait a moment before accessing more destination content.",
+      "button": "Wait & Retry",
+      "countdown": "Next attempt in"
     },
     "500": {
-      "title": "Server Error",
-      "message": "Something went wrong on our end.",
-      "button": "Try Again"
+      "title": "Technical Difficulties",
+      "message": "Our travel information system is experiencing temporary issues. Our team is working to restore full access to TRAVI's content repository.",
+      "button": "Refresh Page",
+      "alt_button": "Contact Support",
+      "meta_title": "500 Server Error | TRAVI Travel Platform",
+      "meta_description": "TRAVI is temporarily unavailable due to technical issues. We're working to restore access to our travel information repository."
     },
     "network": {
-      "title": "Connection Error",
-      "message": "Unable to connect. Please check your internet connection.",
-      "button": "Retry"
+      "title": "Connection Lost",
+      "message": "Unable to reach TRAVI's travel database. Check your internet connection and try again to access our destination insights and travel information.",
+      "button": "Retry Connection",
+      "alt_button": "Offline Mode",
+      "meta_title": "Network Error - Connection Issues | TRAVI",
+      "meta_description": "Connection error preventing access to TRAVI travel content. Verify your internet connection to browse destination information."
+    },
+    "maintenance": {
+      "title": "Scheduled Maintenance",
+      "message": "TRAVI is currently updating our travel intelligence platform to bring you enhanced destination insights and improved performance.",
+      "button": "Check Status",
+      "estimated_time": "Estimated completion"
     }
   },
   "newsletter": {
-    "badge": "Free Weekly Updates",
-    "title": "Get Destination Tips Every Week",
-    "description": "Practical travel tips, new attraction guides, and destination updates. One email per week.",
-    "emailPlaceholder": "your@email.com",
-    "subscribe": "Subscribe",
-    "success": "Done! Check your inbox to confirm."
+    "badge": "Expert Travel Intelligence",
+    "title": "Your Weekly Travel Briefing Awaits",
+    "description": "Curated destination insights, emerging travel trends, and expert recommendations delivered straight to your inbox. Join 50,000+ informed travelers who rely on our weekly intelligence reports.",
+    "emailPlaceholder": "Enter your email address",
+    "subscribe": "Start My Free Subscription",
+    "success": "Welcome aboard! Please check your email to confirm your subscription and receive your first travel briefing."
   },
   "cookies": {
-    "title": "We value your privacy",
-    "description": "We use cookies to enhance your browsing experience, analyze site traffic, and personalize contents. By clicking \"Accept All\", you consent to our use of cookies.",
-    "manage": "Manage",
-    "rejectAll": "Reject All",
+    "title": "Your Privacy Matters",
+    "description": "We use cookies and similar technologies to deliver the best possible experience on TRAVI. These help us understand how you use our travel information platform, improve our services, and provide relevant content. By selecting \"Accept All\", you agree to our comprehensive cookie policy.",
+    "manage": "Manage Preferences",
+    "rejectAll": "Decline All",
     "acceptAll": "Accept All",
-    "preferencesTitle": "Cookie Preferences",
-    "savePreferences": "Save Preferences",
+    "preferencesTitle": "Customize Your Cookie Settings",
+    "savePreferences": "Save My Choices",
     "essential": {
       "title": "Essential Cookies",
-      "description": "Required for the website to function properly"
+      "description": "These cookies are necessary for TRAVI to function correctly. They enable core features like secure access, network management, and accessibility options. You cannot disable these as they are required for basic site operations."
     },
     "analytics": {
-      "title": "Analytics Cookies",
-      "description": "Help us understand how visitors interact with our website"
+      "title": "Performance & Analytics Cookies",
+      "description": "These cookies collect anonymous data about how visitors navigate and interact with TRAVI. We use this information to improve our travel content, optimize site performance, and understand which destinations and travel information are most valuable to our users."
     },
     "marketing": {
-      "title": "Marketing Cookies",
-      "description": "Used to deliver personalized advertisements"
+      "title": "Personalization & Marketing Cookies",
+      "description": "These cookies remember your preferences and help us deliver tailored travel content, destination recommendations, and relevant third-party advertisements based on your interests and browsing behavior across TRAVI and partner sites."
     }
   },
   "meta": {
     "home": {
-      "title": "Travi - Discover Dubai | Your Ultimate Dubai Travel Guide",
-      "description": "Explore Dubai's best attractions, hotels, restaurants, and neighborhoods. Plan your perfect Dubai trip with insider tips and local recommendations."
+      "title": "Dubai Travel Guide 2024 | TRAVI - Expert Dubai Insights & Planning",
+      "description": "Plan your Dubai journey with TRAVI's comprehensive travel intelligence. Access curated insights on Dubai's iconic landmarks, luxury hotels, world-class dining, and vibrant neighborhoods. Expert recommendations for every traveler."
     },
     "attractions": {
-      "title": "Dubai Attractions | Top Things to Do in Dubai",
-      "description": "Discover the best attractions in Dubai - from Burj Khalifa to hidden gems. Plan your Dubai sightseeing adventure."
+      "title": "Dubai Attractions & Activities | Must-See Sights & Hidden Gems - TRAVI",
+      "description": "Navigate Dubai's premier attractions with TRAVI's expert curation. From the iconic Burj Khalifa and Dubai Mall to off-the-beaten-path souks and cultural districts. Real-time insights, booking tips, and insider access to Dubai's best experiences."
     },
     "hotels": {
-      "title": "Dubai Hotels | Best Places to Stay in Dubai",
-      "description": "Find the perfect hotel in Dubai for any budget. From luxury resorts to budget-friendly options."
+      "title": "Dubai Hotels & Accommodations | Luxury to Budget Stays - TRAVI Guide",
+      "description": "Compare Dubai's finest hotels and resorts with TRAVI's independent analysis. From opulent Jumeirah properties to boutique gems in Al Fahidi. Detailed reviews, location insights, and seasonal pricing intelligence for informed booking decisions."
     },
     "dining": {
-      "title": "Dubai Restaurants | Best Dining in Dubai",
-      "description": "Explore Dubai's culinary scene - fine dining, street food, and everything in between."
+      "title": "Dubai Restaurants & Dining Guide | From Street Food to Michelin Stars - TRAVI",
+      "description": "Navigate Dubai's dynamic culinary landscape with TRAVI's dining intelligence. Discover authentic Emirati cuisine, international fine dining, bustling food markets, and trendy cafes. Curated recommendations with booking insights and dietary considerations."
     }
   },
   "guides": {
@@ -613,9 +919,9 @@
       "languages": "Languages"
     },
     "journey": {
-      "badge": "Your Journey, Our Guidance",
-      "title": "Every Great Trip Begins with a Guide",
-      "subtitle": "From dreaming to sharing, we're with you at every step"
+      "badge": "Your Journey, Our Expertise",
+      "title": "Every Great Adventure Starts with Insight",
+      "subtitle": "From inspiration to memories, we guide you through every moment"
     },
     "ideaLab": {
       "badge": "Idea Lab",
@@ -623,126 +929,141 @@
       "readGuide": "Read Guide"
     },
     "archetype": {
-      "badge": "Personalized for You",
-      "title": "What Kind of Traveler Are You?",
-      "subtitle": "Select your travel style and discover guides curated just for you",
-      "viewGuides": "View {{type}} Guides"
+      "badge": "Tailored to You",
+      "title": "What's Your Travel DNA?",
+      "subtitle": "Discover guides perfectly matched to your travel personality",
+      "viewGuides": "Explore {{type}} Guides"
     },
     "archetypes": {
       "adventure": {
         "name": "Adventure Seeker",
-        "description": "Thrilling experiences and adrenaline rushes"
+        "description": "Heart-pumping experiences and untamed horizons"
       },
       "culture": {
-        "name": "Culture Explorer",
-        "description": "Art, history, and local traditions"
+        "name": "Culture Enthusiast",
+        "description": "Art, heritage, and authentic traditions"
       },
       "relaxation": {
-        "name": "Relaxation Guru",
-        "description": "Wellness retreats and peaceful escapes"
+        "name": "Serenity Seeker",
+        "description": "Tranquil retreats and restorative escapes"
       },
       "foodie": {
-        "name": "Culinary Nomad",
-        "description": "Local flavors and gastronomic adventures"
+        "name": "Culinary Explorer",
+        "description": "Flavors, markets, and gastronomic journeys"
       },
       "wellness": {
-        "name": "Wellness Seeker",
-        "description": "Relaxation, spas, and mindful retreats"
+        "name": "Wellness Wanderer",
+        "description": "Mindful travel and holistic experiences"
       },
       "budget": {
-        "name": "Smart Traveler",
-        "description": "Maximum experience, minimal budget"
+        "name": "Savvy Explorer",
+        "description": "Maximum adventure, mindful spending"
       },
       "solo": {
-        "name": "Solo Explorer",
-        "description": "Independent journeys and self-discovery"
+        "name": "Independent Spirit",
+        "description": "Self-guided journeys and personal growth"
       },
       "luxury": {
-        "name": "Luxury Connoisseur",
-        "description": "Premium experiences and fine living"
+        "name": "Luxury Aficionado",
+        "description": "Exceptional experiences and refined travel"
       }
     },
     "milestones": {
       "dream": {
         "title": "Dream",
-        "subtitle": "Discover inspiration",
-        "guides": ["Destination Guides", "Photo Essays"]
+        "subtitle": "Ignite wanderlust",
+        "guides": [
+          "Destination Spotlights",
+          "Visual Journeys"
+        ]
       },
       "plan": {
         "title": "Plan",
-        "subtitle": "Map your journey",
-        "guides": ["Trip Planning", "Visa Requirements"]
+        "subtitle": "Design your route",
+        "guides": [
+          "Itinerary Ideas",
+          "Travel Requirements"
+        ]
       },
       "prepare": {
         "title": "Prepare",
-        "subtitle": "Get ready to go",
-        "guides": ["Packing Lists", "Safety Tips"]
+        "subtitle": "Ready for takeoff",
+        "guides": [
+          "Essential Checklists",
+          "Travel Smart Tips"
+        ]
       },
       "experience": {
         "title": "Experience",
-        "subtitle": "Live the adventure",
-        "guides": ["Local Insights", "Hidden Gems"]
+        "subtitle": "Embrace the moment",
+        "guides": [
+          "Insider Access",
+          "Secret Spots"
+        ]
       },
       "share": {
         "title": "Share",
-        "subtitle": "Tell your story",
-        "guides": ["Travel Writing", "Photography"]
+        "subtitle": "Inspire others",
+        "guides": [
+          "Storytelling Tips",
+          "Photo Essays"
+        ]
       }
     },
     "categories": {
-      "weekendEscapes": "Weekend Escapes",
-      "offBeatenPath": "Off the Beaten Path",
-      "smartTravel": "Smart Travel",
-      "bucketList": "Bucket List",
-      "culinary": "Culinary",
-      "natureWonder": "Nature & Wonder"
+      "weekendEscapes": "Weekend Getaways",
+      "offBeatenPath": "Hidden Treasures",
+      "smartTravel": "Travel Savvy",
+      "bucketList": "Once in a Lifetime",
+      "culinary": "Food & Drink",
+      "natureWonder": "Natural Wonders"
     },
     "seo": {
-      "title": "Travel Guides | Expert Destination Insights",
-      "description": "Discover expert travel guides, destination insights, and insider tips from our global network of travel writers. Plan your perfect trip today."
+      "title": "Travel Guides & Destination Insights | Expert Travel Intelligence | TRAVI",
+      "description": "Access expert travel guides, destination insights, and insider intelligence from TRAVI's global network. Plan unforgettable journeys with trusted editorial content."
     },
     "editorial": {
-      "badge": "From Our Editors",
-      "title": "Editorial Features",
-      "readFull": "Read Full Essay"
+      "badge": "Editor's Choice",
+      "title": "Featured Stories",
+      "readFull": "Read Full Story"
     },
     "gallery": {
-      "badge": "Visual Stories",
-      "title": "Destinations That Inspire",
+      "badge": "Visual Journeys",
+      "title": "Places That Captivate",
       "categories": {
-        "city": "City",
-        "mountains": "Mountains",
-        "beach": "Beach",
-        "safari": "Safari",
-        "nature": "Nature"
+        "city": "Urban",
+        "mountains": "Alpine",
+        "beach": "Coastal",
+        "safari": "Wildlife",
+        "nature": "Wilderness"
       }
     },
     "writers": {
-      "badge": "Expert Voices",
-      "title": "Meet Our Writers",
-      "subtitle": "The expert voices behind our most trusted travel guides",
-      "articleCount": "{{count}} Articles",
-      "viewProfile": "View Profile"
+      "badge": "Expert Contributors",
+      "title": "Our Travel Authorities",
+      "subtitle": "Meet the seasoned writers shaping modern travel journalism",
+      "articleCount": "{{count}} Stories",
+      "viewProfile": "Explore Work"
     },
     "map": {
-      "badge": "Explore by Region",
-      "title": "Guides Around the World",
-      "subtitle": "Click any destination to discover our expert coverage",
-      "guidesAvailable": "{{count}} guides available",
-      "legendDestination": "Destination",
-      "legendHighlighted": "Highlighted"
+      "badge": "Navigate by Region",
+      "title": "Global Guide Coverage",
+      "subtitle": "Select any region to explore our comprehensive travel intelligence",
+      "guidesAvailable": "{{count}} expert guides",
+      "legendDestination": "Coverage Area",
+      "legendHighlighted": "Featured Region"
     },
     "newsletter": {
-      "badge": "Join the Journey",
-      "title": "Travel Stories, Weekly",
-      "description": "Curated travel inspiration, expert tips, and insider perspectives delivered to your inbox every week.",
-      "placeholder": "Enter your email",
-      "subscribe": "Subscribe",
-      "subscribing": "Subscribing...",
-      "joinCount": "Join 50,000+ travelers who read our weekly digest",
-      "invalidEmail": "Please enter a valid email",
-      "successTitle": "Welcome to the journey!",
-      "successDesc": "You're now subscribed to our editorial digest."
+      "badge": "Stay Connected",
+      "title": "The Weekly Wanderer",
+      "description": "Essential travel intelligence, expert insights, and curated discoveries delivered fresh every Thursday morning.",
+      "placeholder": "Your email address",
+      "subscribe": "Join Free",
+      "subscribing": "Processing...",
+      "joinCount": "Trusted by 50,000+ informed travelers worldwide",
+      "invalidEmail": "Please provide a valid email address",
+      "successTitle": "Welcome aboard!",
+      "successDesc": "Check your inbox for your first issue of The Weekly Wanderer."
     }
   },
   "news": {
@@ -752,21 +1073,42 @@
       "minutesAgo": "{{count}}m ago",
       "hoursAgo": "{{count}}h ago",
       "daysAgo": "{{count}}d ago",
-      "minRead": "{{count}} min read"
+      "weeksAgo": "{{count}}w ago",
+      "monthsAgo": "{{count}}mo ago",
+      "minRead": "{{count}} min read",
+      "updated": "Updated {{time}}",
+      "published": "Published {{time}}"
     },
     "header": {
       "title": "TRAVI NEWS",
       "edition": "International Edition",
-      "subscribe": "Subscribe"
+      "subscribe": "Subscribe",
+      "menu": "Menu",
+      "editions": {
+        "international": "International",
+        "americas": "Americas",
+        "europe": "Europe",
+        "asiaPacific": "Asia-Pacific",
+        "africa": "Africa"
+      }
     },
     "breaking": {
-      "label": "Breaking"
+      "label": "Breaking",
+      "alert": "Breaking News Alert",
+      "developing": "Developing Story",
+      "exclusive": "Exclusive",
+      "urgent": "Urgent"
     },
     "search": {
       "placeholder": "Search worldwide news...",
       "button": "Search",
       "title": "Search",
-      "searching": "Searching for \"{{query}}\"..."
+      "searching": "Searching for \"{{query}}\"...",
+      "results": "{{count}} results found",
+      "noResults": "No results found for \"{{query}}\"",
+      "suggestions": "Try searching for destinations, travel tips, or industry news",
+      "recent": "Recent searches",
+      "clear": "Clear search history"
     },
     "categories": {
       "all": "All News",
@@ -775,138 +1117,278 @@
       "culture": "Culture",
       "travel": "Travel",
       "tech": "Tech",
-      "opinion": "Opinion"
+      "opinion": "Opinion",
+      "destinations": "Destinations",
+      "aviation": "Aviation",
+      "hospitality": "Hospitality",
+      "sustainability": "Sustainability",
+      "adventure": "Adventure"
     },
     "empty": {
       "title": "No News Articles Yet",
       "description": "We're working on bringing you the latest travel news and insights. Check back soon for updates from around the world.",
       "exploreDestinations": "Explore Destinations",
-      "viewGuides": "View Travel Guides"
+      "viewGuides": "View Travel Guides",
+      "browseCategories": "Browse Categories",
+      "subscribeUpdates": "Subscribe for Updates"
     },
     "hero": {
       "topStory": "Top Story",
-      "editorialTeam": "Editorial Team"
+      "editorialTeam": "Editorial Team",
+      "featured": "Featured",
+      "editorsPick": "Editor's Pick",
+      "mustRead": "Must Read",
+      "spotlight": "Spotlight"
     },
     "views": "{{count}} views",
     "viewAll": "View All",
+    "loadMore": "Load More Stories",
+    "showLess": "Show Less",
+    "relatedStories": "Related Stories",
+    "moreFromCategory": "More from {{category}}",
     "seo": {
-      "title": "Travel News | Latest Stories & Updates",
-      "description": "Stay informed with the latest travel news, destination updates, and industry insights from around the world."
+      "title": "Travel News | Latest Stories & Updates | TRAVI",
+      "description": "Stay informed with breaking travel news, destination updates, industry insights, and expert analysis from TRAVI's global network of correspondents.",
+      "keywords": "travel news, tourism updates, destination news, aviation news, hotel industry, travel trends, tourism insights, travel alerts"
     },
     "sidebar": {
       "alsoToday": "Also Today",
       "storiesCount": "{{count}} stories",
       "liveUpdates": "Live Updates",
       "trendingTopics": "Trending Topics",
-      "noTrending": "No trending topics yet. Check back soon!"
+      "noTrending": "No trending topics yet. Check back soon!",
+      "popularNow": "Popular Now",
+      "editorsPicks": "Editor's Picks",
+      "latestAnalysis": "Latest Analysis",
+      "followTopic": "Follow Topic"
     },
     "sections": {
       "topStories": "Top Stories",
       "opinion": "Opinion & Analysis",
       "moreOpinion": "More Opinion",
-      "worldwide": "Worldwide Coverage"
+      "worldwide": "Worldwide Coverage",
+      "inDepth": "In-Depth Reports",
+      "analysis": "Analysis",
+      "features": "Features",
+      "investigations": "Investigations"
     },
     "worldwide": {
       "title": "Your Window to the World",
       "subtitle": "News from every corner of the globe",
       "storiesCount": "{{count}} stories",
-      "comingSoon": "Coming soon"
+      "comingSoon": "Coming soon",
+      "regions": {
+        "northAmerica": "North America",
+        "southAmerica": "South America",
+        "europe": "Europe",
+        "asia": "Asia",
+        "africa": "Africa",
+        "oceania": "Oceania",
+        "middleEast": "Middle East"
+      }
     },
     "newsletter": {
       "title": "Stay Informed",
-      "description": "Get the day's top stories delivered to your inbox every morning. Join 50,000+ readers.",
+      "description": "Get the day's top stories delivered to your inbox every morning. Join 50,000+ readers worldwide.",
       "placeholder": "Enter your email",
       "subscribe": "Subscribe Free",
       "noSpam": "No spam. Unsubscribe anytime.",
-      "successTitle": "Subscribed!",
+      "successTitle": "Welcome Aboard!",
       "successDesc": "Please check your email to confirm your subscription.",
       "errorTitle": "Subscription failed",
       "errorDesc": "Please try again later.",
       "invalidTitle": "Invalid email",
-      "invalidDesc": "Please enter a valid email address."
+      "invalidDesc": "Please enter a valid email address.",
+      "preferences": "Email Preferences",
+      "frequency": {
+        "daily": "Daily Digest",
+        "weekly": "Weekly Roundup",
+        "breaking": "Breaking News Only"
+      }
+    },
+    "article": {
+      "byline": "By {{author}}",
+      "location": "Reporting from {{location}}",
+      "shareArticle": "Share Article",
+      "saveForLater": "Save for Later",
+      "printArticle": "Print Article",
+      "reportError": "Report Error",
+      "correction": "Correction",
+      "update": "Update"
+    },
+    "engagement": {
+      "comments": "{{count}} Comments",
+      "shares": "{{count}} Shares",
+      "reactions": "Reactions",
+      "joinDiscussion": "Join the Discussion"
     }
   },
   "pages": {
     "about": {
-      "metaTitle": "About Us | TRAVI World",
-      "metaDescription": "Learn about TRAVI World, an independent travel information resource providing comprehensive travel guides, attractions, hotels and restaurant information for destinations worldwide.",
-      "badge": "Your Travel Companion",
-      "title": "About",
+      "metaTitle": "About TRAVI World | Independent Travel Information Platform",
+      "metaDescription": "Discover TRAVI World - your independent source for comprehensive travel information, destination guides, and local insights across 16+ global cities.",
+      "badge": "About TRAVI World",
+      "title": "Discover",
       "titleHighlight": "TRAVI World",
-      "subtitle": "Your trusted source for comprehensive travel information and destination guides, helping millions explore the world with confidence.",
+      "subtitle": "Your independent travel information platform providing comprehensive destination guides, local insights, and curated travel intelligence worldwide.",
       "ctaExplore": "Explore Destinations",
-      "ctaContact": "Get in Touch"
+      "ctaContact": "Get in Touch",
+      "stats": {
+        "destinations": "Destinations",
+        "articles": "Travel Articles",
+        "support": "24/7 Support",
+        "coverage": "Global Coverage",
+        "cities": "16+ Cities"
+      },
+      "whoWeAre": {
+        "title": "Who We Are",
+        "description": "TRAVI World is an independent travel information platform dedicated to providing comprehensive, accurate, and up-to-date travel intelligence. Like a Reuters for travel, we aggregate and curate essential destination information, local insights, and practical guides to help travelers make informed decisions.",
+        "highlight": "We're not a travel agency or booking platform – we're your trusted source for unbiased travel information."
+      },
+      "mission": {
+        "title": "Our Mission",
+        "description": "To democratize travel information by providing comprehensive, accurate, and accessible destination intelligence that empowers travelers to explore the world with confidence.",
+        "vision": "We envision a world where every traveler has access to reliable, local-level information that transforms trips into meaningful experiences."
+      },
+      "services": {
+        "badge": "What We Provide",
+        "title": "Comprehensive Travel Intelligence",
+        "description": "Our editorial team curates essential information across six core categories, ensuring you have everything needed for informed travel decisions."
+      },
+      "offerings": {
+        "destinations": {
+          "title": "Destination Intelligence",
+          "description": "In-depth guides covering culture, climate, transportation, and local customs for cities worldwide"
+        },
+        "attractions": {
+          "title": "Attraction Insights",
+          "description": "Comprehensive information on must-see landmarks, hidden gems, and authentic local experiences"
+        },
+        "hotels": {
+          "title": "Accommodation Guides",
+          "description": "Detailed profiles of hotels and lodging options across all budgets and travel styles"
+        },
+        "restaurants": {
+          "title": "Dining Intelligence",
+          "description": "Curated restaurant information from street food to fine dining, with local favorites highlighted"
+        },
+        "articles": {
+          "title": "Editorial Content",
+          "description": "Expert travel articles, destination features, and practical guides for smarter travel"
+        },
+        "news": {
+          "title": "Travel Updates",
+          "description": "Real-time travel news, visa updates, and destination alerts to keep you informed"
+        }
+      },
+      "editorial": {
+        "title": "Editorial Independence",
+        "description": "TRAVI World maintains strict editorial independence. Our content is created by travel professionals and local experts who prioritize accuracy and usefulness over commercial interests. Every piece of information undergoes rigorous fact-checking and regular updates.",
+        "affiliateTitle": "Affiliate Transparency",
+        "affiliateDescription": "While we may include affiliate links to support our operations, these partnerships never influence our editorial content. We clearly mark all affiliate relationships and maintain complete transparency about how we fund our platform."
+      },
+      "values": {
+        "badge": "Our Principles",
+        "title": "Built on Trust",
+        "accuracy": {
+          "title": "Unwavering Accuracy",
+          "description": "Every fact verified, every detail checked. We update content continuously to ensure reliability"
+        },
+        "transparency": {
+          "title": "Complete Transparency",
+          "description": "Clear disclosure of affiliate relationships and AI-assisted content creation processes"
+        },
+        "userFocused": {
+          "title": "Traveler-First Approach",
+          "description": "Content designed exclusively to help travelers make confident, informed decisions"
+        }
+      },
+      "connect": {
+        "badge": "Let's Connect",
+        "title": "Join Our Community",
+        "description": "Whether you're planning your next adventure or have feedback about our content, we'd love to hear from you. Connect with fellow travelers and stay updated on the latest destination intelligence."
+      },
+      "company": {
+        "title": "Company Information",
+        "legalName": "KBR Global Creative Consulting Ltd.",
+        "registration": "Registered in United Kingdom",
+        "contactTitle": "Contact Information",
+        "contactForm": "Send Message",
+        "headquarters": "United Kingdom",
+        "email": "hello@traviworld.com",
+        "responseTime": "We respond within 2-3 business days"
+      }
     },
     "contact": {
-      "metaTitle": "Contact Us | TRAVI World",
-      "metaDescription": "Get in touch with TRAVI World. We welcome your feedback, questions, and inquiries about our travel information services.",
-      "badge": "We'd love to hear from you",
+      "metaTitle": "Contact TRAVI World | Travel Information Support",
+      "metaDescription": "Connect with TRAVI World for travel information inquiries, content feedback, or partnership opportunities. We respond within 2-3 business days.",
+      "badge": "We're here to help",
       "titlePart1": "Let's",
       "titlePart2": "Connect",
-      "subtitle": "Have questions about your next adventure? We're here to help you explore the world with confidence.",
-      "cta": "Send us a message",
+      "subtitle": "Have questions about our travel content? Need clarification on destination information? We're here to help you navigate the world with confidence.",
+      "cta": "Send Message",
       "getInTouch": "Get in Touch",
-      "getInTouchSubtitle": "Choose the best way to reach us. We're committed to responding promptly.",
+      "getInTouchSubtitle": "Choose the most convenient way to reach our team. We're committed to providing timely, helpful responses.",
       "howCanWeHelp": "How Can We Help?",
-      "howCanWeHelpSubtitle": "We're here to assist with any questions or feedback you might have about our travel contents and services.",
-      "importantNote": "Important Note",
-      "importantNoteSubtitle": "Please read before contacting us",
-      "ourOffice": "Our Office",
-      "ourOfficeSubtitle": "For official correspondence and postal inquiries",
-      "travelCompanion": "Your travel companion",
-      "urgentNote": "For urgent matters, please include {{urgentLabel}} in your email subject line. We prioritize responses based on the nature of the inquiry.",
-      "urgentLabel": "Urgent",
+      "howCanWeHelpSubtitle": "From content corrections to partnership inquiries, we're here to assist with all aspects of our travel information platform.",
+      "importantNote": "Before You Contact Us",
+      "importantNoteSubtitle": "Please review our FAQ and help sections first – you might find instant answers",
+      "ourOffice": "Registered Office",
+      "ourOfficeSubtitle": "For official correspondence and legal matters only",
+      "travelCompanion": "Your trusted travel information source",
+      "urgentNote": "For time-sensitive matters, please include {{urgentLabel}} in your email subject line. We prioritize inquiries based on urgency and nature.",
+      "urgentLabel": "URGENT",
       "options": {
         "generalInquiries": {
           "title": "General Inquiries",
-          "description": "Questions about our travel guides and contents"
+          "description": "Questions about our travel content and platform features"
         },
         "privacyInquiries": {
-          "title": "Privacy Inquiries",
-          "description": "Data access, deletion, and privacy requests"
+          "title": "Privacy & Data",
+          "description": "Data access requests, deletions, and privacy concerns"
         },
         "visitWebsite": {
-          "title": "Visit Our Website",
-          "description": "Explore destinations and travel inspiration"
+          "title": "Explore TRAVI World",
+          "description": "Browse destinations and discover travel inspiration"
         },
         "responseTime": {
           "title": "Response Time",
-          "description": "We aim to respond promptly",
-          "action": "2-3 business days"
+          "description": "We aim to respond to all inquiries promptly",
+          "action": "Within 48-72 hours"
         }
       },
       "helpTopics": {
-        "general": "General inquiries about our travel guides and contents",
-        "feedback": "Feedback and suggestions for improvement",
-        "reporting": "Reporting contents errors or outdated information",
-        "business": "Business and partnership inquiries",
-        "media": "Media and press inquiries",
-        "privacy": "Privacy-related requests (data access, deletion, etc.)"
+        "general": "General questions about our travel guides and destination content",
+        "feedback": "Suggestions for new features or content improvements",
+        "reporting": "Report inaccurate information or outdated content",
+        "business": "Partnership opportunities and business proposals",
+        "media": "Press inquiries and media kit requests",
+        "privacy": "Data protection requests (access, deletion, portability)"
       }
     },
     "privacy": {
-      "metaTitle": "Privacy Policy | TRAVI World",
-      "metaDescription": "Learn how TRAVI World collects, uses, and protects your personal information. Read our comprehensive privacy policy.",
-      "badge": "Your Privacy Matters",
+      "metaTitle": "Privacy Policy | TRAVI World - Your Data, Protected",
+      "metaDescription": "TRAVI World's comprehensive privacy policy. Learn how we collect, use, and protect your personal information in compliance with GDPR, CCPA, and global privacy laws.",
+      "badge": "Privacy First",
       "title": "Privacy Policy",
-      "subtitle": "We are committed to protecting your privacy and being transparent about our data practices. Learn how TRAVI World collects, uses, and protects your information.",
-      "effectiveDate": "Effective Date: 1 January 2026",
+      "subtitle": "Your privacy is fundamental to our mission. This policy explains how TRAVI World handles your information with complete transparency and in compliance with global privacy regulations.",
+      "effectiveDate": "Effective Date: January 1, 2026",
       "features": {
         "dataProtection": {
           "title": "Data Protection",
-          "description": "Your data is protected"
+          "description": "Industry-standard security measures"
         },
         "minimalCollection": {
           "title": "Minimal Collection",
-          "description": "We collect only what's needed"
+          "description": "Only essential data collected"
         },
         "transparency": {
           "title": "Full Transparency",
-          "description": "Clear about our practices"
+          "description": "Clear, honest data practices"
         },
         "yourControl": {
           "title": "Your Control",
-          "description": "Manage your preferences"
+          "description": "Easy preference management"
         }
       },
       "sections": {
@@ -928,129 +1410,47 @@
       }
     },
     "terms": {
-      "metaTitle": "Terms & Conditions | TRAVI World",
-      "metaDescription": "Read the terms and conditions for using TRAVI World travel information services. Legal agreement between you and KBR Global Creative Consulting Ltd.",
-      "badge": "Legal Agreement",
+      "metaTitle": "Terms & Conditions | TRAVI World Legal Agreement",
+      "metaDescription": "Terms and conditions for using TRAVI World's travel information platform. Important legal agreement including affiliate disclosure and AI content policies.",
+      "badge": "Legal Terms",
       "title": "Terms & Conditions",
-      "subtitle": "Please read these terms carefully before using TRAVI World. Your access to and use of our platform is subject to these conditions.",
-      "lastUpdated": "Last updated: 1 January 2026",
+      "subtitle": "This agreement governs your use of TRAVI World. By accessing our platform, you agree to these terms. Please read them carefully.",
+      "lastUpdated": "Last updated: January 1, 2026",
       "importantNotice": "Important Legal Notice",
       "keyPoints": {
         "editorial": {
-          "title": "Editorial Platform",
-          "description": "Travel guides & destination contents"
+          "title": "Editorial Content",
+          "description": "Independent travel information"
         },
         "affiliate": {
-          "title": "Affiliate Links",
-          "description": "Commission-based recommendations"
+          "title": "Affiliate Disclosure",
+          "description": "Transparent partnerships"
         },
         "aiGenerated": {
-          "title": "AI-Generated",
-          "description": "Content created with AI assistance"
+          "title": "AI-Assisted",
+          "description": "Enhanced with AI technology"
         },
         "privacy": {
-          "title": "Your Privacy",
-          "description": "Data protection guaranteed"
+          "title": "Privacy Protected",
+          "description": "Your data is secure"
         }
       },
       "sections": {
-        "operator": "Operator / Legal Entity",
+        "operator": "Platform Operator",
         "purpose": "1. Purpose & Scope of Use",
-        "affiliateDisclosure": "2. Affiliate Disclosure & Third-Party Transactions",
+        "affiliateDisclosure": "2. Affiliate Disclosure & Third-Party Services",
         "aiDisclaimer": "3. AI-Generated Content Disclaimer",
         "newsletter": "4. Newsletter & Communications",
-        "userConduct": "5. User Conduct & Prohibited Actions",
-        "intellectualProperty": "6. Intellectual Property & Limited License",
-        "dmca": "7. Notice-and-Takedown (DMCA & Similar)",
-        "disclaimers": "8. Accuracy, Availability & Disclaimers",
-        "liability": "9. Limitation of Liability & Force Majeure",
+        "userConduct": "5. User Conduct & Prohibited Activities",
+        "intellectualProperty": "6. Intellectual Property Rights",
+        "dmca": "7. Copyright Policy (DMCA)",
+        "disclaimers": "8. Disclaimers & Limitations",
+        "liability": "9. Limitation of Liability",
         "indemnification": "10. Indemnification",
-        "privacyCookies": "11. Privacy, Cookies & Data Protection",
-        "accessibility": "12. Accessibility Statement",
-        "governingLaw": "13. Governing Law, Dispute Resolution & Jurisdiction",
-        "modifications": "14. Modifications, Severability & General Provisions"
-      }
-    },
-    "about": {
-      "metaTitle": "About TRAVI World | Your Trusted Travel Resource",
-      "metaDescription": "Learn about TRAVI World - an independent travel information platform providing comprehensive guides for destinations worldwide.",
-      "badge": "About TRAVI World",
-      "title": "Discover",
-      "titleHighlight": "TRAVI World",
-      "subtitle": "Your trusted travel resource for exploring destinations worldwide with comprehensive guides and local insights.",
-      "ctaExplore": "Explore Destinations",
-      "ctaContact": "Contact Us",
-      "stats": {
-        "destinations": "Destinations",
-        "articles": "Articles",
-        "support": "Travel Support",
-        "coverage": "Coverage",
-        "cities": "16+ Cities"
-      },
-      "whoWeAre": {
-        "title": "Who We Are"
-      },
-      "mission": {
-        "title": "Our Mission"
-      },
-      "services": {
-        "badge": "Our Services",
-        "title": "What We Offer"
-      },
-      "offerings": {
-        "destinations": {
-          "title": "Destination Guides",
-          "description": "Comprehensive information about cities and regions around the world"
-        },
-        "attractions": {
-          "title": "Attraction Information",
-          "description": "Details about must-see sights and unique experiences"
-        },
-        "hotels": {
-          "title": "Hotel Guides",
-          "description": "Information about accommodation options for every budget"
-        },
-        "restaurants": {
-          "title": "Restaurant Recommendations",
-          "description": "Dining options for every taste and preference"
-        },
-        "articles": {
-          "title": "Travel Articles",
-          "description": "Tips, insights, and travel inspiration"
-        },
-        "news": {
-          "title": "Latest Travel News",
-          "description": "Stay informed with curated travel updates"
-        }
-      },
-      "editorial": {
-        "title": "Editorial Independence",
-        "affiliateTitle": "Affiliate Disclosure"
-      },
-      "values": {
-        "badge": "Our Foundation",
-        "title": "Our Values",
-        "accuracy": {
-          "title": "Accuracy",
-          "description": "We strive to provide accurate and reliable information, regularly updating our contents"
-        },
-        "transparency": {
-          "title": "Transparency",
-          "description": "We are clear about our affiliate relationships and how we operate"
-        },
-        "userFocused": {
-          "title": "User-Focused",
-          "description": "Our contents is designed to help travelers make informed decisions"
-        }
-      },
-      "connect": {
-        "badge": "Let's Connect",
-        "title": "Get in Touch"
-      },
-      "company": {
-        "title": "Company Information",
-        "contactTitle": "Contact Information",
-        "contactForm": "Contact Form"
+        "privacyCookies": "11. Privacy & Data Protection",
+        "accessibility": "12. Accessibility Commitment",
+        "governingLaw": "13. Governing Law & Disputes",
+        "modifications": "14. Changes & General Provisions"
       }
     }
   }

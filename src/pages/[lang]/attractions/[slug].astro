@@ -2,7 +2,7 @@
 import { t, changeLanguage } from "i18next";
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { languages, type Language } from '../../../lib/i18n';
-import { getAllAttractions, getAttractionBySlug, getImageUrl } from '../../../../sanity/lib/client';
+import { getAllAttractions, getAttractionBySlug, getImageUrl } from '../../../lib/db';
 
 export async function getStaticPaths() {
   const paths = [];
@@ -10,11 +10,11 @@ export async function getStaticPaths() {
   // Generate paths for each language
   for (const lang of Object.keys(languages)) {
     try {
-      // Fetch all attractions for this language from Sanity
+      // Fetch all attractions for this language from PostgreSQL
       const attractions = await getAllAttractions(lang);
 
       if (attractions && attractions.length > 0) {
-        // Add paths from Sanity data
+        // Add paths from DB data
         for (const attraction of attractions) {
           paths.push({
             params: {
@@ -24,7 +24,7 @@ export async function getStaticPaths() {
           });
         }
       } else {
-        // Fallback to mock slugs if Sanity is empty
+        // Fallback to mock slugs if DB is empty
         const mockSlugs = [
           'burj-khalifa', 'eiffel-tower', 'colosseum', 'taj-mahal',
           'tokyo-tower', 'dubai-mall', 'louvre', 'sagrada-familia',

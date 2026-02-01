@@ -2,7 +2,7 @@
 import { t, changeLanguage } from "i18next";
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { languages, type Language } from '../../lib/i18n';
-import { getFeaturedAttractions, getImageUrl } from '../../../sanity/lib/client';
+import { getDestinations, getImageUrl } from '../../lib/db';
 
 export async function getStaticPaths() {
   return Object.keys(languages).map((lang) => ({
@@ -15,37 +15,14 @@ const { lang } = Astro.params as { lang: Language };
 // Change language for i18next
 changeLanguage(lang);
 
-// Fetch featured attractions from Sanity (fallback to mock data if empty)
-let featuredAttractions = [];
+// Fetch districts (destinations) from PostgreSQL
+let featuredDestinations = [];
 try {
-  const sanityAttractions = await getFeaturedAttractions(lang, 3);
-  featuredAttractions = sanityAttractions?.length > 0 ? sanityAttractions : [];
+  const destinations = await getDestinations(lang);
+  featuredDestinations = destinations.slice(0, 6); // Show first 6 districts
 } catch (error) {
-  console.error('Error fetching attractions from Sanity:', error);
-}
-
-// Fallback to mock data if Sanity returns empty
-if (featuredAttractions.length === 0) {
-  featuredAttractions = [
-    {
-      slug: { current: 'burj-khalifa' },
-      title: t('home.featured.attraction1', { defaultValue: 'Burj Khalifa' }),
-      description: t('home.featured.attraction1Desc', { defaultValue: "The world's tallest building" }),
-      category: 'landmarks',
-    },
-    {
-      slug: { current: 'eiffel-tower' },
-      title: t('home.featured.attraction2', { defaultValue: 'Eiffel Tower' }),
-      description: t('home.featured.attraction2Desc', { defaultValue: 'Iconic symbol of Paris' }),
-      category: 'landmarks',
-    },
-    {
-      slug: { current: 'colosseum' },
-      title: t('home.featured.attraction3', { defaultValue: 'Colosseum' }),
-      description: t('home.featured.attraction3Desc', { defaultValue: 'Ancient Roman amphitheater' }),
-      category: 'cultural',
-    },
-  ];
+  console.error('Error fetching destinations from DB:', error);
+  featuredDestinations = [];
 }
 ---
 
@@ -99,36 +76,30 @@ if (featuredAttractions.length === 0) {
     </div>
   </section>
 
-  <!-- Featured Attractions Section -->
+  <!-- Featured Districts Section -->
   <section class="container py-16 md:py-24">
     <div class="mb-8 flex items-center justify-between">
       <div>
         <h2 class="text-3xl font-bold tracking-tight">
-          {t('home.topAttractions', { defaultValue: 'Top Attractions' })}
+          {t('home.topDestinations', { defaultValue: 'Dubai Districts' })}
         </h2>
         <p class="text-muted-foreground mt-2">
-          {t('home.sections.categoriesDesc', { defaultValue: 'Jump straight to what matters' })}
+          {t('home.sections.districtsDesc', { defaultValue: 'Explore the best areas in Dubai' })}
         </p>
       </div>
-      <a
-        href={`/${lang}/attractions`}
-        class="text-sm font-medium text-primary hover:underline"
-      >
-        {t('common.viewAll', { defaultValue: 'View All' })} →
-      </a>
     </div>
 
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {featuredAttractions.map((attraction) => (
+      {featuredDestinations.map((destination) => (
         <a
-          href={`/${lang}/attractions/${attraction.slug?.current || attraction.slug}`}
+          href={`/${lang}/destinations/${destination.slug?.current || destination.slug}`}
           class="group relative overflow-hidden rounded-lg border bg-card transition-all hover:shadow-lg"
         >
           <div class="aspect-video overflow-hidden bg-muted">
-            {attraction.images?.[0] ? (
+            {destination.heroImage?.url ? (
               <img
-                src={getImageUrl(attraction.images[0], 800, 450)}
-                alt={attraction.images[0].alt || attraction.title}
+                src={getImageUrl(destination.heroImage.url)}
+                alt={destination.name}
                 class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
             ) : (
@@ -143,13 +114,13 @@ if (featuredAttractions.length === 0) {
           </div>
           <div class="p-6">
             <h3 class="text-xl font-semibold group-hover:text-primary transition-colors">
-              {attraction.title}
+              {destination.name}
             </h3>
             <p class="mt-2 text-sm text-muted-foreground line-clamp-2">
-              {attraction.description}
+              {destination.description}
             </p>
             <div class="mt-4 flex items-center text-sm text-primary">
-              {t('common.readMore', { defaultValue: 'Read More' })}
+              {t('common.explore', { defaultValue: 'Explore' })}
               <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
               </svg>

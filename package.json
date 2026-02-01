@@ -20,9 +20,9 @@
     "@anthropic-ai/sdk": "^0.72.1",
     "@astrojs/react": "^4.4.2",
     "@astrojs/sitemap": "^3.7.0",
-    "@sanity/client": "^7.14.1",
+    "@prisma/adapter-pg": "^7.3.0",
+    "@prisma/client": "^7.3.0",
     "@sanity/document-internationalization": "^4.1.1",
-    "@sanity/image-url": "^2.0.3",
     "@sanity/vision": "^5.7.0",
     "@tailwindcss/vite": "^4.1.18",
     "@types/react": "^19.2.10",
@@ -34,16 +34,18 @@
     "framer-motion": "^12.29.2",
     "i18next": "^25.8.0",
     "lucide-react": "^0.563.0",
+    "pg": "^8.18.0",
+    "prisma": "^7.3.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "resend": "^6.9.1",
     "rss": "^1.2.2",
-    "sanity": "^5.7.0",
     "sanity-plugin-media": "^4.1.1",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
+    "dotenv": "^17.2.3",
     "tsx": "^4.21.0"
   }
 }

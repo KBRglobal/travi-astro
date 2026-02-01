@@ -678,27 +678,42 @@
       "dream": {
         "title": "Dromen",
         "subtitle": "Ontdek inspiratie",
-        "guides": ["Bestemmingsgidsen", "Foto-essays"]
+        "guides": [
+          "Bestemmingsgidsen",
+          "Foto-essays"
+        ]
       },
       "plan": {
         "title": "Plannen",
         "subtitle": "Plan je reis",
-        "guides": ["Reisplanning", "Visumvereisten"]
+        "guides": [
+          "Reisplanning",
+          "Visumvereisten"
+        ]
       },
       "prepare": {
         "title": "Voorbereiden",
         "subtitle": "Maak je klaar om te gaan",
-        "guides": ["Paklijsten", "Veiligheidstips"]
+        "guides": [
+          "Paklijsten",
+          "Veiligheidstips"
+        ]
       },
       "experience": {
         "title": "Ervaren",
         "subtitle": "Beleef het avontuur",
-        "guides": ["Lokale inzichten", "Verborgen pareltjes"]
+        "guides": [
+          "Lokale inzichten",
+          "Verborgen pareltjes"
+        ]
       },
       "share": {
         "title": "Delen",
         "subtitle": "Vertel je verhaal",
-        "guides": ["Reisschrijven", "Fotografie"]
+        "guides": [
+          "Reisschrijven",
+          "Fotografie"
+        ]
       }
     },
     "categories": {

@@ -3,7 +3,7 @@ import { t, changeLanguage } from "i18next";
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { languages, type Language } from '../../../lib/i18n';
 import SearchFilters from '../../../components/islands/SearchFilters';
-import { getAllRestaurants, getImageUrl } from '../../../../sanity/lib/client';
+import { getAllRestaurants, getImageUrl } from '../../../lib/db';
 
 export async function getStaticPaths() {
   return Object.keys(languages).map((lang) => ({
@@ -14,13 +14,12 @@ export async function getStaticPaths() {
 const { lang } = Astro.params as { lang: Language };
 changeLanguage(lang);
 
-// Fetch restaurants from Sanity (fallback to mock data if empty)
+// Fetch restaurants from PostgreSQL
 let restaurants = [];
 try {
-  const sanityRestaurants = await getAllRestaurants(lang);
-  restaurants = sanityRestaurants?.length > 0 ? sanityRestaurants : [];
+  restaurants = await getAllRestaurants(lang);
 } catch (error) {
-  console.error('Error fetching restaurants from Sanity:', error);
+  console.error('Error fetching restaurants from DB:', error);
 }
 
 // Fallback to mock data if Sanity returns empty

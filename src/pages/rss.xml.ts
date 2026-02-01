@@ -1,6 +1,6 @@
 import RSS from 'rss';
 import type { APIRoute } from 'astro';
-import { getAllArticles } from '../../sanity/lib/client';
+import { getAllArticles } from '../lib/db';
 
 export const GET: APIRoute = async ({ site }) => {
   const baseUrl = site?.toString() || 'https://travi.world';

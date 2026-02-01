@@ -678,27 +678,42 @@
       "dream": {
         "title": "Sogna",
         "subtitle": "Scopri l'ispirazione",
-        "guides": ["Guide di Destinazione", "Saggi Fotografici"]
+        "guides": [
+          "Guide di Destinazione",
+          "Saggi Fotografici"
+        ]
       },
       "plan": {
         "title": "Pianifica",
         "subtitle": "Traccia il tuo viaggio",
-        "guides": ["Pianificazione del Viaggio", "Requisiti del Visto"]
+        "guides": [
+          "Pianificazione del Viaggio",
+          "Requisiti del Visto"
+        ]
       },
       "prepare": {
         "title": "Prepara",
         "subtitle": "Preparati a partire",
-        "guides": ["Liste di Bagagli", "Consigli di Sicurezza"]
+        "guides": [
+          "Liste di Bagagli",
+          "Consigli di Sicurezza"
+        ]
       },
       "experience": {
         "title": "Vivi",
         "subtitle": "Vivi l'avventura",
-        "guides": ["Intuizioni Locali", "Gemme Nascoste"]
+        "guides": [
+          "Intuizioni Locali",
+          "Gemme Nascoste"
+        ]
       },
       "share": {
         "title": "Condividi",
         "subtitle": "Racconta la tua storia",
-        "guides": ["Scrittura di Viaggio", "Fotografia"]
+        "guides": [
+          "Scrittura di Viaggio",
+          "Fotografia"
+        ]
       }
     },
     "categories": {
