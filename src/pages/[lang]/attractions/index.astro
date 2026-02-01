@@ -3,6 +3,7 @@ import { t, changeLanguage } from "i18next";
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { languages, type Language } from '../../../lib/i18n';
 import SearchFilters from '../../../components/islands/SearchFilters';
+import { getAllAttractions, getImageUrl } from '../../../../sanity/lib/client';
 
 export async function getStaticPaths() {
   return Object.keys(languages).map((lang) => ({
@@ -13,21 +14,32 @@ export async function getStaticPaths() {
 const { lang } = Astro.params as { lang: Language };
 changeLanguage(lang);
 
-// TODO: Replace with Sanity data
-const attractions = [
-  { id: 'burj-khalifa', title: t('attractions.sample.burjKhalifa', { defaultValue: 'Burj Khalifa' }), description: t('attractions.sample.burjKhalifaDesc', { defaultValue: "World's tallest building" }), category: 'landmarks' },
-  { id: 'eiffel-tower', title: t('attractions.sample.eiffelTower', { defaultValue: 'Eiffel Tower' }), description: t('attractions.sample.eiffelTowerDesc', { defaultValue: 'Iconic symbol of Paris' }), category: 'landmarks' },
-  { id: 'colosseum', title: t('attractions.sample.colosseum', { defaultValue: 'Colosseum' }), description: t('attractions.sample.colosseumDesc', { defaultValue: 'Ancient Roman amphitheater' }), category: 'cultural' },
-  { id: 'taj-mahal', title: t('attractions.sample.tajMahal', { defaultValue: 'Taj Mahal' }), description: t('attractions.sample.tajMahalDesc', { defaultValue: 'Iconic ivory-white marble mausoleum' }), category: 'cultural' },
-  { id: 'tokyo-tower', title: t('attractions.sample.tokyoTower', { defaultValue: 'Tokyo Tower' }), description: t('attractions.sample.tokyoTowerDesc', { defaultValue: 'Communications and observation tower' }), category: 'landmarks' },
-  { id: 'dubai-mall', title: t('attractions.sample.dubaiMall', { defaultValue: 'Dubai Mall' }), description: t('attractions.sample.dubaiMallDesc', { defaultValue: 'One of the largest shopping malls' }), category: 'shopping' },
-  { id: 'louvre', title: t('attractions.sample.louvre', { defaultValue: 'Louvre Museum' }), description: t('attractions.sample.louvreDesc', { defaultValue: "World's largest art museum" }), category: 'museums' },
-  { id: 'sagrada-familia', title: t('attractions.sample.sagradaFamilia', { defaultValue: 'Sagrada Familia' }), description: t('attractions.sample.sagradaFamiliaDesc', { defaultValue: 'Iconic basilica by Gaudí' }), category: 'cultural' },
-  { id: 'statue-of-liberty', title: t('attractions.sample.statueOfLiberty', { defaultValue: 'Statue of Liberty' }), description: t('attractions.sample.statueOfLibertyDesc', { defaultValue: 'Symbol of freedom' }), category: 'landmarks' },
-  { id: 'great-wall', title: t('attractions.sample.greatWall', { defaultValue: 'Great Wall of China' }), description: t('attractions.sample.greatWallDesc', { defaultValue: 'Ancient defensive wall' }), category: 'cultural' },
-  { id: 'sydney-opera', title: t('attractions.sample.sydneyOpera', { defaultValue: 'Sydney Opera House' }), description: t('attractions.sample.sydneyOperaDesc', { defaultValue: 'Multi-venue performing arts center' }), category: 'cultural' },
-  { id: 'big-ben', title: t('attractions.sample.bigBen', { defaultValue: 'Big Ben' }), description: t('attractions.sample.bigBenDesc', { defaultValue: 'Iconic clock tower in London' }), category: 'landmarks' },
-];
+// Fetch attractions from Sanity (fallback to mock data if empty)
+let attractions = [];
+try {
+  const sanityAttractions = await getAllAttractions(lang);
+  attractions = sanityAttractions?.length > 0 ? sanityAttractions : [];
+} catch (error) {
+  console.error('Error fetching attractions from Sanity:', error);
+}
+
+// Fallback to mock data if Sanity returns empty
+if (attractions.length === 0) {
+  attractions = [
+    { slug: { current: 'burj-khalifa' }, title: t('attractions.sample.burjKhalifa', { defaultValue: 'Burj Khalifa' }), description: t('attractions.sample.burjKhalifaDesc', { defaultValue: "World's tallest building" }), category: 'landmarks' },
+    { slug: { current: 'eiffel-tower' }, title: t('attractions.sample.eiffelTower', { defaultValue: 'Eiffel Tower' }), description: t('attractions.sample.eiffelTowerDesc', { defaultValue: 'Iconic symbol of Paris' }), category: 'landmarks' },
+    { slug: { current: 'colosseum' }, title: t('attractions.sample.colosseum', { defaultValue: 'Colosseum' }), description: t('attractions.sample.colosseumDesc', { defaultValue: 'Ancient Roman amphitheater' }), category: 'cultural' },
+    { slug: { current: 'taj-mahal' }, title: t('attractions.sample.tajMahal', { defaultValue: 'Taj Mahal' }), description: t('attractions.sample.tajMahalDesc', { defaultValue: 'Iconic ivory-white marble mausoleum' }), category: 'cultural' },
+    { slug: { current: 'tokyo-tower' }, title: t('attractions.sample.tokyoTower', { defaultValue: 'Tokyo Tower' }), description: t('attractions.sample.tokyoTowerDesc', { defaultValue: 'Communications and observation tower' }), category: 'landmarks' },
+    { slug: { current: 'dubai-mall' }, title: t('attractions.sample.dubaiMall', { defaultValue: 'Dubai Mall' }), description: t('attractions.sample.dubaiMallDesc', { defaultValue: 'One of the largest shopping malls' }), category: 'shopping' },
+    { slug: { current: 'louvre' }, title: t('attractions.sample.louvre', { defaultValue: 'Louvre Museum' }), description: t('attractions.sample.louvreDesc', { defaultValue: "World's largest art museum" }), category: 'museums' },
+    { slug: { current: 'sagrada-familia' }, title: t('attractions.sample.sagradaFamilia', { defaultValue: 'Sagrada Familia' }), description: t('attractions.sample.sagradaFamiliaDesc', { defaultValue: 'Iconic basilica by Gaudí' }), category: 'cultural' },
+    { slug: { current: 'statue-of-liberty' }, title: t('attractions.sample.statueOfLiberty', { defaultValue: 'Statue of Liberty' }), description: t('attractions.sample.statueOfLibertyDesc', { defaultValue: 'Symbol of freedom' }), category: 'landmarks' },
+    { slug: { current: 'great-wall' }, title: t('attractions.sample.greatWall', { defaultValue: 'Great Wall of China' }), description: t('attractions.sample.greatWallDesc', { defaultValue: 'Ancient defensive wall' }), category: 'cultural' },
+    { slug: { current: 'sydney-opera' }, title: t('attractions.sample.sydneyOpera', { defaultValue: 'Sydney Opera House' }), description: t('attractions.sample.sydneyOperaDesc', { defaultValue: 'Multi-venue performing arts center' }), category: 'cultural' },
+    { slug: { current: 'big-ben' }, title: t('attractions.sample.bigBen', { defaultValue: 'Big Ben' }), description: t('attractions.sample.bigBenDesc', { defaultValue: 'Iconic clock tower in London' }), category: 'landmarks' },
+  ];
+}
 
 // Prepare filters for the React component
 const filters = {
@@ -89,17 +101,25 @@ const filters = {
     <div class="mb-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {attractions.map((attraction) => (
         <a
-          href={`/${lang}/attractions/${attraction.id}`}
+          href={`/${lang}/attractions/${attraction.slug?.current || attraction.slug}`}
           class="group overflow-hidden rounded-lg border bg-card transition-all hover:shadow-lg hover:border-primary/50"
         >
           <div class="aspect-video bg-muted overflow-hidden">
-            <div class="flex h-full items-center justify-center text-muted-foreground">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                <circle cx="8.5" cy="8.5" r="1.5"/>
-                <polyline points="21 15 16 10 5 21"/>
-              </svg>
-            </div>
+            {attraction.images?.[0] ? (
+              <img
+                src={getImageUrl(attraction.images[0], 600, 400)}
+                alt={attraction.images[0].alt || attraction.title}
+                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+            ) : (
+              <div class="flex h-full items-center justify-center text-muted-foreground">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+              </div>
+            )}
           </div>
           <div class="p-4">
             <div class="mb-2 flex items-center gap-2">

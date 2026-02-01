@@ -2,23 +2,39 @@ import { createClient } from '@sanity/client';
 import imageUrlBuilder from '@sanity/image-url';
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
+// Check if Sanity is configured
+const projectId = import.meta.env.PUBLIC_SANITY_PROJECT_ID || process.env.PUBLIC_SANITY_PROJECT_ID || '';
+const dataset = import.meta.env.PUBLIC_SANITY_DATASET || process.env.PUBLIC_SANITY_DATASET || 'production';
+export const isSanityConfigured = Boolean(projectId);
+
 // Sanity client configuration
-export const client = createClient({
-  projectId: import.meta.env.PUBLIC_SANITY_PROJECT_ID || process.env.PUBLIC_SANITY_PROJECT_ID || '',
-  dataset: import.meta.env.PUBLIC_SANITY_DATASET || process.env.PUBLIC_SANITY_DATASET || 'production',
-  apiVersion: '2024-01-01',
-  useCdn: true, // `false` for fresh data, `true` for faster cached data
-});
+export const client = isSanityConfigured
+  ? createClient({
+      projectId,
+      dataset,
+      apiVersion: '2024-01-01',
+      useCdn: true, // `false` for fresh data, `true` for faster cached data
+    })
+  : null;
 
 // Image URL builder
-const builder = imageUrlBuilder(client);
+const builder = client ? imageUrlBuilder(client) : null;
 
 export function urlFor(source: SanityImageSource) {
+  if (!builder) {
+    console.warn('Sanity not configured, cannot build image URL');
+    return null;
+  }
   return builder.image(source);
 }
 
 // Helper function to get image URL with transformations
 export function getImageUrl(source: SanityImageSource, width?: number, height?: number) {
+  if (!builder) {
+    console.warn('Sanity not configured, cannot build image URL');
+    return '/placeholder.jpg';
+  }
+
   let imageUrl = builder.image(source).auto('format').fit('max');
 
   if (width) {
@@ -88,6 +104,41 @@ export const queries = {
       images,
       destination->{name, slug},
       rating
+    }
+  `,
+
+  // Get all attractions
+  allAttractions: (lang: string) => `
+    *[_type == "attraction" && language == $lang] | order(title asc) {
+      _id,
+      title,
+      slug,
+      description,
+      category,
+      images,
+      destination->{name, slug},
+      rating,
+      featured
+    }
+  `,
+
+  // Get attraction by slug
+  attractionBySlug: (lang: string) => `
+    *[_type == "attraction" && slug.current == $slug && language == $lang][0] {
+      ...,
+      destination->{
+        name,
+        slug,
+        country
+      },
+      "relatedAttractions": *[_type == "attraction" && language == $lang && category == ^.category && slug.current != $slug][0...3] {
+        _id,
+        title,
+        slug,
+        category,
+        images,
+        rating
+      }
     }
   `,
 
@@ -215,49 +266,71 @@ export const queries = {
 
 // Typed fetch functions
 export async function getDestinations(lang: string) {
+  if (!client) return [];
   return client.fetch(queries.allDestinations(lang), { lang });
 }
 
 export async function getDestinationBySlug(slug: string, lang: string) {
+  if (!client) return null;
   return client.fetch(queries.destinationBySlug(lang), { slug, lang });
 }
 
 export async function getAttractionsByDestination(destinationId: string, lang: string) {
+  if (!client) return [];
   return client.fetch(queries.attractionsByDestination(lang), { destinationId, lang });
 }
 
 export async function getFeaturedAttractions(lang: string, limit = 12) {
+  if (!client) return [];
   return client.fetch(queries.featuredAttractions(lang, limit), { lang });
 }
 
+export async function getAllAttractions(lang: string) {
+  if (!client) return [];
+  return client.fetch(queries.allAttractions(lang), { lang });
+}
+
+export async function getAttractionBySlug(slug: string, lang: string) {
+  if (!client) return null;
+  return client.fetch(queries.attractionBySlug(lang), { slug, lang });
+}
+
 export async function getAllHotels(lang: string) {
+  if (!client) return [];
   return client.fetch(queries.allHotels(lang), { lang });
 }
 
 export async function getHotelsByDestination(destinationId: string, lang: string) {
+  if (!client) return [];
   return client.fetch(queries.hotelsByDestination(lang), { destinationId, lang });
 }
 
 export async function getAllRestaurants(lang: string) {
+  if (!client) return [];
   return client.fetch(queries.allRestaurants(lang), { lang });
 }
 
 export async function getRestaurantsByDestination(destinationId: string, lang: string) {
+  if (!client) return [];
   return client.fetch(queries.restaurantsByDestination(lang), { destinationId, lang });
 }
 
 export async function getAllArticles(lang: string) {
+  if (!client) return [];
   return client.fetch(queries.allArticles(lang), { lang });
 }
 
 export async function getFeaturedArticles(lang: string, limit = 6) {
+  if (!client) return [];
   return client.fetch(queries.featuredArticles(lang, limit), { lang });
 }
 
 export async function getArticleBySlug(slug: string, lang: string) {
+  if (!client) return null;
   return client.fetch(queries.articleBySlug(lang), { slug, lang });
 }
 
 export async function getCounts(lang: string) {
+  if (!client) return { destinations: 0, attractions: 0, hotels: 0, restaurants: 0, articles: 0 };
   return client.fetch(queries.counts(lang), { lang });
 }

@@ -2,6 +2,7 @@
 import { t, changeLanguage } from "i18next";
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { languages, type Language } from '../../lib/i18n';
+import { getFeaturedAttractions, getImageUrl } from '../../../sanity/lib/client';
 
 export async function getStaticPaths() {
   return Object.keys(languages).map((lang) => ({
@@ -14,33 +15,38 @@ const { lang } = Astro.params as { lang: Language };
 // Change language for i18next
 changeLanguage(lang);
 
-// TODO: Replace with Sanity data
-const featuredAttractions = [
-  {
-    id: 'burj-khalifa',
-    slug: 'burj-khalifa',
-    title: t('home.featured.attraction1', { defaultValue: 'Burj Khalifa' }),
-    description: t('home.featured.attraction1Desc', { defaultValue: "The world's tallest building" }),
-    image: '/placeholder.jpg',
-    category: 'landmarks',
-  },
-  {
-    id: 'eiffel-tower',
-    slug: 'eiffel-tower',
-    title: t('home.featured.attraction2', { defaultValue: 'Eiffel Tower' }),
-    description: t('home.featured.attraction2Desc', { defaultValue: 'Iconic symbol of Paris' }),
-    image: '/placeholder.jpg',
-    category: 'landmarks',
-  },
-  {
-    id: 'colosseum',
-    slug: 'colosseum',
-    title: t('home.featured.attraction3', { defaultValue: 'Colosseum' }),
-    description: t('home.featured.attraction3Desc', { defaultValue: 'Ancient Roman amphitheater' }),
-    image: '/placeholder.jpg',
-    category: 'cultural',
-  },
-];
+// Fetch featured attractions from Sanity (fallback to mock data if empty)
+let featuredAttractions = [];
+try {
+  const sanityAttractions = await getFeaturedAttractions(lang, 3);
+  featuredAttractions = sanityAttractions?.length > 0 ? sanityAttractions : [];
+} catch (error) {
+  console.error('Error fetching attractions from Sanity:', error);
+}
+
+// Fallback to mock data if Sanity returns empty
+if (featuredAttractions.length === 0) {
+  featuredAttractions = [
+    {
+      slug: { current: 'burj-khalifa' },
+      title: t('home.featured.attraction1', { defaultValue: 'Burj Khalifa' }),
+      description: t('home.featured.attraction1Desc', { defaultValue: "The world's tallest building" }),
+      category: 'landmarks',
+    },
+    {
+      slug: { current: 'eiffel-tower' },
+      title: t('home.featured.attraction2', { defaultValue: 'Eiffel Tower' }),
+      description: t('home.featured.attraction2Desc', { defaultValue: 'Iconic symbol of Paris' }),
+      category: 'landmarks',
+    },
+    {
+      slug: { current: 'colosseum' },
+      title: t('home.featured.attraction3', { defaultValue: 'Colosseum' }),
+      description: t('home.featured.attraction3Desc', { defaultValue: 'Ancient Roman amphitheater' }),
+      category: 'cultural',
+    },
+  ];
+}
 ---
 
 <BaseLayout
@@ -115,17 +121,25 @@ const featuredAttractions = [
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {featuredAttractions.map((attraction) => (
         <a
-          href={`/${lang}/attractions/${attraction.slug}`}
+          href={`/${lang}/attractions/${attraction.slug?.current || attraction.slug}`}
           class="group relative overflow-hidden rounded-lg border bg-card transition-all hover:shadow-lg"
         >
           <div class="aspect-video overflow-hidden bg-muted">
-            <div class="flex h-full items-center justify-center text-muted-foreground">
-              <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                <circle cx="8.5" cy="8.5" r="1.5"/>
-                <polyline points="21 15 16 10 5 21"/>
-              </svg>
-            </div>
+            {attraction.images?.[0] ? (
+              <img
+                src={getImageUrl(attraction.images[0], 800, 450)}
+                alt={attraction.images[0].alt || attraction.title}
+                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+            ) : (
+              <div class="flex h-full items-center justify-center text-muted-foreground">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+              </div>
+            )}
           </div>
           <div class="p-6">
             <h3 class="text-xl font-semibold group-hover:text-primary transition-colors">
