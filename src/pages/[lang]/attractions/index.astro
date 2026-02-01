@@ -1,7 +1,8 @@
 ---
+import { t, changeLanguage } from "i18next";
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { languages, type Language } from '../../../lib/i18n';
-import { getTranslations } from '../../../lib/translations';
+import SearchFilters from '../../../components/islands/SearchFilters';
 
 export async function getStaticPaths() {
   return Object.keys(languages).map((lang) => ({
@@ -10,161 +11,201 @@ export async function getStaticPaths() {
 }
 
 const { lang } = Astro.params as { lang: Language };
-const t = getTranslations(lang);
+changeLanguage(lang);
 
-// Sample attractions data - will be replaced with content collections
-const sampleAttractions = [
-  {
-    id: 'burj-khalifa',
-    title: 'Burj Khalifa',
-    description: "The world's tallest building",
-    category: 'landmarks',
-    image: '/placeholder.jpg',
-  },
-  {
-    id: 'dubai-mall',
-    title: 'Dubai Mall',
-    description: "One of the world's largest shopping malls",
-    category: 'shopping',
-    image: '/placeholder.jpg',
-  },
-  {
-    id: 'palm-jumeirah',
-    title: 'Palm Jumeirah',
-    description: 'Iconic palm-shaped island',
-    category: 'landmarks',
-    image: '/placeholder.jpg',
-  },
+// TODO: Replace with Sanity data
+const attractions = [
+  { id: 'burj-khalifa', title: t('attractions.sample.burjKhalifa', { defaultValue: 'Burj Khalifa' }), description: t('attractions.sample.burjKhalifaDesc', { defaultValue: "World's tallest building" }), category: 'landmarks' },
+  { id: 'eiffel-tower', title: t('attractions.sample.eiffelTower', { defaultValue: 'Eiffel Tower' }), description: t('attractions.sample.eiffelTowerDesc', { defaultValue: 'Iconic symbol of Paris' }), category: 'landmarks' },
+  { id: 'colosseum', title: t('attractions.sample.colosseum', { defaultValue: 'Colosseum' }), description: t('attractions.sample.colosseumDesc', { defaultValue: 'Ancient Roman amphitheater' }), category: 'cultural' },
+  { id: 'taj-mahal', title: t('attractions.sample.tajMahal', { defaultValue: 'Taj Mahal' }), description: t('attractions.sample.tajMahalDesc', { defaultValue: 'Iconic ivory-white marble mausoleum' }), category: 'cultural' },
+  { id: 'tokyo-tower', title: t('attractions.sample.tokyoTower', { defaultValue: 'Tokyo Tower' }), description: t('attractions.sample.tokyoTowerDesc', { defaultValue: 'Communications and observation tower' }), category: 'landmarks' },
+  { id: 'dubai-mall', title: t('attractions.sample.dubaiMall', { defaultValue: 'Dubai Mall' }), description: t('attractions.sample.dubaiMallDesc', { defaultValue: 'One of the largest shopping malls' }), category: 'shopping' },
+  { id: 'louvre', title: t('attractions.sample.louvre', { defaultValue: 'Louvre Museum' }), description: t('attractions.sample.louvreDesc', { defaultValue: "World's largest art museum" }), category: 'museums' },
+  { id: 'sagrada-familia', title: t('attractions.sample.sagradaFamilia', { defaultValue: 'Sagrada Familia' }), description: t('attractions.sample.sagradaFamiliaDesc', { defaultValue: 'Iconic basilica by Gaudí' }), category: 'cultural' },
+  { id: 'statue-of-liberty', title: t('attractions.sample.statueOfLiberty', { defaultValue: 'Statue of Liberty' }), description: t('attractions.sample.statueOfLibertyDesc', { defaultValue: 'Symbol of freedom' }), category: 'landmarks' },
+  { id: 'great-wall', title: t('attractions.sample.greatWall', { defaultValue: 'Great Wall of China' }), description: t('attractions.sample.greatWallDesc', { defaultValue: 'Ancient defensive wall' }), category: 'cultural' },
+  { id: 'sydney-opera', title: t('attractions.sample.sydneyOpera', { defaultValue: 'Sydney Opera House' }), description: t('attractions.sample.sydneyOperaDesc', { defaultValue: 'Multi-venue performing arts center' }), category: 'cultural' },
+  { id: 'big-ben', title: t('attractions.sample.bigBen', { defaultValue: 'Big Ben' }), description: t('attractions.sample.bigBenDesc', { defaultValue: 'Iconic clock tower in London' }), category: 'landmarks' },
 ];
+
+// Prepare filters for the React component
+const filters = {
+  all: t('attractions.filters.all', { defaultValue: 'All' }),
+  landmarks: t('attractions.filters.landmarks', { defaultValue: 'Landmarks' }),
+  museums: t('attractions.filters.museums', { defaultValue: 'Museums' }),
+  entertainment: t('attractions.filters.entertainment', { defaultValue: 'Entertainment' }),
+  nature: t('attractions.filters.nature', { defaultValue: 'Nature & Parks' }),
+  shopping: t('attractions.filters.shopping', { defaultValue: 'Shopping' }),
+  cultural: t('attractions.filters.cultural', { defaultValue: 'Cultural' }),
+};
 ---
 
 <BaseLayout
-  title={t.attractions.title}
-  description={t.attractions.subtitle}
+  title={t('attractions.hero.title', { defaultValue: 'Discover Amazing Attractions' })}
+  description={t('attractions.hero.description', { defaultValue: 'Explore thousands of attractions worldwide' })}
   lang={lang}
 >
   <div class="container py-20">
     <!-- Hero Section -->
     <div class="mb-12 text-center">
       <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
-        {t.attractions.hero.badgeThousands}
+        {t('attractions.hero.badge', { defaultValue: '3,000+ Attractions' })}
       </span>
-      <h1 class="mb-4 text-4xl font-bold md:text-5xl">
-        {t.attractions.hero.headlinePart1} <span class="text-primary">{t.attractions.hero.headlinePart2}</span>
+      <h1 class="mb-4 text-4xl font-bold md:text-5xl lg:text-6xl">
+        {t('attractions.hero.headlinePart1', { defaultValue: 'Discover' })}
+        <span class="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+          {' '}{t('attractions.hero.headlinePart2', { defaultValue: 'Amazing Places' })}
+        </span>
       </h1>
-      <div class="mx-auto max-w-3xl text-lg text-muted-foreground" set:html={t.attractions.hero.description} />
-
-      <!-- Search Bar -->
-      <div class="mx-auto mt-8 max-w-2xl">
-        <div class="flex gap-2">
-          <input
-            type="search"
-            placeholder={t.attractions.hero.searchPlaceholder}
-            aria-label={t.attractions.hero.searchAriaLabel}
-            class="flex h-12 w-full rounded-md border border-input bg-background px-4 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-          />
-          <button
-            class="inline-flex h-12 items-center justify-center rounded-md bg-primary px-6 text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-            aria-label={t.attractions.hero.searchButtonAriaLabel}
-          >
-            {t.attractions.hero.searchButton}
-          </button>
-        </div>
-      </div>
+      <p class="mx-auto max-w-3xl text-lg text-muted-foreground">
+        {t('attractions.hero.description', { defaultValue: 'Find detailed information about thousands of attractions worldwide. Hours, prices, tips, and honest recommendations.' })}
+      </p>
     </div>
 
-    <!-- Filters Section -->
-    <div class="mb-8">
-      <div class="mb-4 flex flex-wrap gap-2">
-        {Object.entries(t.attractions.filters).map(([key, label]: [string, string]) => (
-          <button class="rounded-md border px-4 py-2 text-sm font-medium transition-colors hover:bg-accent">
-            {label}
-          </button>
-        ))}
-      </div>
+    <!-- Search & Filters (React Island) -->
+    <SearchFilters
+      client:load
+      lang={lang}
+      filters={filters}
+      searchPlaceholder={t('attractions.hero.searchPlaceholder', { defaultValue: 'Search attractions...' })}
+      searchButton={t('attractions.hero.searchButton', { defaultValue: 'Search' })}
+    />
+
+    <!-- Results Count -->
+    <div class="mb-6 flex items-center justify-between">
+      <p class="text-sm text-muted-foreground">
+        {t('attractions.resultsCount', { defaultValue: 'Showing {{count}} attractions', count: attractions.length })}
+      </p>
+      <select class="rounded-md border border-input bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+        <option>{t('attractions.sortBy.featured', { defaultValue: 'Featured' })}</option>
+        <option>{t('attractions.sortBy.popular', { defaultValue: 'Most Popular' })}</option>
+        <option>{t('attractions.sortBy.rating', { defaultValue: 'Highest Rated' })}</option>
+        <option>{t('attractions.sortBy.newest', { defaultValue: 'Newest' })}</option>
+      </select>
     </div>
 
     <!-- Attractions Grid -->
-    <div class="mb-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {sampleAttractions.map((attraction) => (
+    <div class="mb-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {attractions.map((attraction) => (
         <a
           href={`/${lang}/attractions/${attraction.id}`}
-          class="group overflow-hidden rounded-lg border bg-background transition-all hover:shadow-lg"
+          class="group overflow-hidden rounded-lg border bg-card transition-all hover:shadow-lg hover:border-primary/50"
         >
-          <div class="aspect-video bg-muted"></div>
-          <div class="p-6">
+          <div class="aspect-video bg-muted overflow-hidden">
+            <div class="flex h-full items-center justify-center text-muted-foreground">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+            </div>
+          </div>
+          <div class="p-4">
             <div class="mb-2 flex items-center gap-2">
-              <span class="rounded-full bg-primary/10 px-2 py-1 text-xs font-medium text-primary">
-                {t.attractions.types[attraction.category] || attraction.category}
+              <span class="rounded-full bg-primary/10 px-2 py-1 text-xs font-medium text-primary capitalize">
+                {attraction.category}
               </span>
             </div>
-            <h3 class="text-xl font-semibold group-hover:text-primary">
+            <h3 class="text-lg font-semibold group-hover:text-primary transition-colors line-clamp-1">
               {attraction.title}
             </h3>
-            <p class="mt-2 text-sm text-muted-foreground">
+            <p class="mt-1 text-sm text-muted-foreground line-clamp-2">
               {attraction.description}
             </p>
+            <div class="mt-3 flex items-center text-xs text-primary">
+              {t('common.readMore', { defaultValue: 'Read More' })}
+              <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-3 w-3 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
           </div>
         </a>
       ))}
     </div>
 
     <!-- Features Section -->
-    <div class="mb-16">
+    <div class="mb-16 rounded-lg bg-muted/50 p-8 md:p-12">
       <div class="mb-8 text-center">
         <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
-          {t.attractions.sections.whyBookBadge}
+          {t('attractions.sections.whyBadge', { defaultValue: 'Why Choose TRAVI' })}
         </span>
-        <h2 class="mb-2 text-3xl font-bold">{t.attractions.sections.whyBookTitle}</h2>
-        <p class="text-muted-foreground">{t.attractions.sections.whyBookDesc}</p>
+        <h2 class="mb-2 text-3xl font-bold">
+          {t('attractions.sections.whyTitle', { defaultValue: 'Trusted Travel Information' })}
+        </h2>
+        <p class="text-muted-foreground">
+          {t('attractions.sections.whyDesc', { defaultValue: 'Everything you need to plan your perfect trip' })}
+        </p>
       </div>
       <div class="grid gap-6 md:grid-cols-3">
-        {Object.entries(t.attractions.features)
-          .filter(([key]) => !key.endsWith('Desc'))
-          .map(([key, title]: [string, string]) => {
-            const desc = t.attractions.features[key + 'Desc'];
-            return (
-              <div class="rounded-lg border bg-card p-6 text-center">
-                <h3 class="mb-2 text-lg font-semibold">{title}</h3>
-                <p class="text-sm text-muted-foreground">{desc}</p>
-              </div>
-            );
-          })}
+        <div class="rounded-lg border bg-card p-6 text-center">
+          <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+              <path d="M12 2v20M2 12h20"/>
+            </svg>
+          </div>
+          <h3 class="mb-2 text-lg font-semibold">
+            {t('attractions.features.accurate', { defaultValue: 'Accurate Information' })}
+          </h3>
+          <p class="text-sm text-muted-foreground">
+            {t('attractions.features.accurateDesc', { defaultValue: 'Up-to-date details on hours, prices, and more' })}
+          </p>
+        </div>
+
+        <div class="rounded-lg border bg-card p-6 text-center">
+          <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <h3 class="mb-2 text-lg font-semibold">
+            {t('attractions.features.verified', { defaultValue: 'Verified Reviews' })}
+          </h3>
+          <p class="text-sm text-muted-foreground">
+            {t('attractions.features.verifiedDesc', { defaultValue: 'Honest recommendations from real travelers' })}
+          </p>
+        </div>
+
+        <div class="rounded-lg border bg-card p-6 text-center">
+          <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <h3 class="mb-2 text-lg font-semibold">
+            {t('attractions.features.comprehensive', { defaultValue: 'Comprehensive Guides' })}
+          </h3>
+          <p class="text-sm text-muted-foreground">
+            {t('attractions.features.comprehensiveDesc', { defaultValue: 'Detailed information for every attraction' })}
+          </p>
+        </div>
       </div>
     </div>
 
-    <!-- Browse by Destination -->
-    <div class="mb-16">
-      <div class="mb-8 text-center">
-        <h2 class="mb-2 text-3xl font-bold">{t.attractions.browse.title}</h2>
-        <p class="text-muted-foreground">{t.attractions.browse.desc}</p>
-      </div>
-      <div class="text-center text-muted-foreground">
-        <p>{t.attractions.browse.noDestinations}</p>
-      </div>
-    </div>
-
-    <!-- Explore Links -->
-    <div class="rounded-lg border bg-muted/50 p-8 text-center">
-      <h2 class="mb-6 text-2xl font-bold">{t.attractions.exploreLinks.title}</h2>
+    <!-- Explore More -->
+    <div class="rounded-lg border bg-card p-8 text-center">
+      <h2 class="mb-6 text-2xl font-bold">
+        {t('attractions.exploreLinks.title', { defaultValue: 'Explore More' })}
+      </h2>
       <div class="flex flex-wrap justify-center gap-4">
         <a
           href={`/${lang}/hotels`}
-          class="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          class="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
-          {t.attractions.exploreLinks.hotelsWorldwide}
+          {t('attractions.exploreLinks.hotels', { defaultValue: 'Browse Hotels' })}
         </a>
         <a
           href={`/${lang}/dining`}
-          class="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          class="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
-          {t.attractions.exploreLinks.bestRestaurants}
+          {t('attractions.exploreLinks.dining', { defaultValue: 'Find Restaurants' })}
         </a>
         <a
-          href={`/${lang}/news`}
-          class="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          href={`/${lang}/guides`}
+          class="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
-          {t.attractions.exploreLinks.travelNews}
+          {t('attractions.exploreLinks.guides', { defaultValue: 'Travel Guides' })}
         </a>
       </div>
     </div>
