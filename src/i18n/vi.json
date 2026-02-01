@@ -4,30 +4,57 @@
     "destinations": "Điểm Đến",
     "attractions": "Điểm Tham Quan",
     "hotels": "Khách Sạn",
-    "guides": "Cẩm Nang",
+    "guides": "Cẩm Nang Du Lịch",
     "dining": "Ẩm Thực",
     "districts": "Khu Vực",
-    "articles": "Tin Tức",
-    "news": "Tin Tức",
+    "articles": "Bài Viết",
+    "news": "Tin Tức Du Lịch",
     "shopping": "Mua Sắm",
     "realEstate": "Bất Động Sản",
     "events": "Sự Kiện",
     "search": "Tìm Kiếm",
     "language": "Ngôn Ngữ",
-    "mainNavigation": "Menu chính",
-    "openMenu": "Mở menu",
-    "closeMenu": "Đóng menu",
-    "logoAlt": "TRAVI - Cẩm Nang Du Lịch",
+    "mainNavigation": "Thanh điều hướng chính",
+    "openMenu": "Mở menu điều hướng",
+    "closeMenu": "Đóng menu điều hướng",
+    "logoAlt": "TRAVI - Kho Thông Tin Du Lịch Toàn Cầu",
     "followInstagram": "Theo dõi TRAVI trên Instagram",
     "followTikTok": "Theo dõi TRAVI trên TikTok",
-    "changeLanguage": "Đổi ngôn ngữ",
+    "changeLanguage": "Thay đổi ngôn ngữ hiển thị",
     "selectLanguage": "Chọn Ngôn Ngữ",
     "popularLanguages": "Ngôn Ngữ Phổ Biến",
     "allLanguages": "Tất Cả Ngôn Ngữ"
   },
   "breadcrumbs": {
     "ariaLabel": "Điều hướng trang",
-    "dubai": "Dubai"
+    "dubai": "Dubai",
+    "home": "Trang chủ",
+    "destinations": "Điểm đến",
+    "hotels": "Khách sạn",
+    "restaurants": "Nhà hàng",
+    "attractions": "Điểm tham quan",
+    "activities": "Hoạt động",
+    "transportation": "Di chuyển",
+    "travel_guides": "Cẩm nang du lịch",
+    "blog": "Bài viết",
+    "search": "Tìm kiếm",
+    "all": "Tất cả",
+    "popular": "Phổ biến",
+    "recommended": "Gợi ý",
+    "nearby": "Gần đây",
+    "reviews": "Đánh giá",
+    "photos": "Hình ảnh",
+    "videos": "Video",
+    "map": "Bản đồ",
+    "filters": "Lọc",
+    "sort": "Sắp xếp",
+    "results": "Kết quả",
+    "page": "Trang",
+    "of": "của",
+    "back": "Quay lại",
+    "next": "Tiếp theo",
+    "previous": "Trước",
+    "breadcrumb_separator": "›"
   },
   "common": {
     "readMore": "Đọc Thêm",
@@ -56,121 +83,121 @@
   "home": {
     "hero": {
       "title": "Khám Phá Thế Giới Cùng TRAVI",
-      "subtitle": "Cẩm nang du lịch toàn diện cho 17 điểm đến trên toàn thế giới",
+      "subtitle": "Kho tàng thông tin du lịch uy tín cho 17 điểm đến hàng đầu thế giới",
       "searchPlaceholder": "Tìm điểm tham quan, khách sạn, nhà hàng...",
       "cta": "Bắt Đầu Khám Phá",
-      "badge": "Cổng Thông Tin Du Lịch Thế Giới",
+      "badge": "Ngân Hàng Dữ Liệu Du Lịch Toàn Cầu",
       "headlinePart1": "Nguồn Thông Tin",
-      "headlinePart2": "Du Lịch Tin Cậy",
-      "description": "Thông tin du lịch toàn diện cho {{destinations}} điểm đến trên toàn thế giới. Khám phá cẩm nang chi tiết cho hơn {{attractions}} điểm tham quan.",
-      "descriptionPart1": "Thông tin du lịch toàn diện cho",
-      "descriptionPart2": "điểm đến trên toàn thế giới. Khám phá cẩm nang chi tiết cho hơn",
-      "descriptionPart3": "điểm tham quan.",
-      "carouselLabel": "Điều hướng carousel điểm đến",
-      "viewDestination": "Xem {{name}} - {{tagline}}",
-      "worldwide": "Toàn Thế Giới",
+      "headlinePart2": "Du Lịch Đáng Tin Cậy",
+      "description": "Kho tàng thông tin du lịch chi tiết cho {{destinations}} điểm đến hấp dẫn trên toàn cầu. Khám phá hơn {{attractions}} điểm tham quan được phân tích chuyên sâu.",
+      "descriptionPart1": "Kho tàng thông tin du lịch chi tiết cho",
+      "descriptionPart2": "điểm đến hấp dẫn trên toàn cầu. Khám phá hơn",
+      "descriptionPart3": "điểm tham quan được phân tích chuyên sâu.",
+      "carouselLabel": "Điều hướng danh sách điểm đến nổi bật",
+      "viewDestination": "Khám phá {{name}} - {{tagline}}",
+      "worldwide": "Toàn Cầu",
       "exploreWorld": "Khám Phá Thế Giới",
-      "welcomeAriaLabel": "Chào mừng đến với TRAVI World",
-      "pageTitle": "TRAVI World - Cẩm Nang Du Lịch Khách Sạn, Điểm Tham Quan & Hoạt Động",
-      "pageDescription": "Cẩm nang du lịch hoàn chỉnh cho 17 điểm đến trên thế giới. Thông tin chuyên gia về khách sạn, điểm tham quan, nhà hàng và hoạt động cho hơn 3.000 địa điểm.",
-      "orgDescription": "Nguồn thông tin du lịch tin cậy của bạn cho 17 điểm đến trên toàn thế giới."
+      "welcomeAriaLabel": "Chào mừng đến với TRAVI World - Ngân hàng dữ liệu du lịch toàn cầu",
+      "pageTitle": "TRAVI World - Ngân Hàng Dữ Liệu Du Lịch: Khách Sạn, Điểm Tham Quan & Trải Nghiệm",
+      "pageDescription": "Nguồn thông tin du lịch đáng tin cậy nhất cho 17 thành phố du lịch hàng đầu thế giới. Phân tích chuyên sâu về hơn 3.000 điểm tham quan, khách sạn, nhà hàng và trải nghiệm độc đáo.",
+      "orgDescription": "TRAVI World - Ngân hàng dữ liệu du lịch uy tín hàng đầu với thông tin chi tiết về 17 điểm đến du lịch quan trọng trên toàn cầu."
     },
     "srLabel": {
-      "attractions": "Hơn {{count}} điểm tham quan",
-      "destinations": "{{count}} điểm đến trên toàn thế giới",
-      "languages": "Nền tảng đa ngôn ngữ với nhiều ngôn ngữ được bổ sung liên tục"
+      "attractions": "Hơn {{count}} điểm tham quan được đánh giá chi tiết",
+      "destinations": "{{count}} thành phố du lịch hàng đầu thế giới",
+      "languages": "Nền tảng đa ngôn ngữ phục vụ du khách toàn cầu"
     },
-    "featured": "Nổi Bật",
-    "trending": "Xu Hướng",
-    "topAttractions": "Điểm Tham Quan Hàng Đầu",
-    "bestHotels": "Khách Sạn Tốt Nhất",
-    "latestNews": "Tin Tức & Cẩm Nang Mới Nhất",
+    "featured": "Điểm Nhấn",
+    "trending": "Đang Được Quan Tâm",
+    "topAttractions": "Điểm Tham Quan Không Thể Bỏ Qua",
+    "bestHotels": "Khách Sạn Được Đánh Giá Cao",
+    "latestNews": "Tin Tức & Phân Tích Mới Nhất",
     "sections": {
-      "destinations": "Khám Phá Điểm Đến",
-      "destinationsDesc": "Khám phá bộ sưu tập các điểm đến du lịch toàn cầu được tuyển chọn",
-      "categories": "Duyệt Theo Danh Mục",
-      "categoriesDesc": "Tìm chính xác những gì bạn đang tìm kiếm",
-      "experiences": "Du Lịch Theo Trải Nghiệm",
-      "experiencesDesc": "Chọn phong cách du lịch của bạn",
-      "faq": "Câu Hỏi Thường Gặp",
-      "faqDesc": "Mọi thứ bạn cần biết về TRAVI",
-      "regions": "Khám Phá Theo Khu Vực",
-      "newsletter": "Cập Nhật Tin Tức",
-      "allDestinationsTitle": "Cẩm Nang Du Lịch Cho Tất Cả {{count}} Điểm Đến",
-      "completeGuide": "{{name}}, {{country}} - Cẩm Nang Du Lịch Hoàn Chỉnh"
+      "destinations": "Khám Phá Các Điểm Đến",
+      "destinationsDesc": "Thông tin chuyên sâu về các thành phố du lịch hàng đầu thế giới",
+      "categories": "Tìm Kiếm Theo Chủ Đề",
+      "categoriesDesc": "Dễ dàng tìm kiếm thông tin phù hợp với nhu cầu của bạn",
+      "experiences": "Phong Cách Du Lịch",
+      "experiencesDesc": "Lựa chọn trải nghiệm phù hợp với sở thích cá nhân",
+      "faq": "Thắc Mắc Thường Gặp",
+      "faqDesc": "Tìm hiểu cách sử dụng TRAVI World hiệu quả nhất",
+      "regions": "Khám Phá Theo Khu Vực Địa Lý",
+      "newsletter": "Bản Tin Cập Nhật",
+      "allDestinationsTitle": "Thông Tin Chi Tiết {{count}} Điểm Đến Du Lịch Hàng Đầu",
+      "completeGuide": "{{name}}, {{country}} - Phân Tích Toàn Diện"
     },
     "cta": {
-      "exploreDestinations": "Khám Phá Điểm Đến",
-      "viewGuides": "Xem Cẩm Nang",
-      "viewAll": "Xem Tất Cả",
-      "startExploring": "Bắt Đầu Khám Phá",
-      "planTrip": "Lên Kế Hoạch Chuyến Đi",
-      "viewExperience": "Xem {{name}}"
+      "exploreDestinations": "Khám Phá Các Điểm Đến",
+      "viewGuides": "Xem Hướng Dẫn Chi Tiết",
+      "viewAll": "Xem Toàn Bộ",
+      "startExploring": "Bắt Đầu Hành Trình",
+      "planTrip": "Lập Kế Hoạch Du Lịch",
+      "viewExperience": "Tìm Hiểu {{name}}"
     },
     "stats": {
       "destinations": "ĐIỂM ĐẾN",
       "attractions": "ĐIỂM THAM QUAN",
       "languages": "NGÔN NGỮ",
       "attractionsNum": "3.000+",
-      "destinationsNum": "16",
-      "languagesNum": "17+",
-      "destinationsCountWithLabel": "{{count}} điểm đến",
-      "attractionsCountWithLabel": "Hơn {{count}} điểm tham quan"
+      "destinationsNum": "17",
+      "languagesNum": "20+",
+      "destinationsCountWithLabel": "{{count}} thành phố du lịch",
+      "attractionsCountWithLabel": "Hơn {{count}} địa điểm được đánh giá"
     },
     "categories": {
       "attractions": "Điểm Tham Quan",
-      "attractionsDesc": "Những địa điểm phải đến",
+      "attractionsDesc": "Địa danh không thể bỏ qua",
       "news": "Tin Tức Du Lịch",
-      "newsDesc": "Cập nhật mới nhất",
-      "guides": "Cẩm Nang",
-      "guidesDesc": "Cẩm nang điểm đến",
-      "hotels": "Khách Sạn",
-      "hotelsDesc": "Tìm chỗ ở hoàn hảo"
+      "newsDesc": "Thông tin mới nhất từ khắp nơi",
+      "guides": "Hướng Dẫn Du Lịch",
+      "guidesDesc": "Phân tích chuyên sâu từng điểm đến",
+      "hotels": "Lưu Trú",
+      "hotelsDesc": "Đánh giá khách sạn chi tiết"
     },
     "experiences": {
-      "luxury": "Du Lịch Sang Trọng",
-      "luxuryDesc": "Trải nghiệm du lịch cao cấp và điểm đến độc quyền",
-      "adventure": "Phiêu Lưu & Ngoài Trời",
-      "adventureDesc": "Trải nghiệm phiêu lưu và hoạt động ngoài trời đầy phấn khích",
+      "luxury": "Du Lịch Cao Cấp",
+      "luxuryDesc": "Trải nghiệm đẳng cấp tại những điểm đến xa hoa nhất",
+      "adventure": "Mạo Hiểm & Khám Phá",
+      "adventureDesc": "Những hoạt động phiêu lưu và trải nghiệm thiên nhiên hoang dã",
       "family": "Du Lịch Gia Đình",
-      "familyDesc": "Điểm đến và hoạt động thân thiện với gia đình",
+      "familyDesc": "Điểm đến an toàn và vui vẻ cho mọi lứa tuổi",
       "budget": "Du Lịch Tiết Kiệm",
-      "budgetDesc": "Lựa chọn du lịch và điểm đến giá cả phải chăng",
-      "romance": "Tuần Trăng Mật & Lãng Mạn",
-      "romanceDesc": "Điểm đến lãng mạn và tuần trăng mật",
-      "solo": "Du Lịch Một Mình",
-      "soloDesc": "Điểm đến hoàn hảo cho du khách đi một mình"
+      "budgetDesc": "Khám phá thế giới với ngân sách hợp lý",
+      "romance": "Lãng Mạn & Trăng Mật",
+      "romanceDesc": "Những điểm đến tình yêu cho các cặp đôi",
+      "solo": "Du Lịch Độc Hành",
+      "soloDesc": "Hướng dẫn an toàn cho người đi du lịch một mình"
     },
     "faq": {
-      "title": "Câu Hỏi Thường Gặp",
-      "subtitle": "Mọi thứ bạn cần biết về TRAVI World",
+      "title": "Thắc Mắc Thường Gặp",
+      "subtitle": "Tìm hiểu về TRAVI World và cách sử dụng hiệu quả",
       "whatIsTravi": "TRAVI World là gì?",
-      "whatIsTraviAnswer": "TRAVI World là nền tảng thông tin du lịch toàn diện bao gồm 17 điểm đến trên toàn thế giới với cẩm nang chi tiết cho hơn 3.000 điểm tham quan, khách sạn, nhà hàng và hoạt động.",
-      "howManyDestinations": "TRAVI bao gồm bao nhiêu điểm đến?",
-      "howManyDestinationsAnswer": "TRAVI World bao gồm 17 điểm đến du lịch lớn bao gồm Dubai, Paris, Tokyo, New York, Barcelona, Singapore, London, Bangkok, Abu Dhabi, Amsterdam, Hong Kong, Istanbul, Las Vegas, Los Angeles, Miami và Rome.",
-      "isFree": "TRAVI World có miễn phí không?",
-      "isFreeAnswer": "Có, TRAVI World hoàn toàn miễn phí. Duyệt hàng nghìn cẩm nang du lịch, đánh giá điểm tham quan, gợi ý khách sạn và nhà hàng mà không mất phí.",
-      "updateFrequency": "Nội dung được cập nhật bao lâu một lần?",
-      "updateFrequencyAnswer": "Nội dung TRAVI World được cập nhật hàng ngày với tin tức du lịch mới nhất, đánh giá điểm tham quan mới và thông tin cập nhật về khách sạn và nhà hàng trên tất cả 17 điểm đến."
+      "whatIsTraviAnswer": "TRAVI World là ngân hàng dữ liệu du lịch chuyên nghiệp, cung cấp thông tin đáng tin cậy về 17 thành phố du lịch quan trọng nhất thế giới. Với hơn 3.000 bài phân tích chi tiết về điểm tham quan, khách sạn, nhà hàng và trải nghiệm địa phương.",
+      "howManyDestinations": "TRAVI có thông tin về bao nhiêu điểm đến?",
+      "howManyDestinationsAnswer": "TRAVI World hiện cung cấp thông tin chi tiết về 17 thành phố du lịch hàng đầu: Dubai, Paris, Tokyo, New York, Barcelona, Singapore, London, Bangkok, Abu Dhabi, Amsterdam, Hong Kong, Istanbul, Las Vegas, Los Angeles, Miami và Rome.",
+      "isFree": "Sử dụng TRAVI World có mất phí không?",
+      "isFreeAnswer": "Hoàn toàn miễn phí. Bạn có thể truy cập toàn bộ kho dữ liệu du lịch, đọc hàng nghìn bài phân tích chuyên sâu và tìm kiếm thông tin về mọi điểm đến mà không cần đăng ký hay trả phí.",
+      "updateFrequency": "Thông tin được cập nhật như thế nào?",
+      "updateFrequencyAnswer": "Đội ngũ biên tập của TRAVI World cập nhật thông tin liên tục. Tin tức du lịch được đăng tải hàng ngày, đánh giá điểm tham quan được kiểm tra định kỳ, và thông tin về khách sạn, nhà hàng luôn được làm mới để đảm bảo độ chính xác cao nhất."
     },
-    "mascotAlt": "Linh vật TRAVI với các địa danh thế giới - khám phá cẩm nang du lịch Dubai, Paris, London, Rome và nhiều hơn nữa",
-    "mascotTitle": "TRAVI World - Cẩm Nang Du Lịch Các Điểm Đến Toàn Cầu"
+    "mascotAlt": "Biểu tượng TRAVI với các công trình nổi tiếng thế giới - khám phá thông tin du lịch Dubai, Paris, London, Rome và 13 điểm đến khác",
+    "mascotTitle": "TRAVI World - Ngân Hàng Dữ Liệu Du Lịch Toàn Cầu"
   },
   "attractions": {
     "title": "Điểm Tham Quan Dubai",
-    "subtitle": "Khám phá các địa danh biểu tượng và những viên ngọc ẩn",
+    "subtitle": "Khám phá biểu tượng sa mạc và kỳ quan kiến trúc hiện đại",
     "hero": {
       "badge": "{{count}} điểm tham quan tại {{cities}} thành phố",
       "badgeThousands": "Hàng nghìn điểm tham quan trên toàn thế giới",
-      "headlinePart1": "Hoạt Động",
-      "headlinePart2": "Trên Toàn Thế Giới",
-      "description": "<span class=\"font-medium text-slate-700 dark:text-slate-300\">Vé vào cửa không xếp hàng</span> đến Tháp Eiffel, Đấu Trường La Mã, Burj Khalifa và các điểm tham quan hàng đầu tại Paris, Rome, Dubai và nhiều hơn nữa.",
+      "headlinePart1": "Trải Nghiệm Độc Đáo",
+      "headlinePart2": "Khắp Năm Châu",
+      "description": "<span class=\"font-medium text-slate-700 dark:text-slate-300\">Vé ưu tiên không chờ đợi</span> lên Tháp Eiffel, vào Đấu Trường La Mã, ngắm toàn cảnh từ Burj Khalifa và hàng nghìn điểm du lịch nổi tiếng tại Paris, Rome, Dubai cùng nhiều thành phố khác.",
       "searchPlaceholder": "Tìm Tháp Eiffel, Đấu Trường La Mã, Burj Khalifa...",
-      "carouselLabel": "Carousel điểm tham quan nổi bật",
-      "sectionLabel": "Đặt vé đến các điểm tham quan hàng đầu trên toàn thế giới",
+      "carouselLabel": "Danh sách điểm tham quan nổi bật",
+      "sectionLabel": "Đặt vé tham quan các địa danh hàng đầu thế giới",
       "searchAriaLabel": "Tìm kiếm điểm tham quan theo tên hoặc thành phố",
       "searchButton": "Tìm Kiếm",
-      "searchButtonAriaLabel": "Tìm kiếm điểm tham quan"
+      "searchButtonAriaLabel": "Thực hiện tìm kiếm điểm tham quan"
     },
     "stats": {
       "attractions": "ĐIỂM THAM QUAN",
@@ -183,114 +210,141 @@
       "rating": "Đánh giá {{rating}} sao"
     },
     "types": {
-      "all": "Tất Cả Loại",
-      "museums": "Bảo Tàng",
-      "landmarks": "Địa Danh",
-      "tours": "Tour Du Lịch",
-      "themeParks": "Công Viên Giải Trí",
-      "shows": "Chương Trình Biểu Diễn"
+      "all": "Tất Cả Loại Hình",
+      "museums": "Bảo Tàng & Phòng Triển Lãm",
+      "landmarks": "Di Tích & Công Trình Lịch Sử",
+      "tours": "Tour Tham Quan & Khám Phá",
+      "themeParks": "Công Viên Vui Chơi & Giải Trí",
+      "shows": "Biểu Diễn & Sự Kiện Văn Hóa"
     },
-    "thingsToDoIn": "Hoạt Động Tại {{name}}",
-    "countAttractions": "{{country}} - {{count}} điểm tham quan",
+    "thingsToDoIn": "Điểm Đến Không Thể Bỏ Qua Tại {{name}}",
+    "countAttractions": "{{country}} - {{count}} điểm tham quan hấp dẫn",
     "filters": {
       "all": "Tất Cả",
-      "popular": "Phổ Biến Nhất",
-      "free": "Miễn Phí Vào Cửa",
-      "familyFriendly": "Thân Thiện Gia Đình",
-      "outdoor": "Ngoài Trời",
-      "indoor": "Trong Nhà"
+      "popular": "Được Yêu Thích Nhất",
+      "free": "Miễn Phí Tham Quan",
+      "familyFriendly": "Phù Hợp Gia Đình",
+      "outdoor": "Hoạt Động Ngoài Trời",
+      "indoor": "Hoạt Động Trong Nhà"
     },
     "details": {
-      "location": "Vị Trí",
-      "hours": "Giờ Mở Cửa",
-      "price": "Giá",
-      "duration": "Thời Gian",
-      "tips": "Mẹo Từ Người Trong Cuộc"
+      "location": "Địa Điểm",
+      "hours": "Thời Gian Hoạt Động",
+      "price": "Giá Vé",
+      "duration": "Thời Lượng Tham Quan",
+      "tips": "Kinh Nghiệm Từ Chuyên Gia"
     },
     "sections": {
-      "destinations": "Khám Phá Điểm Tham Quan Theo Điểm Đến",
-      "destinationsDesc": "Chọn một thành phố để khám phá những hoạt động tuyệt vời",
-      "faq": "Câu Hỏi Thường Gặp",
-      "faqDesc": "Nhận câu trả lời về việc đặt điểm tham quan trên toàn thế giới",
-      "whyBookBadge": "Tại Sao Đặt Với Chúng Tôi",
-      "whyBookTitle": "Không Xếp Hàng, Tiết Kiệm Thời Gian",
-      "whyBookDesc": "Đặt vé trước và tận hưởng việc vào cửa không rắc rối tại các điểm tham quan hàng đầu",
-      "allDestinations": "Tất Cả Điểm Đến"
+      "destinations": "Khám Phá Điểm Tham Quan Theo Từng Điểm Đến",
+      "destinationsDesc": "Lựa chọn thành phố để khám phá những trải nghiệm đáng nhớ",
+      "faq": "Giải Đáp Thắc Mắc",
+      "faqDesc": "Tìm hiểu mọi thông tin về việc đặt vé tham quan trên toàn cầu",
+      "whyBookBadge": "Lý Do Nên Chọn Chúng Tôi",
+      "whyBookTitle": "Tiết Kiệm Thời Gian, Tối Ưu Trải Nghiệm",
+      "whyBookDesc": "Đặt vé trực tuyến và tận hưởng quyền ưu tiên tại các điểm du lịch hàng đầu",
+      "allDestinations": "Xem Tất Cả Điểm Đến"
     },
     "features": {
-      "skipTheLine": "Vé Không Xếp Hàng",
-      "skipTheLineDesc": "Bỏ qua hàng dài tại Tháp Eiffel, Đấu Trường La Mã, Vatican và nhiều hơn nữa",
-      "mobileTickets": "Vé Di Động",
-      "mobileTicketsDesc": "Giao ngay lập tức đến điện thoại - hiển thị vé và vào cửa",
-      "freeCancellation": "Hủy Miễn Phí",
-      "freeCancellationDesc": "Kế hoạch thay đổi? Hủy tới 24 giờ trước để được hoàn tiền đầy đủ"
+      "skipTheLine": "Vé Ưu Tiên Không Xếp Hàng",
+      "skipTheLineDesc": "Tiết kiệm thời gian quý báu tại Tháp Eiffel, Đấu Trường La Mã, Vatican và nhiều nơi khác",
+      "mobileTickets": "Vé Điện Tử Tiện Lợi",
+      "mobileTicketsDesc": "Nhận vé ngay trên smartphone - quét mã và vào thẳng",
+      "freeCancellation": "Chính Sách Hủy Linh Hoạt",
+      "freeCancellationDesc": "Đổi kế hoạch? Hủy miễn phí trước 24 giờ và hoàn tiền 100%"
     },
     "browse": {
-      "title": "Hoạt Động Theo Điểm Đến",
-      "desc": "Tìm điểm tham quan và trải nghiệm tại các thành phố hàng đầu thế giới",
-      "thingsToDo": "{{count}} hoạt động",
-      "noDestinations": "Hiện không có điểm đến nào."
+      "title": "Khám Phá Theo Điểm Đến",
+      "desc": "Tìm kiếm điểm tham quan và trải nghiệm tại các thành phố du lịch hàng đầu",
+      "thingsToDo": "{{count}} hoạt động hấp dẫn",
+      "noDestinations": "Chưa có thông tin điểm đến."
     },
     "exploreLinks": {
       "title": "Khám Phá Thêm Cẩm Nang Du Lịch",
-      "hotelsWorldwide": "Khách Sạn Trên Toàn Thế Giới",
-      "bestRestaurants": "Nhà Hàng Tốt Nhất",
-      "travelNews": "Tin Tức Du Lịch"
+      "hotelsWorldwide": "Khách Sạn Toàn Cầu",
+      "bestRestaurants": "Ẩm Thực Địa Phương",
+      "travelNews": "Tin Tức & Xu Hướng Du Lịch"
     },
     "cta": {
-      "title": "Sẵn Sàng Khám Phá?",
-      "desc": "Đặt vé không xếp hàng đến Tháp Eiffel, Đấu Trường La Mã, Burj Khalifa và các điểm tham quan hàng đầu trên toàn thế giới.",
-      "parisAttractions": "Điểm Tham Quan Paris",
-      "romeAttractions": "Điểm Tham Quan Rome"
+      "title": "Bắt Đầu Hành Trình Của Bạn",
+      "desc": "Đặt vé ưu tiên tham quan Tháp Eiffel, Đấu Trường La Mã, Burj Khalifa và hàng nghìn điểm đến hấp dẫn khắp thế giới.",
+      "parisAttractions": "Khám Phá Paris",
+      "romeAttractions": "Khám Phá Rome"
     },
     "search": {
-      "popular": "Phổ Biến:",
-      "thingsToDoIn": "Hoạt Động Tại {{city}}",
-      "ariaCarouselNav": "Điều hướng carousel điểm tham quan",
-      "ariaViewInCity": "Xem {{name}} tại {{city}}"
+      "popular": "Tìm kiếm nhiều nhất:",
+      "thingsToDoIn": "Trải nghiệm tại {{city}}",
+      "ariaCarouselNav": "Điều hướng danh sách điểm tham quan",
+      "ariaViewInCity": "Xem thông tin {{name}} tại {{city}}"
     },
     "gallery": {
       "ariaFeaturedAttraction": "Điểm tham quan nổi bật",
-      "ariaThumbnails": "Ảnh thu nhỏ carousel điểm tham quan",
-      "ariaTicketsIn": "Vé {{name}} tại {{city}}",
-      "priceFrom": "Từ",
-      "bookTickets": "Đặt Vé",
-      "skipTheLine": "Không Xếp Hàng",
-      "duration": "2-3 giờ",
+      "ariaThumbnails": "Xem ảnh điểm tham quan",
+      "ariaTicketsIn": "Đặt vé {{name}} tại {{city}}",
+      "priceFrom": "Giá từ",
+      "bookTickets": "Đặt Vé Ngay",
+      "skipTheLine": "Vé Ưu Tiên",
+      "duration": "2-3 tiếng",
       "freeCancellation": "Hủy Miễn Phí",
-      "freeCancellationDesc": "24h trước chuyến thăm",
-      "mobileTickets": "Vé Di Động",
-      "instantDelivery": "Giao ngay lập tức"
+      "freeCancellationDesc": "Trước 24h khởi hành",
+      "mobileTickets": "Vé Điện Tử",
+      "instantDelivery": "Nhận vé ngay lập tức"
     },
     "chip": {
-      "thingsToDo": "{{count}} hoạt động"
+      "thingsToDo": "{{count}} điểm tham quan"
     }
   },
   "hotels": {
-    "title": "Khách Sạn Dubai",
-    "subtitle": "Tìm chỗ ở hoàn hảo của bạn",
+    "title": "Khách Sạn Dubai - Hướng Dẫn Lưu Trú Toàn Diện",
+    "subtitle": "Khám phá đa dạng lựa chọn từ resort 7 sao đến khách sạn boutique độc đáo",
     "filters": {
       "all": "Tất Cả Khách Sạn",
-      "luxury": "Sang Trọng",
-      "budget": "Tiết Kiệm",
-      "beachfront": "Ven Biển",
-      "cityCenter": "Trung Tâm Thành Phố",
-      "familyFriendly": "Thân Thiện Gia Đình"
+      "luxury": "Siêu Sang Trọng",
+      "budget": "Giá Hợp Lý",
+      "beachfront": "Hướng Biển",
+      "cityCenter": "Trung Tâm Dubai",
+      "familyFriendly": "Gia Đình & Trẻ Em",
+      "businessHotels": "Khách Sạn Doanh Nhân",
+      "boutique": "Boutique Độc Đáo",
+      "desert": "Resort Sa Mạc",
+      "nearMetro": "Gần Tàu Metro"
     },
     "details": {
-      "priceFrom": "Từ",
-      "perNight": "mỗi đêm",
-      "amenities": "Tiện Nghi",
-      "checkIn": "Nhận Phòng",
-      "checkOut": "Trả Phòng",
-      "rooms": "Phòng",
-      "rating": "Đánh Giá"
+      "priceFrom": "Giá từ",
+      "perNight": "VNĐ/đêm",
+      "amenities": "Tiện Ích Nổi Bật",
+      "checkIn": "Giờ Nhận Phòng",
+      "checkOut": "Giờ Trả Phòng",
+      "rooms": "Loại Phòng",
+      "rating": "Xếp Hạng Sao",
+      "guestRating": "Đánh Giá Khách",
+      "location": "Vị Trí",
+      "distanceFromCenter": "Cách Trung Tâm",
+      "breakfast": "Bữa Sáng",
+      "wifi": "WiFi Miễn Phí",
+      "parking": "Bãi Đỗ Xe",
+      "pool": "Hồ Bơi",
+      "spa": "Spa & Wellness",
+      "gym": "Phòng Gym",
+      "airportTransfer": "Đưa Đón Sân Bay"
     },
-    "bookNow": "Đặt Ngay"
+    "bookNow": "Đặt Phòng Ngay",
+    "viewDetails": "Xem Chi Tiết",
+    "compareHotels": "So Sánh Khách Sạn",
+    "availability": "Kiểm Tra Phòng Trống",
+    "specialOffers": "Ưu Đãi Đặc Biệt",
+    "meta": {
+      "description": "Tìm kiếm và so sánh khách sạn Dubai từ sang trọng đến bình dân. Đánh giá chi tiết, hình ảnh thực tế và giá tốt nhất cho chuyến du lịch Dubai của bạn",
+      "keywords": "khách sạn Dubai, resort Dubai, khách sạn 5 sao Dubai, khách sạn giá rẻ Dubai, khách sạn ven biển Dubai, đặt phòng Dubai"
+    }
   },
   "dining": {
-    "title": "Ẩm Thực Dubai",
-    "subtitle": "Trải nghiệm ẩm thực cho mọi khẩu vị",
+    "title": "Ẩm Thực Dubai - Hương Vị Tứ Phương",
+    "subtitle": "Khám phá thiên đường ẩm thực từ sang trọng đến bình dân tại trung tâm giao thoa văn hóa Trung Đông",
+    "meta": {
+      "title": "Ẩm Thực Dubai 2024 - Nhà Hàng & Quán Ăn Ngon | TRAVI",
+      "description": "Cẩm nang ẩm thực Dubai 2024: Nhà hàng Michelin, món ăn đường phố, quán cafe view đẹp. Review chi tiết, giá cả, địa điểm cho du khách Việt Nam.",
+      "keywords": "ẩm thực Dubai, nhà hàng Dubai, món ăn Dubai, quán ăn ngon Dubai, Dubai food guide, halal Dubai, nhà hàng Việt Nam Dubai"
+    },
     "filters": {
       "all": "Tất Cả Nhà Hàng",
       "fineDining": "Nhà Hàng Cao Cấp",
@@ -298,14 +352,52 @@
       "cafes": "Quán Cà Phê",
       "streetFood": "Ẩm Thực Đường Phố",
       "halal": "Halal",
-      "vegetarian": "Chay"
+      "vegetarian": "Chay",
+      "seafood": "Hải Sản",
+      "middleEastern": "Trung Đông",
+      "asian": "Châu Á",
+      "european": "Châu Âu",
+      "buffet": "Buffet",
+      "rooftop": "Sân Thượng"
     },
     "details": {
-      "cuisine": "Ẩm Thực",
+      "cuisine": "Phong Cách Ẩm Thực",
       "priceRange": "Mức Giá",
       "hours": "Giờ Mở Cửa",
       "dress": "Quy Định Trang Phục",
-      "reservations": "Đặt Chỗ"
+      "reservations": "Đặt Chỗ",
+      "location": "Khu Vực",
+      "specialties": "Món Đặc Biệt",
+      "rating": "Đánh Giá",
+      "parking": "Bãi Đỗ Xe",
+      "payment": "Phương Thức Thanh Toán",
+      "features": "Tiện Ích"
+    },
+    "priceCategories": {
+      "budget": "Dưới 100 AED/người",
+      "moderate": "100-300 AED/người",
+      "expensive": "300-500 AED/người",
+      "luxury": "Trên 500 AED/người"
+    },
+    "diningTips": {
+      "title": "Lưu Ý Khi Ăn Uống Tại Dubai",
+      "tips": [
+        "Đặt bàn trước cho nhà hàng cao cấp, đặc biệt cuối tuần",
+        "Tháng Ramadan: nhiều nhà hàng đóng cửa ban ngày",
+        "Rượu bia chỉ phục vụ tại khách sạn và một số địa điểm có giấy phép",
+        "Brunch thứ Sáu phổ biến với người dân địa phương",
+        "Tip 10-15% đã bao gồm trong hóa đơn"
+      ]
+    },
+    "popularAreas": {
+      "title": "Khu Vực Ẩm Thực Nổi Tiếng",
+      "areas": {
+        "jbr": "JBR & Marina - Nhà hàng view biển",
+        "downtown": "Downtown - Cao cấp & sang trọng",
+        "deira": "Deira - Ẩm thực truyền thống",
+        "jumeirah": "Jumeirah - Đa dạng phong cách",
+        "alSeef": "Al Seef - Không gian văn hóa"
+      }
     }
   },
   "destinations": {
@@ -469,144 +561,278 @@
     }
   },
   "districts": {
-    "title": "Khu Vực Dubai",
-    "subtitle": "Khám phá các khu phố đa dạng của Dubai",
-    "explore": "Khám Phá Khu Vực"
+    "title": "Các Quận tại Dubai",
+    "subtitle": "Tìm hiểu 9 quận độc đáo với văn hóa, kiến trúc và trải nghiệm riêng biệt",
+    "explore": "Khám Phá Các Quận",
+    "description": "Dubai được chia thành 9 quận chính, mỗi nơi mang đậm bản sắc riêng từ phố cổ Deira sầm uất đến Marina Dubai hiện đại. Tìm hiểu đặc trưng từng khu vực để lên kế hoạch khám phá thành phố sa mạc này một cách trọn vẹn nhất.",
+    "featured_districts": "Quận Nổi Bật",
+    "all_districts": "Tất Cả Các Quận",
+    "district_guide": "Cẩm Nang Theo Quận",
+    "popular_areas": "Khu Vực Phổ Biến",
+    "residential_districts": "Quận Dân Cư",
+    "business_districts": "Quận Thương Mại",
+    "tourist_districts": "Quận Du Lịch",
+    "emerging_districts": "Quận Mới Nổi",
+    "district_highlights": "Điểm Nhấn Các Quận",
+    "transportation": "Di Chuyển Giữa Các Quận",
+    "district_map": "Bản Đồ Phân Vùng",
+    "local_insights": "Góc Nhìn Địa Phương",
+    "district_comparison": "So Sánh Các Quận",
+    "living_costs": "Chi Phí Sinh Hoạt Theo Quận"
   },
   "realEstate": {
     "title": "Bất Động Sản Dubai",
-    "subtitle": "Đầu tư vào tương lai",
+    "subtitle": "Đầu tư vào tương lai thịnh vượng",
     "offPlan": {
-      "title": "Bất Động Sản Mở Bán",
-      "subtitle": "Đầu Tư Sớm, Trả Ít Hơn, Lãi Nhiều Hơn",
-      "findProperty": "Tìm Bất Động Sản Hoàn Hảo",
-      "from": "Từ",
-      "paymentPlan": "Phương Thức Thanh Toán",
-      "handover": "Bàn Giao",
-      "developer": "Nhà Phát Triển"
+      "title": "Bất Động Sản Đang Xây Dựng",
+      "subtitle": "Đầu Tư Sớm, Chi Phí Thấp, Lợi Nhuận Cao",
+      "findProperty": "Tìm Bất Động Sản Lý Tưởng",
+      "from": "Giá từ",
+      "paymentPlan": "Kế Hoạch Thanh Toán",
+      "handover": "Thời Gian Bàn Giao",
+      "developer": "Chủ Đầu Tư",
+      "viewDetails": "Xem Chi Tiết",
+      "compareProperties": "So Sánh Dự Án",
+      "bookViewing": "Đặt Lịch Tham Quan",
+      "downloadBrochure": "Tải Brochure"
     },
     "filters": {
-      "all": "Tất Cả Bất Động Sản",
-      "apartments": "Căn Hộ",
-      "villas": "Biệt Thự",
-      "townhouses": "Nhà Phố",
-      "penthouses": "Penthouse"
+      "all": "Tất Cả Loại Hình",
+      "apartments": "Căn Hộ Chung Cư",
+      "villas": "Biệt Thự Cao Cấp",
+      "townhouses": "Nhà Phố Liền Kề",
+      "penthouses": "Căn Hộ Penthouse",
+      "studios": "Căn Hộ Studio",
+      "duplexes": "Căn Hộ Duplex"
     },
     "features": {
-      "cryptoAccepted": "Chấp Nhận Tiền Điện Tử",
-      "paymentPlans": "Phương Thức Thanh Toán Linh Hoạt",
-      "goldenVisa": "Đủ Điều Kiện Visa Vàng",
-      "roiGuarantee": "Bảo Đảm ROI"
+      "cryptoAccepted": "Thanh Toán Tiền Điện Tử",
+      "paymentPlans": "Trả Góp Linh Hoạt",
+      "goldenVisa": "Đủ Điều Kiện Visa Vàng UAE",
+      "roiGuarantee": "Cam Kết Lợi Nhuận Đầu Tư",
+      "taxFree": "Miễn Thuế Thu Nhập",
+      "freehold": "Sở Hữu Vĩnh Viễn",
+      "beachfront": "Mặt Tiền Biển",
+      "cityView": "Tầm Nhìn Thành Phố"
+    },
+    "propertyDetails": {
+      "overview": "Tổng Quan Dự Án",
+      "location": "Vị Trí",
+      "amenities": "Tiện Ích",
+      "floorPlans": "Mặt Bằng",
+      "priceList": "Bảng Giá",
+      "availability": "Tình Trạng Còn Hàng"
+    },
+    "investmentInfo": {
+      "expectedROI": "Lợi Nhuận Dự Kiến",
+      "rentalYield": "Tỷ Suất Cho Thuê",
+      "capitalAppreciation": "Tăng Giá Vốn",
+      "paymentSchedule": "Lịch Thanh Toán"
+    },
+    "ctaButtons": {
+      "inquireNow": "Liên Hệ Ngay",
+      "scheduleCall": "Đặt Lịch Tư Vấn",
+      "virtualTour": "Tham Quan 3D",
+      "whatsapp": "Chat WhatsApp"
+    },
+    "seo": {
+      "metaTitle": "Bất Động Sản Dubai 2024 | Đầu Tư BĐS UAE | TRAVI",
+      "metaDescription": "Khám phá cơ hội đầu tư bất động sản Dubai với TRAVI. Căn hộ, biệt thự cao cấp, visa vàng UAE, miễn thuế, lợi nhuận cao. Tư vấn miễn phí từ chuyên gia."
     }
   },
   "search": {
-    "placeholder": "Tìm điểm tham quan, cẩm nang, điểm đến...",
+    "placeholder": "Tìm kiếm địa điểm du lịch, cẩm nang, điểm đến hấp dẫn...",
     "results": "Kết Quả Tìm Kiếm",
-    "noResults": "Không tìm thấy kết quả cho",
-    "tryAgain": "Thử từ khóa khác"
+    "noResults": "Không tìm thấy kết quả phù hợp cho",
+    "tryAgain": "Vui lòng thử từ khóa khác hoặc điều chỉnh bộ lọc tìm kiếm",
+    "searchTips": "Mẹo tìm kiếm hiệu quả",
+    "popularSearches": "Từ khóa phổ biến",
+    "recentSearches": "Tìm kiếm gần đây",
+    "clearHistory": "Xóa lịch sử",
+    "searchFilters": "Bộ lọc tìm kiếm",
+    "allCategories": "Tất cả danh mục",
+    "destinations": "Điểm đến",
+    "attractions": "Điểm tham quan",
+    "guides": "Cẩm nang du lịch",
+    "experiences": "Trải nghiệm",
+    "searchButton": "Tìm kiếm",
+    "advancedSearch": "Tìm kiếm nâng cao",
+    "sortBy": "Sắp xếp theo",
+    "relevance": "Độ phù hợp",
+    "newest": "Mới nhất",
+    "mostPopular": "Phổ biến nhất",
+    "loading": "Đang tìm kiếm...",
+    "searchError": "Đã xảy ra lỗi. Vui lòng thử lại sau",
+    "showMore": "Xem thêm kết quả",
+    "filterByRegion": "Lọc theo khu vực",
+    "filterByType": "Lọc theo loại hình",
+    "clearFilters": "Xóa bộ lọc"
   },
   "footer": {
-    "about": "Về Travi",
-    "aboutTravi": "Về Travi",
-    "aboutText": "Thông tin du lịch toàn diện cho 17 điểm đến trên toàn thế giới.",
+    "about": "Về TRAVI",
+    "aboutTravi": "Giới thiệu TRAVI",
+    "aboutText": "Kho tàng thông tin du lịch chuyên sâu và cập nhật cho 17 điểm đến hàng đầu thế giới. Nền tảng tư liệu du lịch toàn diện dành cho du khách Việt.",
     "aboutUs": "Về Chúng Tôi",
-    "quickLinks": "Liên Kết Nhanh",
-    "legal": "Pháp Lý",
-    "privacy": "Chính Sách Bảo Mật",
+    "quickLinks": "Truy Cập Nhanh",
+    "legal": "Thông Tin Pháp Lý",
+    "privacy": "Quyền Riêng Tư",
     "privacyPolicy": "Chính Sách Bảo Mật",
-    "terms": "Điều Khoản & Điều Kiện",
+    "terms": "Điều Khoản Sử Dụng",
     "termsOfService": "Điều Khoản Dịch Vụ",
     "contact": "Liên Hệ",
-    "contactUs": "Liên Hệ Chúng Tôi",
-    "followUs": "Theo Dõi Chúng Tôi",
+    "contactUs": "Liên Hệ Với Chúng Tôi",
+    "followUs": "Kết Nối Với TRAVI",
     "explore": "Khám Phá",
     "travel": "Du Lịch",
-    "company": "Công Ty",
-    "allGuides": "Tất Cả Cẩm Nang",
+    "company": "TRAVI",
+    "allGuides": "Toàn Bộ Cẩm Nang",
     "cookies": "Cookie",
-    "security": "Bảo Mật",
-    "cookieSettings": "Cài Đặt Cookie",
-    "tagline": "Nguồn Thông Tin Du Lịch Tin Cậy",
-    "ariaLabel": "Footer trang web",
-    "featuredGuides": "Cẩm Nang Nổi Bật",
-    "tools": "Công Cụ",
-    "currencyConverter": "Chuyển Đổi Tiền Tệ",
-    "roiCalculator": "Máy Tính ROI",
-    "mortgageCalculator": "Máy Tính Thế Chấp",
-    "glossary": "Thuật Ngữ",
-    "freeThingsToDo": "70+ Hoạt Động Miễn Phí",
-    "open24Hours": "Mở Cửa 24 Giờ",
-    "tributeToSheikh": "Tri Ân Đức Sheikh Mohammed",
-    "lawsForTourists": "Luật Cho Du Khách",
-    "newsletter": "Đăng ký nhận bản tin",
-    "newsletterDescription": "Nhận mẹo du lịch Dubai và cập nhật mới nhất.",
-    "emailPlaceholder": "Nhập email của bạn",
-    "allRightsReserved": "Bảo lưu mọi quyền.",
-    "copyright": "© {{year}} {{brand}}. Bảo lưu mọi quyền.",
-    "emailAriaLabel": "Gửi email cho TRAVI"
+    "security": "An Toàn Thông Tin",
+    "cookieSettings": "Tùy Chỉnh Cookie",
+    "tagline": "Nguồn Tư Liệu Du Lịch Đáng Tin Cậy",
+    "ariaLabel": "Phần chân trang TRAVI",
+    "featuredGuides": "Cẩm Nang Tiêu Biểu",
+    "tools": "Tiện Ích Du Lịch",
+    "currencyConverter": "Quy Đổi Ngoại Tệ",
+    "roiCalculator": "Tính Toán ROI",
+    "mortgageCalculator": "Tính Lãi Vay Mua Nhà",
+    "glossary": "Từ Điển Du Lịch",
+    "freeThingsToDo": "70+ Trải Nghiệm Miễn Phí",
+    "open24Hours": "Địa Điểm Mở Cửa 24/7",
+    "tributeToSheikh": "Tôn Vinh Sheikh Mohammed",
+    "lawsForTourists": "Quy Định Dành Cho Du Khách",
+    "newsletter": "Bản Tin TRAVI",
+    "newsletterDescription": "Đón nhận thông tin du lịch độc quyền và cập nhật xu hướng mới nhất từ các chuyên gia TRAVI.",
+    "emailPlaceholder": "Email của bạn",
+    "allRightsReserved": "Đã đăng ký bản quyền.",
+    "copyright": "© {{year}} {{brand}}. Mọi quyền được bảo lưu.",
+    "emailAriaLabel": "Gửi email đến TRAVI",
+    "socialMedia": "Mạng Xã Hội",
+    "partners": "Đối Tác",
+    "helpCenter": "Trung Tâm Hỗ Trợ",
+    "faq": "Câu Hỏi Thường Gặp",
+    "sitemap": "Sơ Đồ Trang",
+    "accessibility": "Hỗ Trợ Tiếp Cận",
+    "careers": "Cơ Hội Nghề Nghiệp",
+    "press": "Truyền Thông",
+    "investors": "Nhà Đầu Tư",
+    "advertise": "Quảng Cáo",
+    "affiliates": "Đối Tác Liên Kết",
+    "sustainability": "Phát Triển Bền Vững",
+    "resources": "Tài Nguyên",
+    "blog": "Blog Du Lịch",
+    "community": "Cộng Đồng",
+    "developers": "Nhà Phát Triển",
+    "language": "Ngôn Ngữ",
+    "currency": "Tiền Tệ"
   },
   "errors": {
+    "403": {
+      "title": "Truy Cập Bị Từ Chối",
+      "message": "Bạn không có quyền truy cập vào nội dung này. Vui lòng đăng nhập hoặc liên hệ với bộ phận hỗ trợ của TRAVI để được giúp đỡ.",
+      "button": "Đăng Nhập",
+      "alt_button": "Quay Lại",
+      "meta_title": "Lỗi 403 - Truy Cập Bị Từ Chối | TRAVI"
+    },
     "404": {
       "title": "Không Tìm Thấy Trang",
-      "message": "Trang bạn đang tìm kiếm không tồn tại.",
-      "button": "Về Trang Chủ"
+      "message": "Rất tiếc, trang bạn đang tìm kiếm không tồn tại hoặc đã được chuyển đến địa chỉ khác. Vui lòng kiểm tra lại đường dẫn hoặc sử dụng menu điều hướng để khám phá nội dung du lịch từ TRAVI.",
+      "button": "Về Trang Chủ",
+      "alt_button": "Tìm Kiếm",
+      "meta_title": "Lỗi 404 - Không Tìm Thấy Trang | TRAVI"
     },
     "500": {
-      "title": "Lỗi Máy Chủ",
-      "message": "Đã có lỗi xảy ra ở phía chúng tôi.",
-      "button": "Thử Lại"
+      "title": "Lỗi Hệ Thống",
+      "message": "Xin lỗi quý khách, hệ thống đang gặp sự cố kỹ thuật. Đội ngũ TRAVI đang khắc phục để mang đến trải nghiệm tốt nhất. Vui lòng thử lại sau ít phút.",
+      "button": "Làm Mới Trang",
+      "alt_button": "Liên Hệ Hỗ Trợ",
+      "meta_title": "Lỗi 500 - Lỗi Máy Chủ | TRAVI"
     },
     "network": {
-      "title": "Lỗi Kết Nối",
-      "message": "Không thể kết nối. Vui lòng kiểm tra kết nối internet.",
-      "button": "Thử Lại"
+      "title": "Mất Kết Nối Mạng",
+      "message": "Không thể tải dữ liệu du lịch từ TRAVI. Vui lòng kiểm tra kết nối internet của bạn hoặc thử lại sau.",
+      "button": "Thử Lại",
+      "alt_button": "Kiểm Tra Kết Nối",
+      "meta_title": "Lỗi Kết Nối Mạng | TRAVI"
+    },
+    "timeout": {
+      "title": "Quá Thời Gian Chờ",
+      "message": "Yêu cầu của bạn mất quá nhiều thời gian để xử lý. Điều này có thể do kết nối mạng chậm hoặc máy chủ đang bận. Vui lòng thử lại.",
+      "button": "Thử Lại",
+      "meta_title": "Lỗi Timeout - Quá Thời Gian Chờ | TRAVI"
+    },
+    "maintenance": {
+      "title": "Bảo Trì Hệ Thống",
+      "message": "TRAVI đang nâng cấp hệ thống để mang đến trải nghiệm tốt hơn cho bạn. Vui lòng quay lại sau ít phút. Xin cảm ơn sự thông cảm của quý khách.",
+      "button": "Làm Mới",
+      "estimated_time": "Thời gian dự kiến: 30 phút",
+      "meta_title": "Bảo Trì Hệ Thống | TRAVI"
+    },
+    "generic": {
+      "title": "Đã Xảy Ra Lỗi",
+      "message": "Rất tiếc, có lỗi không mong muốn xảy ra. Vui lòng thử lại hoặc liên hệ hỗ trợ nếu sự cố tiếp tục.",
+      "button": "Thử Lại",
+      "error_code": "Mã lỗi",
+      "meta_title": "Lỗi Hệ Thống | TRAVI"
     }
   },
   "newsletter": {
-    "badge": "Tham Gia Cuộc Phiêu Lưu",
-    "title": "Nhận Điều Kỳ Diệu Du Lịch Vào Hộp Thư",
-    "description": "Mẹo hàng tuần, viên ngọc ẩn và ưu đãi độc quyền - không spam, chỉ niềm đam mê du lịch.",
-    "emailPlaceholder": "email@cua-ban.com",
-    "subscribe": "Đăng Ký",
-    "success": "Bạn đã đăng ký! Kiểm tra hộp thư của bạn."
+    "badge": "Khám Phá Thế Giới Cùng TRAVI",
+    "title": "Bản Tin Du Lịch Uy Tín Đầu Tiên Tại Việt Nam",
+    "description": "Cập nhật xu hướng du lịch toàn cầu, điểm đến độc đáo và cơ hội khám phá đặc biệt. Thông tin chính xác từ mạng lưới phóng viên du lịch quốc tế.",
+    "emailPlaceholder": "nhapemail@dulich.vn",
+    "subscribe": "Đăng Ký Miễn Phí",
+    "success": "Chúc mừng! Bạn sẽ nhận bản tin đầu tiên trong 24h tới.",
+    "frequency": "Gửi mỗi thứ Ba hàng tuần",
+    "benefits": {
+      "title": "Lợi Ích Độc Quyền",
+      "items": [
+        "Phân tích chuyên sâu về điểm đến hot nhất",
+        "Cảnh báo giá vé máy bay giảm sốc",
+        "Hướng dẫn visa và thủ tục mới nhất",
+        "Ưu đãi độc quyền từ đối tác TRAVI"
+      ]
+    },
+    "privacy": "Cam kết bảo mật thông tin tuyệt đối",
+    "unsubscribe": "Hủy đăng ký bất cứ lúc nào"
   },
   "cookies": {
-    "title": "Chúng tôi trân trọng quyền riêng tư của bạn",
-    "description": "Chúng tôi sử dụng cookie để nâng cao trải nghiệm duyệt web, phân tích lưu lượng truy cập và cá nhân hóa nội dung. Bằng cách nhấp \"Chấp Nhận Tất Cả\", bạn đồng ý với việc sử dụng cookie của chúng tôi.",
-    "manage": "Quản Lý",
+    "title": "TRAVI tôn trọng quyền riêng tư của bạn",
+    "description": "TRAVI sử dụng cookie để tối ưu hóa trải nghiệm duyệt web, phân tích hành vi người dùng và cá nhân hóa thông tin du lịch phù hợp với nhu cầu của bạn. Khi chọn \"Chấp Nhận Tất Cả\", bạn đồng ý cho phép chúng tôi sử dụng đầy đủ các loại cookie.",
+    "manage": "Tùy Chỉnh Cookie",
     "rejectAll": "Từ Chối Tất Cả",
     "acceptAll": "Chấp Nhận Tất Cả",
-    "preferencesTitle": "Tùy Chọn Cookie",
-    "savePreferences": "Lưu Tùy Chọn",
+    "preferencesTitle": "Quản Lý Tùy Chọn Cookie",
+    "savePreferences": "Lưu Cài Đặt",
     "essential": {
       "title": "Cookie Thiết Yếu",
-      "description": "Cần thiết để trang web hoạt động đúng"
+      "description": "Cookie bắt buộc để đảm bảo các chức năng cơ bản của trang web hoạt động ổn định, bao gồm bảo mật, quản lý phiên làm việc và truy cập nội dung du lịch"
     },
     "analytics": {
       "title": "Cookie Phân Tích",
-      "description": "Giúp chúng tôi hiểu cách du khách tương tác với trang web"
+      "description": "Thu thập dữ liệu ẩn danh về cách người dùng tương tác với nền tảng TRAVI, giúp chúng tôi cải thiện trải nghiệm và nội dung thông tin du lịch"
     },
     "marketing": {
       "title": "Cookie Tiếp Thị",
-      "description": "Được sử dụng để cung cấp quảng cáo được cá nhân hóa"
+      "description": "Cá nhân hóa nội dung du lịch và hiển thị thông tin khuyến mãi phù hợp với sở thích, lịch sử tìm kiếm và hành trình du lịch của bạn"
     }
   },
   "meta": {
     "home": {
-      "title": "Travi - Khám Phá Dubai | Cẩm Nang Du Lịch Dubai Toàn Diện",
-      "description": "Khám phá các điểm tham quan, khách sạn, nhà hàng và khu vực tốt nhất của Dubai. Lên kế hoạch chuyến đi Dubai hoàn hảo với mẹo từ người trong cuộc và gợi ý địa phương."
+      "title": "TRAVI - Kho Thông Tin Du Lịch Dubai | Hướng Dẫn Chi Tiết & Cập Nhật 2024",
+      "description": "Nguồn thông tin du lịch Dubai đáng tin cậy nhất cho người Việt. Cập nhật liên tục về điểm tham quan, khách sạn, ẩm thực, mua sắm và kinh nghiệm thực tế từ cộng đồng du khách."
     },
     "attractions": {
-      "title": "Điểm Tham Quan Dubai | Hoạt Động Hàng Đầu Tại Dubai",
-      "description": "Khám phá các điểm tham quan tốt nhất tại Dubai - từ Burj Khalifa đến những viên ngọc ẩn. Lên kế hoạch chuyến tham quan Dubai của bạn."
+      "title": "Điểm Du Lịch Dubai 2024 | Danh Sách Địa Điểm Tham Quan Không Thể Bỏ Qua",
+      "description": "Tổng hợp đầy đủ các điểm tham quan Dubai từ biểu tượng nổi tiếng đến địa điểm ít người biết. Thông tin giờ mở cửa, giá vé, hướng dẫn di chuyển và mẹo tránh đông đúc."
     },
     "hotels": {
-      "title": "Khách Sạn Dubai | Chỗ Ở Tốt Nhất Tại Dubai",
-      "description": "Tìm khách sạn hoàn hảo tại Dubai cho mọi ngân sách. Từ khu nghỉ dưỡng sang trọng đến lựa chọn tiết kiệm."
+      "title": "Khách Sạn & Resort Dubai | So Sánh Chi Tiết Theo Khu Vực & Giá",
+      "description": "Phân tích chuyên sâu hệ thống lưu trú Dubai theo từng khu vực. Đánh giá thực tế về tiện nghi, vị trí, giá cả từ khách sạn 3 sao đến resort 7 sao hạng sang."
     },
     "dining": {
-      "title": "Nhà Hàng Dubai | Ẩm Thực Tốt Nhất Tại Dubai",
-      "description": "Khám phá bối cảnh ẩm thực Dubai - nhà hàng cao cấp, ẩm thực đường phố và mọi thứ ở giữa."
+      "title": "Ẩm Thực Dubai | Từ Michelin Đến Quán Ăn Địa Phương Authentic",
+      "description": "Bản đồ ẩm thực Dubai chi tiết nhất - nhà hàng sao Michelin, quán ăn halal ngon, food court giá rẻ. Review trung thực về món ăn, giá cả và trải nghiệm thực tế."
     }
   },
   "guides": {
@@ -616,7 +842,7 @@
       "headlinePart2": "Chạm Đến Trái Tim",
       "description": "Cẩm nang do chuyên gia tạo ra, góc nhìn từ người trong cuộc và câu chuyện biên tập biến đổi cách bạn trải nghiệm thế giới.",
       "startJourney": "Bắt Đầu Hành Trình",
-      "browseCollection": "Duyệt Bộ Sưu Tập",
+      "browseCollection": "Khám Phá Bộ Sưu Tập",
       "issueBadge": "Số 47 — Mùa Đông 2026"
     },
     "stats": {
@@ -627,7 +853,7 @@
     "journey": {
       "badge": "Hành Trình Của Bạn, Hướng Dẫn Của Chúng Tôi",
       "title": "Mọi Chuyến Đi Tuyệt Vời Đều Bắt Đầu Với Một Cẩm Nang",
-      "subtitle": "Từ mơ ước đến chia sẻ, chúng tôi ở bên bạn ở mọi bước"
+      "subtitle": "Từ giấc mơ đến kỷ niệm, chúng tôi đồng hành cùng bạn trên mọi nẻo đường"
     },
     "ideaLab": {
       "badge": "Phòng Thí Nghiệm Ý Tưởng",
@@ -635,207 +861,293 @@
       "readGuide": "Đọc Cẩm Nang"
     },
     "archetype": {
-      "badge": "Được Cá Nhân Hóa Cho Bạn",
-      "title": "Bạn Là Loại Du Khách Nào?",
-      "subtitle": "Chọn phong cách du lịch của bạn và khám phá cẩm nang được tuyển chọn riêng cho bạn",
+      "badge": "Thiết Kế Riêng Cho Bạn",
+      "title": "Bạn Thuộc Típ Du Khách Nào?",
+      "subtitle": "Khám phá phong cách du lịch của riêng bạn và tìm những cẩm nang phù hợp nhất",
       "viewGuides": "Xem Cẩm Nang {{type}}"
     },
     "archetypes": {
       "adventure": {
-        "name": "Người Tìm Kiếm Phiêu Lưu",
-        "description": "Trải nghiệm hồi hộp và adrenaline"
+        "name": "Người Săn Phiêu Lưu",
+        "description": "Đam mê cảm giác mạnh và thử thách bản thân"
       },
       "culture": {
-        "name": "Người Khám Phá Văn Hóa",
-        "description": "Nghệ thuật, lịch sử và truyền thống địa phương"
+        "name": "Nhà Thám Hiểm Văn Hóa",
+        "description": "Say mê nghệ thuật, lịch sử và phong tục địa phương"
       },
       "relaxation": {
         "name": "Bậc Thầy Thư Giãn",
-        "description": "Khu nghỉ dưỡng chăm sóc sức khỏe và nơi trốn thoát yên bình"
+        "description": "Tìm kiếm những kỳ nghỉ bình yên và tái tạo năng lượng"
       },
       "foodie": {
-        "name": "Du Mục Ẩm Thực",
-        "description": "Hương vị địa phương và phiêu lưu ẩm thực"
+        "name": "Tín Đồ Ẩm Thực",
+        "description": "Khám phá thế giới qua từng món ăn địa phương"
       },
       "wellness": {
-        "name": "Người Tìm Kiếm Sức Khỏe",
-        "description": "Thư giãn, spa và khu nghỉ dưỡng tâm linh"
+        "name": "Người Theo Đuổi Sức Khỏe",
+        "description": "Chú trọng yoga, thiền và lối sống lành mạnh"
       },
       "budget": {
-        "name": "Du Khách Thông Minh",
-        "description": "Trải nghiệm tối đa, ngân sách tối thiểu"
+        "name": "Du Khách Tiết Kiệm",
+        "description": "Tối ưu trải nghiệm với ngân sách hợp lý"
       },
       "solo": {
-        "name": "Người Khám Phá Một Mình",
-        "description": "Hành trình độc lập và khám phá bản thân"
+        "name": "Kẻ Lang Thang Đơn Độc",
+        "description": "Yêu thích tự do và khám phá bản ngã"
       },
       "luxury": {
-        "name": "Người Sành Điệu Sang Trọng",
-        "description": "Trải nghiệm cao cấp và cuộc sống tinh tế"
+        "name": "Người Sành Xa Xỉ",
+        "description": "Đắm chìm trong dịch vụ đẳng cấp và tiện nghi cao cấp"
       }
     },
     "milestones": {
       "dream": {
-        "title": "Mơ Ước",
-        "subtitle": "Khám phá cảm hứng",
-        "guides": ["Cẩm Nang Điểm Đến", "Bài Tiểu Luận Ảnh"]
+        "title": "Ước Mơ",
+        "subtitle": "Khơi nguồn cảm hứng",
+        "guides": [
+          "Cẩm Nang Điểm Đến",
+          "Chuyện Kể Qua Ảnh"
+        ]
       },
       "plan": {
-        "title": "Lên Kế Hoạch",
-        "subtitle": "Vạch ra hành trình",
-        "guides": ["Lập Kế Hoạch Chuyến Đi", "Yêu Cầu Visa"]
+        "title": "Lập Kế Hoạch",
+        "subtitle": "Thiết kế lộ trình",
+        "guides": [
+          "Lịch Trình Chi Tiết",
+          "Thủ Tục Visa"
+        ]
       },
       "prepare": {
         "title": "Chuẩn Bị",
-        "subtitle": "Sẵn sàng lên đường",
-        "guides": ["Danh Sách Đồ Dùng", "Mẹo An Toàn"]
+        "subtitle": "Sẵn sàng khởi hành",
+        "guides": [
+          "Hành Trang Thông Minh",
+          "Bí Kíp An Toàn"
+        ]
       },
       "experience": {
         "title": "Trải Nghiệm",
-        "subtitle": "Sống cuộc phiêu lưu",
-        "guides": ["Góc Nhìn Địa Phương", "Viên Ngọc Ẩn"]
+        "subtitle": "Sống trọn từng khoảnh khắc",
+        "guides": [
+          "Góc Nhìn Người Bản Địa",
+          "Điểm Đến Bí Mật"
+        ]
       },
       "share": {
         "title": "Chia Sẻ",
-        "subtitle": "Kể câu chuyện của bạn",
-        "guides": ["Viết Lách Du Lịch", "Nhiếp Ảnh"]
+        "subtitle": "Lan tỏa hành trình",
+        "guides": [
+          "Viết Blog Du Lịch",
+          "Nghệ Thuật Chụp Ảnh"
+        ]
       }
     },
     "categories": {
-      "weekendEscapes": "Trốn Cuối Tuần",
-      "offBeatenPath": "Ngoài Lối Mòn",
+      "weekendEscapes": "Chuyến Đi Cuối Tuần",
+      "offBeatenPath": "Điểm Đến Hoang Sơ",
       "smartTravel": "Du Lịch Thông Minh",
-      "bucketList": "Danh Sách Điều Muốn Làm",
-      "culinary": "Ẩm Thực",
-      "natureWonder": "Thiên Nhiên & Kỳ Quan"
+      "bucketList": "Ước Mơ Cả Đời",
+      "culinary": "Hành Trình Ẩm Thực",
+      "natureWonder": "Kỳ Quan Thiên Nhiên"
     },
     "seo": {
-      "title": "Cẩm Nang Du Lịch | Góc Nhìn Điểm Đến Chuyên Gia",
-      "description": "Khám phá cẩm nang du lịch chuyên gia, góc nhìn điểm đến và mẹo từ người trong cuộc từ mạng lưới nhà văn du lịch toàn cầu của chúng tôi. Lên kế hoạch chuyến đi hoàn hảo ngay hôm nay."
+      "title": "Cẩm Nang Du Lịch Chuyên Sâu | TRAVI - Kho Tàng Tri Thức Du Lịch Việt Nam",
+      "description": "Khám phá cẩm nang du lịch chi tiết từ chuyên gia, bí quyết từ người trong cuộc và lời khuyên thực tế cho mọi điểm đến. Nguồn thông tin du lịch đáng tin cậy nhất Việt Nam."
     },
     "editorial": {
-      "badge": "Từ Biên Tập Viên",
-      "title": "Đặc Trưng Biên Tập",
+      "badge": "Góc Biên Tập",
+      "title": "Bài Viết Nổi Bật",
       "readFull": "Đọc Toàn Bộ Bài Viết"
     },
     "gallery": {
-      "badge": "Câu Chuyện Hình Ảnh",
-      "title": "Điểm Đến Truyền Cảm Hứng",
+      "badge": "Du Lịch Qua Hình Ảnh",
+      "title": "Điểm Đến Mơ Ước",
       "categories": {
-        "city": "Thành Phố",
-        "mountains": "Núi",
-        "beach": "Bãi Biển",
-        "safari": "Safari",
-        "nature": "Thiên Nhiên"
+        "city": "Đô Thị Sôi Động",
+        "mountains": "Núi Non Hùng Vĩ",
+        "beach": "Biển Xanh Cát Trắng",
+        "safari": "Thiên Nhiên Hoang Dã",
+        "nature": "Cảnh Sắc Thiên Nhiên"
       }
     },
     "writers": {
-      "badge": "Tiếng Nói Chuyên Gia",
-      "title": "Gặp Gỡ Nhà Văn",
-      "subtitle": "Những tiếng nói chuyên gia đằng sau cẩm nang du lịch đáng tin cậy nhất",
+      "badge": "Đội Ngũ Chuyên Gia",
+      "title": "Gặp Gỡ Các Tác Giả",
+      "subtitle": "Những chuyên gia du lịch hàng đầu chia sẻ kinh nghiệm quý báu",
       "articleCount": "{{count}} Bài Viết",
       "viewProfile": "Xem Hồ Sơ"
     },
     "map": {
-      "badge": "Khám Phá Theo Khu Vực",
-      "title": "Cẩm Nang Khắp Thế Giới",
-      "subtitle": "Nhấp vào bất kỳ điểm đến nào để khám phá phạm vi chuyên gia của chúng tôi",
-      "guidesAvailable": "{{count}} cẩm nang có sẵn",
+      "badge": "Khám Phá Theo Bản Đồ",
+      "title": "Cẩm Nang Toàn Cầu",
+      "subtitle": "Chạm vào bất kỳ điểm nào để khám phá kho tàng thông tin của chúng tôi",
+      "guidesAvailable": "{{count}} cẩm nang sẵn có",
       "legendDestination": "Điểm Đến",
-      "legendHighlighted": "Được Đánh Dấu"
+      "legendHighlighted": "Nổi Bật"
     },
     "newsletter": {
-      "badge": "Tham Gia Hành Trình",
-      "title": "Câu Chuyện Du Lịch, Hàng Tuần",
-      "description": "Cảm hứng du lịch được tuyển chọn, mẹo chuyên gia và góc nhìn từ người trong cuộc được giao đến hộp thư của bạn mỗi tuần.",
-      "placeholder": "Nhập email của bạn",
-      "subscribe": "Đăng Ký",
-      "subscribing": "Đang đăng ký...",
-      "joinCount": "Tham gia cùng 50.000+ du khách đọc tóm tắt hàng tuần của chúng tôi",
-      "invalidEmail": "Vui lòng nhập email hợp lệ",
-      "successTitle": "Chào mừng đến với hành trình!",
-      "successDesc": "Bạn đã đăng ký nhận bản tóm tắt biên tập của chúng tôi."
+      "badge": "Cộng Đồng Du Lịch",
+      "title": "Tin Tức Du Lịch Hàng Tuần",
+      "description": "Nhận ngay cảm hứng du lịch được tuyển chọn, bí quyết từ chuyên gia và tin tức độc quyền mỗi tuần trong hộp thư của bạn.",
+      "placeholder": "Địa chỉ email của bạn",
+      "subscribe": "Đăng Ký Ngay",
+      "subscribing": "Đang xử lý...",
+      "joinCount": "Gia nhập cùng 50.000+ độc giả khắp Việt Nam",
+      "invalidEmail": "Vui lòng nhập địa chỉ email hợp lệ",
+      "successTitle": "Chào mừng bạn đến với cộng đồng TRAVI!",
+      "successDesc": "Bạn đã đăng ký thành công bản tin du lịch hàng tuần của chúng tôi."
     }
   },
   "news": {
     "time": {
-      "recent": "Gần Đây",
+      "recent": "Mới cập nhật",
       "justNow": "Vừa xong",
       "minutesAgo": "{{count}} phút trước",
       "hoursAgo": "{{count}} giờ trước",
       "daysAgo": "{{count}} ngày trước",
-      "minRead": "{{count}} phút đọc"
+      "minRead": "{{count}} phút đọc",
+      "weeksAgo": "{{count}} tuần trước",
+      "monthsAgo": "{{count}} tháng trước",
+      "yearsAgo": "{{count}} năm trước",
+      "readTime": "Thời gian đọc: {{count}} phút"
     },
     "header": {
-      "title": "TIN TỨC TRAVI",
-      "edition": "Ấn Bản Quốc Tế",
-      "subscribe": "Đăng Ký"
+      "title": "TIN TỨC DU LỊCH TRAVI",
+      "edition": "Phiên Bản Việt Nam",
+      "subscribe": "Đăng Ký Nhận Tin",
+      "editionSelect": "Chọn phiên bản",
+      "language": "Ngôn ngữ",
+      "breakingNews": "Tin nóng hổi"
     },
     "breaking": {
-      "label": "Tin Nóng"
+      "label": "TIN NÓNG",
+      "developing": "Đang cập nhật",
+      "exclusive": "Độc quyền",
+      "live": "TRỰC TIẾP",
+      "urgent": "Khẩn cấp"
     },
     "search": {
-      "placeholder": "Tìm tin tức thế giới...",
+      "placeholder": "Tìm kiếm tin tức du lịch...",
       "button": "Tìm Kiếm",
-      "title": "Tìm Kiếm",
-      "searching": "Đang tìm \"{{query}}\"..."
+      "title": "Tìm Kiếm Tin Tức",
+      "searching": "Đang tìm \"{{query}}\"...",
+      "results": "{{count}} kết quả cho \"{{query}}\"",
+      "noResults": "Không tìm thấy kết quả nào cho \"{{query}}\"",
+      "suggestions": "Gợi ý tìm kiếm",
+      "recentSearches": "Tìm kiếm gần đây",
+      "clearHistory": "Xóa lịch sử"
     },
     "categories": {
       "all": "Tất Cả Tin Tức",
       "world": "Thế Giới",
-      "business": "Kinh Doanh",
-      "culture": "Văn Hóa",
-      "travel": "Du Lịch",
-      "tech": "Công Nghệ",
-      "opinion": "Ý Kiến"
+      "business": "Kinh Doanh Du Lịch",
+      "culture": "Văn Hóa & Di Sản",
+      "travel": "Xu Hướng Du Lịch",
+      "tech": "Công Nghệ Du Lịch",
+      "opinion": "Góc Nhìn Chuyên Gia",
+      "destinations": "Điểm Đến",
+      "aviation": "Hàng Không",
+      "hospitality": "Khách Sạn & Resort",
+      "sustainable": "Du Lịch Bền Vững",
+      "adventure": "Du Lịch Mạo Hiểm",
+      "luxury": "Du Lịch Cao Cấp"
     },
     "empty": {
-      "title": "Chưa Có Bài Viết Tin Tức",
-      "description": "Chúng tôi đang làm việc để mang đến cho bạn tin tức và góc nhìn du lịch mới nhất. Hãy quay lại sớm để cập nhật từ khắp nơi trên thế giới.",
+      "title": "Chưa Có Tin Tức Nào",
+      "description": "Đội ngũ biên tập TRAVI đang tích cực cập nhật những tin tức du lịch mới nhất từ khắp nơi trên thế giới. Hãy quay lại sau để không bỏ lỡ những thông tin quan trọng nhé!",
       "exploreDestinations": "Khám Phá Điểm Đến",
-      "viewGuides": "Xem Cẩm Nang Du Lịch"
+      "viewGuides": "Xem Cẩm Nang Du Lịch",
+      "subscribeNewsletter": "Đăng ký nhận tin để được cập nhật sớm nhất"
     },
     "hero": {
-      "topStory": "Tin Chính",
-      "editorialTeam": "Đội Ngũ Biên Tập"
+      "topStory": "Tin Nổi Bật",
+      "editorialTeam": "Biên Tập TRAVI",
+      "featured": "Tiêu Điểm",
+      "mustRead": "Đọc Ngay",
+      "editorsPick": "Lựa Chọn Của Biên Tập"
     },
     "views": "{{count}} lượt xem",
     "viewAll": "Xem Tất Cả",
+    "loadMore": "Tải Thêm Tin",
+    "showLess": "Thu Gọn",
+    "relatedArticles": "Tin Liên Quan",
+    "shareArticle": "Chia Sẻ Bài Viết",
+    "saveForLater": "Lưu Để Đọc Sau",
     "seo": {
-      "title": "Tin Tức Du Lịch | Câu Chuyện & Cập Nhật Mới Nhất",
-      "description": "Cập nhật tin tức du lịch mới nhất, cập nhật điểm đến và góc nhìn ngành từ khắp nơi trên thế giới."
+      "title": "Tin Tức Du Lịch Việt Nam & Thế Giới | TRAVI - Cập Nhật 24/7",
+      "description": "Cập nhật tin tức du lịch mới nhất 2024 từ Việt Nam và thế giới. Xu hướng du lịch, điểm đến hot, kinh nghiệm du lịch từ chuyên gia. Tin cậy bởi hàng triệu du khách.",
+      "keywords": "tin tức du lịch, tin du lịch mới nhất, xu hướng du lịch 2024, điểm đến hot, kinh nghiệm du lịch, tin tức hàng không, khách sạn resort"
     },
     "sidebar": {
-      "alsoToday": "Cũng Hôm Nay",
-      "storiesCount": "{{count}} câu chuyện",
+      "alsoToday": "Tin Khác Hôm Nay",
+      "storiesCount": "{{count}} tin tức",
       "liveUpdates": "Cập Nhật Trực Tiếp",
-      "trendingTopics": "Chủ Đề Xu Hướng",
-      "noTrending": "Chưa có chủ đề xu hướng. Hãy quay lại sớm!"
+      "trendingTopics": "Chủ Đề Đang Hot",
+      "noTrending": "Đang cập nhật xu hướng mới. Hãy quay lại sau!",
+      "mostRead": "Đọc Nhiều Nhất",
+      "editors": "Lựa Chọn Biên Tập",
+      "todayHighlights": "Điểm Nhấn Hôm Nay",
+      "upcomingEvents": "Sự Kiện Sắp Tới",
+      "weatherUpdates": "Thời Tiết Du Lịch"
     },
     "sections": {
-      "topStories": "Tin Chính",
-      "opinion": "Ý Kiến & Phân Tích",
-      "moreOpinion": "Thêm Ý Kiến",
-      "worldwide": "Phạm Vi Toàn Cầu"
+      "topStories": "Tin Nổi Bật",
+      "opinion": "Góc Nhìn & Phân Tích",
+      "moreOpinion": "Thêm Bài Phân Tích",
+      "worldwide": "Tin Tức Toàn Cầu",
+      "vietnam": "Tin Trong Nước",
+      "asia": "Châu Á - Thái Bình Dương",
+      "europe": "Châu Âu",
+      "americas": "Châu Mỹ",
+      "africa": "Châu Phi",
+      "middleEast": "Trung Đông"
     },
     "worldwide": {
-      "title": "Cửa Sổ Của Bạn Ra Thế Giới",
-      "subtitle": "Tin tức từ mọi góc của địa cầu",
-      "storiesCount": "{{count}} câu chuyện",
-      "comingSoon": "Sắp ra mắt"
+      "title": "Kết Nối Thế Giới Du Lịch",
+      "subtitle": "Tin tức từ 5 châu lục, cập nhật liên tục 24/7",
+      "storiesCount": "{{count}} tin từ {{region}}",
+      "comingSoon": "Sắp ra mắt",
+      "regions": "Khu Vực",
+      "allRegions": "Tất Cả Khu Vực"
     },
     "newsletter": {
-      "title": "Luôn Cập Nhật",
-      "description": "Nhận những câu chuyện hàng đầu trong ngày vào hộp thư mỗi sáng. Tham gia cùng 50.000+ độc giả.",
-      "placeholder": "Nhập email của bạn",
+      "title": "Đừng Bỏ Lỡ Tin Hot",
+      "description": "Nhận bản tin du lịch hàng ngày với những tin tức quan trọng nhất. Đã có hơn 50.000 người đăng ký.",
+      "placeholder": "Email của bạn",
       "subscribe": "Đăng Ký Miễn Phí",
-      "noSpam": "Không spam. Hủy đăng ký bất cứ lúc nào.",
-      "successTitle": "Đã đăng ký!",
-      "successDesc": "Vui lòng kiểm tra email để xác nhận đăng ký.",
-      "errorTitle": "Đăng ký thất bại",
-      "errorDesc": "Vui lòng thử lại sau.",
+      "noSpam": "Cam kết không spam. Hủy đăng ký bất cứ lúc nào.",
+      "successTitle": "Đăng ký thành công!",
+      "successDesc": "Vui lòng kiểm tra email để xác nhận. Cảm ơn bạn đã tin tưởng TRAVI!",
+      "errorTitle": "Có lỗi xảy ra",
+      "errorDesc": "Vui lòng thử lại sau hoặc liên hệ hỗ trợ.",
       "invalidTitle": "Email không hợp lệ",
-      "invalidDesc": "Vui lòng nhập địa chỉ email hợp lệ."
+      "invalidDesc": "Vui lòng nhập đúng định dạng email.",
+      "benefits": "Ưu điểm khi đăng ký",
+      "benefit1": "Tin tức du lịch độc quyền",
+      "benefit2": "Ưu đãi từ đối tác",
+      "benefit3": "Cảnh báo giá vé máy bay"
+    },
+    "article": {
+      "byAuthor": "Bởi {{author}}",
+      "inCategory": "Trong {{category}}",
+      "updated": "Cập nhật lần cuối",
+      "originallyPublished": "Đăng lần đầu",
+      "continueReading": "Đọc Tiếp",
+      "backToTop": "Về Đầu Trang",
+      "reportError": "Báo Lỗi",
+      "printArticle": "In Bài Viết"
+    },
+    "filters": {
+      "sortBy": "Sắp xếp theo",
+      "latest": "Mới nhất",
+      "popular": "Phổ biến",
+      "mostViewed": "Xem nhiều nhất",
+      "mostShared": "Chia sẻ nhiều nhất",
+      "dateRange": "Khoảng thời gian",
+      "today": "Hôm nay",
+      "thisWeek": "Tuần này",
+      "thisMonth": "Tháng này",
+      "allTime": "Tất cả"
     }
   },
   "pages": {
