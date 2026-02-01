@@ -1,0 +1,43 @@
+{
+  "name": "TRAVI World - Travel Guides & Information",
+  "short_name": "TRAVI",
+  "description": "Comprehensive travel information and guides for destinations worldwide",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0EA5E9",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["travel", "lifestyle", "navigation"],
+  "lang": "en-US",
+  "dir": "auto",
+  "shortcuts": [
+    {
+      "name": "Browse Attractions",
+      "short_name": "Attractions",
+      "description": "Explore attractions worldwide",
+      "url": "/en/attractions",
+      "icons": [{ "src": "/icon-attractions.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Find Hotels",
+      "short_name": "Hotels",
+      "description": "Search for hotels",
+      "url": "/en/hotels",
+      "icons": [{ "src": "/icon-hotels.png", "sizes": "192x192" }]
+    }
+  ]
+}
