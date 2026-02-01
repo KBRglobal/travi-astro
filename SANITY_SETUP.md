@@ -65,21 +65,9 @@ RESEND_API_KEY=re_xxxxxxxxxxxxx
 
 ## 3. הפעלת Sanity Studio
 
-### אופציה A: Embedded Studio (מומלץ)
+### Standalone Studio (פורט 3333)
 
-Studio מוטמע ב-Astro בכתובת `/studio`:
-
-```bash
-# הפעל את Astro dev server
-npm run dev
-
-# פתח Studio בדפדפן
-open http://localhost:4321/studio
-```
-
-### אופציה B: Standalone Studio
-
-Studio נפרד (פורט 3333):
+Studio נפרד שרץ על פורט 3333:
 
 ```bash
 # הפעל Studio בלבד
@@ -88,6 +76,8 @@ npm run studio
 # פתח בדפדפן
 open http://localhost:3333
 ```
+
+**הערה**: השתמשנו ב-standalone studio כדי להימנע מצורך ב-server-side rendering. ה-Studio רץ בנפרד מהאתר הסטטי.
 
 ---
 

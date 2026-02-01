@@ -152,7 +152,9 @@ const displayData = {
   hours: attraction.openingHours?.length > 0
     ? attraction.openingHours.join(', ')
     : attraction.hours || t('attractions.detail.generic.hours', { defaultValue: 'Daily 9:00 AM - 6:00 PM' }),
-  price: attraction.pricing?.general || attraction.price || t('attractions.detail.generic.price', { defaultValue: 'From $20' }),
+  price: attraction.pricing?.adult
+    ? `${attraction.pricing.currency || '$'}${attraction.pricing.adult}${attraction.pricing.notes ? ` (${attraction.pricing.notes})` : ''}`
+    : attraction.price || t('attractions.detail.generic.price', { defaultValue: 'From $20' }),
   duration: attraction.duration || t('attractions.detail.generic.duration', { defaultValue: '2-3 hours' }),
   address: attraction.location?.address || attraction.address || t('attractions.detail.generic.address', { defaultValue: 'Location not specified' }),
 };
