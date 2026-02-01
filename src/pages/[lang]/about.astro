@@ -1,7 +1,7 @@
 ---
+import { t, changeLanguage } from "i18next";
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { languages, type Language } from '../../lib/i18n';
-import { getTranslations } from '../../lib/translations';
 
 export async function getStaticPaths() {
   return Object.keys(languages).map((lang) => ({
@@ -10,38 +10,38 @@ export async function getStaticPaths() {
 }
 
 const { lang } = Astro.params as { lang: Language };
-const t = getTranslations(lang);
+changeLanguage(lang);
 ---
 
 <BaseLayout
-  title={t.pages.about.metaTitle}
-  description={t.pages.about.metaDescription}
+  title={t('about.meta.title', { defaultValue: 'About TRAVI | Your Travel Companion' })}
+  description={t('about.meta.description', { defaultValue: 'Learn about TRAVI - your trusted source for travel information, guides, and recommendations worldwide.' })}
   lang={lang}
 >
   <div class="container max-w-4xl py-20">
     <!-- Header -->
     <div class="mb-12 text-center">
       <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
-        {t.pages.about.badge}
+        {t('about.badge', { defaultValue: 'About Us' })}
       </span>
       <h1 class="mb-4 text-4xl font-bold md:text-5xl">
-        {t.pages.about.title} <span class="text-primary">{t.pages.about.titleHighlight}</span>
+        {t('about.title', { defaultValue: 'Know Before' })} <span class="text-primary">{t('about.titleHighlight', { defaultValue: 'You Go' })}</span>
       </h1>
       <p class="mx-auto max-w-2xl text-lg text-muted-foreground">
-        {t.pages.about.subtitle}
+        {t('about.subtitle', { defaultValue: 'TRAVI is your trusted travel companion, providing detailed information about destinations, attractions, and experiences worldwide.' })}
       </p>
       <div class="mt-8 flex justify-center gap-4">
         <a
           href={`/${lang}/attractions`}
           class="inline-flex h-11 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
         >
-          {t.pages.about.ctaExplore}
+          {t('about.ctaExplore', { defaultValue: 'Explore Attractions' })}
         </a>
         <a
           href={`/${lang}/contact`}
           class="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
         >
-          {t.pages.about.ctaContact}
+          {t('about.ctaContact', { defaultValue: 'Contact Us' })}
         </a>
       </div>
     </div>
@@ -50,37 +50,107 @@ const t = getTranslations(lang);
     <div class="mb-16 grid grid-cols-2 gap-8 md:grid-cols-4">
       <div class="text-center">
         <div class="text-3xl font-bold text-primary">17</div>
-        <div class="text-sm text-muted-foreground">{t.pages.about.stats.destinations}</div>
+        <div class="text-sm text-muted-foreground">{t('about.stats.destinations', { defaultValue: 'Destinations' })}</div>
       </div>
       <div class="text-center">
         <div class="text-3xl font-bold text-primary">3,000+</div>
-        <div class="text-sm text-muted-foreground">{t.pages.about.stats.articles}</div>
+        <div class="text-sm text-muted-foreground">{t('about.stats.attractions', { defaultValue: 'Attractions' })}</div>
       </div>
       <div class="text-center">
         <div class="text-3xl font-bold text-primary">24/7</div>
-        <div class="text-sm text-muted-foreground">{t.pages.about.stats.support}</div>
+        <div class="text-sm text-muted-foreground">{t('about.stats.support', { defaultValue: 'Support' })}</div>
       </div>
       <div class="text-center">
-        <div class="text-3xl font-bold text-primary">{t.pages.about.stats.cities}</div>
-        <div class="text-sm text-muted-foreground">{t.pages.about.stats.coverage}</div>
+        <div class="text-3xl font-bold text-primary">100+</div>
+        <div class="text-sm text-muted-foreground">{t('about.stats.cities', { defaultValue: 'Cities' })}</div>
       </div>
     </div>
 
-    <!-- Services Section -->
+    <!-- Mission Section -->
+    <div class="mb-16 rounded-lg border bg-muted/50 p-8 md:p-12">
+      <div class="mb-6 text-center">
+        <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
+          {t('about.mission.badge', { defaultValue: 'Our Mission' })}
+        </span>
+        <h2 class="mb-4 text-3xl font-bold">{t('about.mission.title', { defaultValue: 'Travel with Confidence' })}</h2>
+        <p class="mx-auto max-w-2xl text-muted-foreground">
+          {t('about.mission.description', { defaultValue: 'Our mission is to provide travelers with accurate, up-to-date information about destinations worldwide. We believe every journey should be well-informed and memorable.' })}
+        </p>
+      </div>
+    </div>
+
+    <!-- What We Offer -->
     <div class="mb-16">
       <div class="mb-8 text-center">
         <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
-          {t.pages.about.services.badge}
+          {t('about.services.badge', { defaultValue: 'What We Offer' })}
         </span>
-        <h2 class="text-3xl font-bold">{t.pages.about.services.title}</h2>
+        <h2 class="text-3xl font-bold">{t('about.services.title', { defaultValue: 'Comprehensive Travel Information' })}</h2>
       </div>
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {Object.entries(t.pages.about.offerings).map(([key, service]: [string, any]) => (
-          <div class="rounded-lg border bg-card p-6">
-            <h3 class="mb-2 text-xl font-semibold">{service.title}</h3>
-            <p class="text-sm text-muted-foreground">{service.description}</p>
+        <div class="rounded-lg border bg-card p-6">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
           </div>
-        ))}
+          <h3 class="mb-2 text-xl font-semibold">{t('about.offerings.attractions.title', { defaultValue: 'Attraction Guides' })}</h3>
+          <p class="text-sm text-muted-foreground">{t('about.offerings.attractions.description', { defaultValue: 'Detailed guides for thousands of attractions with hours, prices, and insider tips.' })}</p>
+        </div>
+
+        <div class="rounded-lg border bg-card p-6">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <h3 class="mb-2 text-xl font-semibold">{t('about.offerings.hotels.title', { defaultValue: 'Hotel Recommendations' })}</h3>
+          <p class="text-sm text-muted-foreground">{t('about.offerings.hotels.description', { defaultValue: 'Curated hotel recommendations for every budget and travel style.' })}</p>
+        </div>
+
+        <div class="rounded-lg border bg-card p-6">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="m2 17 10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3 class="mb-2 text-xl font-semibold">{t('about.offerings.guides.title', { defaultValue: 'Destination Guides' })}</h3>
+          <p class="text-sm text-muted-foreground">{t('about.offerings.guides.description', { defaultValue: 'Comprehensive guides covering culture, food, transportation, and local tips.' })}</p>
+        </div>
+
+        <div class="rounded-lg border bg-card p-6">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h3 class="mb-2 text-xl font-semibold">{t('about.offerings.realtime.title', { defaultValue: 'Real-Time Updates' })}</h3>
+          <p class="text-sm text-muted-foreground">{t('about.offerings.realtime.description', { defaultValue: 'Current information on hours, prices, and availability for better planning.' })}</p>
+        </div>
+
+        <div class="rounded-lg border bg-card p-6">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <h3 class="mb-2 text-xl font-semibold">{t('about.offerings.reviews.title', { defaultValue: 'Honest Reviews' })}</h3>
+          <p class="text-sm text-muted-foreground">{t('about.offerings.reviews.description', { defaultValue: 'Authentic reviews from real travelers to help you make informed decisions.' })}</p>
+        </div>
+
+        <div class="rounded-lg border bg-card p-6">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <h3 class="mb-2 text-xl font-semibold">{t('about.offerings.support.title', { defaultValue: '24/7 Support' })}</h3>
+          <p class="text-sm text-muted-foreground">{t('about.offerings.support.description', { defaultValue: 'Always here to help with questions and travel assistance anytime you need.' })}</p>
+        </div>
       </div>
     </div>
 
@@ -88,33 +158,42 @@ const t = getTranslations(lang);
     <div class="mb-16">
       <div class="mb-8 text-center">
         <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
-          {t.pages.about.values.badge}
+          {t('about.values.badge', { defaultValue: 'Our Values' })}
         </span>
-        <h2 class="text-3xl font-bold">{t.pages.about.values.title}</h2>
+        <h2 class="text-3xl font-bold">{t('about.values.title', { defaultValue: 'What Drives Us' })}</h2>
       </div>
       <div class="grid gap-6 md:grid-cols-3">
-        {Object.entries(t.pages.about.values)
-          .filter(([key]) => !['badge', 'title'].includes(key))
-          .map(([key, value]: [string, any]) => (
-            <div class="rounded-lg border bg-card p-6 text-center">
-              <h3 class="mb-2 text-xl font-semibold">{value.title}</h3>
-              <p class="text-sm text-muted-foreground">{value.description}</p>
-            </div>
-          ))}
+        <div class="rounded-lg border bg-card p-6 text-center">
+          <h3 class="mb-2 text-xl font-semibold">{t('about.values.accuracy.title', { defaultValue: 'Accuracy' })}</h3>
+          <p class="text-sm text-muted-foreground">{t('about.values.accuracy.description', { defaultValue: 'We verify every detail to ensure you have the most reliable information.' })}</p>
+        </div>
+
+        <div class="rounded-lg border bg-card p-6 text-center">
+          <h3 class="mb-2 text-xl font-semibold">{t('about.values.transparency.title', { defaultValue: 'Transparency' })}</h3>
+          <p class="text-sm text-muted-foreground">{t('about.values.transparency.description', { defaultValue: 'Honest, unbiased recommendations you can trust.' })}</p>
+        </div>
+
+        <div class="rounded-lg border bg-card p-6 text-center">
+          <h3 class="mb-2 text-xl font-semibold">{t('about.values.community.title', { defaultValue: 'Community' })}</h3>
+          <p class="text-sm text-muted-foreground">{t('about.values.community.description', { defaultValue: 'Built by travelers, for travelers, sharing real experiences.' })}</p>
+        </div>
       </div>
     </div>
 
     <!-- Contact CTA -->
     <div class="rounded-lg border bg-muted/50 p-8 text-center">
       <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
-        {t.pages.about.connect.badge}
+        {t('about.connect.badge', { defaultValue: 'Get In Touch' })}
       </span>
-      <h2 class="mb-4 text-2xl font-bold">{t.pages.about.connect.title}</h2>
+      <h2 class="mb-4 text-2xl font-bold">{t('about.connect.title', { defaultValue: 'Have Questions?' })}</h2>
+      <p class="mb-6 text-muted-foreground">
+        {t('about.connect.description', { defaultValue: "We'd love to hear from you. Reach out anytime." })}
+      </p>
       <a
         href={`/${lang}/contact`}
         class="inline-flex h-11 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
       >
-        {t.pages.about.ctaContact}
+        {t('about.ctaContact', { defaultValue: 'Contact Us' })}
       </a>
     </div>
   </div>

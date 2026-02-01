@@ -1,7 +1,7 @@
 ---
+import { t, changeLanguage } from "i18next";
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { languages, type Language } from '../../lib/i18n';
-import { getTranslations } from '../../lib/translations';
 import ContactForm from '../../components/islands/ContactForm';
 
 export async function getStaticPaths() {
@@ -11,81 +11,173 @@ export async function getStaticPaths() {
 }
 
 const { lang } = Astro.params as { lang: Language };
-const t = getTranslations(lang);
+changeLanguage(lang);
 ---
 
 <BaseLayout
-  title={t.pages.contact.metaTitle}
-  description={t.pages.contact.metaDescription}
+  title={t('contact.meta.title', { defaultValue: 'Contact Us | TRAVI' })}
+  description={t('contact.meta.description', { defaultValue: 'Get in touch with TRAVI. We\'re here to help with any questions about your travel plans.' })}
   lang={lang}
 >
   <div class="container max-w-4xl py-20">
     <!-- Header -->
     <div class="mb-12 text-center">
       <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
-        {t.pages.contact.badge}
+        {t('contact.badge', { defaultValue: 'Contact Us' })}
       </span>
       <h1 class="mb-4 text-4xl font-bold md:text-5xl">
-        {t.pages.contact.titlePart1} <span class="text-primary">{t.pages.contact.titlePart2}</span>
+        {t('contact.title', { defaultValue: 'Get in' })} <span class="text-primary">{t('contact.titleHighlight', { defaultValue: 'Touch' })}</span>
       </h1>
       <p class="mx-auto max-w-2xl text-lg text-muted-foreground">
-        {t.pages.contact.subtitle}
+        {t('contact.subtitle', { defaultValue: 'Have a question or need help planning your trip? We\'re here to help. Send us a message and we\'ll get back to you as soon as possible.' })}
       </p>
     </div>
 
     <!-- Contact Options -->
     <div class="mb-16">
       <div class="mb-8">
-        <h2 class="mb-2 text-2xl font-bold">{t.pages.contact.getInTouch}</h2>
-        <p class="text-muted-foreground">{t.pages.contact.getInTouchSubtitle}</p>
+        <h2 class="mb-2 text-2xl font-bold">{t('contact.getInTouch', { defaultValue: 'Ways to Reach Us' })}</h2>
+        <p class="text-muted-foreground">{t('contact.getInTouchSubtitle', { defaultValue: 'Choose the best way to connect with our team' })}</p>
       </div>
       <div class="grid gap-6 md:grid-cols-2">
-        {Object.entries(t.pages.contact.options).map(([key, option]: [string, any]) => (
-          <div class="rounded-lg border bg-card p-6">
-            <h3 class="mb-2 text-lg font-semibold">{option.title}</h3>
-            <p class="text-sm text-muted-foreground">{option.description}</p>
-            {option.action && (
-              <div class="mt-4 inline-block rounded bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
-                {option.action}
-              </div>
-            )}
+        <div class="rounded-lg border bg-card p-6">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
           </div>
-        ))}
+          <h3 class="mb-2 text-lg font-semibold">{t('contact.options.email.title', { defaultValue: 'Email' })}</h3>
+          <p class="mb-3 text-sm text-muted-foreground">{t('contact.options.email.description', { defaultValue: 'Send us an email and we\'ll respond within 24 hours.' })}</p>
+          <div class="inline-block rounded bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
+            support@travi.world
+          </div>
+        </div>
+
+        <div class="rounded-lg border bg-card p-6">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <h3 class="mb-2 text-lg font-semibold">{t('contact.options.livechat.title', { defaultValue: 'Live Chat' })}</h3>
+          <p class="mb-3 text-sm text-muted-foreground">{t('contact.options.livechat.description', { defaultValue: 'Chat with our team in real-time for instant answers.' })}</p>
+          <div class="inline-block rounded bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
+            {t('contact.options.livechat.status', { defaultValue: 'Available 24/7' })}
+          </div>
+        </div>
+
+        <div class="rounded-lg border bg-card p-6">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <h3 class="mb-2 text-lg font-semibold">{t('contact.options.phone.title', { defaultValue: 'Phone' })}</h3>
+          <p class="mb-3 text-sm text-muted-foreground">{t('contact.options.phone.description', { defaultValue: 'Call us for urgent inquiries or immediate assistance.' })}</p>
+          <div class="inline-block rounded bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
+            +1 (555) 123-4567
+          </div>
+        </div>
+
+        <div class="rounded-lg border bg-card p-6">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </div>
+          <h3 class="mb-2 text-lg font-semibold">{t('contact.options.social.title', { defaultValue: 'Social Media' })}</h3>
+          <p class="mb-3 text-sm text-muted-foreground">{t('contact.options.social.description', { defaultValue: 'Follow us on social media for updates and travel inspiration.' })}</p>
+          <div class="inline-block rounded bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
+            @traviworld
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Help Topics -->
     <div class="mb-16">
       <div class="mb-8">
-        <h2 class="mb-2 text-2xl font-bold">{t.pages.contact.howCanWeHelp}</h2>
-        <p class="text-muted-foreground">{t.pages.contact.howCanWeHelpSubtitle}</p>
+        <h2 class="mb-2 text-2xl font-bold">{t('contact.howCanWeHelp', { defaultValue: 'How Can We Help?' })}</h2>
+        <p class="text-muted-foreground">{t('contact.howCanWeHelpSubtitle', { defaultValue: 'Common topics our support team can assist with' })}</p>
       </div>
       <div class="grid gap-4 md:grid-cols-2">
-        {Object.entries(t.pages.contact.helpTopics).map(([key, topic]: [string, string]) => (
-          <div class="flex items-start gap-3 rounded-lg border bg-card p-4">
-            <div class="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-            </div>
-            <p class="text-sm">{topic}</p>
+        <div class="flex items-start gap-3 rounded-lg border bg-card p-4">
+          <div class="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
           </div>
-        ))}
+          <p class="text-sm">{t('contact.helpTopics.1', { defaultValue: 'Travel planning and destination recommendations' })}</p>
+        </div>
+
+        <div class="flex items-start gap-3 rounded-lg border bg-card p-4">
+          <div class="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <p class="text-sm">{t('contact.helpTopics.2', { defaultValue: 'Attraction information, hours, and tickets' })}</p>
+        </div>
+
+        <div class="flex items-start gap-3 rounded-lg border bg-card p-4">
+          <div class="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <p class="text-sm">{t('contact.helpTopics.3', { defaultValue: 'Website features and account support' })}</p>
+        </div>
+
+        <div class="flex items-start gap-3 rounded-lg border bg-card p-4">
+          <div class="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <p class="text-sm">{t('contact.helpTopics.4', { defaultValue: 'Partnership and collaboration inquiries' })}</p>
+        </div>
+
+        <div class="flex items-start gap-3 rounded-lg border bg-card p-4">
+          <div class="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <p class="text-sm">{t('contact.helpTopics.5', { defaultValue: 'Press and media requests' })}</p>
+        </div>
+
+        <div class="flex items-start gap-3 rounded-lg border bg-card p-4">
+          <div class="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <p class="text-sm">{t('contact.helpTopics.6', { defaultValue: 'Feedback and suggestions' })}</p>
+        </div>
       </div>
     </div>
 
     <!-- Important Note -->
     <div class="mb-16 rounded-lg border-l-4 border-primary bg-primary/5 p-6">
-      <h3 class="mb-2 text-lg font-semibold">{t.pages.contact.importantNote}</h3>
-      <p class="mb-4 text-sm text-muted-foreground">{t.pages.contact.importantNoteSubtitle}</p>
-      <p class="text-sm">
-        {t.pages.contact.urgentNote.replace('{{urgentLabel}}', `"${t.pages.contact.urgentLabel}"`)}
+      <h3 class="mb-2 flex items-center gap-2 text-lg font-semibold">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="16" x2="12" y2="12"/>
+          <line x1="12" y1="8" x2="12.01" y2="8"/>
+        </svg>
+        {t('contact.importantNote', { defaultValue: 'Response Time' })}
+      </h3>
+      <p class="text-sm text-muted-foreground">
+        {t('contact.importantNoteSubtitle', { defaultValue: 'We typically respond to all inquiries within 24 hours during business days. For urgent matters, please use our live chat or phone support.' })}
       </p>
     </div>
 
     <!-- Contact Form -->
     <div class="rounded-lg border bg-card p-8">
-      <h2 class="mb-6 text-2xl font-bold">{t.pages.contact.cta}</h2>
+      <h2 class="mb-6 text-2xl font-bold">{t('contact.formTitle', { defaultValue: 'Send Us a Message' })}</h2>
       <ContactForm client:load lang={lang} />
     </div>
   </div>
